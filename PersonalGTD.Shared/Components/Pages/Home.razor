@@ -3,12 +3,39 @@
 @using PersonalGTD.Shared.Services
 @inject ITaskService TaskService
 
+@inject IProjectService ProjectService
+@inject IContextService ContextService
+
 <PageTitle>PersonalGTD - Tasks</PageTitle>
 
 <div class="gtd-container">
     <div class="add-task-card">
         <input type="text" class="task-input" placeholder="What needs to be done?" @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" />
-        <input type="text" class="context-input" placeholder="Context (e.g., @@work, @@home)" @bind="newTaskContext" />
+        
+        <div class="selectors">
+            <select class="context-select" @bind="newContextId">
+                <option value="@Guid.Empty">-- Aucun contexte --</option>
+                @if (contexts != null)
+                {
+                    @foreach (var c in contexts)
+                    {
+                        <option value="@c.Id">@c.Name</option>
+                    }
+                }
+            </select>
+
+            <select class="project-select" @bind="newProjectId">
+                <option value="@Guid.Empty">-- Aucun projet --</option>
+                @if (projects != null)
+                {
+                    @foreach (var p in projects)
+                    {
+                        <option value="@p.Id">@p.Name</option>
+                    }
+                }
+            </select>
+        </div>
+
         <button class="add-button" @onclick="AddTaskAsync" disabled="@string.IsNullOrWhiteSpace(newTaskTitle)">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </button>
@@ -37,10 +64,24 @@
                     </div>
                     <div class="task-content">
                         <div class="task-title">@task.Title</div>
-                        @if (!string.IsNullOrWhiteSpace(task.Context))
-                        {
-                            <span class="task-context">@task.Context</span>
-                        }
+                        <div class="task-badges">
+                            @if (task.ProjectId.HasValue && projects != null)
+                            {
+                                var proj = projects.FirstOrDefault(p => p.Id == task.ProjectId);
+                                if (proj != null)
+                                {
+                                    <span class="task-project" style="color: @proj.Color; background-color: @(proj.Color)20; border: 1px solid @proj.Color">@proj.Name</span>
+                                }
+                            }
+                            @if (task.ContextId.HasValue && contexts != null)
+                            {
+                                var ctx = contexts.FirstOrDefault(c => c.Id == task.ContextId);
+                                if (ctx != null)
+                                {
+                                    <span class="task-context" style="color: @ctx.Color; background-color: @(ctx.Color)20; border: 1px solid @ctx.Color">@ctx.Name</span>
+                                }
+                            }
+                        </div>
                     </div>
                     <button class="delete-button" @onclick="@(() => DeleteItemAsync(task.Id))">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
@@ -53,11 +94,17 @@
 
 @code {
     private IEnumerable<GtdItem>? tasks;
+    private List<GtdProject>? projects;
+    private List<GtdContext>? contexts;
+    
     private string newTaskTitle = string.Empty;
-    private string newTaskContext = string.Empty;
+    private Guid newProjectId = Guid.Empty;
+    private Guid newContextId = Guid.Empty;
 
     protected override async Task OnInitializedAsync()
     {
+        projects = await ProjectService.GetProjectsAsync();
+        contexts = await ContextService.GetContextsAsync();
         await LoadTasksAsync();
     }
 
@@ -81,12 +128,14 @@
         var task = new GtdItem
         {
             Title = newTaskTitle,
-            Context = newTaskContext
+            ProjectId = newProjectId == Guid.Empty ? null : newProjectId,
+            ContextId = newContextId == Guid.Empty ? null : newContextId
         };
 
         await TaskService.AddItemAsync(task);
         newTaskTitle = string.Empty;
-        newTaskContext = string.Empty;
+        newProjectId = Guid.Empty;
+        newContextId = Guid.Empty;
         await LoadTasksAsync();
     }
 

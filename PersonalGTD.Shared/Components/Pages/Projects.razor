@@ -1,0 +1,134 @@
+@page "/projects"
+@using PersonalGTD.Shared.Models
+@using PersonalGTD.Shared.Services
+@inject IProjectService ProjectService
+
+<PageTitle>Projets - Mon organiseur</PageTitle>
+
+<div class="page-header">
+    <h2>Gestion des Projets</h2>
+    <button class="btn-primary" @onclick="() => showForm = !showForm">
+        @(showForm ? "Fermer" : "Nouveau Projet")
+    </button>
+</div>
+
+@if (showForm)
+{
+    <div class="form-card">
+        <h3>@(editingId.HasValue ? "Modifier le projet" : "Nouveau projet")</h3>
+        
+        <div class="form-group">
+            <label>Nom du projet</label>
+            <input type="text" @bind="currentProject.Name" placeholder="Ex: Rénovation cuisine..." />
+        </div>
+        
+        <div class="form-group">
+            <label>Description</label>
+            <textarea @bind="currentProject.Description" placeholder="Détails du projet..."></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Couleur</label>
+            <input type="color" @bind="currentProject.Color" />
+        </div>
+        
+        <div class="form-actions">
+            <button class="btn-secondary" @onclick="CancelEdit">Annuler</button>
+            <button class="btn-primary" @onclick="SaveProject">Sauvegarder</button>
+        </div>
+    </div>
+}
+
+<div class="grid-container">
+    @if (projects == null)
+    {
+        <p>Chargement...</p>
+    }
+    else if (!projects.Any())
+    {
+        <div class="empty-state">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <p>Aucun projet pour le moment.</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var p in projects)
+        {
+            <div class="card" style="border-top: 4px solid @p.Color">
+                <div class="card-header">
+                    <h4>@p.Name</h4>
+                    <div class="actions">
+                        <button class="icon-btn edit" @onclick="() => EditProject(p)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </button>
+                        <button class="icon-btn delete" @onclick="() => DeleteProject(p.Id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="description">@p.Description</p>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private List<GtdProject>? projects;
+    private bool showForm = false;
+    private GtdProject currentProject = new();
+    private Guid? editingId = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadProjects();
+    }
+
+    private async Task LoadProjects()
+    {
+        projects = await ProjectService.GetProjectsAsync();
+    }
+
+    private void EditProject(GtdProject p)
+    {
+        currentProject = new GtdProject
+        {
+            Id = p.Id,
+            Name = p.Name,
+            Description = p.Description,
+            Color = p.Color
+        };
+        editingId = p.Id;
+        showForm = true;
+    }
+
+    private void CancelEdit()
+    {
+        currentProject = new();
+        editingId = null;
+        showForm = false;
+    }
+
+    private async Task SaveProject()
+    {
+        if (string.IsNullOrWhiteSpace(currentProject.Name)) return;
+
+        if (editingId.HasValue)
+        {
+            await ProjectService.UpdateProjectAsync(currentProject);
+        }
+        else
+        {
+            await ProjectService.AddProjectAsync(currentProject);
+        }
+
+        await LoadProjects();
+        CancelEdit();
+    }
+
+    private async Task DeleteProject(Guid id)
+    {
+        await ProjectService.DeleteProjectAsync(id);
+        await LoadProjects();
+    }
+}

@@ -9,7 +9,8 @@ public class GtdItem
     
     public GtdStatus Status { get; set; } = GtdStatus.Inbox;
     
-    public string Context { get; set; } = string.Empty;
+    public Guid? ProjectId { get; set; }
+    public Guid? ContextId { get; set; }
     public int EnergyLevel { get; set; } = 3; // 1 to 5
     public TimeSpan EstimatedTime { get; set; } = TimeSpan.Zero;
 }

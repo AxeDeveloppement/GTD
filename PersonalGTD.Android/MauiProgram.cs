@@ -23,6 +23,8 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddSingleton<ITaskService, TaskService>();
+		builder.Services.AddSingleton<IProjectService, ProjectService>();
+		builder.Services.AddSingleton<IContextService, ContextService>();
 
 		return builder.Build();
 	}

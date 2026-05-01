@@ -41,15 +41,42 @@
 .fab-input-panel {
     background: white;
     border-radius: 16px;
-    padding: 0.5rem;
+    padding: 0.75rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.5rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: bottom right;
     width: 320px;
     border: 1px solid #e2e8f0;
+}
+
+.fab-main-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.fab-selectors {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.5rem;
+}
+
+.fab-select {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    color: #475569;
+    background: #f8fafc;
+    outline: none;
 }
 
 .quick-input {

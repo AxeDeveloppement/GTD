@@ -31,7 +31,8 @@ public class TaskService : ITaskService
             existing.Title = item.Title;
             existing.Note = item.Note;
             existing.Status = item.Status;
-            existing.Context = item.Context;
+            existing.ContextId = item.ContextId;
+            existing.ProjectId = item.ProjectId;
             existing.EnergyLevel = item.EnergyLevel;
             existing.EstimatedTime = item.EstimatedTime;
         }
