@@ -1,4 +1,6 @@
 @inject NavigationManager Navigation
+@inject PersonalGTD.Shared.Services.ReviewStateService ReviewState
+@implements IDisposable
 
 <div class="sidebar @(IsOpen ? "open" : "")">
     <div class="sidebar-header">
@@ -51,10 +53,12 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 <span>Un jour / Peut-être</span>
             </NavLink>
-            <NavLink class="nav-item" href="/weekly-review">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3"></path><path d="M19 12h3"></path><path d="M12 2v3"></path><path d="M12 19v3"></path><path d="M16 12a4 4 0 0 1-8 0"></path><path d="M6 16l-3 3"></path><path d="M21 5l-3 3"></path><path d="M6 8L3 5"></path><path d="M21 19l-3-3"></path></svg>
-                <span>Revue Hebdomadaire</span>
-            </NavLink>
+            <div class="@(ShowReviewAlert ? "review-due-wrapper" : "")">
+                <NavLink class="nav-item" href="/weekly-review">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3"></path><path d="M19 12h3"></path><path d="M12 2v3"></path><path d="M12 19v3"></path><path d="M16 12a4 4 0 0 1-8 0"></path><path d="M6 16l-3 3"></path><path d="M21 5l-3 3"></path><path d="M6 8L3 5"></path><path d="M21 19l-3-3"></path></svg>
+                    <span>Revue Hebdomadaire</span>
+                </NavLink>
+            </div>
         </div>
 
         <div class="nav-section">
@@ -76,9 +80,46 @@
     [Parameter] public bool IsOpen { get; set; }
     [Parameter] public EventCallback<bool> IsOpenChanged { get; set; }
 
+    private bool isReviewDue = false;
+    private System.Timers.Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        CheckReviewTime(null, null);
+        timer = new System.Timers.Timer(60000);
+        timer.Elapsed += CheckReviewTime;
+        timer.Start();
+        ReviewState.OnStateChanged += OnReviewStateChanged;
+    }
+
+    private void OnReviewStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    private bool ShowReviewAlert => isReviewDue && !ReviewState.IsReviewDoneThisWeek;
+
+    private void CheckReviewTime(object? sender, System.Timers.ElapsedEventArgs? e)
+    {
+        var now = DateTime.Now;
+        bool due = (now.DayOfWeek == DayOfWeek.Friday && now.Hour >= 16) ||
+                   now.DayOfWeek == DayOfWeek.Saturday ||
+                   now.DayOfWeek == DayOfWeek.Sunday;
+
+        isReviewDue = due;
+        ReviewState.Tick();
+        InvokeAsync(StateHasChanged);
+    }
+
     private async Task ToggleSidebar()
     {
         IsOpen = !IsOpen;
         await IsOpenChanged.InvokeAsync(IsOpen);
+    }
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+        ReviewState.OnStateChanged -= OnReviewStateChanged;
     }
 }

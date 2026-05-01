@@ -32,4 +32,7 @@ public class GtdItem : BaseModel
 
     [Column("estimated_time")]
     public TimeSpan EstimatedTime { get; set; } = TimeSpan.Zero;
+
+    [Column("due_date")]
+    public DateTime? DueDate { get; set; }
 }

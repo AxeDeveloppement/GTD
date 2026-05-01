@@ -1,0 +1,114 @@
+.review-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    transition: all 0.2s;
+}
+
+.review-step:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+}
+
+.review-step.done {
+    background: #f0fdf4;
+    border-color: #86efac;
+    opacity: 0.7;
+}
+
+.step-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.review-step.done .step-title {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.step-description {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.review-step.done .step-description {
+    color: #94a3b8;
+}
+
+.step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4f46e5;
+    text-decoration: none;
+    border: 1px solid #c7d2fe;
+    background: #eef2ff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.step-link:hover {
+    background: #e0e7ff;
+    border-color: #a5b4fc;
+}
+
+.step-check-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #22c55e;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.step-check-btn:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.step-check-btn.checked {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}

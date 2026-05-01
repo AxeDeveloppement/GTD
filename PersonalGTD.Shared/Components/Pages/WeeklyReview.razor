@@ -1,0 +1,257 @@
+@page "/weekly-review"
+@inject PersonalGTD.Shared.Services.ReviewStateService ReviewState
+@inject IJSRuntime JS
+@implements IDisposable
+
+<PageTitle>Revue Hebdomadaire - Mon organiseur</PageTitle>
+
+<div class="gtd-container">
+    <div class="review-header">
+        <div class="review-title-block">
+            <h2>Revue Hebdomadaire</h2>
+            <p class="review-subtitle">Prenez le temps de faire le point sur votre système.</p>
+        </div>
+        <div class="progress-block">
+            <span class="progress-label">@completedCount / @totalCount étapes complétées</span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: @(totalCount > 0 ? (completedCount * 100 / totalCount) : 0)%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs-container">
+        <button class="tab-button @(activeTab == ReviewTab.ClearMind ? "active" : "")" @onclick="() => SetTab(ReviewTab.ClearMind)">
+            🧹 Se vider l'esprit
+        </button>
+        <button class="tab-button @(activeTab == ReviewTab.Update ? "active" : "")" @onclick="() => SetTab(ReviewTab.Update)">
+            🔄 Se mettre à jour
+        </button>
+        <button class="tab-button @(activeTab == ReviewTab.Creative ? "active" : "")" @onclick="() => SetTab(ReviewTab.Creative)">
+            💡 Être créatif
+        </button>
+    </div>
+
+    @if (activeTab == ReviewTab.ClearMind)
+    {
+        <div class="review-tab-content">
+            <div class="tab-intro">
+                <p>Videz entièrement votre mental. Tout ce qui « tourne » dans votre tête doit se retrouver dans votre inbox.</p>
+            </div>
+            @foreach (var step in clearMindSteps)
+            {
+                <ReviewStep Step="step" OnToggle="() => ToggleStep(step)" />
+            }
+        </div>
+    }
+    else if (activeTab == ReviewTab.Update)
+    {
+        <div class="review-tab-content">
+            <div class="tab-intro">
+                <p>Passez en revue chaque liste de votre système et mettez-la à jour.</p>
+            </div>
+            @foreach (var step in updateSteps)
+            {
+                <ReviewStep Step="step" OnToggle="() => ToggleStep(step)" />
+            }
+        </div>
+    }
+    else if (activeTab == ReviewTab.Creative)
+    {
+        <div class="review-tab-content">
+            <div class="tab-intro">
+                <p>Prenez de la hauteur. Réfléchissez à vos objectifs et à votre vision à long terme.</p>
+            </div>
+            @foreach (var step in creativeSteps)
+            {
+                <ReviewStep Step="step" OnToggle="() => ToggleStep(step)" />
+            }
+        </div>
+    }
+
+    <div class="review-footer">
+        <button class="reset-btn" @onclick="HandleReset">🔁 Réinitialiser la revue</button>
+        <span style="flex: 1"></span>
+        <button class="done-btn" @onclick="HandleMarkDone">✅ Switcher la revue cette semaine</button>
+    </div>
+</div>
+
+@code {
+    private ReviewTab activeTab = ReviewTab.ClearMind;
+    private enum ReviewTab { ClearMind, Update, Creative }
+
+    private int completedCount => AllSteps.Count(s => s.Done);
+    private int totalCount => AllSteps.Count;
+    private List<ReviewStepModel> AllSteps => clearMindSteps.Concat(updateSteps).Concat(creativeSteps).ToList();
+
+    private List<ReviewStepModel> clearMindSteps = new()
+    {
+        new("Vider les boîtes de réception")
+        {
+            Icon = "📥",
+            Description = "Traiter les mails restants, les notes physiques, les tickets de caisse ou les feuilles volantes.",
+            Link = "/",
+            LinkLabel = "Ouvrir l'Inbox"
+        },
+        new("Vidage de cerveau complet")
+        {
+            Icon = "🧠",
+            Description = "Noter tout ce qui vous préoccupe actuellement (projets, idées, corvées) pour l'intégrer au système.",
+            Link = "/",
+            LinkLabel = "Ouvrir l'Inbox"
+        },
+    };
+
+    private List<ReviewStepModel> updateSteps = new()
+    {
+        new("Revoir le calendrier")
+        {
+            Icon = "🗓️",
+            Description = "Regarder les deux semaines passées (pour voir si des actions n'ont pas été suivies d'effet) et les deux semaines à venir (pour anticiper la préparation).",
+            Link = "/agenda",
+            LinkLabel = "Ouvrir l'Agenda"
+        },
+        new("Passer en revue les Projets")
+        {
+            Icon = "🗂️",
+            Description = "C'est l'étape la plus cruciale. Pour chaque projet actif, vérifiez qu'il y a au moins une \"Action Suivante\" définie dans vos listes.",
+            Link = "/projects",
+            LinkLabel = "Ouvrir les Projets"
+        },
+        new("Vérifier la liste \"En attente\"")
+        {
+            Icon = "⏳",
+            Description = "Relancer les personnes qui ne vous ont pas répondu.",
+            Link = "/waiting",
+            LinkLabel = "Ouvrir En attente"
+        },
+    };
+
+    private List<ReviewStepModel> creativeSteps = new()
+    {
+        new("Liste \"Un jour / Peut-être\"")
+        {
+            Icon = "💭",
+            Description = "Relire cette liste pour décider si certains projets doivent devenir actifs maintenant, ou si d'autres doivent être supprimés définitivement.",
+            Link = "/sometime",
+            LinkLabel = "Ouvrir Un jour / Peut-être"
+        },
+        new("Nouvelles idées")
+        {
+            Icon = "💡",
+            Description = "Profiter du sentiment de contrôle pour imaginer de nouveaux projets ou des approches différentes.",
+            Link = "/",
+            LinkLabel = "Ouvrir l'Inbox"
+        },
+    };
+
+    private void SetTab(ReviewTab tab) => activeTab = tab;
+
+    private Action? _autoResetHandler;
+
+    protected override void OnInitialized()
+    {
+        _autoResetHandler = () => _ = HandleAutoReset();
+        ReviewState.OnAutoReset += _autoResetHandler;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadStateAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task SaveStateAsync()
+    {
+        var stepStates = AllSteps.Select(s => s.Done).ToArray();
+        var json = System.Text.Json.JsonSerializer.Serialize(stepStates);
+        await JS.InvokeVoidAsync("localStorage.setItem", "gtd-weekly-steps", json);
+
+        if (ReviewState.IsReviewDoneThisWeek)
+            await JS.InvokeVoidAsync("localStorage.setItem", "gtd-review-done-at", DateTime.Now.ToString("o"));
+        else
+            await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-review-done-at");
+    }
+
+    private async Task LoadStateAsync()
+    {
+        // Load step states
+        var json = await JS.InvokeAsync<string?>("localStorage.getItem", "gtd-weekly-steps");
+        if (!string.IsNullOrEmpty(json))
+        {
+            var stepStates = System.Text.Json.JsonSerializer.Deserialize<bool[]>(json);
+            if (stepStates != null)
+            {
+                var allSteps = AllSteps;
+                for (int i = 0; i < Math.Min(stepStates.Length, allSteps.Count); i++)
+                    allSteps[i].Done = stepStates[i];
+            }
+        }
+
+        // Load review done timestamp
+        var doneAt = await JS.InvokeAsync<string?>("localStorage.getItem", "gtd-review-done-at");
+        if (!string.IsNullOrEmpty(doneAt) && DateTime.TryParse(doneAt, out var dt))
+        {
+            // Re-apply to service only if still valid (after last Friday 16:00)
+            if (dt >= ReviewStateService.GetLastReviewTrigger())
+                ReviewState.MarkReviewDone();
+        }
+    }
+
+    private async Task HandleAutoReset()
+    {
+        foreach (var step in AllSteps)
+            step.Done = false;
+        await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-weekly-steps");
+        await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-review-done-at");
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task ToggleStep(ReviewStepModel step)
+    {
+        step.Done = !step.Done;
+        if (AllSteps.All(s => s.Done))
+            ReviewState.MarkReviewDone();
+        else
+            ReviewState.ResetReview();
+        await SaveStateAsync();
+        StateHasChanged();
+    }
+
+    private async Task HandleReset()
+    {
+        foreach (var step in AllSteps)
+            step.Done = false;
+        ReviewState.ResetReview();
+        await SaveStateAsync();
+        StateHasChanged();
+    }
+
+    private async Task HandleMarkDone()
+    {
+        foreach (var step in AllSteps)
+            step.Done = true;
+        ReviewState.MarkReviewDone();
+        await SaveStateAsync();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        if (_autoResetHandler != null)
+            ReviewState.OnAutoReset -= _autoResetHandler;
+    }
+
+    public class ReviewStepModel
+    {
+        public string Title { get; set; }
+        public string Icon { get; set; } = "•";
+        public string? Description { get; set; }
+        public string? Link { get; set; }
+        public string? LinkLabel { get; set; }
+        public bool Done { get; set; } = false;
+        public ReviewStepModel(string title) => Title = title;
+    }
+}
