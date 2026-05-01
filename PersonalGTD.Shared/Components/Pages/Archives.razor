@@ -1,0 +1,106 @@
+@page "/archives"
+@using PersonalGTD.Shared.Models
+@using PersonalGTD.Shared.Services
+@inject ITaskService TaskService
+@inject IProjectService ProjectService
+@inject IContextService ContextService
+
+<PageTitle>Archives - Mon organiseur</PageTitle>
+
+<div class="gtd-container">
+    <div style="margin-bottom: 1rem;">
+        <h2 style="margin: 0; color: #0f172a;">Archives</h2>
+        <p style="margin: 0.5rem 0 0 0; color: #64748b;">Historique des tâches réalisées et abandonnées.</p>
+    </div>
+
+    <div class="tabs-container">
+        <button class="tab-button @(activeTab == ArchiveTab.Done ? "active" : "")" @onclick="() => SetActiveTab(ArchiveTab.Done)">
+            Terminées
+        </button>
+        <button class="tab-button @(activeTab == ArchiveTab.Abandoned ? "active" : "")" @onclick="() => SetActiveTab(ArchiveTab.Abandoned)">
+            Abandonnées
+        </button>
+    </div>
+
+    <div class="task-list">
+        @if (tasks == null)
+        {
+            <div class="loading-state">Chargement...</div>
+        }
+        else if (!tasks.Any())
+        {
+            <div class="empty-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v13H3V8"></path><polyline points="1 3 23 3 23 8 1 8 1 3"></polyline><path d="M10 12h4"></path></svg>
+                <p>Aucune tâche dans cette archive.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var task in tasks)
+            {
+                <TaskItemCard Task="task" Projects="projects" Contexts="contexts" OnTaskUpdated="HandleTaskUpdated" OnTaskDeleted="DeleteItemAsync" />
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private IEnumerable<GtdItem>? allArchivedTasks;
+    private IEnumerable<GtdItem>? tasks;
+    private List<GtdProject>? projects;
+    private List<GtdContext>? contexts;
+
+    private ArchiveTab activeTab = ArchiveTab.Done;
+
+    private enum ArchiveTab
+    {
+        Done,
+        Abandoned
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        projects = await ProjectService.GetProjectsAsync();
+        contexts = await ContextService.GetContextsAsync();
+        await LoadTasksAsync();
+    }
+
+    private async Task LoadTasksAsync()
+    {
+        var all = await TaskService.GetItemsAsync();
+        allArchivedTasks = all.Where(t => t.Status == GtdStatus.Done || t.Status == GtdStatus.Abandoned);
+        FilterTasks();
+    }
+
+    private void SetActiveTab(ArchiveTab tab)
+    {
+        activeTab = tab;
+        FilterTasks();
+    }
+
+    private void FilterTasks()
+    {
+        if (allArchivedTasks == null) return;
+        
+        if (activeTab == ArchiveTab.Done)
+        {
+            tasks = allArchivedTasks.Where(t => t.Status == GtdStatus.Done);
+        }
+        else
+        {
+            tasks = allArchivedTasks.Where(t => t.Status == GtdStatus.Abandoned);
+        }
+    }
+
+    private async Task HandleTaskUpdated(GtdItem task)
+    {
+        await TaskService.UpdateItemAsync(task);
+        await LoadTasksAsync();
+    }
+
+    private async Task DeleteItemAsync(Guid id)
+    {
+        await TaskService.DeleteItemAsync(id);
+        await LoadTasksAsync();
+    }
+}

@@ -1,0 +1,67 @@
+@page "/next-actions"
+@using PersonalGTD.Shared.Models
+@using PersonalGTD.Shared.Services
+@inject ITaskService TaskService
+@inject IProjectService ProjectService
+@inject IContextService ContextService
+
+<PageTitle>Prochaines Actions - Mon organiseur</PageTitle>
+
+<div class="gtd-container">
+    <div style="margin-bottom: 1rem;">
+        <h2 style="margin: 0; color: #0f172a;">Prochaines Actions</h2>
+        <p style="margin: 0.5rem 0 0 0; color: #64748b;">Les tâches physiques et visibles à effectuer dès que possible.</p>
+    </div>
+
+    <div class="task-list">
+        @if (tasks == null)
+        {
+            <div class="loading-state">Chargement...</div>
+        }
+        else if (!tasks.Any())
+        {
+            <div class="empty-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                <p>Aucune prochaine action pour le moment.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var task in tasks)
+            {
+                <TaskItemCard Task="task" Projects="projects" Contexts="contexts" OnTaskUpdated="HandleTaskUpdated" OnTaskDeleted="DeleteItemAsync" />
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private IEnumerable<GtdItem>? tasks;
+    private List<GtdProject>? projects;
+    private List<GtdContext>? contexts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        projects = await ProjectService.GetProjectsAsync();
+        contexts = await ContextService.GetContextsAsync();
+        await LoadTasksAsync();
+    }
+
+    private async Task LoadTasksAsync()
+    {
+        var allTasks = await TaskService.GetItemsAsync();
+        tasks = allTasks.Where(t => t.Status == GtdStatus.NextAction);
+    }
+
+    private async Task HandleTaskUpdated(GtdItem task)
+    {
+        await TaskService.UpdateItemAsync(task);
+        await LoadTasksAsync();
+    }
+
+    private async Task DeleteItemAsync(Guid id)
+    {
+        await TaskService.DeleteItemAsync(id);
+        await LoadTasksAsync();
+    }
+}

@@ -6,11 +6,11 @@
 @inject IProjectService ProjectService
 @inject IContextService ContextService
 
-<PageTitle>PersonalGTD - Tasks</PageTitle>
+<PageTitle>Boîte de réception - Mon organiseur</PageTitle>
 
 <div class="gtd-container">
     <div class="add-task-card">
-        <input type="text" class="task-input" placeholder="What needs to be done?" @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" />
+        <input type="text" class="task-input" placeholder="Qu'y a-t-il à faire ?" @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" />
         
         <div class="selectors">
             <select class="context-select" @bind="newContextId">
@@ -44,49 +44,20 @@
     <div class="task-list">
         @if (tasks == null)
         {
-            <div class="loading-state">Loading tasks...</div>
+            <div class="loading-state">Chargement...</div>
         }
         else if (!tasks.Any())
         {
             <div class="empty-state">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                <p>All caught up! You have no pending tasks.</p>
+                <p>Boîte de réception vide. Super !</p>
             </div>
         }
         else
         {
-            @foreach (var task in tasks)
+            @foreach (var task in tasks.Where(t => t.Status == GtdStatus.Inbox))
             {
-                <div class="task-card @(task.Status == GtdStatus.Archived ? "completed" : "")">
-                    <div class="checkbox-wrapper">
-                        <input type="checkbox" id="@task.Id" checked="@(task.Status == GtdStatus.Archived)" @onchange="@(e => ToggleCompletionAsync(task, e))" />
-                        <label for="@task.Id"></label>
-                    </div>
-                    <div class="task-content">
-                        <div class="task-title">@task.Title</div>
-                        <div class="task-badges">
-                            @if (task.ProjectId.HasValue && projects != null)
-                            {
-                                var proj = projects.FirstOrDefault(p => p.Id == task.ProjectId);
-                                if (proj != null)
-                                {
-                                    <span class="task-project" style="color: @proj.Color; background-color: @(proj.Color)20; border: 1px solid @proj.Color">@proj.Name</span>
-                                }
-                            }
-                            @if (task.ContextId.HasValue && contexts != null)
-                            {
-                                var ctx = contexts.FirstOrDefault(c => c.Id == task.ContextId);
-                                if (ctx != null)
-                                {
-                                    <span class="task-context" style="color: @ctx.Color; background-color: @(ctx.Color)20; border: 1px solid @ctx.Color">@ctx.Name</span>
-                                }
-                            }
-                        </div>
-                    </div>
-                    <button class="delete-button" @onclick="@(() => DeleteItemAsync(task.Id))">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                    </button>
-                </div>
+                <TaskItemCard Task="task" Projects="projects" Contexts="contexts" OnTaskUpdated="HandleTaskUpdated" OnTaskDeleted="DeleteItemAsync" />
             }
         }
     </div>
@@ -139,10 +110,8 @@
         await LoadTasksAsync();
     }
 
-    private async Task ToggleCompletionAsync(GtdItem task, ChangeEventArgs e)
+    private async Task HandleTaskUpdated(GtdItem task)
     {
-        bool isChecked = (bool)(e.Value ?? false);
-        task.Status = isChecked ? GtdStatus.Archived : GtdStatus.Inbox;
         await TaskService.UpdateItemAsync(task);
         await LoadTasksAsync();
     }

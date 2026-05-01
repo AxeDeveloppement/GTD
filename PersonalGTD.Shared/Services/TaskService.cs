@@ -1,51 +1,41 @@
 using PersonalGTD.Shared.Models;
+using Supabase;
 
 namespace PersonalGTD.Shared.Services;
 
 public class TaskService : ITaskService
 {
-    private readonly List<GtdItem> _items = new();
+    private readonly Client _supabase;
 
-    public Task<IEnumerable<GtdItem>> GetItemsAsync()
+    public TaskService(Client supabase)
     {
-        return Task.FromResult<IEnumerable<GtdItem>>(_items);
+        _supabase = supabase;
     }
 
-    public Task<GtdItem?> GetItemAsync(Guid id)
+    public async Task<IEnumerable<GtdItem>> GetItemsAsync()
     {
-        var item = _items.FirstOrDefault(i => i.Id == id);
-        return Task.FromResult(item);
+        var response = await _supabase.From<GtdItem>().Get();
+        return response.Models;
     }
 
-    public Task AddItemAsync(GtdItem item)
+    public async Task<GtdItem?> GetItemAsync(Guid id)
     {
-        _items.Add(item);
-        return Task.CompletedTask;
+        var response = await _supabase.From<GtdItem>().Where(x => x.Id == id).Get();
+        return response.Models.FirstOrDefault();
     }
 
-    public Task UpdateItemAsync(GtdItem item)
+    public async Task AddItemAsync(GtdItem item)
     {
-        var existing = _items.FirstOrDefault(i => i.Id == item.Id);
-        if (existing != null)
-        {
-            existing.Title = item.Title;
-            existing.Note = item.Note;
-            existing.Status = item.Status;
-            existing.ContextId = item.ContextId;
-            existing.ProjectId = item.ProjectId;
-            existing.EnergyLevel = item.EnergyLevel;
-            existing.EstimatedTime = item.EstimatedTime;
-        }
-        return Task.CompletedTask;
+        await _supabase.From<GtdItem>().Insert(item);
     }
 
-    public Task DeleteItemAsync(Guid id)
+    public async Task UpdateItemAsync(GtdItem item)
     {
-        var existing = _items.FirstOrDefault(i => i.Id == id);
-        if (existing != null)
-        {
-            _items.Remove(existing);
-        }
-        return Task.CompletedTask;
+        await _supabase.From<GtdItem>().Update(item);
+    }
+
+    public async Task DeleteItemAsync(Guid id)
+    {
+        await _supabase.From<GtdItem>().Where(x => x.Id == id).Delete();
     }
 }

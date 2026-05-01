@@ -6,5 +6,6 @@ public enum GtdStatus
     NextAction,
     Waiting,
     Sometime,
-    Archived
+    Done,
+    Abandoned
 }
