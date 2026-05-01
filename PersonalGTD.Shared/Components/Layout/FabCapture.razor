@@ -1,0 +1,76 @@
+@using PersonalGTD.Shared.Models
+@using PersonalGTD.Shared.Services
+@inject ITaskService TaskService
+
+<div class="fab-container">
+    @if (isExpanded)
+    {
+        <div class="fab-input-panel">
+            <input @ref="titleInput" type="text" class="quick-input" placeholder="Nouvelle tâche Inbox..." @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" autofocus />
+            <button class="quick-submit" @onclick="SubmitTask" disabled="@string.IsNullOrWhiteSpace(newTaskTitle)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </div>
+    }
+
+    <button class="fab-button @(isExpanded ? "expanded" : "")" @onclick="ToggleFab">
+        @if (isExpanded)
+        {
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        }
+        else
+        {
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        }
+    </button>
+</div>
+
+@if (isExpanded)
+{
+    <div class="fab-overlay" @onclick="ToggleFab"></div>
+}
+
+@code {
+    private bool isExpanded;
+    private string newTaskTitle = string.Empty;
+    private ElementReference titleInput;
+
+    private async Task ToggleFab()
+    {
+        isExpanded = !isExpanded;
+        if (isExpanded)
+        {
+            newTaskTitle = string.Empty;
+            // Delay to allow DOM to render input before focus
+            await Task.Delay(50);
+            try { await titleInput.FocusAsync(); } catch { }
+        }
+    }
+
+    private async Task HandleKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await SubmitTask();
+        }
+        else if (e.Key == "Escape")
+        {
+            isExpanded = false;
+        }
+    }
+
+    private async Task SubmitTask()
+    {
+        if (string.IsNullOrWhiteSpace(newTaskTitle)) return;
+
+        var task = new GtdItem
+        {
+            Title = newTaskTitle,
+            Status = GtdStatus.Inbox
+        };
+
+        await TaskService.AddItemAsync(task);
+        isExpanded = false;
+        newTaskTitle = string.Empty;
+    }
+}

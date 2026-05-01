@@ -22,7 +22,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<ITaskService, InMemoryTaskService>();
+		builder.Services.AddSingleton<ITaskService, TaskService>();
 
 		return builder.Build();
 	}

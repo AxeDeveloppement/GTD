@@ -4,8 +4,9 @@ namespace PersonalGTD.Shared.Services;
 
 public interface ITaskService
 {
-    Task<IEnumerable<TaskModel>> GetTasksAsync();
-    Task AddTaskAsync(TaskModel task);
-    Task UpdateTaskAsync(TaskModel task);
-    Task DeleteTaskAsync(string id);
+    Task<IEnumerable<GtdItem>> GetItemsAsync();
+    Task<GtdItem?> GetItemAsync(Guid id);
+    Task AddItemAsync(GtdItem item);
+    Task UpdateItemAsync(GtdItem item);
+    Task DeleteItemAsync(Guid id);
 }
