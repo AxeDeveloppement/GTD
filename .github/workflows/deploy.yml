@@ -1,0 +1,59 @@
+name: 🚀 Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: 💉 Inject Supabase secrets into appsettings.json
+        run: |
+          sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" PersonalGTD.Web/wwwroot/appsettings.json
+          sed -i "s|SUPABASE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_KEY }}|g" PersonalGTD.Web/wwwroot/appsettings.json
+        working-directory: ${{ github.workspace }}
+
+      - name: 🏗️ Publish Blazor WebAssembly
+        run: |
+          dotnet publish PersonalGTD.Web/PersonalGTD.Web.csproj \
+            -c Release \
+            -o release \
+            --nologo
+        working-directory: ${{ github.workspace }}
+
+      - name: 🛠️ Fix base href for GitHub Pages
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          sed -i "s|<base href=\"/\" />|<base href=\"/${REPO_NAME}/\" />|g" release/wwwroot/index.html
+        working-directory: ${{ github.workspace }}
+
+      - name: 📄 Add 404.html for Blazor SPA routing
+        run: |
+          cp release/wwwroot/index.html release/wwwroot/404.html
+        working-directory: ${{ github.workspace }}
+
+      - name: 🔇 Disable Jekyll processing
+        run: touch release/wwwroot/.nojekyll
+        working-directory: ${{ github.workspace }}
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: release/wwwroot
+          force_orphan: true
