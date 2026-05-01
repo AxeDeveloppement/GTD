@@ -42,9 +42,29 @@ jobs:
           sed -i "s|<base href=\"/\" />|<base href=\"/${REPO_NAME}/\" />|g" release/wwwroot/index.html
         working-directory: ${{ github.workspace }}
 
-      - name: 📄 Add 404.html for Blazor SPA routing
+      - name: 📄 Générer 404.html pour le routage Blazor SPA
         run: |
-          cp release/wwwroot/index.html release/wwwroot/404.html
+          cat > release/wwwroot/404.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Mon organiseur</title>
+            <script>
+              var pathSegmentsToKeep = 1;
+              var l = window.location;
+              l.replace(
+                l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+                l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+                l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+                (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+                l.hash
+              );
+            <\/script>
+          </head>
+          <body></body>
+          </html>
+          EOF
         working-directory: ${{ github.workspace }}
 
       - name: 🔇 Disable Jekyll processing
