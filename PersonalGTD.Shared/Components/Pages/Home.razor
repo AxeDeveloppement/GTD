@@ -1,0 +1,105 @@
+@page "/"
+@using PersonalGTD.Shared.Models
+@using PersonalGTD.Shared.Services
+@inject ITaskService TaskService
+
+<PageTitle>PersonalGTD - Tasks</PageTitle>
+
+<div class="gtd-container">
+    <div class="add-task-card">
+        <input type="text" class="task-input" placeholder="What needs to be done?" @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" />
+        <input type="text" class="context-input" placeholder="Context (e.g., @@work, @@home)" @bind="newTaskContext" />
+        <button class="add-button" @onclick="AddTaskAsync" disabled="@string.IsNullOrWhiteSpace(newTaskTitle)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+    </div>
+
+    <div class="task-list">
+        @if (tasks == null)
+        {
+            <div class="loading-state">Loading tasks...</div>
+        }
+        else if (!tasks.Any())
+        {
+            <div class="empty-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <p>All caught up! You have no pending tasks.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var task in tasks)
+            {
+                <div class="task-card @(task.IsCompleted ? "completed" : "")">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="@task.Id" checked="@task.IsCompleted" @onchange="@(e => ToggleCompletionAsync(task, e))" />
+                        <label for="@task.Id"></label>
+                    </div>
+                    <div class="task-content">
+                        <div class="task-title">@task.Title</div>
+                        @if (!string.IsNullOrWhiteSpace(task.Context))
+                        {
+                            <span class="task-context">@task.Context</span>
+                        }
+                    </div>
+                    <button class="delete-button" @onclick="@(() => DeleteTaskAsync(task.Id))">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                    </button>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private IEnumerable<TaskModel>? tasks;
+    private string newTaskTitle = string.Empty;
+    private string newTaskContext = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTasksAsync();
+    }
+
+    private async Task LoadTasksAsync()
+    {
+        tasks = await TaskService.GetTasksAsync();
+    }
+
+    private async Task HandleKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrWhiteSpace(newTaskTitle))
+        {
+            await AddTaskAsync();
+        }
+    }
+
+    private async Task AddTaskAsync()
+    {
+        if (string.IsNullOrWhiteSpace(newTaskTitle)) return;
+
+        var task = new TaskModel
+        {
+            Title = newTaskTitle,
+            Context = newTaskContext
+        };
+
+        await TaskService.AddTaskAsync(task);
+        newTaskTitle = string.Empty;
+        newTaskContext = string.Empty;
+        await LoadTasksAsync();
+    }
+
+    private async Task ToggleCompletionAsync(TaskModel task, ChangeEventArgs e)
+    {
+        task.IsCompleted = (bool)(e.Value ?? false);
+        await TaskService.UpdateTaskAsync(task);
+        await LoadTasksAsync();
+    }
+
+    private async Task DeleteTaskAsync(string id)
+    {
+        await TaskService.DeleteTaskAsync(id);
+        await LoadTasksAsync();
+    }
+}
