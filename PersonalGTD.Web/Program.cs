@@ -13,6 +13,7 @@ builder.Services.AddSingleton<ITaskService, TaskService>();
 builder.Services.AddSingleton<IProjectService, ProjectService>();
 builder.Services.AddSingleton<IContextService, ContextService>();
 builder.Services.AddSingleton<ReviewStateService>();
+builder.Services.AddSingleton<AuthService>();
 
 // Configuration Supabase (lue depuis wwwroot/appsettings.json)
 var supabaseUrl = builder.Configuration["Supabase:Url"] 

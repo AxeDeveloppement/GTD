@@ -14,4 +14,7 @@ public class GtdContext : BaseModel
 
     [Column("color")]
     public string Color { get; set; } = "#94a3b8"; // Default Slate
+
+    [Column("owner_username")]
+    public string? OwnerUsername { get; set; }
 }

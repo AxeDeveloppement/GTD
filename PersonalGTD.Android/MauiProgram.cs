@@ -26,6 +26,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IProjectService, ProjectService>();
 		builder.Services.AddSingleton<IContextService, ContextService>();
 		builder.Services.AddSingleton<ReviewStateService>();
+		builder.Services.AddSingleton<AuthService>();
 
 		// Configuration Supabase
 		var supabaseUrl = "https://jbolffzgbwqystewrxng.supabase.co"; // URL Supabase fournie par l'utilisateur

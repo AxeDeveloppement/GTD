@@ -35,4 +35,7 @@ public class GtdItem : BaseModel
 
     [Column("due_date")]
     public DateTime? DueDate { get; set; }
+
+    [Column("owner_username")]
+    public string? OwnerUsername { get; set; }
 }

@@ -1,6 +1,7 @@
 @page "/weekly-review"
 @inject PersonalGTD.Shared.Services.ReviewStateService ReviewState
 @inject IJSRuntime JS
+@inject PersonalGTD.Shared.Services.AuthService AuthService
 @implements IDisposable
 
 <PageTitle>Revue Hebdomadaire - Mon organiseur</PageTitle>
@@ -167,18 +168,20 @@
     {
         var stepStates = AllSteps.Select(s => s.Done).ToArray();
         var json = System.Text.Json.JsonSerializer.Serialize(stepStates);
-        await JS.InvokeVoidAsync("localStorage.setItem", "gtd-weekly-steps", json);
+        var user = AuthService.CurrentUser ?? "unknown";
+        await JS.InvokeVoidAsync("localStorage.setItem", $"gtd-weekly-steps-{user}", json);
 
         if (ReviewState.IsReviewDoneThisWeek)
-            await JS.InvokeVoidAsync("localStorage.setItem", "gtd-review-done-at", DateTime.Now.ToString("o"));
+            await JS.InvokeVoidAsync("localStorage.setItem", $"gtd-review-done-at-{user}", DateTime.Now.ToString("o"));
         else
-            await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-review-done-at");
+            await JS.InvokeVoidAsync("localStorage.removeItem", $"gtd-review-done-at-{user}");
     }
 
     private async Task LoadStateAsync()
     {
+        var user = AuthService.CurrentUser ?? "unknown";
         // Load step states
-        var json = await JS.InvokeAsync<string?>("localStorage.getItem", "gtd-weekly-steps");
+        var json = await JS.InvokeAsync<string?>("localStorage.getItem", $"gtd-weekly-steps-{user}");
         if (!string.IsNullOrEmpty(json))
         {
             var stepStates = System.Text.Json.JsonSerializer.Deserialize<bool[]>(json);
@@ -191,21 +194,28 @@
         }
 
         // Load review done timestamp
-        var doneAt = await JS.InvokeAsync<string?>("localStorage.getItem", "gtd-review-done-at");
+        var doneAt = await JS.InvokeAsync<string?>("localStorage.getItem", $"gtd-review-done-at-{user}");
         if (!string.IsNullOrEmpty(doneAt) && DateTime.TryParse(doneAt, out var dt))
         {
             // Re-apply to service only if still valid (after last Friday 16:00)
             if (dt >= ReviewStateService.GetLastReviewTrigger())
+            {
                 ReviewState.MarkReviewDone();
+                return;
+            }
         }
+        
+        // If no valid timestamp is found, ensure the state is reset
+        ReviewState.ResetReview();
     }
 
     private async Task HandleAutoReset()
     {
+        var user = AuthService.CurrentUser ?? "unknown";
         foreach (var step in AllSteps)
             step.Done = false;
-        await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-weekly-steps");
-        await JS.InvokeVoidAsync("localStorage.removeItem", "gtd-review-done-at");
+        await JS.InvokeVoidAsync("localStorage.removeItem", $"gtd-weekly-steps-{user}");
+        await JS.InvokeVoidAsync("localStorage.removeItem", $"gtd-review-done-at-{user}");
         await InvokeAsync(StateHasChanged);
     }
 

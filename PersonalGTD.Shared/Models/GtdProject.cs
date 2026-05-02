@@ -17,4 +17,10 @@ public class GtdProject : BaseModel
 
     [Column("color")]
     public string Color { get; set; } = "#4f46e5"; // Default Indigo
+
+    [Column("owner_username")]
+    public string? OwnerUsername { get; set; }
+
+    [Column("status")]
+    public GtdStatus Status { get; set; } = GtdStatus.NextAction;
 }
