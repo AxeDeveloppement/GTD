@@ -16,7 +16,11 @@
     <div class="task-list">
         @if (tasks == null)
         {
-            <div class="loading-state">Chargement...</div>
+            <div class="loading-state">
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+                <div class="skeleton-item"></div>
+            </div>
         }
         else if (!tasks.Any())
         {

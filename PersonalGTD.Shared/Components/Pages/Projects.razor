@@ -44,7 +44,11 @@
 <div class="grid-container">
     @if (projects == null)
     {
-        <p>Chargement...</p>
+        <div class="loading-state" style="grid-column: 1 / -1;">
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+        </div>
     }
     else if (!projects.Any())
     {

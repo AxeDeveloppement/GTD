@@ -42,6 +42,32 @@
         <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        window.notificationHelper = {
+            requestPermission: async function() {
+                if (!("Notification" in window)) return "not_supported";
+                try {
+                    const permission = await Notification.requestPermission();
+                    return permission;
+                } catch (e) {
+                    return "error";
+                }
+            },
+            showNotification: function(title, body, tag) {
+                if (!("Notification" in window) || Notification.permission !== "granted") return;
+                
+                // On Android, service worker notifications are preferred but for simple PWA, 
+                // new Notification() works while the app is active.
+                const options = {
+                    body: body,
+                    icon: 'icon-192.png',
+                    tag: tag,
+                    renotify: true
+                };
+                new Notification(title, options);
+            }
+        };
+    </script>
 </body>
 
 </html>

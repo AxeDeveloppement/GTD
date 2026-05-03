@@ -1,68 +1,125 @@
 .tabs-container {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.tabs-wrapper {
-    display: flex;
-    gap: 0.4rem;
-    flex: 1;
-    min-width: 280px; /* Force wrap if less than this */
-    justify-content: center;
-}
-
-@media (max-width: 480px) {
-    .tabs-wrapper {
-        min-width: 100%;
-    }
-    .tab-button {
-        flex: 1;
-        justify-content: center;
-        padding: 0.5rem 0.25rem;
-        font-size: 0.85rem;
-    }
+    background: #f1f5f9;
+    padding: 0.25rem;
+    border-radius: 12px;
+    margin: 0 auto 1.5rem auto;
+    width: fit-content;
+    max-width: 100%;
+    gap: 0.15rem;
+    flex-wrap: wrap; /* Allow wrap on very small screens */
 }
 
 .tab-button {
     background: none;
     border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: #64748b;
     cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.2s;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.tab-button svg {
+    opacity: 0.7;
+    width: 18px;
+    height: 18px;
 }
 
 .tab-button:hover {
-    color: #0f172a;
-    background: #f1f5f9;
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .tab-button.active {
     color: #4f46e5;
-    background: #e0e7ff;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button span {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .tabs-container {
+        padding: 0.35rem;
+        border-radius: 14px;
+        margin-bottom: 2.5rem;
+        gap: 0.25rem;
+        flex-wrap: nowrap;
+    }
+    .tab-button {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+        gap: 0.6rem;
+    }
+    .tab-button span {
+        display: inline;
+    }
+}
+
+@media (max-width: 640px) {
+    .tab-button.active span {
+        display: inline; /* Only show text for active tab on mobile */
+    }
+    .count-badge {
+        display: none; /* Hide badges on mobile tabs to save space */
+    }
+}
+
+@media (max-width: 400px) {
+    .tab-button.active span {
+        display: none; /* Icon only for all tabs on very small mobile */
+    }
 }
 
 .count-badge {
-    font-size: 0.75rem;
-    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
     border-radius: 999px;
     color: white;
+    font-weight: 700;
 }
 
 .count-badge.red { background: #ef4444; }
 .count-badge.orange { background: #f97316; }
 
 /* Calendar Styles */
+.calendar-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden; /* No more horizontal scroll */
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #e2e8f0;
+    gap: 1px;
+}
+
+@media (min-width: 1024px) {
+    .calendar-wrapper {
+        overflow-x: visible;
+        border: none;
+    }
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.5rem;
+        background: transparent;
+    }
+}
+
 .calendar-controls {
     display: flex;
     align-items: center;
@@ -93,43 +150,36 @@
 
 .cal-btn:hover { background: #f1f5f9; }
 
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 0.5rem;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1rem;
-}
-
 .day-header {
     text-align: center;
     font-weight: 600;
     font-size: 0.85rem;
     color: #64748b;
-    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: #f8fafc;
 }
 
 .calendar-day {
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
     min-height: 100px;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    min-width: 0; /* Important for grid shrinkage */
     overflow: hidden;
 }
 
 .calendar-day.today {
-    border: 2px solid #4f46e5;
+    background: #f0f4ff;
+}
+
+.calendar-day.today .day-number {
+    color: #4f46e5;
+    font-weight: 700;
 }
 
 .calendar-day.other-month {
-    opacity: 0.5;
-    background: #f1f5f9;
+    background: #f8fafc;
+    color: #cbd5e1;
 }
 
 .day-number {
@@ -137,11 +187,6 @@
     font-weight: 500;
     color: #94a3b8;
     margin-bottom: 0.5rem;
-}
-
-.calendar-day.today .day-number {
-    color: #4f46e5;
-    font-weight: 700;
 }
 
 .day-tasks {
@@ -160,8 +205,6 @@
     text-overflow: ellipsis;
     color: #0f172a;
     cursor: pointer;
-    width: 100%; /* Force truncation */
-    display: block;
 }
 
 .cal-task:hover {
@@ -173,15 +216,37 @@
 .cal-green { background: #dcfce7; border-left: 2px solid #22c55e; }
 
 @media (max-width: 768px) {
-    .calendar-day { min-height: 60px; padding: 0.15rem; }
-    .cal-task { font-size: 0.6rem; padding: 0.1rem; }
-    .day-number { font-size: 0.7rem; margin-bottom: 0.1rem; }
-    .day-header { font-size: 0.7rem; }
-    .calendar-grid { padding: 0.5rem; gap: 0.25rem; }
+    .calendar-day { 
+        min-height: 50px; 
+        padding: 0.25rem;
+        align-items: center;
+    }
+    .day-number {
+        font-size: 0.75rem;
+        margin-bottom: 0.15rem;
+    }
+    .day-tasks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+    .cal-task { 
+        font-size: 0; /* Hide text */
+        width: 6px;
+        height: 6px;
+        min-height: 6px;
+        padding: 0;
+        border-radius: 50%;
+        border-left: none;
+    }
+    .cal-red { background: #ef4444; }
+    .cal-orange { background: #f97316; }
+    .cal-green { background: #22c55e; }
+    .day-header { font-size: 0.7rem; padding: 0.25rem 0.1rem; }
 }
 
 @media (max-width: 480px) {
-    .calendar-grid { padding: 0.25rem; gap: 2px; }
     .cal-month { font-size: 1rem; }
     .cal-btn { width: 30px; height: 30px; }
     .calendar-controls { margin-bottom: 0.5rem; }

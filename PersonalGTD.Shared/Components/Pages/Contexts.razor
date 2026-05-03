@@ -39,7 +39,11 @@
 <div class="list-container">
     @if (contexts == null)
     {
-        <p>Chargement...</p>
+        <div class="loading-state">
+            <div class="skeleton-item" style="height: 40px;"></div>
+            <div class="skeleton-item" style="height: 40px;"></div>
+            <div class="skeleton-item" style="height: 40px;"></div>
+        </div>
     }
     else if (!contexts.Any())
     {
