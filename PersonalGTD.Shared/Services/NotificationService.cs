@@ -10,6 +10,9 @@ public class NotificationService
     private readonly ITaskService _taskService;
     private readonly AuthService _authService;
 
+    public bool HasAgendaNotifications { get; private set; }
+    public event Action? OnStateChanged;
+
     public NotificationService(IJSRuntime js, ITaskService taskService, AuthService authService)
     {
         _js = js;
@@ -34,6 +37,7 @@ public class NotificationService
 
         if (overdueTasks.Any())
         {
+            HasAgendaNotifications = true;
             var title = "Tâches en retard !";
             var body = $"Vous avez {overdueTasks.Count} tâche(s) en retard.";
             await NotifyOnceAsync("overdue-alert", title, body);
@@ -41,9 +45,24 @@ public class NotificationService
 
         if (todayTasks.Any())
         {
+            HasAgendaNotifications = true;
             var title = "Tâches du jour";
             var body = $"Vous avez {todayTasks.Count} tâche(s) à faire aujourd'hui.";
             await NotifyOnceAsync("today-alert", title, body);
+        }
+
+        if (HasAgendaNotifications)
+        {
+            OnStateChanged?.Invoke();
+        }
+    }
+
+    public void ClearAgendaNotifications()
+    {
+        if (HasAgendaNotifications)
+        {
+            HasAgendaNotifications = false;
+            OnStateChanged?.Invoke();
         }
     }
 

@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .fab-button {
@@ -49,7 +49,11 @@
     animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: bottom right;
     width: 320px;
+    max-width: 100%; /* ne peut jamais déborder de son contexte */
     border: 1px solid #e2e8f0;
+    overflow: hidden; /* contient tous les enfants — n'affecte pas le popup natif du select */
+    /* Desktop : le panel sort vers le haut depuis le bouton FAB */
+    order: -1;
 }
 
 .fab-main-row {
@@ -63,20 +67,28 @@
     display: flex;
     gap: 0.5rem;
     width: 100%;
+    min-width: 0; /* permet aux enfants flex de se réduire */
     margin-top: 0.5rem;
     border-top: 1px solid #f1f5f9;
     padding-top: 0.5rem;
+    overflow: hidden;
 }
 
 .fab-select {
-    flex: 1;
+    flex: 1 1 0;       /* base de 0 : se distribue équitablement */
+    min-width: 0;      /* évite le débordement flex */
+    max-width: 100%;   /* ne sort jamais du conteneur */
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 0.4rem;
+    padding: 0.4rem 0.5rem;
     font-size: 0.85rem;
     color: #475569;
     background: #f8fafc;
     outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .quick-input {
@@ -117,9 +129,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(2px);
-    z-index: 999;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 9999; /* sous le panel (10001) et le container (10000) */
     animation: fadeIn 0.2s ease;
 }
 
@@ -139,18 +152,65 @@
     to { opacity: 1; }
 }
 
+/* ======================================================
+   MOBILE & TABLETTE — panel ancré en haut, jamais sous le clavier
+   ====================================================== */
+@media (max-width: 1024px) {
+    /* Le container ne sert qu'à positionner le bouton FAB */
+    .fab-container {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        /* Le panel sort du flux du container sur mobile */
+    }
+
+    /* Le panel devient une modale fixe ancrée dans la zone sûre du haut */
+    .fab-input-panel {
+        position: fixed;
+        /* Header mobile = 60px + 10px de marge = 70px */
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100vw - 2rem);
+        max-width: 500px;
+        border-radius: 18px;
+        padding: 1rem;
+        z-index: 10001; /* au-dessus de l'overlay */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        /* Annule l'animation depuis le bas — part du haut */
+        animation: panelDropIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-origin: top center;
+        order: 0; /* reset l'order desktop */
+    }
+
+    .fab-selectors {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 480px) {
     .fab-container {
         bottom: 1rem;
         right: 1rem;
     }
-    
+
     .fab-input-panel {
-        width: calc(100vw - 2rem);
-        padding: 0.5rem;
+        width: calc(100vw - 1.5rem);
+        padding: 0.85rem;
     }
-    
+
     .fab-selectors {
         flex-direction: column;
+    }
+}
+
+@keyframes panelDropIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-16px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
     }
 }

@@ -4,6 +4,7 @@
 @inject ITaskService TaskService
 @inject IProjectService ProjectService
 @inject IContextService ContextService
+@inject NotificationService NotificationService
 
 <PageTitle>Agenda - Mon organiseur</PageTitle>
 
@@ -58,21 +59,27 @@
 
                 @foreach (var day in GetCalendarDays())
                 {
-                    <div class="calendar-day @(day.Date == DateTime.Now.Date ? "today" : "") @(day.Month != currentDate.Month ? "other-month" : "")">
+                    var dayTasks = GetTasksForDate(day.Date).ToList();
+                    var visibleTasks = dayTasks.Take(3).ToList();
+                    var extraCount = dayTasks.Count - visibleTasks.Count;
+                    <div class="calendar-day @(day.Date == DateTime.Now.Date ? "today" : "") @(day.Month != currentDate.Month ? "other-month" : "") @(dayTasks.Any() ? "has-tasks" : "")">
                         <span class="day-number">@day.Day</span>
                         <div class="day-tasks">
-                            @foreach(var t in GetTasksForDate(day.Date))
+                            @foreach(var t in visibleTasks)
                             {
                                 <div class="cal-task @GetTaskColorClass(t)" title="@t.Title" @onclick="() => NavigateToTask(t)">
                                     @t.Title
                                 </div>
+                            }
+                            @if (extraCount > 0)
+                            {
+                                <div class="cal-task-more">+@extraCount</div>
                             }
                         </div>
                     </div>
                 }
                 </div>
             </div>
-        </div>
     }
     else
     {
@@ -121,6 +128,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        NotificationService.ClearAgendaNotifications();
         projects = await ProjectService.GetProjectsAsync();
         contexts = await ContextService.GetContextsAsync();
         await LoadTasksAsync();

@@ -84,7 +84,8 @@
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
-::deep .review-due-wrapper .nav-item {
+::deep .review-due-wrapper .nav-item,
+::deep .agenda-notification-wrapper .nav-item {
     background-color: #7f1d1d;
     border-color: #ef4444;
     color: #fecaca !important;

@@ -1,14 +1,20 @@
+/* ====================================================
+   TABS — segment control moderne
+   ==================================================== */
 .tabs-container {
     display: flex;
     justify-content: center;
-    background: #f1f5f9;
+    background: rgba(241, 245, 249, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 0.25rem;
-    border-radius: 12px;
-    margin: 0 auto 1.5rem auto;
+    border-radius: 14px;
+    margin: 0 auto 2rem auto;
     width: fit-content;
     max-width: 100%;
     gap: 0.15rem;
-    flex-wrap: wrap; /* Allow wrap on very small screens */
+    flex-wrap: wrap;
+    border: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .tab-button {
@@ -35,13 +41,13 @@
 
 .tab-button:hover {
     color: #1e293b;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .tab-button.active {
     color: #4f46e5;
     background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.12), 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .tab-button span {
@@ -68,19 +74,22 @@
 
 @media (max-width: 640px) {
     .tab-button.active span {
-        display: inline; /* Only show text for active tab on mobile */
+        display: inline;
     }
     .count-badge {
-        display: none; /* Hide badges on mobile tabs to save space */
+        display: none;
     }
 }
 
 @media (max-width: 400px) {
     .tab-button.active span {
-        display: none; /* Icon only for all tabs on very small mobile */
+        display: none;
     }
 }
 
+/* ====================================================
+   BADGES
+   ==================================================== */
 .count-badge {
     font-size: 0.7rem;
     padding: 0.1rem 0.4rem;
@@ -89,165 +98,406 @@
     font-weight: 700;
 }
 
-.count-badge.red { background: #ef4444; }
+.count-badge.red    { background: #ef4444; }
 .count-badge.orange { background: #f97316; }
 
-/* Calendar Styles */
-.calendar-wrapper {
-    width: 100%;
-    margin-bottom: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    overflow: hidden; /* No more horizontal scroll */
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background: #e2e8f0;
-    gap: 1px;
-}
-
-@media (min-width: 1024px) {
-    .calendar-wrapper {
-        overflow-x: visible;
-        border: none;
-    }
-    .calendar-grid {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 0.5rem;
-        background: transparent;
-    }
-}
-
+/* ====================================================
+   CALENDAR — CONTRÔLES (navigation mois)
+   ==================================================== */
 .calendar-controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
 }
 
 .cal-month {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 700;
     text-transform: capitalize;
+    letter-spacing: -0.02em;
     color: #0f172a;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .cal-btn {
     background: white;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    width: 36px;
-    height: 36px;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: #475569;
-    transition: background 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
-.cal-btn:hover { background: #f1f5f9; }
-
-.day-header {
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: #64748b;
-    padding: 0.5rem;
+.cal-btn:hover {
     background: #f8fafc;
-}
-
-.calendar-day {
-    background: white;
-    min-height: 100px;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.calendar-day.today {
-    background: #f0f4ff;
-}
-
-.calendar-day.today .day-number {
+    border-color: #c7d2fe;
     color: #4f46e5;
-    font-weight: 700;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
 }
 
-.calendar-day.other-month {
-    background: #f8fafc;
-    color: #cbd5e1;
-}
-
-.day-number {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #94a3b8;
-    margin-bottom: 0.5rem;
-}
-
-.day-tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    flex: 1;
-}
-
-.cal-task {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.4rem;
-    border-radius: 4px;
-    white-space: nowrap;
+/* ====================================================
+   CALENDAR WRAPPER — suppression de la grille rigide
+   ==================================================== */
+.calendar-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 16px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    color: #0f172a;
-    cursor: pointer;
 }
 
-.cal-task:hover {
-    filter: brightness(0.95);
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e8ecf2;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
-.cal-red { background: #fee2e2; border-left: 2px solid #ef4444; }
-.cal-orange { background: #ffedd5; border-left: 2px solid #f97316; }
-.cal-green { background: #dcfce7; border-left: 2px solid #22c55e; }
-
-@media (max-width: 768px) {
-    .calendar-day { 
-        min-height: 50px; 
-        padding: 0.25rem;
-        align-items: center;
+/* ====================================================
+   DESKTOP — design moderne sans quadrillage
+   ==================================================== */
+@media (min-width: 1024px) {
+    .calendar-wrapper {
+        overflow: visible;
+        background: #f4f6fb; /* fond unifié léger = plus de damier flottant */
+        border-radius: 20px;
+        padding: 1.25rem;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
     }
+
+    .calendar-grid {
+        gap: 5px;
+        background: transparent;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    /* En-tête des jours */
+    .day-header {
+        background: transparent;
+        text-align: center;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #475569; /* plus contrasté qu'avant */
+        padding: 0 0 0.85rem 0;
+        border-bottom: none;
+    }
+
+    /* Cellule jour */
+    .calendar-day {
+        background: #ffffff;
+        min-height: 110px;
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        border: 1px solid rgba(226, 232, 240, 0.5); /* bordure très subtile pour délimiter sans damier dur */
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .calendar-day::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(79,70,229,0.03) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+
+    .calendar-day:hover {
+        border-color: #e0e7ff;
+        box-shadow: 0 4px 16px rgba(79, 70, 229, 0.1);
+        transform: translateY(-1px);
+    }
+
+    .calendar-day:hover::before {
+        opacity: 1;
+    }
+
+    /* Jour courant */
+    .calendar-day.today {
+        background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+        border-color: #c7d2fe;
+        box-shadow: 0 2px 12px rgba(79, 70, 229, 0.12);
+    }
+
+    .calendar-day.today::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+        border-radius: 14px 14px 0 0;
+    }
+
+    /* Jours d'un autre mois — même fond mais vraiment effacé */
+    .calendar-day.other-month {
+        background: rgba(255,255,255,0.45);
+        border-color: transparent;
+    }
+
+    .calendar-day.other-month:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    /* Numéro du jour — desktop */
+    .day-number {
+        font-size: 0.88rem;
+        font-weight: 700;          /* gras pour bien ressortir */
+        color: #1e293b;            /* quasi-noir, très lisible sur blanc */
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        transition: background 0.15s ease, color 0.15s ease;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #b0bec9;  /* toujours clair mais plus foncé que transparent */
+        font-weight: 400;
+    }
+
+    /* Tâches dans le calendrier — desktop */
+    .day-tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        flex: 1;
+    }
+
+    .cal-task {
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 0.22rem 0.5rem;
+        border-radius: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .cal-task:hover {
+        filter: none;
+        transform: translateX(2px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .cal-red {
+        background: linear-gradient(90deg, #fff1f2, #ffe4e6);
+        border-left-color: #ef4444;
+        color: #be123c;
+    }
+    .cal-orange {
+        background: linear-gradient(90deg, #fff7ed, #ffedd5);
+        border-left-color: #f97316;
+        color: #c2410c;
+    }
+    .cal-green {
+        background: linear-gradient(90deg, #f0fdf4, #dcfce7);
+        border-left-color: #22c55e;
+        color: #15803d;
+    }
+
+    /* Indicateur débordement desktop */
+    .cal-task-more {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #94a3b8;
+        padding: 0.15rem 0.35rem;
+        background: #f1f5f9;
+        border-radius: 4px;
+        text-align: center;
+        cursor: default;
+    }
+
+    /* Petit point d'accent sur le numéro pour les jours avec tâches */
+    .calendar-day.has-tasks:not(.today) .day-number::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #4f46e5;
+    }
+}
+
+/* ====================================================
+   MOBILE — vue compacte avec dots
+   ==================================================== */
+@media (max-width: 1023px) {
+    .calendar-wrapper {
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .calendar-grid {
+        gap: 1px;
+        background: #e2e8f0;
+    }
+
+    .day-header {
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        padding: 0.5rem 0.25rem;
+        background: #f8fafc;
+        letter-spacing: 0.04em;
+    }
+
+    .calendar-day {
+        background: white;
+        min-height: 52px;
+        padding: 0.3rem 0.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .calendar-day.today {
+        background: #eef2ff;
+    }
+
+    .calendar-day.other-month {
+        background: #f8fafc;
+        opacity: 0.6;
+    }
+
     .day-number {
         font-size: 0.75rem;
-        margin-bottom: 0.15rem;
+        font-weight: 500;
+        color: #475569;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
     }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #cbd5e1;
+    }
+
     .day-tasks {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 2px;
     }
-    .cal-task { 
-        font-size: 0; /* Hide text */
+
+    .cal-task {
+        font-size: 0;
         width: 6px;
         height: 6px;
         min-height: 6px;
         padding: 0;
         border-radius: 50%;
         border-left: none;
+        cursor: pointer;
     }
-    .cal-red { background: #ef4444; }
+
+    .cal-red    { background: #ef4444; }
     .cal-orange { background: #f97316; }
-    .cal-green { background: #22c55e; }
-    .day-header { font-size: 0.7rem; padding: 0.25rem 0.1rem; }
+    .cal-green  { background: #22c55e; }
 }
 
 @media (max-width: 480px) {
-    .cal-month { font-size: 1rem; }
-    .cal-btn { width: 30px; height: 30px; }
-    .calendar-controls { margin-bottom: 0.5rem; }
+    .cal-month  { font-size: 1.1rem; }
+    .cal-btn    { width: 32px; height: 32px; }
+    .calendar-controls { margin-bottom: 0.75rem; }
+}
+
+/* ====================================================
+   LISTE DE TÂCHES (onglets En retard / Aujourd'hui / À venir)
+   ==================================================== */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skeleton-item {
+    height: 72px;
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 12px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0;
 }
