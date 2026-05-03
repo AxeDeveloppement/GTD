@@ -22,10 +22,22 @@
 }
 
 .sidebar-header h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     margin: 0;
-    color: #ffffff;
+    background: linear-gradient(to right, #ffffff 20%, #94a3b8 40%, #94a3b8 60%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.04em;
+    animation: titleShimmer 6s linear infinite;
+}
+
+.sidebar-header h2::after {
+    content: '.';
+    color: #6366f1;
+    -webkit-text-fill-color: #6366f1;
 }
 
 .sidebar-content {
@@ -44,12 +56,13 @@
 }
 
 .nav-section h3 {
-    font-size: 0.95rem; /* Augmente la taille de la police */
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
-    color: #94a3b8;
-    margin: 0 0 0.5rem 0.5rem;
-    letter-spacing: 0.05em;
+    color: #64748b;
+    margin: 0 0 0.75rem 0.5rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
 }
 
 ::deep .nav-item {

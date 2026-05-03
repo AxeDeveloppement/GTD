@@ -2,7 +2,7 @@
 
 <div class="task-card @(Task.Status == GtdStatus.Done || Task.Status == GtdStatus.Abandoned ? "completed" : "") @(IsHighlighted ? "highlighted-task" : "")" id="task-@(Task.Id)">
     <div class="task-content">
-        <div class="task-title">@Task.Title</div>
+        <div class="task-title" @onclick="OpenModal">@Task.Title</div>
         <div class="task-badges">
             @{
                 var selectedProj = Projects?.FirstOrDefault(p => p.Id == Task.ProjectId);
@@ -63,7 +63,7 @@
             <option value="@GtdStatus.Abandoned">Abandonnée</option>
         </select>
 
-        <button class="desc-button @(!string.IsNullOrWhiteSpace(Task.Note) ? "has-note" : "")" @onclick="OpenModal" title="Description">
+        <button class="desc-button @(!string.IsNullOrWhiteSpace(Task.Note) ? "has-note" : "")" @onclick="OpenModal" title="Détails de la tâche">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
         </button>
 
@@ -78,17 +78,24 @@
     <div class="modal-overlay" @onclick="CloseModal">
         <div class="modal-content" @onclick:stopPropagation>
             <div class="modal-header">
-                <h3>@Task.Title</h3>
+                <h3>Modifier la tâche</h3>
                 <button class="close-modal-btn" @onclick="CloseModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
             <div class="modal-body">
-                <textarea class="modal-textarea" placeholder="Ajouter une description, des notes, des liens utiles..." @bind="editNote" autofocus></textarea>
+                <div class="modal-field">
+                    <label>Titre</label>
+                    <input type="text" class="modal-input" placeholder="Titre de la tâche" @bind="editTitle" />
+                </div>
+                <div class="modal-field">
+                    <label>Description / Notes</label>
+                    <textarea class="modal-textarea" placeholder="Ajouter une description, des notes, des liens utiles..." @bind="editNote"></textarea>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn-cancel" @onclick="CloseModal">Annuler</button>
-                <button class="btn-save" @onclick="SaveNote">Enregistrer</button>
+                <button class="btn-save" @onclick="SaveTaskDetails">Enregistrer</button>
             </div>
         </div>
     </div>
@@ -156,10 +163,12 @@
     }
 
     private bool isModalOpen = false;
+    private string editTitle = string.Empty;
     private string editNote = string.Empty;
 
     private void OpenModal()
     {
+        editTitle = Task.Title;
         editNote = Task.Note ?? string.Empty;
         isModalOpen = true;
     }
@@ -169,8 +178,12 @@
         isModalOpen = false;
     }
 
-    private async Task SaveNote()
+    private async Task SaveTaskDetails()
     {
+        if (!string.IsNullOrWhiteSpace(editTitle))
+        {
+            Task.Title = editTitle;
+        }
         Task.Note = editNote;
         isModalOpen = false;
         await OnTaskUpdated.InvokeAsync(Task);

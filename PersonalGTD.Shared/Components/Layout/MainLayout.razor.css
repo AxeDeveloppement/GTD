@@ -2,6 +2,253 @@
     box-sizing: border-box;
 }
 
+/* ====================================================
+   PAGE DE CONNEXION
+   ==================================================== */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    padding: 1.5rem;
+}
+
+/* Grain décoratif en fond */
+.login-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(79,70,229,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(124,58,237,0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Marque / Logo */
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.login-logo {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.login-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.05em;
+    position: relative;
+    display: inline-block;
+}
+
+.login-title::after {
+    content: '.';
+    color: #7c3aed;
+    -webkit-text-fill-color: #7c3aed; /* Re-override for gradient text */
+}
+
+.login-subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Formulaire */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.login-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.01em;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font-family: inherit;
+}
+
+.login-input:focus {
+    border-color: #6366f1;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.login-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    color: #be123c;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    font-family: inherit;
+    margin-top: 0.25rem;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+/* ── Encart démo ─────────────────────────────────── */
+.demo-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+    border: 1.5px solid #c7d2fe;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+}
+
+.demo-card:hover {
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    border-color: #a5b4fc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.15);
+}
+
+.demo-card:active {
+    transform: scale(0.99);
+}
+
+.demo-icon {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+.demo-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.demo-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #3730a3;
+    line-height: 1.2;
+}
+
+.demo-creds {
+    font-size: 0.78rem;
+    color: #6366f1;
+    line-height: 1.2;
+}
+
+.demo-creds strong {
+    font-weight: 700;
+    color: #4338ca;
+}
+
+.demo-arrow {
+    color: #6366f1;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.demo-card:hover .demo-arrow {
+    transform: translateX(3px);
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+}
+
 .app-container {
     display: flex;
     height: 100vh;
@@ -66,9 +313,13 @@
 .app-title {
     margin: 0;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.2px;
+    font-weight: 800;
+    background: linear-gradient(to right, #ffffff 20%, #a5b4fc 40%, #a5b4fc 60%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -79,6 +330,13 @@
     max-width: 60%;
     text-align: center;
     z-index: 1;
+    animation: titleShimmer 4s linear infinite;
+}
+
+.app-title::after {
+    content: '.';
+    color: #6366f1;
+    -webkit-text-fill-color: #6366f1;
 }
 
 @media (min-width: 768px) {
