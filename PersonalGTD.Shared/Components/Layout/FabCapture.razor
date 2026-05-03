@@ -29,7 +29,7 @@
                     <option value="@Guid.Empty">-- Projet --</option>
                     @if (projects != null)
                     {
-                        @foreach (var p in projects)
+                        @foreach (var p in projects.Where(p => p.Status != GtdStatus.Done && p.Status != GtdStatus.Abandoned))
                         {
                             <option value="@p.Id">@p.Name</option>
                         }

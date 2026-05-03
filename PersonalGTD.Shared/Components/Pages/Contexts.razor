@@ -6,10 +6,12 @@
 <PageTitle>Filtres - Mon organiseur</PageTitle>
 
 <div class="page-header">
-    <h2>Gestion des Contextes (Filtres @@)</h2>
-    <button class="btn-primary" @onclick="() => showForm = !showForm">
-        @(showForm ? "Fermer" : "Nouveau Contexte")
-    </button>
+    <h2 class="page-title">Gestion des Contextes (Filtres @@)</h2>
+    <div class="page-actions">
+        <button class="btn-primary" @onclick="() => showForm = !showForm">
+            @(showForm ? "Fermer" : "Nouveau Contexte")
+        </button>
+    </div>
 </div>
 
 @if (showForm)

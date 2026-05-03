@@ -139,13 +139,18 @@
     to { opacity: 1; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .fab-container {
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
     }
     
     .fab-input-panel {
-        width: calc(100vw - 3rem);
+        width: calc(100vw - 2rem);
+        padding: 0.5rem;
+    }
+    
+    .fab-selectors {
+        flex-direction: column;
     }
 }

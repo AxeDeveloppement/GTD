@@ -1,10 +1,30 @@
 .tabs-container {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 0.5rem;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.tabs-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    flex: 1;
+    min-width: 280px; /* Force wrap if less than this */
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .tabs-wrapper {
+        min-width: 100%;
+    }
+    .tab-button {
+        flex: 1;
+        justify-content: center;
+        padding: 0.5rem 0.25rem;
+        font-size: 0.85rem;
+    }
 }
 
 .tab-button {
@@ -75,7 +95,7 @@
 
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 0.5rem;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -99,6 +119,8 @@
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
+    min-width: 0; /* Important for grid shrinkage */
+    overflow: hidden;
 }
 
 .calendar-day.today {
@@ -138,6 +160,8 @@
     text-overflow: ellipsis;
     color: #0f172a;
     cursor: pointer;
+    width: 100%; /* Force truncation */
+    display: block;
 }
 
 .cal-task:hover {
@@ -149,6 +173,16 @@
 .cal-green { background: #dcfce7; border-left: 2px solid #22c55e; }
 
 @media (max-width: 768px) {
-    .calendar-day { min-height: 60px; padding: 0.25rem; }
-    .cal-task { font-size: 0.6rem; padding: 0.15rem; }
+    .calendar-day { min-height: 60px; padding: 0.15rem; }
+    .cal-task { font-size: 0.6rem; padding: 0.1rem; }
+    .day-number { font-size: 0.7rem; margin-bottom: 0.1rem; }
+    .day-header { font-size: 0.7rem; }
+    .calendar-grid { padding: 0.5rem; gap: 0.25rem; }
+}
+
+@media (max-width: 480px) {
+    .calendar-grid { padding: 0.25rem; gap: 2px; }
+    .cal-month { font-size: 1rem; }
+    .cal-btn { width: 30px; height: 30px; }
+    .calendar-controls { margin-bottom: 0.5rem; }
 }

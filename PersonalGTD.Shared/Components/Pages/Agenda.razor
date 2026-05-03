@@ -8,26 +8,30 @@
 <PageTitle>Agenda - Mon organiseur</PageTitle>
 
 <div class="gtd-container">
-    <div style="margin-bottom: 1rem;">
-        <h2 style="margin: 0; color: #0f172a;">Agenda</h2>
-        <p style="margin: 0.5rem 0 0 0; color: #64748b;">Gérez vos tâches planifiées à une date précise.</p>
+    <div class="page-header">
+        <h2 class="page-title">Agenda</h2>
+        <p class="page-subtitle">Gérez vos tâches planifiées à une date précise.</p>
     </div>
 
     <div class="tabs-container">
-        <button class="tab-button @(activeTab == AgendaTab.Calendar ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Calendar)">
-            Calendrier
-        </button>
-        <button class="tab-button @(activeTab == AgendaTab.Overdue ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Overdue)">
-            En retard
-            @if (overdueCount > 0) { <span class="count-badge red">@overdueCount</span> }
-        </button>
-        <button class="tab-button @(activeTab == AgendaTab.Today ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Today)">
-            Aujourd'hui
-            @if (todayCount > 0) { <span class="count-badge orange">@todayCount</span> }
-        </button>
-        <button class="tab-button @(activeTab == AgendaTab.Upcoming ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Upcoming)">
-            À venir
-        </button>
+        <div class="tabs-wrapper">
+            <button class="tab-button @(activeTab == AgendaTab.Calendar ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Calendar)">
+                Calendrier
+            </button>
+            <button class="tab-button @(activeTab == AgendaTab.Overdue ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Overdue)">
+                En retard
+                @if (overdueCount > 0) { <span class="count-badge red">@overdueCount</span> }
+            </button>
+        </div>
+        <div class="tabs-wrapper">
+            <button class="tab-button @(activeTab == AgendaTab.Today ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Today)">
+                Aujourd'hui
+                @if (todayCount > 0) { <span class="count-badge orange">@todayCount</span> }
+            </button>
+            <button class="tab-button @(activeTab == AgendaTab.Upcoming ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Upcoming)">
+                À venir
+            </button>
+        </div>
     </div>
 
     @if (activeTab == AgendaTab.Calendar)

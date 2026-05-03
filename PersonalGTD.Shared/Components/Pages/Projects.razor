@@ -6,10 +6,12 @@
 <PageTitle>Projets - Mon organiseur</PageTitle>
 
 <div class="page-header">
-    <h2>Gestion des Projets</h2>
-    <button class="btn-primary" @onclick="() => showForm = !showForm">
-        @(showForm ? "Fermer" : "Nouveau Projet")
-    </button>
+    <h2 class="page-title">Gestion des Projets</h2>
+    <div class="page-actions">
+        <button class="btn-primary" @onclick="() => showForm = !showForm">
+            @(showForm ? "Fermer" : "Nouveau Projet")
+        </button>
+    </div>
 </div>
 
 @if (showForm)

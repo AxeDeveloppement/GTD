@@ -49,6 +49,39 @@
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; /* Important for ellipsis in flexbox */
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.logout-text {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .logout-text {
+        display: inline;
+    }
 }
 
 .app-main {
@@ -69,5 +102,19 @@
     
     .app-main {
         padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-main {
+        padding: 0.75rem;
+    }
+    
+    .app-header {
+        padding: 0 0.75rem;
+        height: 56px;
+    }
+    .app-title {
+        font-size: 1.2rem;
     }
 }

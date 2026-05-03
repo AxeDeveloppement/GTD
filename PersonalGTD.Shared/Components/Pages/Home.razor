@@ -8,6 +8,11 @@
 
 <PageTitle>Boîte de réception - Mon organiseur</PageTitle>
 
+<div class="page-header">
+    <h2 class="page-title">Boîte de réception</h2>
+    <p class="page-subtitle">Capturez tout ce qui demande votre attention.</p>
+</div>
+
 <div class="gtd-container">
     <div class="add-task-card">
         <input type="text" class="task-input" placeholder="Qu'y a-t-il à faire ?" @bind="newTaskTitle" @bind:event="oninput" @onkeyup="HandleKeyUp" />
@@ -28,7 +33,7 @@
                 <option value="@Guid.Empty">-- Aucun projet --</option>
                 @if (projects != null)
                 {
-                    @foreach (var p in projects)
+                    @foreach (var p in projects.Where(p => p.Status != GtdStatus.Done && p.Status != GtdStatus.Abandoned))
                     {
                         <option value="@p.Id">@p.Name</option>
                     }

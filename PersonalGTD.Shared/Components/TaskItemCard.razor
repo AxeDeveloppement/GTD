@@ -6,10 +6,14 @@
         <div class="task-badges">
             @{
                 var selectedProj = Projects?.FirstOrDefault(p => p.Id == Task.ProjectId);
-                var projStyle = selectedProj != null ? $"color: {selectedProj.Color}; background-color: {selectedProj.Color}20; border: 1px solid {selectedProj.Color};" : "color: #64748b; background-color: #f1f5f9; border: 1px dashed #cbd5e1;";
+                var projStyle = selectedProj != null 
+                    ? $"color: #0f172a; background-color: {selectedProj.Color}25; border: 1px solid {selectedProj.Color}66; font-weight: 600;" 
+                    : "color: #64748b; background-color: #f1f5f9; border: 1px dashed #cbd5e1;";
                 
                 var selectedCtx = Contexts?.FirstOrDefault(c => c.Id == Task.ContextId);
-                var ctxStyle = selectedCtx != null ? $"color: {selectedCtx.Color}; background-color: {selectedCtx.Color}20; border: 1px solid {selectedCtx.Color};" : "color: #64748b; background-color: #f1f5f9; border: 1px dashed #cbd5e1;";
+                var ctxStyle = selectedCtx != null 
+                    ? $"color: #0f172a; background-color: {selectedCtx.Color}25; border: 1px solid {selectedCtx.Color}66; font-weight: 600;" 
+                    : "color: #64748b; background-color: #f1f5f9; border: 1px dashed #cbd5e1;";
             }
             
             <select class="badge-select" style="@projStyle" value="@Task.ProjectId" @onchange="ChangeProject">
@@ -23,16 +27,16 @@
                 }
             </select>
 
-                <select class="fab-select" @bind="newProjectId">
-                    <option value="@Guid.Empty">-- Projet --</option>
-                    @if (Projects != null)
+            <select class="badge-select" style="@ctxStyle" value="@Task.ContextId" @onchange="ChangeContext">
+                <option value="" style="color: #0f172a; background-color: #ffffff;">+ Contexte</option>
+                @if (Contexts != null)
+                {
+                    @foreach(var c in Contexts)
                     {
-                        @foreach (var p in Projects.Where(p => p.Status != GtdStatus.Done && p.Status != GtdStatus.Abandoned))
-                        {
-                            <option value="@p.Id">@p.Name</option>
-                        }
+                        <option value="@c.Id" style="color: #0f172a; background-color: #ffffff;">@c.Name</option>
                     }
-                </select>
+                }
+            </select>
 
             @{
                 var dateStyle = Task.DueDate.HasValue 
@@ -49,27 +53,6 @@
         </div>
     </div>
     
-    <div class="tabs-container">
-        <div class="tabs-wrapper">
-            <button class="tab-button @(activeTab == AgendaTab.Calendar ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Calendar)">
-                Calendrier
-            </button>
-            <button class="tab-button @(activeTab == AgendaTab.Overdue ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Overdue)">
-                En retard
-                @if (overdueCount > 0) { <span class="count-badge red">@overdueCount</span> }
-            </button>
-        </div>
-        <div class="tabs-wrapper">
-            <button class="tab-button @(activeTab == AgendaTab.Today ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Today)">
-                Aujourd'hui
-                @if (todayCount > 0) { <span class="count-badge orange">@todayCount</span> }
-            </button>
-            <button class="tab-button @(activeTab == AgendaTab.Upcoming ? "active" : "")" @onclick="() => SetActiveTab(AgendaTab.Upcoming)">
-                À venir
-            </button>
-        </div>
-    </div>
-
     <div class="task-actions">
         <select class="status-select" value="@Task.Status" @onchange="ChangeStatus">
             <option value="@GtdStatus.Inbox">Inbox</option>
@@ -103,12 +86,9 @@
             <div class="modal-body">
                 <textarea class="modal-textarea" placeholder="Ajouter une description, des notes, des liens utiles..." @bind="editNote" autofocus></textarea>
             </div>
-            <div class="page-header">
-    <h2 class="title-nowrap">Gestion des Projets</h2>
-    <button class="btn-primary" @onclick="() => showForm = !showForm">
-        @(showForm ? "Fermer" : "Nouveau Projet")
-    </button>
-</div> class="btn-save" @onclick="SaveNote">Enregistrer</button>
+            <div class="modal-footer">
+                <button class="btn-cancel" @onclick="CloseModal">Annuler</button>
+                <button class="btn-save" @onclick="SaveNote">Enregistrer</button>
             </div>
         </div>
     </div>
@@ -151,44 +131,13 @@
 
     private async Task ChangeContext(ChangeEventArgs e)
     {
-       .app-title {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.logout-btn {
-    background: none;
-    border: none;
-    color: #ef4444;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.logout-btn:hover {
-    background: rgba(239, 68, 68, 0.1);
-}
-
-.d-desktop {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .d-desktop {
-        display: inline;
-    }
-}            Task.ContextId = null;
+        if (Guid.TryParse(e.Value?.ToString(), out var newContextId))
+        {
+            Task.ContextId = newContextId;
+        }
+        else
+        {
+            Task.ContextId = null;
         }
         await OnTaskUpdated.InvokeAsync(Task);
     }
