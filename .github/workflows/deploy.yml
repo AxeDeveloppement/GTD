@@ -40,6 +40,7 @@ jobs:
         run: |
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           sed -i "s|<base href=\"/\" />|<base href=\"/${REPO_NAME}/\" />|g" release/wwwroot/index.html
+          echo "Base href updated to /${REPO_NAME}/ in release/wwwroot/index.html"
         working-directory: ${{ github.workspace }}
 
       - name: 📄 Générer 404.html pour le routage Blazor SPA
@@ -69,6 +70,10 @@ jobs:
 
       - name: 🔇 Disable Jekyll processing
         run: touch release/wwwroot/.nojekyll
+        working-directory: ${{ github.workspace }}
+
+      - name: 🔍 Check build output
+        run: ls -R release/wwwroot
         working-directory: ${{ github.workspace }}
 
       - name: 🚀 Deploy to GitHub Pages
