@@ -17,17 +17,24 @@ public class AuthService
 
     public async Task InitializeAsync()
     {
+        if (IsInitialized) return;
+        
         try
         {
-            var user = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "gtd_user");
-            if (!string.IsNullOrEmpty(user))
+            // We use a timeout to prevent hanging on Android WebView startup
+            var userTask = _jsRuntime.InvokeAsync<string>("localStorage.getItem", "gtd_user").AsTask();
+            if (await Task.WhenAny(userTask, Task.Delay(2000)) == userTask)
             {
-                CurrentUser = user;
+                var user = await userTask;
+                if (!string.IsNullOrEmpty(user))
+                {
+                    CurrentUser = user;
+                }
             }
         }
         catch
         {
-            // Ignore in case JS interop is not ready or failing
+            // Fail silently
         }
         finally
         {

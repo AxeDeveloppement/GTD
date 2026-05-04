@@ -23,6 +23,10 @@
     <script src="_framework/blazor.webview.js"></script>
     <script>
         window.notificationHelper = {
+            navHandler: null,
+            registerNavigationHandler: function(dotNetObj) {
+                this.navHandler = dotNetObj;
+            },
             requestPermission: async function() {
                 if (!("Notification" in window)) return "not_supported";
                 try {
@@ -39,15 +43,23 @@
                     body: body,
                     icon: 'icon-192.png',
                     tag: tag,
-                    renotify: true
+                    renotify: true,
+                    requireInteraction: true
                 };
                 const n = new Notification(title, options);
+                const self = this;
                 n.onclick = function(event) {
                     event.preventDefault();
                     window.focus();
+                    
                     if (tag && tag.startsWith('agenda-')) {
-                        window.location.href = '/agenda';
+                        if (self.navHandler) {
+                            self.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
+                        } else {
+                            window.location.href = window.location.origin + "/agenda";
+                        }
                     }
+                    n.close();
                 };
             }
         };

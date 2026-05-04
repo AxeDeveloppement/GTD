@@ -71,11 +71,15 @@ public class NotificationService
         var user = _authService.CurrentUser;
         var storageKey = $"gtd-notified-{user}-{key}-{DateTime.Now:yyyy-MM-dd}";
         
-        var alreadyNotified = await _js.InvokeAsync<string>("localStorage.getItem", storageKey);
-        if (string.IsNullOrEmpty(alreadyNotified))
+        try 
         {
-            await _js.InvokeVoidAsync("notificationHelper.showNotification", title, body, key);
-            await _js.InvokeVoidAsync("localStorage.setItem", storageKey, "true");
+            var alreadyNotified = await _js.InvokeAsync<string>("localStorage.getItem", storageKey);
+            if (string.IsNullOrEmpty(alreadyNotified))
+            {
+                await _js.InvokeVoidAsync("notificationHelper.showNotification", title, body, key);
+                await _js.InvokeVoidAsync("localStorage.setItem", storageKey, "true");
+            }
         }
+        catch { /* JS not ready or not supported */ }
     }
 }

@@ -6,7 +6,7 @@
 @inject PersonalGTD.Shared.Services.NotificationService NotificationService
 @inject NavigationManager NavigationManager
 
-@if (!AuthService.IsInitialized)
+@if (!isReady)
 {
     <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background-color: #0f172a; color: #f8fafc; gap: 1.5rem;">
         <div class="loading-spinner"></div>
@@ -97,28 +97,15 @@ else
 }
 
 @code {
+    private bool isReady;
     private bool isSidebarOpen;
     private string loginUsername = "";
     private string loginPassword = "";
     private bool loginError = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         AuthService.OnAuthStateChanged += StateHasChanged;
-        
-        // Appeler explicitement InitializedAsync car MainLayout est rendu lors du premier chargement
-        // Cela va lire le localStorage.
-        await AuthService.InitializeAsync();
-        if (AuthService.CurrentUser != null)
-        {
-            try
-            {
-                await LoadReviewStateAsync();
-                await NotificationService.RequestPermissionAsync();
-                await NotificationService.CheckAndNotifyAsync();
-            }
-            catch { /* On ignore les erreurs JS au démarrage pour éviter de bloquer l'app */ }
-        }
     }
 
     public void Dispose()
@@ -185,7 +172,26 @@ else
     {
         if (firstRender)
         {
-            await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+            try 
+            {
+                // Guarantee AuthService initialization first
+                await AuthService.InitializeAsync();
+                
+                await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+                
+                if (AuthService.CurrentUser != null)
+                {
+                    await LoadReviewStateAsync();
+                    await NotificationService.RequestPermissionAsync();
+                    await NotificationService.CheckAndNotifyAsync();
+                }
+            }
+            catch { /* WebView not ready or not supported */ }
+            finally
+            {
+                isReady = true;
+                StateHasChanged();
+            }
         }
     }
 
