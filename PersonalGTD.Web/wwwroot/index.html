@@ -53,9 +53,9 @@
                     
                     if (tag && tag.startsWith('agenda-')) {
                         if (self.navHandler) {
-                            self.navHandler.invokeMethodAsync('NavigateTo', '/agenda');
+                            self.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
                         } else {
-                            window.location.href = '/agenda';
+                            window.location.href = window.location.origin + "/agenda";
                         }
                     }
                     n.close();

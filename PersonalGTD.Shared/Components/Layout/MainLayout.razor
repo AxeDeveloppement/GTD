@@ -192,6 +192,6 @@ else
     [JSInvokable]
     public void NavigateTo(string url)
     {
-        NavigationManager.NavigateTo(url);
+        NavigationManager.NavigateTo(url.TrimStart('/'));
     }
 }
