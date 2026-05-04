@@ -22,11 +22,12 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<ITaskService, TaskService>();
-		builder.Services.AddSingleton<IProjectService, ProjectService>();
-		builder.Services.AddSingleton<IContextService, ContextService>();
-		builder.Services.AddSingleton<ReviewStateService>();
-		builder.Services.AddSingleton<AuthService>();
+		builder.Services.AddScoped<ITaskService, TaskService>();
+		builder.Services.AddScoped<IProjectService, ProjectService>();
+		builder.Services.AddScoped<IContextService, ContextService>();
+		builder.Services.AddScoped<ReviewStateService>();
+		builder.Services.AddScoped<AuthService>();
+		builder.Services.AddScoped<NotificationService>();
 
 		// Configuration Supabase
 		var supabaseUrl = "https://jbolffzgbwqystewrxng.supabase.co"; // URL Supabase fournie par l'utilisateur

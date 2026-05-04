@@ -6,35 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon organiseur</title>
     <base href="/" />
-    <!-- Script de restauration de route pour GitHub Pages (SPA redirect) -->
-    <script>
-        (function(l) {
-            if (l.search[1] === '/') {
-                var decoded = l.search.slice(1).split('&').map(function(s) {
-                    return s.replace(/~and~/g, '&')
-                }).join('?');
-                window.history.replaceState(null, null,
-                    l.pathname.slice(0, -1) + decoded + l.hash
-                );
-            }
-        }(window.location))
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="PersonalGTD.Web.styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
-    </div>
+    <div id="app">Chargement en cours...</div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -44,6 +22,10 @@
     <script src="_framework/blazor.webassembly.js"></script>
     <script>
         window.notificationHelper = {
+            navHandler: null,
+            registerNavigationHandler: function(dotNetObj) {
+                this.navHandler = dotNetObj;
+            },
             requestPermission: async function() {
                 if (!("Notification" in window)) return "not_supported";
                 try {
@@ -56,15 +38,28 @@
             showNotification: function(title, body, tag) {
                 if (!("Notification" in window) || Notification.permission !== "granted") return;
                 
-                // On Android, service worker notifications are preferred but for simple PWA, 
-                // new Notification() works while the app is active.
                 const options = {
                     body: body,
                     icon: 'icon-192.png',
                     tag: tag,
-                    renotify: true
+                    renotify: true,
+                    requireInteraction: true
                 };
-                new Notification(title, options);
+                const n = new Notification(title, options);
+                const self = this;
+                n.onclick = function(event) {
+                    event.preventDefault();
+                    window.focus();
+                    
+                    if (tag && tag.startsWith('agenda-')) {
+                        if (self.navHandler) {
+                            self.navHandler.invokeMethodAsync('NavigateTo', '/agenda');
+                        } else {
+                            window.location.href = '/agenda';
+                        }
+                    }
+                    n.close();
+                };
             }
         };
     </script>

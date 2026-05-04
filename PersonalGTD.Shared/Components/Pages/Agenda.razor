@@ -62,12 +62,12 @@
                     var dayTasks = GetTasksForDate(day.Date).ToList();
                     var visibleTasks = dayTasks.Take(3).ToList();
                     var extraCount = dayTasks.Count - visibleTasks.Count;
-                    <div class="calendar-day @(day.Date == DateTime.Now.Date ? "today" : "") @(day.Month != currentDate.Month ? "other-month" : "") @(dayTasks.Any() ? "has-tasks" : "")">
+                    <div class="calendar-day @(day.Date == DateTime.Now.Date ? "today" : "") @(day.Month != currentDate.Month ? "other-month" : "") @(dayTasks.Any() ? "has-tasks" : "")" @onclick="() => NavigateToDate(day)">
                         <span class="day-number">@day.Day</span>
                         <div class="day-tasks">
                             @foreach(var t in visibleTasks)
                             {
-                                <div class="cal-task @GetTaskColorClass(t)" title="@t.Title" @onclick="() => NavigateToTask(t)">
+                                <div class="cal-task @GetTaskColorClass(t)" title="@t.Title" @onclick="() => NavigateToTask(t)" @onclick:stopPropagation>
                                     @t.Title
                                 </div>
                             }
@@ -237,6 +237,20 @@
             activeTab = AgendaTab.Upcoming;
 
         highlightedTaskId = task.Id;
+        FilterTasks();
+    }
+
+    private void NavigateToDate(DateTime date)
+    {
+        var today = DateTime.Now.Date;
+        if (date < today)
+            activeTab = AgendaTab.Overdue;
+        else if (date == today)
+            activeTab = AgendaTab.Today;
+        else
+            activeTab = AgendaTab.Upcoming;
+
+        highlightedTaskId = null;
         FilterTasks();
     }
 }

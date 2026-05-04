@@ -2,94 +2,88 @@
 @using PersonalGTD.Shared.Models
 @using PersonalGTD.Shared.Services
 @inject IProjectService ProjectService
+@inject NavigationManager Navigation
 
-<PageTitle>Projets - Mon organiseur</PageTitle>
-
-<div class="page-header">
-    <h2 class="page-title">Gestion des Projets</h2>
-    <div class="page-actions">
-        <button class="btn-primary" @onclick="() => showForm = !showForm">
-            @(showForm ? "Fermer" : "Nouveau Projet")
+<div class="page-container">
+    <div class="page-header">
+        <h2 class="title-nowrap">Gestion des Projets</h2>
+        <button class="btn-primary" @onclick="ShowAddForm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Nouveau Projet
         </button>
     </div>
-</div>
 
-@if (showForm)
-{
-    <div class="form-card">
-        <h3>@(editingId.HasValue ? "Modifier le projet" : "Nouveau projet")</h3>
-        
-        <div class="form-group">
-            <label>Nom du projet</label>
-            <input type="text" @bind="currentProject.Name" placeholder="Ex: Rénovation cuisine..." />
-        </div>
-        
-        <div class="form-group">
-            <label>Description</label>
-            <textarea @bind="currentProject.Description" placeholder="Détails du projet..."></textarea>
-        </div>
-        
-        <div class="form-group">
-            <label>Couleur</label>
-            <input type="color" @bind="currentProject.Color" />
-        </div>
-        
-        <div class="form-actions">
-            <button class="btn-secondary" @onclick="CancelEdit">Annuler</button>
-            <button class="btn-primary" @onclick="SaveProject">Sauvegarder</button>
-        </div>
-    </div>
-}
-
-<div class="grid-container">
-    @if (projects == null)
+    @if (showForm)
     {
-        <div class="loading-state" style="grid-column: 1 / -1;">
-            <div class="skeleton-item"></div>
-            <div class="skeleton-item"></div>
-            <div class="skeleton-item"></div>
+        <div class="form-card">
+            <h3>@(editingProject == null ? "Nouveau Projet" : "Modifier le Projet")</h3>
+            <div class="form-group">
+                <label>Nom du projet</label>
+                <input type="text" @bind="projectModel.Name" placeholder="Ex: Finaliser mon site web" />
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea @bind="projectModel.Description" placeholder="Détails du projet..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Couleur</label>
+                <input type="color" @bind="projectModel.Color" />
+            </div>
+            <div class="form-actions">
+                <button class="btn-secondary" @onclick="HideForm">Annuler</button>
+                <button class="btn-primary" @onclick="SaveProject">Enregistrer</button>
+            </div>
         </div>
     }
-    else if (!projects.Any())
-    {
-        <div class="empty-state">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-            <p>Aucun projet pour le moment.</p>
-        </div>
-    }
-    else
-    {
-        @foreach (var p in projects)
+
+    <div class="grid-container">
+        @if (projects == null || !projects.Any())
         {
-            <div class="card" style="border-top: 4px solid @p.Color">
-                <div class="card-header">
-                    <h4>@p.Name</h4>
-                    <div class="actions">
-                        <button class="icon-btn done" @onclick="() => SetProjectStatus(p, GtdStatus.Done)" title="Marquer comme réalisé">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </button>
-                        <button class="icon-btn abandon" @onclick="() => SetProjectStatus(p, GtdStatus.Abandoned)" title="Abandonner">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        </button>
-                        <button class="icon-btn edit" @onclick="() => EditProject(p)" title="Modifier">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </button>
-                        <button class="icon-btn delete" @onclick="() => DeleteProject(p.Id)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                        </button>
-                    </div>
-                </div>
-                <p class="description">@p.Description</p>
+            <div class="empty-state">
+                <p>Aucun projet pour le moment. Créez-en un pour organiser vos tâches !</p>
             </div>
         }
-    }
+        else
+        {
+            @foreach (var p in projects)
+            {
+                <div class="card" style="border-top: 4px solid @p.Color">
+                    <div class="card-header">
+                        <div class="title-zone" title="@p.Name">
+                            <h4 class="project-title">
+                                <span class="truncated">@TruncateTitle(p.Name)</span>
+                                <span class="full">@p.Name</span>
+                            </h4>
+                        </div>
+                        <div class="actions-zone">
+                            <button class="icon-btn done" @onclick="() => SetProjectStatus(p, GtdStatus.Done)" title="Marquer comme réalisé">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </button>
+                            <button class="icon-btn abandon" @onclick="() => SetProjectStatus(p, GtdStatus.Abandoned)" title="Abandonner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            </button>
+                            <button class="icon-btn edit" @onclick="() => EditProject(p)" title="Modifier">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </button>
+                            <button class="icon-btn delete" @onclick="() => DeleteProject(p.Id)" title="Supprimer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="description-zone">
+                        <p class="description">@p.Description</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
 </div>
 
 @code {
-    private List<GtdProject>? projects;
+    private List<GtdProject> projects;
     private bool showForm = false;
-    private GtdProject currentProject = new();
-    private Guid? editingId = null;
+    private GtdProject projectModel = new GtdProject { Color = "#4f46e5" };
+    private GtdProject editingProject = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -98,45 +92,59 @@
 
     private async Task LoadProjects()
     {
-        var allProjects = await ProjectService.GetProjectsAsync();
-        projects = allProjects.Where(p => p.Status != GtdStatus.Done && p.Status != GtdStatus.Abandoned).ToList();
+        projects = await ProjectService.GetProjectsAsync();
     }
 
-    private void EditProject(GtdProject p)
+    private void ShowAddForm()
     {
-        currentProject = new GtdProject
-        {
-            Id = p.Id,
-            Name = p.Name,
-            Description = p.Description,
-            Color = p.Color
-        };
-        editingId = p.Id;
+        editingProject = null;
+        projectModel = new GtdProject { Color = "#4f46e5" };
         showForm = true;
     }
 
-    private void CancelEdit()
+    private void HideForm()
     {
-        currentProject = new();
-        editingId = null;
         showForm = false;
+        editingProject = null;
+    }
+
+    private void EditProject(GtdProject project)
+    {
+        editingProject = project;
+        projectModel = new GtdProject
+        {
+            Id = project.Id,
+            Name = project.Name,
+            Description = project.Description,
+            Color = project.Color,
+            Status = project.Status,
+            OwnerUsername = project.OwnerUsername
+        };
+        showForm = true;
     }
 
     private async Task SaveProject()
     {
-        if (string.IsNullOrWhiteSpace(currentProject.Name)) return;
+        if (string.IsNullOrWhiteSpace(projectModel.Name)) return;
 
-        if (editingId.HasValue)
+        if (editingProject == null)
         {
-            await ProjectService.UpdateProjectAsync(currentProject);
+            await ProjectService.AddProjectAsync(projectModel);
         }
         else
         {
-            await ProjectService.AddProjectAsync(currentProject);
+            await ProjectService.UpdateProjectAsync(projectModel);
         }
 
+        HideForm();
         await LoadProjects();
-        CancelEdit();
+    }
+
+    private async Task SetProjectStatus(GtdProject project, GtdStatus status)
+    {
+        project.Status = status;
+        await ProjectService.UpdateProjectAsync(project);
+        await LoadProjects();
     }
 
     private async Task DeleteProject(Guid id)
@@ -145,10 +153,11 @@
         await LoadProjects();
     }
 
-    private async Task SetProjectStatus(GtdProject p, GtdStatus status)
+    private string TruncateTitle(string title)
     {
-        p.Status = status;
-        await ProjectService.UpdateProjectAsync(p);
-        await LoadProjects();
+        if (string.IsNullOrEmpty(title)) return title;
+        int limit = 20; // Enough to read most, but safe
+        if (title.Length <= limit) return title;
+        return title.Substring(0, limit) + "...";
     }
 }

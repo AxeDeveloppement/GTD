@@ -9,12 +9,12 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddSingleton<ITaskService, TaskService>();
-builder.Services.AddSingleton<IProjectService, ProjectService>();
-builder.Services.AddSingleton<IContextService, ContextService>();
-builder.Services.AddSingleton<ReviewStateService>();
-builder.Services.AddSingleton<AuthService>();
-builder.Services.AddSingleton<NotificationService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<IContextService, ContextService>();
+builder.Services.AddScoped<ReviewStateService>();
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<NotificationService>();
 
 // Configuration Supabase (lue depuis wwwroot/appsettings.json)
 var supabaseUrl = builder.Configuration["Supabase:Url"] 

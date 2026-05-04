@@ -211,6 +211,7 @@
         transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
     }
 
     .calendar-day::before {
@@ -395,6 +396,12 @@
         flex-direction: column;
         align-items: center;
         overflow: hidden;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+    
+    .calendar-day:active {
+        background-color: #f1f5f9;
     }
 
     .calendar-day.today {

@@ -4,6 +4,7 @@
 @inject PersonalGTD.Shared.Services.ReviewStateService ReviewState
 @inject IJSRuntime JS
 @inject PersonalGTD.Shared.Services.NotificationService NotificationService
+@inject NavigationManager NavigationManager
 
 @if (!AuthService.IsInitialized)
 {
@@ -110,9 +111,13 @@ else
         await AuthService.InitializeAsync();
         if (AuthService.CurrentUser != null)
         {
-            await LoadReviewStateAsync();
-            await NotificationService.RequestPermissionAsync();
-            await NotificationService.CheckAndNotifyAsync();
+            try
+            {
+                await LoadReviewStateAsync();
+                await NotificationService.RequestPermissionAsync();
+                await NotificationService.CheckAndNotifyAsync();
+            }
+            catch { /* On ignore les erreurs JS au démarrage pour éviter de bloquer l'app */ }
         }
     }
 
@@ -131,9 +136,13 @@ else
         }
         else
         {
-            await LoadReviewStateAsync();
-            await NotificationService.RequestPermissionAsync();
-            await NotificationService.CheckAndNotifyAsync();
+            try
+            {
+                await LoadReviewStateAsync();
+                await NotificationService.RequestPermissionAsync();
+                await NotificationService.CheckAndNotifyAsync();
+            }
+            catch { /* Fail silently */ }
         }
     }
 
@@ -170,5 +179,19 @@ else
             }
         }
         ReviewState.ResetReview();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+        }
+    }
+
+    [JSInvokable]
+    public void NavigateTo(string url)
+    {
+        NavigationManager.NavigateTo(url);
     }
 }

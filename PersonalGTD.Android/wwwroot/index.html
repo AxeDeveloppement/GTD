@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>Mon organiseur</title>
     <base href="/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="PersonalGTD.Android.styles.css" />
     <link rel="icon" href="data:,">
 </head>
 
 <body>
-
     <div class="status-bar-safe-area"></div>
-
-    <div id="app">Loading...</div>
+    <div id="app">Chargement en cours...</div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -25,8 +20,37 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.webview.js" autostart="false"></script>
-
+    <script src="_framework/blazor.webview.js"></script>
+    <script>
+        window.notificationHelper = {
+            requestPermission: async function() {
+                if (!("Notification" in window)) return "not_supported";
+                try {
+                    const permission = await Notification.requestPermission();
+                    return permission;
+                } catch (e) {
+                    return "error";
+                }
+            },
+            showNotification: function(title, body, tag) {
+                if (!("Notification" in window) || Notification.permission !== "granted") return;
+                
+                const options = {
+                    body: body,
+                    icon: 'icon-192.png',
+                    tag: tag,
+                    renotify: true
+                };
+                const n = new Notification(title, options);
+                n.onclick = function(event) {
+                    event.preventDefault();
+                    window.focus();
+                    if (tag && tag.startsWith('agenda-')) {
+                        window.location.href = '/agenda';
+                    }
+                };
+            }
+        };
+    </script>
 </body>
-
 </html>

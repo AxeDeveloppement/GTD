@@ -40,7 +40,7 @@ public class NotificationService
             HasAgendaNotifications = true;
             var title = "Tâches en retard !";
             var body = $"Vous avez {overdueTasks.Count} tâche(s) en retard.";
-            await NotifyOnceAsync("overdue-alert", title, body);
+            await NotifyOnceAsync("agenda-overdue", title, body);
         }
 
         if (todayTasks.Any())
@@ -48,8 +48,11 @@ public class NotificationService
             HasAgendaNotifications = true;
             var title = "Tâches du jour";
             var body = $"Vous avez {todayTasks.Count} tâche(s) à faire aujourd'hui.";
-            await NotifyOnceAsync("today-alert", title, body);
+            await NotifyOnceAsync("agenda-today", title, body);
         }
+
+        // Notification de test systématique pour valider le clic
+        await _js.InvokeVoidAsync("notificationHelper.showNotification", "Connexion réussie", "Cliquez ici pour tester l'accès à l'agenda.", "agenda-test");
 
         if (HasAgendaNotifications)
         {
@@ -68,6 +71,10 @@ public class NotificationService
 
     private async Task NotifyOnceAsync(string key, string title, string body)
     {
+        // On force l'affichage pour le test actuel
+        await _js.InvokeVoidAsync("notificationHelper.showNotification", title, body, key);
+        
+        /* Version de production :
         var user = _authService.CurrentUser;
         var storageKey = $"gtd-notified-{user}-{key}-{DateTime.Now:yyyy-MM-dd}";
         
@@ -77,5 +84,6 @@ public class NotificationService
             await _js.InvokeVoidAsync("notificationHelper.showNotification", title, body, key);
             await _js.InvokeVoidAsync("localStorage.setItem", storageKey, "true");
         }
+        */
     }
 }
