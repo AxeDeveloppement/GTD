@@ -10,6 +10,10 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+            .ConfigureMauiHandlers(handlers =>
+            {
+                handlers.AddHandler<Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler>();
+            })
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -38,3 +42,5 @@ public static class MauiProgram
 		return builder.Build();
 	}
 }
+
+

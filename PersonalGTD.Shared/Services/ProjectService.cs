@@ -17,14 +17,14 @@ public class ProjectService : IProjectService
     public async Task<List<GtdProject>> GetProjectsAsync()
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdProject>().Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdProject>().Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.Where(x => x.OwnerUsername == user).ToList();
     }
 
     public async Task<GtdProject?> GetProjectAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdProject>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdProject>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.FirstOrDefault(x => x.OwnerUsername == user);
     }
 
@@ -43,6 +43,6 @@ public class ProjectService : IProjectService
     public async Task DeleteProjectAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        await _supabase.From<GtdProject>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Delete();
+        await _supabase.From<GtdProject>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Delete();
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
@@ -7,62 +7,132 @@
     <base href="/" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="PersonalGTD.Android.styles.css" />
-    <link rel="icon" href="data:,">
 </head>
 
+
+
 <body>
-    <div class="status-bar-safe-area"></div>
-    <div id="app">Chargement en cours...</div>
+    <div id="app">
+        <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background-color:#0f172a; color:white; font-family:sans-serif; text-align:center;">
+            <div style="width:40px; height:40px; border:3px solid rgba(255,255,255,0.3); border-radius:50%; border-top-color:white; animation:spin 1s linear infinite;"></div>
+            <p style="margin-top:20px; font-weight:bold; margin-bottom:5px;">Démarrage de l'application...</p>
+            <p id="startup-step" style="color:#94a3b8; font-size:0.8rem;">Initialisation du WebView...</p>
+            <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+        </div>
+    </div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
+        Une erreur est survenue.
+        <a href="" class="reload">Réactualiser</a>
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.webview.js"></script>
+    <div id="custom-notification" onclick="window.notificationHelper.handleClick()" style="display:none; position:fixed; top:env(safe-area-inset-top, 20px); left:16px; right:16px; background:rgba(30, 41, 59, 0.95); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:16px; z-index:99999; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); transform:translateY(-150%); transition:transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor:pointer;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+            <div style="background:linear-gradient(135deg, #4f46e5, #7c3aed); width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div style="font-family:'Outfit', sans-serif; font-weight:700; color:white; font-size:1.1rem; letter-spacing:-0.02em;">Mon organisateur</div>
+            <button onclick="event.stopPropagation(); window.notificationHelper.closeCustom()" style="margin-left:auto; background:none; border:none; color:#94a3b8; padding:4px; cursor:pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div id="notif-title" style="color:white; font-weight:600; font-size:1rem; margin-bottom:4px; font-family:'Inter', sans-serif;"></div>
+        <div id="notif-body" style="color:#cbd5e1; font-size:0.9rem; line-height:1.5; font-family:'Inter', sans-serif; opacity:0.9;"></div>
+    </div>
+
+
     <script>
+        window.onerror = function(msg, url, line) {
+            var step = document.getElementById('startup-step');
+            if (step) step.innerHTML = "<span style='color:#f87171'>Erreur JS: " + msg + "</span>";
+            return false;
+        };
+
+        document.getElementById('startup-step').innerText = "Phase 1: Chargement du script...";
+
+        var blazorScript = document.createElement('script');
+        blazorScript.src = '_framework/blazor.webview.js';
+        blazorScript.setAttribute('autostart', 'false');
+        blazorScript.onload = function() {
+            document.getElementById('startup-step').innerText = "Phase 2: Moteur chargé, attente du pont natif...";
+            
+            function tryStart() {
+                if (window.external && window.external.receiveMessage) {
+                    document.getElementById('startup-step').innerText = "Phase 2.5: Pont détecté, démarrage...";
+                    Blazor.start().then(function() {
+                        document.getElementById('startup-step').innerText = "Phase 3: Blazor prêt";
+                    }).catch(function(err) {
+                        document.getElementById('startup-step').innerHTML = "<span style='color:#f87171'>Erreur start: " + err + "</span>";
+                    });
+                } else {
+                    // On réessaie toutes les 200ms
+                    setTimeout(tryStart, 200);
+                }
+            }
+            tryStart();
+        };
+        blazorScript.onerror = function() {
+            document.getElementById('startup-step').innerHTML = "<span style='color:#f87171'>Erreur: Script introuvable</span>";
+        };
+        document.body.appendChild(blazorScript);
+
+
         window.notificationHelper = {
             navHandler: null,
+            timeout: null,
             registerNavigationHandler: function(dotNetObj) {
                 this.navHandler = dotNetObj;
+                document.getElementById('startup-step').innerText = "Phase 3: Application prête !";
             },
             requestPermission: async function() {
                 if (!("Notification" in window)) return "not_supported";
-                try {
+                try { 
                     const permission = await Notification.requestPermission();
                     return permission;
-                } catch (e) {
-                    return "error";
+                } catch (e) { return "error"; }
+            },
+            closeCustom: function() {
+                const el = document.getElementById('custom-notification');
+                el.style.transform = 'translateY(-150%)';
+                setTimeout(() => { el.style.display = 'none'; }, 500);
+            },
+            handleClick: function() {
+                if (this.navHandler) {
+                    this.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
                 }
+                this.closeCustom();
             },
             showNotification: function(title, body, tag) {
-                if (!("Notification" in window) || Notification.permission !== "granted") return;
+
+                console.log("Notif: " + title);
                 
-                const options = {
-                    body: body,
-                    icon: 'icon-192.png',
-                    tag: tag,
-                    renotify: true,
-                    requireInteraction: true
-                };
-                const n = new Notification(title, options);
-                const self = this;
-                n.onclick = function(event) {
-                    event.preventDefault();
-                    window.focus();
-                    
-                    if (tag && tag.startsWith('agenda-')) {
-                        if (self.navHandler) {
-                            self.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
-                        } else {
-                            window.location.href = window.location.origin + "/agenda";
-                        }
-                    }
-                    n.close();
-                };
+                const el = document.getElementById('custom-notification');
+                document.getElementById('notif-title').innerText = title;
+                document.getElementById('notif-body').innerText = body;
+                
+                el.style.display = 'block';
+                // Petit délai pour l'animation
+                setTimeout(() => { el.style.transform = 'translateY(0)'; }, 10);
+                
+                // Fermeture automatique après 6 secondes
+                if (this.timeout) clearTimeout(this.timeout);
+                this.timeout = setTimeout(() => {
+                    this.closeCustom();
+                }, 6000);
+
+                // Tentative système quand même
+                if (("Notification" in window) && Notification.permission === "granted") {
+                    try {
+                        const n = new Notification(title, { body: body, icon: 'icon-192.png', tag: tag });
+                        n.onclick = () => { window.focus(); this.closeCustom(); };
+                    } catch (e) {}
+                }
             }
         };
     </script>
+
+
+
 </body>
 </html>

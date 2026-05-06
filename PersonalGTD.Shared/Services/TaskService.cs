@@ -17,14 +17,14 @@ public class TaskService : ITaskService
     public async Task<IEnumerable<GtdItem>> GetItemsAsync()
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdItem>().Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdItem>().Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.Where(x => x.OwnerUsername == user);
     }
 
     public async Task<GtdItem?> GetItemAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdItem>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdItem>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.FirstOrDefault(x => x.OwnerUsername == user);
     }
 
@@ -43,6 +43,6 @@ public class TaskService : ITaskService
     public async Task DeleteItemAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        await _supabase.From<GtdItem>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Delete();
+        await _supabase.From<GtdItem>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Delete();
     }
 }

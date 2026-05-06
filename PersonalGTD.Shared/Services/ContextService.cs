@@ -17,14 +17,14 @@ public class ContextService : IContextService
     public async Task<List<GtdContext>> GetContextsAsync()
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdContext>().Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdContext>().Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.Where(x => x.OwnerUsername == user).ToList();
     }
 
     public async Task<GtdContext?> GetContextAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        var response = await _supabase.From<GtdContext>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Get();
+        var response = await _supabase.From<GtdContext>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Get();
         return response.Models.FirstOrDefault(x => x.OwnerUsername == user);
     }
 
@@ -43,6 +43,6 @@ public class ContextService : IContextService
     public async Task DeleteContextAsync(Guid id)
     {
         var user = _authService.CurrentUser;
-        await _supabase.From<GtdContext>().Where(x => x.Id == id).Filter("owner_username", Postgrest.Constants.Operator.Equals, user).Delete();
+        await _supabase.From<GtdContext>().Where(x => x.Id == id).Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, user).Delete();
     }
 }
