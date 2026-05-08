@@ -80,7 +80,10 @@ public class AuthService
         
         try
         {
-            // 1. Tenter de charger une session existante du localStorage IMMÉDIATEMENT
+            // 1. Initialiser le client Supabase (déclenche le parsing automatique de l'URL hash)
+            await _supabase.InitializeAsync();
+
+            // 2. Tenter de charger une session existante du localStorage IMMÉDIATEMENT
             var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
             if (!string.IsNullOrEmpty(savedUser))
             {
@@ -102,17 +105,30 @@ public class AuthService
                 } catch { }
             }
 
-            // 2. Laisser le temps au client de parser le fragment d'URL (OAuth redirect)
+            // 3. Laisser un peu de temps pour que le client traite les jetons de l'URL
             await Task.Delay(500); 
 
-            // 3. Vérifier la session actuelle
+            // 4. Vérifier la session actuelle
             var currentSession = _supabase.Auth.CurrentSession;
             var user = currentSession?.User ?? _supabase.Auth.CurrentUser;
 
+            // Tentative désespérée : Parser manuellement l'URL si rien n'est trouvé
+            if (user == null)
+            {
+                var currentUrl = await _jsRuntime.InvokeAsync<string>("eval", "window.location.href");
+                if (currentUrl.Contains("access_token="))
+                {
+                    // Supabase devrait l'avoir vu, mais si ce n'est pas le cas, on attend encore un peu
+                    await Task.Delay(500);
+                    currentSession = _supabase.Auth.CurrentSession;
+                    user = currentSession?.User ?? _supabase.Auth.CurrentUser;
+                }
+            }
+
             if (user != null)
             {
-                var username = MapEmailToUsername(user.Email);
-                if (username != null)
+                var username = MapEmailToUsername(user.Email) ?? user.Email;
+                if (!string.IsNullOrEmpty(username))
                 {
                     CurrentUser = username;
                     await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
@@ -125,9 +141,9 @@ public class AuthService
                 }
             }
         }
-        catch
+        catch (Exception ex)
         {
-            // Fail silently
+            Console.WriteLine($"Auth initialization error: {ex.Message}");
         }
         finally
         {

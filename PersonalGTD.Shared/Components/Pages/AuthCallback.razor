@@ -2,93 +2,47 @@
 @using PersonalGTD.Shared.Services
 @inject AuthService AuthService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JS
 
-<div class="callback-page">
-    <div class="callback-card">
-        <div class="loading-spinner"></div>
-        <h2 class="callback-title">Connexion...</h2>
-        <p class="callback-text">Nous finalisons votre connexion. Veuillez patienter un instant.</p>
-    </div>
+<div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background-color: #0f172a; color: #f8fafc; gap: 1.5rem;">
+    <div class="loading-spinner"></div>
+    <p style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; opacity: 0.8;">Finalisation de la connexion...</p>
 </div>
-
-<style>
-    .callback-page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #0f172a;
-        color: #f8fafc;
-        font-family: 'Outfit', sans-serif;
-    }
-
-    .callback-card {
-        background: rgba(30, 41, 59, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 3rem;
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        max-width: 400px;
-        width: 90%;
-    }
-
-    .callback-title {
-        margin-top: 1.5rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-    }
-
-    .callback-text {
-        margin-top: 0.5rem;
-        opacity: 0.7;
-        line-height: 1.6;
-    }
-
-    .loading-spinner {
-        width: 48px;
-        height: 48px;
-        border: 4px solid rgba(255, 255, 255, 0.1);
-        border-left-color: #3b82f6;
-        border-radius: 50%;
-        margin: 0 auto;
-        animation: spin 1s linear infinite;
-    }
-
-    @@keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-</style>
 
 @code {
     protected override async Task OnInitializedAsync()
     {
-        // Give the Supabase client a moment to parse the URL fragment/query
-        await Task.Delay(1000); 
-        
-        var success = await AuthService.HandleCallbackAsync();
-        if (success)
+        try
         {
-            NavigationManager.NavigateTo("", forceLoad: true);
-        }
-        else
-        {
-            // If it failed, maybe it's still processing or there was an error
-            // We'll try one more time after another short delay
-            await Task.Delay(1000);
-            success = await AuthService.HandleCallbackAsync();
+            // Capturer le fragment d'URL manuellement via JS avant que Blazor ne s'en mêle trop
+            var hash = await JS.InvokeAsync<string>("eval", "window.location.hash");
             
-            if (success)
+            if (!string.IsNullOrEmpty(hash) && hash.Contains("access_token="))
             {
-                NavigationManager.NavigateTo("", forceLoad: true);
+                // Sauvegarder temporairement pour aider AuthService
+                await JS.InvokeVoidAsync("localStorage.setItem", "supabase_auth_token", hash);
+            }
+
+            // Attendre un peu pour laisser le SDK Supabase traiter le fragment (il le voit aussi via l'URL)
+            await Task.Delay(1000);
+
+            // Tenter de récupérer l'utilisateur
+            await AuthService.InitializeAsync();
+
+            if (AuthService.CurrentUser != null)
+            {
+                // Succès ! Direction la Inbox
+                NavigationManager.NavigateTo(NavigationManager.BaseUri);
             }
             else
             {
-                NavigationManager.NavigateTo("?error=auth_failed");
+                // Échec ? On retourne au login
+                NavigationManager.NavigateTo(NavigationManager.BaseUri);
             }
+        }
+        catch
+        {
+            NavigationManager.NavigateTo(NavigationManager.BaseUri);
         }
     }
 }
