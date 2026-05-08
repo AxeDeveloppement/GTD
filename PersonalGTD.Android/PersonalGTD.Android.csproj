@@ -66,6 +66,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.12" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.12" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.12" />
+        <PackageReference Include="Xamarin.AndroidX.Work.Runtime" Version="2.11.2" />
     </ItemGroup>
 
     <ItemGroup>

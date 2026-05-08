@@ -1,7 +1,11 @@
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
+using Microsoft.Maui;
+using Microsoft.Extensions.DependencyInjection;
+using AndroidX.Work;
 
 
 namespace PersonalGTD.Android;
@@ -20,7 +24,44 @@ public class MainActivity : MauiAppCompatActivity
                 RequestPermissions(new string[] { global::Android.Manifest.Permission.PostNotifications }, 0);
             }
         }
+
+        HandleIntent(Intent);
+        ScheduleNotificationWorker();
 	}
+
+    private void ScheduleNotificationWorker()
+    {
+        try
+        {
+            var workRequest = PeriodicWorkRequest.Builder.From<NotificationWorker>(TimeSpan.FromHours(1)).Build();
+            WorkManager.GetInstance(this).EnqueueUniquePeriodicWork(
+                "GTDNotificationWork", 
+                ExistingPeriodicWorkPolicy.Keep, 
+                workRequest);
+        }
+        catch (Exception ex)
+        {
+            global::Android.Util.Log.Error("MainActivity", $"Failed to schedule worker: {ex.Message}");
+        }
+    }
+
+    protected override void OnNewIntent(Intent? intent)
+    {
+        base.OnNewIntent(intent);
+        HandleIntent(intent);
+    }
+
+    private void HandleIntent(Intent? intent)
+    {
+        if (intent?.DataString != null && intent.DataString.StartsWith("gtdapp://auth"))
+        {
+            var authService = IPlatformApplication.Current?.Services.GetService<PersonalGTD.Shared.Services.AuthService>();
+            if (authService != null)
+            {
+                _ = authService.ProcessDeepLink(intent.DataString);
+            }
+        }
+    }
 }
 
 

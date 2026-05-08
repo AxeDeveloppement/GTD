@@ -4,6 +4,8 @@ using Supabase.Gotrue;
 using System.Text.Json;
 using System;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using Microsoft.Maui.Storage;
 
 namespace PersonalGTD.Shared.Services;
 
@@ -39,9 +41,9 @@ public class AuthService
                 var session = _supabase.Auth.CurrentSession;
                 if (session != null)
                 {
-                    // Persister la session Supabase
+                    // Persister la session Supabase via Preferences pour accès natif
                     var sessionJson = JsonSerializer.Serialize(session);
-                    await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson);
+                    Preferences.Default.Set("supabase_session", sessionJson);
                     
                     var user = session.User;
                     if (user != null)
@@ -50,7 +52,7 @@ public class AuthService
                         if (username != null)
                         {
                             CurrentUser = username;
-                            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                            Preferences.Default.Set("gtd_user", username);
                         }
                     }
                 }
@@ -62,8 +64,8 @@ public class AuthService
                 if (_supabase.Auth.CurrentSession == null)
                 {
                     CurrentUser = null;
-                    await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session");
-                    await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
+                    Preferences.Default.Remove("supabase_session");
+                    Preferences.Default.Remove("gtd_user");
                     NotifyAuthenticationStateChanged();
                 }
             }
@@ -91,15 +93,15 @@ public class AuthService
                 await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_auth_token");
             }
 
-            // 3. Charger la session persistée classique
-            var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
+            // 3. Charger la session persistée classique via Preferences
+            var savedUser = Preferences.Default.Get<string?>("gtd_user", null);
             if (!string.IsNullOrEmpty(savedUser))
             {
                 CurrentUser = savedUser;
                 NotifyAuthenticationStateChanged();
             }
 
-            var savedSessionJson = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_session");
+            var savedSessionJson = Preferences.Default.Get<string?>("supabase_session", null);
             if (!string.IsNullOrEmpty(savedSessionJson))
             {
                 try 
@@ -124,12 +126,12 @@ public class AuthService
                 if (!string.IsNullOrEmpty(username))
                 {
                     CurrentUser = username;
-                    await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                    Preferences.Default.Set("gtd_user", username);
                     
                     if (currentSession != null)
                     {
                         var sessionJson = JsonSerializer.Serialize(currentSession);
-                        await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson);
+                        Preferences.Default.Set("supabase_session", sessionJson);
                     }
                 }
             }
@@ -176,6 +178,15 @@ public class AuthService
     {
         try
         {
+            // Détection Android pour utiliser le scheme personnalisé
+            var isAndroid = RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) || 
+                           RuntimeInformation.OSDescription.Contains("android", StringComparison.OrdinalIgnoreCase);
+            
+            if (isAndroid)
+            {
+                callbackUrl = "gtdapp://auth";
+            }
+
             var options = new SignInOptions
             {
                 RedirectTo = callbackUrl
@@ -183,9 +194,42 @@ public class AuthService
             var result = await _supabase.Auth.SignIn(Supabase.Gotrue.Constants.Provider.Google, options);
             return result?.Uri?.ToString();
         }
-        catch
+        catch (Exception ex)
         {
+            Console.WriteLine($"Error getting Google sign in URL: {ex.Message}");
             return null;
+        }
+    }
+
+    public async Task ProcessDeepLink(string url)
+    {
+        if (string.IsNullOrEmpty(url)) return;
+
+        try
+        {
+            // S'assurer que Supabase est initialisé
+            if (!IsInitialized)
+            {
+                await InitializeAsync();
+            }
+
+            var uri = new Uri(url);
+            var fragment = uri.Fragment;
+            
+            if (string.IsNullOrEmpty(fragment) && url.Contains("#"))
+            {
+                fragment = url.Substring(url.IndexOf('#'));
+            }
+
+            if (!string.IsNullOrEmpty(fragment))
+            {
+                await ProcessHashFragment(fragment);
+                NotifyAuthenticationStateChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error processing deep link: {ex.Message}");
         }
     }
 
