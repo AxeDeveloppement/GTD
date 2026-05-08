@@ -1,0 +1,2655 @@
+﻿/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Layout\FabCapture.razor.css */
+.fab-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    z-index: 10000;
+}
+
+.fab-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.fab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.fab-button:active {
+    transform: scale(0.95);
+}
+
+.fab-button.expanded {
+    background: #475569;
+    box-shadow: 0 4px 14px rgba(71, 85, 105, 0.4);
+}
+
+.fab-input-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+    width: 320px;
+    max-width: 100%; /* ne peut jamais dÃ©border de son contexte */
+    border: 1px solid #e2e8f0;
+    overflow: hidden; /* contient tous les enfants â€” n'affecte pas le popup natif du select */
+    /* Desktop : le panel sort vers le haut depuis le bouton FAB */
+    order: -1;
+}
+
+.fab-main-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.fab-selectors {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    min-width: 0; /* permet aux enfants flex de se rÃ©duire */
+    margin-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.5rem;
+    overflow: hidden;
+}
+
+.fab-select {
+    flex: 1 1 0;       /* base de 0 : se distribue Ã©quitablement */
+    min-width: 0;      /* Ã©vite le dÃ©bordement flex */
+    max-width: 100%;   /* ne sort jamais du conteneur */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+    color: #475569;
+    background: #f8fafc;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.quick-input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+}
+
+.quick-submit {
+    background: #e0e7ff;
+    color: #4f46e5;
+    border: none;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quick-submit:hover:not(:disabled) {
+    background: #c7d2fe;
+}
+
+.quick-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.fab-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 9999; /* sous le panel (10001) et le container (10000) */
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ======================================================
+   MOBILE & TABLETTE â€” panel ancrÃ© en haut, jamais sous le clavier
+   ====================================================== */
+@media (max-width: 1024px) {
+    /* Le container ne sert qu'Ã  positionner le bouton FAB */
+    .fab-container {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        /* Le panel sort du flux du container sur mobile */
+    }
+
+    /* Le panel devient une modale fixe ancrÃ©e dans la zone sÃ»re du haut */
+    .fab-input-panel {
+        position: fixed;
+        /* Header mobile = 60px + 10px de marge = 70px */
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100vw - 2rem);
+        max-width: 500px;
+        border-radius: 18px;
+        padding: 1rem;
+        z-index: 10001; /* au-dessus de l'overlay */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        /* Annule l'animation depuis le bas â€” part du haut */
+        animation: panelDropIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-origin: top center;
+        order: 0; /* reset l'order desktop */
+    }
+
+    .fab-selectors {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .fab-container {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .fab-input-panel {
+        width: calc(100vw - 1.5rem);
+        padding: 0.85rem;
+    }
+
+    .fab-selectors {
+        flex-direction: column;
+    }
+}
+
+@keyframes panelDropIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-16px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Layout\MainLayout.razor.css */
+* {
+    box-sizing: border-box;
+}
+
+/* ====================================================
+   PAGE DE CONNEXION
+   ==================================================== */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    padding: 1.5rem;
+}
+
+/* Grain dÃ©coratif en fond */
+.login-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(79,70,229,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(124,58,237,0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.login-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Marque / Logo */
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.login-logo {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.login-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.04em;
+    position: relative;
+    display: inline-block;
+}
+
+.login-title::after {
+    content: '.';
+    color: #7c3aed;
+    -webkit-text-fill-color: #7c3aed; /* Re-override for gradient text */
+}
+
+.login-subtitle {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* Formulaire */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.login-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.03);
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.login-input:focus {
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.login-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    color: #be123c;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    font-family: inherit;
+    margin-top: 0.25rem;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.google-oauth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.google-oauth-text {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* â”€â”€ Encart dÃ©mo â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.demo-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+}
+
+.demo-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.demo-card:active {
+    transform: scale(0.99);
+}
+
+.demo-icon {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+.demo-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.demo-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.2;
+}
+
+.demo-creds {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.2;
+}
+
+.demo-creds strong {
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.demo-arrow {
+    color: #6366f1;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.demo-card:hover .demo-arrow {
+    transform: translateX(3px);
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: #0f172a; /* Base Ardoise Slate-900 */
+    color: #f8fafc;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0; /* Default to mobile-first */
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .main-wrapper {
+        margin-left: 260px;
+    }
+}
+
+.app-header {
+    background-color: #0f172a;
+    height: 60px;
+    padding: 0 0.75rem;
+    border-bottom: 1px solid #1e293b;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #f8fafc;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+    .app-header {
+        height: 64px;
+        padding: 0 1.5rem;
+        gap: 1rem;
+    }
+}
+
+.app-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ffffff 20%, #a5b4fc 40%, #a5b4fc 60%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 60%;
+    text-align: center;
+    z-index: 1;
+    animation: titleShimmer 4s linear infinite;
+}
+
+.app-title::after {
+    content: '.';
+    color: #6366f1;
+    -webkit-text-fill-color: #6366f1;
+}
+
+@media (min-width: 768px) {
+    .app-title {
+        font-size: 1.5rem;
+        position: static;
+        transform: none;
+        max-width: none;
+        flex: 1;
+        text-align: left;
+    }
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.05) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+    height: 36px;
+    min-width: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.logout-btn svg {
+    color: #f87171;
+    width: 18px;
+    height: 18px;
+}
+
+.logout-text {
+    display: none;
+    font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+    .logout-btn {
+        padding: 0 1.1rem;
+        height: 42px;
+    }
+    .logout-text {
+        display: inline;
+    }
+}
+
+.d-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .d-desktop {
+        display: inline;
+    }
+}
+
+.app-main {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .app-main {
+        padding: 1.5rem;
+    }
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Layout\Sidebar.razor.css */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #0f172a; /* Slate-900 */
+    border-right: 1px solid #1e293b;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    height: 64px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-header h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff 20%, #94a3b8 40%, #94a3b8 60%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.04em;
+    animation: titleShimmer 6s linear infinite;
+}
+
+.sidebar-header h2::after {
+    content: '.';
+    color: #6366f1;
+    -webkit-text-fill-color: #6366f1;
+}
+
+.sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-section h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    margin: 0 0 0.75rem 0.5rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background-color: #1e293b;
+    border: 1px solid transparent;
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:hover {
+    background-color: #334155;
+    border-color: #475569;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item.active {
+    background-color: #4f46e5;
+    border-color: #6366f1;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.review-due-wrapper .nav-item,
+.agenda-notification-wrapper .nav-item {
+    background-color: #7f1d1d;
+    border-color: #ef4444;
+    color: #fecaca !important;
+    animation: pulse-red 2s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+}
+
+.nav-item svg {
+    color: inherit;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    flex-shrink: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #f8fafc;
+    cursor: pointer;
+    min-width: 44px; /* Accessible au pouce */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.6);
+    z-index: 90;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s;
+}
+
+.d-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .d-mobile {
+        display: flex;
+    }
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\Agenda.razor.css */
+/* ====================================================
+   TABS â€” segment control moderne
+   ==================================================== */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    background: rgba(241, 245, 249, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.25rem;
+    border-radius: 14px;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    max-width: 100%;
+    gap: 0.15rem;
+    flex-wrap: wrap;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.tab-button svg {
+    opacity: 0.7;
+    width: 18px;
+    height: 18px;
+}
+
+.tab-button:hover {
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.tab-button.active {
+    color: #4f46e5;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.tab-button span {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .tabs-container {
+        padding: 0.35rem;
+        border-radius: 14px;
+        margin-bottom: 2.5rem;
+        gap: 0.25rem;
+        flex-wrap: nowrap;
+    }
+    .tab-button {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+        gap: 0.6rem;
+    }
+    .tab-button span {
+        display: inline;
+    }
+}
+
+@media (max-width: 640px) {
+    .tab-button.active span {
+        display: inline;
+    }
+    .count-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .tab-button.active span {
+        display: none;
+    }
+}
+
+/* ====================================================
+   BADGES
+   ==================================================== */
+.count-badge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    color: white;
+    font-weight: 700;
+}
+
+.count-badge.red    { background: #ef4444; }
+.count-badge.orange { background: #f97316; }
+
+/* ====================================================
+   CALENDAR â€” CONTRÃ”LES (navigation mois)
+   ==================================================== */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+}
+
+.cal-month {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cal-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cal-btn:hover {
+    background: #f8fafc;
+    border-color: #c7d2fe;
+    color: #4f46e5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+/* ====================================================
+   CALENDAR WRAPPER â€” suppression de la grille rigide
+   ==================================================== */
+.calendar-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e8ecf2;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ====================================================
+   DESKTOP â€” design moderne sans quadrillage
+   ==================================================== */
+@media (min-width: 1024px) {
+    .calendar-wrapper {
+        overflow: visible;
+        background: #f4f6fb; /* fond unifiÃ© lÃ©ger = plus de damier flottant */
+        border-radius: 20px;
+        padding: 1.25rem;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .calendar-grid {
+        gap: 5px;
+        background: transparent;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    /* En-tÃªte des jours */
+    .day-header {
+        background: transparent;
+        text-align: center;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #475569; /* plus contrastÃ© qu'avant */
+        padding: 0 0 0.85rem 0;
+        border-bottom: none;
+    }
+
+    /* Cellule jour */
+    .calendar-day {
+        background: #ffffff;
+        min-height: 110px;
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        border: 1px solid rgba(226, 232, 240, 0.5); /* bordure trÃ¨s subtile pour dÃ©limiter sans damier dur */
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .calendar-day::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(79,70,229,0.03) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+
+    .calendar-day:hover {
+        border-color: #e0e7ff;
+        box-shadow: 0 4px 16px rgba(79, 70, 229, 0.1);
+        transform: translateY(-1px);
+    }
+
+    .calendar-day:hover::before {
+        opacity: 1;
+    }
+
+    /* Jour courant */
+    .calendar-day.today {
+        background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+        border-color: #c7d2fe;
+        box-shadow: 0 2px 12px rgba(79, 70, 229, 0.12);
+    }
+
+    .calendar-day.today::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+        border-radius: 14px 14px 0 0;
+    }
+
+    /* Jours d'un autre mois â€” mÃªme fond mais vraiment effacÃ© */
+    .calendar-day.other-month {
+        background: rgba(255,255,255,0.45);
+        border-color: transparent;
+    }
+
+    .calendar-day.other-month:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    /* NumÃ©ro du jour â€” desktop */
+    .day-number {
+        font-size: 0.88rem;
+        font-weight: 700;          /* gras pour bien ressortir */
+        color: #1e293b;            /* quasi-noir, trÃ¨s lisible sur blanc */
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        transition: background 0.15s ease, color 0.15s ease;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #b0bec9;  /* toujours clair mais plus foncÃ© que transparent */
+        font-weight: 400;
+    }
+
+    /* TÃ¢ches dans le calendrier â€” desktop */
+    .day-tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        flex: 1;
+    }
+
+    .cal-task {
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 0.22rem 0.5rem;
+        border-radius: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .cal-task:hover {
+        filter: none;
+        transform: translateX(2px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .cal-red {
+        background: linear-gradient(90deg, #fff1f2, #ffe4e6);
+        border-left-color: #ef4444;
+        color: #be123c;
+    }
+    .cal-orange {
+        background: linear-gradient(90deg, #fff7ed, #ffedd5);
+        border-left-color: #f97316;
+        color: #c2410c;
+    }
+    .cal-green {
+        background: linear-gradient(90deg, #f0fdf4, #dcfce7);
+        border-left-color: #22c55e;
+        color: #15803d;
+    }
+
+    /* Indicateur dÃ©bordement desktop */
+    .cal-task-more {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #94a3b8;
+        padding: 0.15rem 0.35rem;
+        background: #f1f5f9;
+        border-radius: 4px;
+        text-align: center;
+        cursor: default;
+    }
+
+    /* Petit point d'accent sur le numÃ©ro pour les jours avec tÃ¢ches */
+    .calendar-day.has-tasks:not(.today) .day-number::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #4f46e5;
+    }
+}
+
+/* ====================================================
+   MOBILE â€” vue compacte avec dots
+   ==================================================== */
+@media (max-width: 1023px) {
+    .calendar-wrapper {
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .calendar-grid {
+        gap: 1px;
+        background: #e2e8f0;
+    }
+
+    .day-header {
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        padding: 0.5rem 0.25rem;
+        background: #f8fafc;
+        letter-spacing: 0.04em;
+    }
+
+    .calendar-day {
+        background: white;
+        min-height: 52px;
+        padding: 0.3rem 0.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+    
+    .calendar-day:active {
+        background-color: #f1f5f9;
+    }
+
+    .calendar-day.today {
+        background: #eef2ff;
+    }
+
+    .calendar-day.other-month {
+        background: #f8fafc;
+        opacity: 0.6;
+    }
+
+    .day-number {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #475569;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
+    }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #cbd5e1;
+    }
+
+    .day-tasks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .cal-task {
+        font-size: 0;
+        width: 6px;
+        height: 6px;
+        min-height: 6px;
+        padding: 0;
+        border-radius: 50%;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .cal-red    { background: #ef4444; }
+    .cal-orange { background: #f97316; }
+    .cal-green  { background: #22c55e; }
+}
+
+@media (max-width: 480px) {
+    .cal-month  { font-size: 1.1rem; }
+    .cal-btn    { width: 32px; height: 32px; }
+    .calendar-controls { margin-bottom: 0.75rem; }
+}
+
+/* ====================================================
+   LISTE DE TÃ‚CHES (onglets En retard / Aujourd'hui / Ã€ venir)
+   ==================================================== */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skeleton-item {
+    height: 72px;
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 12px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\Archives.razor.css */
+.tabs-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.tab-button:hover {
+    color: #0f172a;
+    background: #f1f5f9;
+}
+
+.tab-button.active {
+    color: #4f46e5;
+    background: #e0e7ff;
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\Contexts.razor.css */
+/* Re-use base styles from Projects to maintain consistency */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.title-nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.form-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"] {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+}
+
+.form-group input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Specific list styles */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.context-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: #94a3b8;
+    transition: all 0.2s;
+}
+
+.icon-btn.edit:hover {
+    color: #4f46e5;
+    background: #e0e7ff;
+}
+
+.icon-btn.delete:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #475569;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\Home.razor.css */
+.gtd-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.add-task-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 0.5rem;
+}
+
+.task-input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.875rem 1.125rem;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+    background: #f8fafc;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.task-input:focus {
+    border-color: #4f46e5;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.selectors {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.project-select, .context-select {
+    flex: 1;
+    min-width: 0; /* Important pour flex-shrink */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+    background: #f8fafc;
+    color: #0f172a;
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-appearance: none; /* Nettoyage Android */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.add-button {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.add-button:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+}
+
+.add-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #94a3b8;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+    .add-task-card {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    
+    .task-input {
+        flex: 2;
+    }
+    
+    .selectors {
+        flex: 3;
+    }
+    
+    .add-button {
+        width: 60px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .selectors {
+        flex-direction: column;
+    }
+}
+
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\Projects.razor.css */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.form-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"], .form-group textarea {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.form-group input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.grid-container > .card {
+    flex: 0 1 320px;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 480px) {
+    .grid-container > * {
+        flex: 1 1 100%;
+    }
+    .page-header {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #0f172a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 320px;
+    min-width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    min-height: 40px;
+}
+
+.title-zone {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+    position: relative;
+    cursor: help;
+}
+
+.project-title .full {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 100;
+    width: 100%;
+    min-width: 300px;
+    white-space: normal;
+    word-break: break-word;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 15px -10px rgba(0, 0, 0, 0.15);
+    padding: 0.85rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: opacity 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+.title-zone:hover .project-title .full {
+    visibility: visible;
+    opacity: 1;
+}
+
+.title-zone:hover .project-title .truncated {
+    opacity: 0;
+}
+
+.project-title .truncated {
+    transition: opacity 0.1s ease-in-out;
+}
+
+.actions-zone {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: #94a3b8;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn.edit:hover {
+    color: #4f46e5;
+    background: #e0e7ff;
+}
+
+.icon-btn.delete:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
+.icon-btn.done:hover {
+    color: #10b981;
+    background: #d1fae5;
+}
+
+.icon-btn.abandon:hover {
+    color: #f59e0b;
+    background: #fef3c7;
+}
+
+.description-zone {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.description {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.card:hover .description {
+    -webkit-line-clamp: unset;
+}
+
+.empty-state {
+    flex: 1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #cbd5e1;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\Pages\WeeklyReview.razor.css */
+.review-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.review-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.review-title-block h2 {
+    margin: 0;
+}
+
+.review-subtitle {
+    margin: 0.25rem 0 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.progress-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .progress-block {
+        align-items: flex-start;
+        min-width: 100%;
+    }
+}
+
+.progress-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.tab-button:hover {
+    color: #0f172a;
+    background: #f1f5f9;
+}
+
+.tab-button.active {
+    color: #4f46e5;
+    background: #e0e7ff;
+}
+
+/* Tab Content */
+.review-tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tab-intro {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tab-intro p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.review-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    .review-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .reset-btn, .done-btn {
+        width: 100%;
+    }
+}
+
+.reset-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.done-btn {
+    background: #4f46e5;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.done-btn:hover {
+    background: #4338ca;
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\GoogleLoginButton.razor.css */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.98);
+    color: #0f172a;
+    border: none;
+    border-radius: 14px;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Outfit', sans-serif;
+}
+
+.google-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.google-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.google-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\ReviewStep.razor.css */
+.review-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    transition: all 0.2s;
+}
+
+.review-step:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+}
+
+.review-step.done {
+    background: #f0fdf4;
+    border-color: #86efac;
+    opacity: 0.7;
+}
+
+.step-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.review-step.done .step-title {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.step-description {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.review-step.done .step-description {
+    color: #94a3b8;
+}
+
+.step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4f46e5;
+    text-decoration: none;
+    border: 1px solid #c7d2fe;
+    background: #eef2ff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.step-link:hover {
+    background: #e0e7ff;
+    border-color: #a5b4fc;
+}
+
+.step-check-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #22c55e;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.step-check-btn:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.step-check-btn.checked {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+
+/* Source: D:\projects\GTD\GTD\PersonalGTD.Shared\Components\TaskItemCard.razor.css */
+.task-card {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    width: 100%;
+    gap: 1rem;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.highlighted-task {
+    animation: highlight-pulse 2s ease-out;
+    border-color: #6366f1;
+}
+
+@keyframes highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); border-color: #6366f1; background-color: #e0e7ff; }
+    70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); border-color: #6366f1; background-color: white; }
+    100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); border-color: #e2e8f0; }
+}
+
+.task-card.completed {
+    opacity: 0.6;
+}
+
+.task-card.completed .task-title {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.task-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.task-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.task-title:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+.task-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge-select {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    appearance: none; /* Hide default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 1.2rem; /* Make room for custom arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 10px;
+    transition: all 0.2s;
+}
+
+.badge-select:hover {
+    filter: brightness(0.95);
+}
+
+input[type="date"].badge-select {
+    padding-right: 0.5rem;
+    background-image: none;
+    font-family: inherit;
+    position: relative;
+}
+
+input[type="date"].empty-date::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type="date"].empty-date::before {
+    content: "+ Date..";
+    color: #64748b;
+    position: absolute;
+    left: 0.6rem;
+    pointer-events: none;
+}
+
+input[type="date"].badge-select::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-select {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+    color: #475569;
+    background: #f8fafc;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.status-select:focus {
+    border-color: #4f46e5;
+}
+
+.desc-button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desc-button:hover {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+.desc-button.has-note {
+    color: #4f46e5;
+    background-color: #e0e7ff;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.delete-button:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-pop {
+    0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 6px;
+    display: flex;
+}
+
+.close-modal-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.modal-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.modal-textarea {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #334155;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.modal-textarea:focus {
+    border-color: #6366f1;
+}
+
+.modal-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    background: #f8fafc;
+}
+
+.btn-cancel {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.btn-cancel:hover { background: #f1f5f9; }
+
+.btn-save {
+    background: #4f46e5;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-save:hover { background: #4338ca; }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .task-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .task-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+    .badge-select {
+        max-width: 120px;
+        text-overflow: ellipsis;
+    }
+}
+
