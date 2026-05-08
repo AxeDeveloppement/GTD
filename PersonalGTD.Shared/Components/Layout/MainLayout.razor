@@ -6,6 +6,8 @@
 @inject PersonalGTD.Shared.Services.NotificationService NotificationService
 @inject NavigationManager NavigationManager
 
+<AuthListener />
+
 @if (!isReady)
 {
     <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background-color: #0f172a; color: #f8fafc; gap: 1.5rem;">

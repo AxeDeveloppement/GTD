@@ -1,0 +1,38 @@
+@using PersonalGTD.Shared.Services
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+@code {
+    protected override void OnInitialized()
+    {
+        AuthService.OnAuthStateChanged += HandleAuthStateChanged;
+        CheckCurrentSession();
+    }
+
+    private void HandleAuthStateChanged()
+    {
+        CheckCurrentSession();
+    }
+
+    private void CheckCurrentSession()
+    {
+        // If we are on the login page (or any page where CurrentUser is handled by MainLayout)
+        // and we have a user, ensure we are not stuck on a white page or callback.
+        var uri = NavigationManager.Uri;
+        if (AuthService.CurrentUser != null && (uri.Contains("auth/callback") || uri.EndsWith("/")))
+        {
+            // If we are already on home but the UI hasn't refreshed or we are on callback,
+            // force a navigation to home to "clean up" the URL.
+            if (uri.Contains("auth/callback") || uri.Contains("#access_token"))
+            {
+                NavigationManager.NavigateTo("", forceLoad: true);
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        AuthService.OnAuthStateChanged -= HandleAuthStateChanged;
+    }
+}

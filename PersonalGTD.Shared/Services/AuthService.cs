@@ -17,6 +17,39 @@ public class AuthService
     {
         _jsRuntime = jsRuntime;
         _supabase = supabase;
+        
+        // Listen to auth state changes (OAuth, session recovery, etc.)
+        _supabase.Auth.AddStateChangedListener(OnSupabaseAuthStateChanged);
+    }
+
+    private async void OnSupabaseAuthStateChanged(object sender, AuthState state)
+    {
+        if (state == AuthState.SignedIn || state == AuthState.TokenRefreshed)
+        {
+            var user = _supabase.Auth.CurrentUser;
+            if (user != null)
+            {
+                var username = MapEmailToUsername(user.Email);
+                if (username != null && CurrentUser != username)
+                {
+                    CurrentUser = username;
+                    try 
+                    {
+                        await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                    } catch { }
+                    OnAuthStateChanged?.Invoke();
+                }
+            }
+        }
+        else if (state == AuthState.SignedOut)
+        {
+            CurrentUser = null;
+            try 
+            {
+                await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
+            } catch { }
+            OnAuthStateChanged?.Invoke();
+        }
     }
 
     public async Task InitializeAsync()
@@ -25,14 +58,30 @@ public class AuthService
         
         try
         {
-            // We use a timeout to prevent hanging on Android WebView startup
-            var userTask = _jsRuntime.InvokeAsync<string>("localStorage.getItem", "gtd_user").AsTask();
-            if (await Task.WhenAny(userTask, Task.Delay(2000)) == userTask)
+            // Give Supabase client time to parse hash fragment if present
+            if (IsInitialized == false) await Task.Delay(200);
+
+            var session = _supabase.Auth.CurrentSession;
+            if (session?.User != null)
             {
-                var user = await userTask;
-                if (!string.IsNullOrEmpty(user))
+                var username = MapEmailToUsername(session.User.Email);
+                if (username != null)
                 {
-                    CurrentUser = user;
+                    CurrentUser = username;
+                    try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch {}
+                }
+            }
+            else 
+            {
+                // Fallback to localStorage if no active Supabase session
+                var userTask = _jsRuntime.InvokeAsync<string>("localStorage.getItem", "gtd_user").AsTask();
+                if (await Task.WhenAny(userTask, Task.Delay(1000)) == userTask)
+                {
+                    var user = await userTask;
+                    if (!string.IsNullOrEmpty(user))
+                    {
+                        CurrentUser = user;
+                    }
                 }
             }
         }
