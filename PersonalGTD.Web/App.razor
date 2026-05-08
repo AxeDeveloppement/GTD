@@ -1,12 +1,46 @@
-<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] { typeof(PersonalGTD.Shared.Components.Pages.Home).Assembly }">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(PersonalGTD.Shared.Components.Layout.MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(PersonalGTD.Shared.Components.Layout.MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+@using PersonalGTD.Shared.Services
+@inject AuthService AuthService
+
+@if (!isInitialized)
+{
+    <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background-color: #0f172a; color: #f8fafc; gap: 1.5rem;">
+        <div class="loading-spinner"></div>
+        <p style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; opacity: 0.8;">Vérification de la session...</p>
+    </div>
+}
+else
+{
+    <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] { typeof(PersonalGTD.Shared.Components.Pages.Home).Assembly }">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(PersonalGTD.Shared.Components.Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(PersonalGTD.Shared.Components.Layout.MainLayout)">
+                <p role="alert">Désolé, cette page n'existe pas.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+}
+
+@code {
+    private bool isInitialized;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Attendre que Supabase soit complètement initialisé avant de charger le Router
+            await AuthService.InitializeAsync();
+        }
+        catch
+        {
+            // Continuer quand même en cas d'erreur
+        }
+        finally
+        {
+            isInitialized = true;
+        }
+    }
+}

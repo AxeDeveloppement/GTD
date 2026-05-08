@@ -109,21 +109,9 @@ else
     private string loginPassword = "";
     private bool loginError = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         AuthService.OnAuthStateChanged += HandleAuthStateChanged;
-        
-        try
-        {
-            // Initialisation immédiate dès que possible
-            await AuthService.InitializeAsync();
-            
-            if (AuthService.CurrentUser != null)
-            {
-                await LoadReviewStateAsync();
-            }
-        }
-        catch { }
     }
 
     private void HandleAuthStateChanged()
@@ -220,6 +208,7 @@ else
                 
                 if (AuthService.CurrentUser != null)
                 {
+                    await LoadReviewStateAsync();
                     await NotificationService.RequestPermissionAsync();
                     await NotificationService.CheckAndNotifyAsync();
                 }
