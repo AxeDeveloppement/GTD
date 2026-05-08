@@ -17,7 +17,7 @@
     private async Task SignInWithGoogle()
     {
         // Rediriger vers la page de callback dédiée pour gérer le token
-        var callbackUrl = NavigationManager.BaseUri + "auth/callback";
+        var callbackUrl = NavigationManager.BaseUri;
         var url = await AuthService.GetGoogleSignInUrl(callbackUrl);
         if (!string.IsNullOrEmpty(url))
         {

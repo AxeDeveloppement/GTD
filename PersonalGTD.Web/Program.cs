@@ -30,7 +30,11 @@ try
     var supabaseKey = builder.Configuration["Supabase:Key"]
         ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impib2xmZnpnYndxeXN0ZXdyeG5nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2Mzk1NzksImV4cCI6MjA5MzIxNTU3OX0.R2bK_kq7YmHLB5HG3Cl2xnuG6hCheXxKqeXoyqIhPbA";
     
-    var supabaseOptions = new Supabase.SupabaseOptions { AutoConnectRealtime = true };
+    var supabaseOptions = new Supabase.SupabaseOptions 
+    { 
+        AutoConnectRealtime = false,
+        AutoRefreshToken = true
+    };
     
     builder.Services.AddSingleton(provider => {
         Console.WriteLine("✨ Création du client Supabase Singleton...");

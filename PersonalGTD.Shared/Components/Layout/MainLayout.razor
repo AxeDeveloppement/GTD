@@ -109,9 +109,15 @@ else
     private string loginPassword = "";
     private bool loginError = false;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         AuthService.OnAuthStateChanged += HandleAuthStateChanged;
+        
+        // Détecter la session dès le chargement, particulièrement utile pour le retour d'OAuth
+        if (AuthService.CurrentUser == null)
+        {
+            await AuthService.InitializeAsync();
+        }
     }
 
     private void HandleAuthStateChanged()
@@ -200,10 +206,16 @@ else
                 await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
                 
                 var uri = NavigationManager.Uri;
-                if (uri.Contains("auth/callback") || uri.Contains("#access_token") || uri.Contains("access_token="))
+                if (uri.Contains("#access_token") || uri.Contains("access_token=") || uri.Contains("auth/callback"))
                 {
-                    // Nettoyer l'URL
+                    // Nettoyer l'URL sans recharger pour une expérience fluide
                     await JS.InvokeVoidAsync("window.history.replaceState", null, "", NavigationManager.BaseUri);
+                    
+                    // Si on vient de se connecter mais que l'UI n'a pas suivi, forcer un rafraîchissement
+                    if (AuthService.CurrentUser == null)
+                    {
+                        await AuthService.InitializeAsync();
+                    }
                 }
                 
                 if (AuthService.CurrentUser != null)
