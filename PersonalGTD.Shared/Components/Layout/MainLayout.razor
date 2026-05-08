@@ -29,49 +29,18 @@ else if (AuthService.CurrentUser == null)
                 <p class="login-subtitle">Gérez vos tâches avec la méthode GTD</p>
             </div>
 
-            <!-- Formulaire -->
-            <div class="login-form">
-                <div class="login-field">
-                    <label class="login-label">Identifiant</label>
-                    <input @bind="loginUsername" type="text" class="login-input" placeholder="Votre nom d'utilisateur" />
-                </div>
-
-                <div class="login-field">
-                    <label class="login-label">Mot de passe</label>
-                    <input @bind="loginPassword" type="password" class="login-input" placeholder="••••••••" @onkeyup="HandleLoginKeyUp" />
-                </div>
-
-                @if (loginError)
-                {
-                    <div class="login-error">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        <span>Identifiants incorrects. Veuillez réessayer.</span>
-                    </div>
-                }
-
-                <button @onclick="LoginAsync" class="login-btn">
-                    Se connecter
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </button>
-
-                <div class="login-divider">OU</div>
-
+            <!-- Connexion simplifiée -->
+            <div class="login-form" style="display: flex; flex-direction: column; align-items: center; gap: 2rem; padding: 1rem 0;">
+                <p style="text-align: center; color: #e2e8f0; font-size: 1.1rem; line-height: 1.6; margin: 0; font-weight: 500;">
+                    Essayer sans compte avec votre compte Google
+                </p>
+                
                 <GoogleLoginButton />
+                
+                <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; opacity: 0.8; margin: 0;">
+                    Accès instantané à votre espace personnel
+                </p>
             </div>
-
-            <!-- Encart démo -->
-            <button class="demo-card" @onclick="FillDemo" title="Cliquer pour pré-remplir les champs">
-                <div class="demo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-                </div>
-                <div class="demo-text">
-                    <span class="demo-label">Essayer sans compte</span>
-                    <span class="demo-creds">Identifiant&nbsp;<strong>demo</strong> · Mot de passe&nbsp;<strong>demo</strong></span>
-                </div>
-                <div class="demo-arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-            </button>
 
         </div>
     </div>
@@ -105,9 +74,6 @@ else
 @code {
     private bool isReady;
     private bool isSidebarOpen;
-    private string loginUsername = "";
-    private string loginPassword = "";
-    private bool loginError = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -142,44 +108,12 @@ else
         AuthService.OnAuthStateChanged -= HandleAuthStateChanged;
     }
 
-    private async Task LoginAsync()
-    {
-        loginError = false;
-        var success = await AuthService.LoginAsync(loginUsername, loginPassword);
-        if (!success)
-        {
-            loginError = true;
-        }
-        else
-        {
-            try
-            {
-                await LoadReviewStateAsync();
-                await NotificationService.RequestPermissionAsync();
-                await NotificationService.CheckAndNotifyAsync();
-            }
-            catch { /* Fail silently */ }
-        }
-    }
 
-    private void FillDemo()
-    {
-        loginUsername = "demo";
-        loginPassword = "demo";
-        loginError = false;
-    }
-
-    private async Task HandleLoginKeyUp(KeyboardEventArgs e)
-    {
-        if (e.Key == "Enter") await LoginAsync();
-    }
 
     private async Task LogoutAsync()
     {
         await AuthService.LogoutAsync();
         ReviewState.ResetReview();
-        loginUsername = "";
-        loginPassword = "";
     }
 
     private async Task LoadReviewStateAsync()
