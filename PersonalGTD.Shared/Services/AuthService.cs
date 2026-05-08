@@ -5,7 +5,6 @@ using System.Text.Json;
 using System;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
-using Microsoft.Maui.Storage;
 
 namespace PersonalGTD.Shared.Services;
 
@@ -41,9 +40,9 @@ public class AuthService
                 var session = _supabase.Auth.CurrentSession;
                 if (session != null)
                 {
-                    // Persister la session Supabase via Preferences pour accès natif
+                    // Persister la session Supabase via localStorage
                     var sessionJson = JsonSerializer.Serialize(session);
-                    Preferences.Default.Set("supabase_session", sessionJson);
+                    try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson); } catch { }
                     
                     var user = session.User;
                     if (user != null)
@@ -52,7 +51,7 @@ public class AuthService
                         if (username != null)
                         {
                             CurrentUser = username;
-                            Preferences.Default.Set("gtd_user", username);
+                            try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch { }
                         }
                     }
                 }
@@ -60,12 +59,12 @@ public class AuthService
             }
             else if (state == Supabase.Gotrue.Constants.AuthState.SignedOut)
             {
-                // Uniquement si on est vraiment déconnecté (pas lors d'un rafraîchissement raté temporaire)
+                // Uniquement si on est vraiment déconnecté
                 if (_supabase.Auth.CurrentSession == null)
                 {
                     CurrentUser = null;
-                    Preferences.Default.Remove("supabase_session");
-                    Preferences.Default.Remove("gtd_user");
+                    try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session"); } catch { }
+                    try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user"); } catch { }
                     NotifyAuthenticationStateChanged();
                 }
             }
@@ -93,15 +92,15 @@ public class AuthService
                 await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_auth_token");
             }
 
-            // 3. Charger la session persistée classique via Preferences
-            var savedUser = Preferences.Default.Get<string?>("gtd_user", null);
+            // 3. Charger la session persistée classique via localStorage
+            var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
             if (!string.IsNullOrEmpty(savedUser))
             {
                 CurrentUser = savedUser;
                 NotifyAuthenticationStateChanged();
             }
 
-            var savedSessionJson = Preferences.Default.Get<string?>("supabase_session", null);
+            var savedSessionJson = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_session");
             if (!string.IsNullOrEmpty(savedSessionJson))
             {
                 try 
@@ -126,12 +125,12 @@ public class AuthService
                 if (!string.IsNullOrEmpty(username))
                 {
                     CurrentUser = username;
-                    Preferences.Default.Set("gtd_user", username);
+                    try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch { }
                     
                     if (currentSession != null)
                     {
                         var sessionJson = JsonSerializer.Serialize(currentSession);
-                        Preferences.Default.Set("supabase_session", sessionJson);
+                        try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson); } catch { }
                     }
                 }
             }

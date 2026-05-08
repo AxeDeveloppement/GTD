@@ -1,0 +1,375 @@
+{
+  "mainAssemblyName": "PersonalGTD.Web",
+  "resources": {
+    "hash": "sha256-WBzRu9dnxRoS+VV1g3r58KEkZQQVrEySW66mva2JvBM=",
+    "fingerprinting": {
+      "Microsoft.AspNetCore.Components.i4ui8tdogl.wasm": "Microsoft.AspNetCore.Components.wasm",
+      "Microsoft.AspNetCore.Components.Web.4t03et3ty2.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
+      "Microsoft.AspNetCore.Components.WebAssembly.4r0p4f7kio.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
+      "Microsoft.Extensions.Configuration.ywz9ik7vb2.wasm": "Microsoft.Extensions.Configuration.wasm",
+      "Microsoft.Extensions.Configuration.Abstractions.5sh1scpn1n.wasm": "Microsoft.Extensions.Configuration.Abstractions.wasm",
+      "Microsoft.Extensions.Configuration.Json.hui4iqxkm7.wasm": "Microsoft.Extensions.Configuration.Json.wasm",
+      "Microsoft.Extensions.DependencyInjection.brpts7qgsj.wasm": "Microsoft.Extensions.DependencyInjection.wasm",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.2kpbyokilj.wasm": "Microsoft.Extensions.DependencyInjection.Abstractions.wasm",
+      "Microsoft.Extensions.Logging.06xa641acn.wasm": "Microsoft.Extensions.Logging.wasm",
+      "Microsoft.Extensions.Logging.Abstractions.9yps872v13.wasm": "Microsoft.Extensions.Logging.Abstractions.wasm",
+      "Microsoft.Extensions.Options.fjz209emjd.wasm": "Microsoft.Extensions.Options.wasm",
+      "Microsoft.Extensions.Primitives.4gqqhw3g60.wasm": "Microsoft.Extensions.Primitives.wasm",
+      "Microsoft.IdentityModel.Abstractions.skdplt8msc.wasm": "Microsoft.IdentityModel.Abstractions.wasm",
+      "Microsoft.IdentityModel.JsonWebTokens.do6a07o59u.wasm": "Microsoft.IdentityModel.JsonWebTokens.wasm",
+      "Microsoft.IdentityModel.Logging.8ddje1n6px.wasm": "Microsoft.IdentityModel.Logging.wasm",
+      "Microsoft.IdentityModel.Tokens.tgxjdpx9cv.wasm": "Microsoft.IdentityModel.Tokens.wasm",
+      "Microsoft.IO.RecyclableMemoryStream.yxkatvvqoa.wasm": "Microsoft.IO.RecyclableMemoryStream.wasm",
+      "Microsoft.JSInterop.u4dkki87wb.wasm": "Microsoft.JSInterop.wasm",
+      "Microsoft.JSInterop.WebAssembly.dnug9e66zg.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
+      "Microsoft.Maui.Controls.3cwdv2w38v.wasm": "Microsoft.Maui.Controls.wasm",
+      "Microsoft.Maui.Controls.Xaml.e5d3jhwxwr.wasm": "Microsoft.Maui.Controls.Xaml.wasm",
+      "Microsoft.Maui.u6l0fo4pb7.wasm": "Microsoft.Maui.wasm",
+      "Microsoft.Maui.Essentials.bkv9p8d1mv.wasm": "Microsoft.Maui.Essentials.wasm",
+      "Microsoft.Maui.Graphics.ot3scd3dp6.wasm": "Microsoft.Maui.Graphics.wasm",
+      "MimeMapping.gmxjevqz69.wasm": "MimeMapping.wasm",
+      "Newtonsoft.Json.qkbufwhni2.wasm": "Newtonsoft.Json.wasm",
+      "Supabase.qyt6qogdl5.wasm": "Supabase.wasm",
+      "Supabase.Core.zcuz262cdn.wasm": "Supabase.Core.wasm",
+      "Supabase.Functions.das9utiwul.wasm": "Supabase.Functions.wasm",
+      "Supabase.Gotrue.kcc8v0x814.wasm": "Supabase.Gotrue.wasm",
+      "Supabase.Postgrest.srqgtlz67a.wasm": "Supabase.Postgrest.wasm",
+      "Supabase.Realtime.r7rezo8ln8.wasm": "Supabase.Realtime.wasm",
+      "Supabase.Storage.rox9ole9mr.wasm": "Supabase.Storage.wasm",
+      "System.IdentityModel.Tokens.Jwt.8p36zpd3sm.wasm": "System.IdentityModel.Tokens.Jwt.wasm",
+      "System.Reactive.8ohwbquoo2.wasm": "System.Reactive.wasm",
+      "Websocket.Client.sntjl98ana.wasm": "Websocket.Client.wasm",
+      "Microsoft.CSharp.eqffwtcewj.wasm": "Microsoft.CSharp.wasm",
+      "System.Collections.Concurrent.qmp00er2xi.wasm": "System.Collections.Concurrent.wasm",
+      "System.Collections.Immutable.8zj8oamidu.wasm": "System.Collections.Immutable.wasm",
+      "System.Collections.NonGeneric.kadx0gzqeo.wasm": "System.Collections.NonGeneric.wasm",
+      "System.Collections.Specialized.wytw0r3c9w.wasm": "System.Collections.Specialized.wasm",
+      "System.Collections.19mbkdlsf9.wasm": "System.Collections.wasm",
+      "System.ComponentModel.Primitives.z5i0jf0hiu.wasm": "System.ComponentModel.Primitives.wasm",
+      "System.ComponentModel.TypeConverter.zrzaokncch.wasm": "System.ComponentModel.TypeConverter.wasm",
+      "System.ComponentModel.9jbfhdd9o4.wasm": "System.ComponentModel.wasm",
+      "System.Console.v00mzs6lqv.wasm": "System.Console.wasm",
+      "System.Data.Common.mn6scv76ms.wasm": "System.Data.Common.wasm",
+      "System.Diagnostics.DiagnosticSource.p9xljpzvxh.wasm": "System.Diagnostics.DiagnosticSource.wasm",
+      "System.Diagnostics.TraceSource.kjo1z9jpg3.wasm": "System.Diagnostics.TraceSource.wasm",
+      "System.Diagnostics.Tracing.8c7oh1osuc.wasm": "System.Diagnostics.Tracing.wasm",
+      "System.Drawing.Primitives.um68xmouvq.wasm": "System.Drawing.Primitives.wasm",
+      "System.Drawing.5ziebqy3j0.wasm": "System.Drawing.wasm",
+      "System.Formats.Asn1.xf49xcc77t.wasm": "System.Formats.Asn1.wasm",
+      "System.IO.Compression.muypmfus97.wasm": "System.IO.Compression.wasm",
+      "System.IO.Pipelines.hqvxmp1tnr.wasm": "System.IO.Pipelines.wasm",
+      "System.Linq.Expressions.mrunfj7bg5.wasm": "System.Linq.Expressions.wasm",
+      "System.Linq.646gf9qpcb.wasm": "System.Linq.wasm",
+      "System.Memory.pf5a3apgyk.wasm": "System.Memory.wasm",
+      "System.Net.Http.mx9p43vs6b.wasm": "System.Net.Http.wasm",
+      "System.Net.NetworkInformation.gqkc298rf3.wasm": "System.Net.NetworkInformation.wasm",
+      "System.Net.Ping.oewtlayn5l.wasm": "System.Net.Ping.wasm",
+      "System.Net.Primitives.yo1gwezwab.wasm": "System.Net.Primitives.wasm",
+      "System.Net.WebSockets.Client.cyi3anclp0.wasm": "System.Net.WebSockets.Client.wasm",
+      "System.Net.WebSockets.tcteq9tbw7.wasm": "System.Net.WebSockets.wasm",
+      "System.Numerics.Vectors.pzhfuox7pp.wasm": "System.Numerics.Vectors.wasm",
+      "System.ObjectModel.1ruot79jq7.wasm": "System.ObjectModel.wasm",
+      "System.Private.Uri.3vruoixnd4.wasm": "System.Private.Uri.wasm",
+      "System.Private.Xml.Linq.m59yedm2n0.wasm": "System.Private.Xml.Linq.wasm",
+      "System.Private.Xml.q795easah6.wasm": "System.Private.Xml.wasm",
+      "System.Reflection.Emit.ILGeneration.7u6bfk7h55.wasm": "System.Reflection.Emit.ILGeneration.wasm",
+      "System.Reflection.Emit.Lightweight.3tsgrw7c4g.wasm": "System.Reflection.Emit.Lightweight.wasm",
+      "System.Reflection.Primitives.mqh5dcggcu.wasm": "System.Reflection.Primitives.wasm",
+      "System.Runtime.InteropServices.JavaScript.7u81f8olp1.wasm": "System.Runtime.InteropServices.JavaScript.wasm",
+      "System.Runtime.InteropServices.x4oidzv9xc.wasm": "System.Runtime.InteropServices.wasm",
+      "System.Runtime.Loader.sox3tj0vj5.wasm": "System.Runtime.Loader.wasm",
+      "System.Runtime.Numerics.gf6whhbvw0.wasm": "System.Runtime.Numerics.wasm",
+      "System.Runtime.Serialization.Formatters.xom0qwumxc.wasm": "System.Runtime.Serialization.Formatters.wasm",
+      "System.Runtime.Serialization.Primitives.lqowotcine.wasm": "System.Runtime.Serialization.Primitives.wasm",
+      "System.Runtime.eqwjlwr4b8.wasm": "System.Runtime.wasm",
+      "System.Security.Claims.wlbfry6grz.wasm": "System.Security.Claims.wasm",
+      "System.Security.Cryptography.3bujsaestr.wasm": "System.Security.Cryptography.wasm",
+      "System.Text.Encoding.Extensions.r3tvss3oy9.wasm": "System.Text.Encoding.Extensions.wasm",
+      "System.Text.Encodings.Web.o9icumg7r0.wasm": "System.Text.Encodings.Web.wasm",
+      "System.Text.Json.uy013q7f7v.wasm": "System.Text.Json.wasm",
+      "System.Text.RegularExpressions.diiobv0bpe.wasm": "System.Text.RegularExpressions.wasm",
+      "System.Threading.Channels.3l57jczmpr.wasm": "System.Threading.Channels.wasm",
+      "System.Threading.Thread.u13k1px4e9.wasm": "System.Threading.Thread.wasm",
+      "System.Threading.g1x3wsghd7.wasm": "System.Threading.wasm",
+      "System.Web.HttpUtility.rcooxpkhlz.wasm": "System.Web.HttpUtility.wasm",
+      "System.Xml.Linq.62mgoxb9g2.wasm": "System.Xml.Linq.wasm",
+      "System.Xml.ReaderWriter.gz32ys99sf.wasm": "System.Xml.ReaderWriter.wasm",
+      "System.Xml.XDocument.rq3uoqeade.wasm": "System.Xml.XDocument.wasm",
+      "System.t4d4s3f398.wasm": "System.wasm",
+      "netstandard.r4qhdad01r.wasm": "netstandard.wasm",
+      "System.Private.CoreLib.b2mr4ki8c1.wasm": "System.Private.CoreLib.wasm",
+      "PersonalGTD.Shared.50lh5xnp55.wasm": "PersonalGTD.Shared.wasm",
+      "PersonalGTD.Web.jiow7u5f0a.wasm": "PersonalGTD.Web.wasm",
+      "Microsoft.Maui.Controls.resources.ogkysbqmfv.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.o8ibky10uq.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.8csa4z76uu.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.e2pgybmybw.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.c0heg8h9m9.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.pu8rw7vkzy.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.44zn54mn2h.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.dti0l2aq98.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.9weoin3r7c.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.w2mymtoasw.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.7rx31jl6bd.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.mbp5hqfmkw.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.d6oclhznfk.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.zzu2x14m5h.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.dnfmvbm20t.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.jy9bunt70m.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.2tdjzmd7jh.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.heu91kgn3i.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.ldfxfquj65.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.7z7l0t47io.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.33yimvhg41.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.39yamyzkz3.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.7zdsvqydw3.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.wdkbvegejk.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.45ivlfm8md.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.kdzhplsoz1.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.0erlpldn95.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.o0po8gt2bx.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.cj61iknpeq.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.1ilhwdkavc.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.7x41d3hx6n.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.w7xj2384zd.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.x0zuq6kyb2.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "Microsoft.Maui.Controls.resources.0jmjmegi8w.wasm": "Microsoft.Maui.Controls.resources.wasm",
+      "dotnet.js": "dotnet.js",
+      "dotnet.native.noby4tlk4d.js": "dotnet.native.js",
+      "dotnet.native.qe75a9vfqn.wasm": "dotnet.native.wasm",
+      "dotnet.runtime.9o45ky8ejm.js": "dotnet.runtime.js",
+      "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
+      "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
+      "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat"
+    },
+    "jsModuleNative": {
+      "dotnet.native.noby4tlk4d.js": "sha256-p9eEzXhQIsI0a5bBJhfzW15iRafgplTxT8XrO5FiH9o="
+    },
+    "jsModuleRuntime": {
+      "dotnet.runtime.9o45ky8ejm.js": "sha256-6QIZYgG+ftoT9N1H1EEJeXIhD/qbKqEcnmawDskiwdI="
+    },
+    "wasmNative": {
+      "dotnet.native.qe75a9vfqn.wasm": "sha256-Po2dalLvTpf5jAS+jt0TzuBYybYiL1F6qAacZJ8UAdo="
+    },
+    "icu": {
+      "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
+      "icudt_EFIGS.tptq2av103.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
+      "icudt_no_CJK.lfu7j35m59.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
+    },
+    "coreAssembly": {
+      "System.Runtime.InteropServices.JavaScript.7u81f8olp1.wasm": "sha256-/zEYK1VQFpcGHE49otyHuuLSnHHmI8k4PJBBu8zEx3g=",
+      "System.Private.CoreLib.b2mr4ki8c1.wasm": "sha256-jeN/rTeTHYrP5l0wU7I/csRDe6d0Ktblz/zsPOTWZTw="
+    },
+    "assembly": {
+      "Microsoft.AspNetCore.Components.i4ui8tdogl.wasm": "sha256-AtU80vl1QCcAqMddulFZh9UC3bTkWr315/VUIhxl3uY=",
+      "Microsoft.AspNetCore.Components.Web.4t03et3ty2.wasm": "sha256-KAdOJRwYaWTc76ux2bLWk5sQALdPKkCqkp1fysnmaCY=",
+      "Microsoft.AspNetCore.Components.WebAssembly.4r0p4f7kio.wasm": "sha256-EGDgS7Lc+rFS7Lde+8rjnFDFznUCgkdlY8VgqR5qP38=",
+      "Microsoft.Extensions.Configuration.ywz9ik7vb2.wasm": "sha256-EnA/XUHW4ZZOvesGNEkXh8l0IZZH7sGxlCOW1hJLubM=",
+      "Microsoft.Extensions.Configuration.Abstractions.5sh1scpn1n.wasm": "sha256-u1MkhHcpGGDl0a6AdvJHnsNiTBancIzXY9CURD2WRP4=",
+      "Microsoft.Extensions.Configuration.Json.hui4iqxkm7.wasm": "sha256-aUL1p8N7BVpff4zCDZ0GloDhldubhgfQ+pTN+yP+NL4=",
+      "Microsoft.Extensions.DependencyInjection.brpts7qgsj.wasm": "sha256-WSDvlvf9pY3w10ATHfM0QNp/tZcLxyMgE4WG659uY8c=",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.2kpbyokilj.wasm": "sha256-3ifib0M9n7+Zcm3aNKNOQnypADSMsSrQYqzvTTMeQuE=",
+      "Microsoft.Extensions.Logging.06xa641acn.wasm": "sha256-mFMeFv/FFi31QtXFa3yaXnNv0r4sd0Oq1OaorQbNXWE=",
+      "Microsoft.Extensions.Logging.Abstractions.9yps872v13.wasm": "sha256-nyk/BiCbvPzCY7pHwU7vzD8ffdH8egTZ5lwwCc0McZk=",
+      "Microsoft.Extensions.Options.fjz209emjd.wasm": "sha256-a0RlHdLt8kcq2nENJKPOSfnSjDZPU3vL6dVP96ngbCU=",
+      "Microsoft.Extensions.Primitives.4gqqhw3g60.wasm": "sha256-nJbd4z33/d+vMBnqd/+rQy+mYKW96JFKBDDXkQO+FpQ=",
+      "Microsoft.IdentityModel.Abstractions.skdplt8msc.wasm": "sha256-BCbRMZLUjKW94HpH+moydrVpZBEbczR2fdGRkNQVqoo=",
+      "Microsoft.IdentityModel.JsonWebTokens.do6a07o59u.wasm": "sha256-s4PcUGVsWd3RawK+erm+TTtlaW7lKCGUikybScse+Fs=",
+      "Microsoft.IdentityModel.Logging.8ddje1n6px.wasm": "sha256-bCz8CCCm5uY5GjtTU0LKnPC2jeodISJaYOMn/IOwj2M=",
+      "Microsoft.IdentityModel.Tokens.tgxjdpx9cv.wasm": "sha256-007xuDnm4v+hMpJrxaWzOijbGgrD3RuurnF/l4ibZEQ=",
+      "Microsoft.IO.RecyclableMemoryStream.yxkatvvqoa.wasm": "sha256-hhE+p8W36Xt5rxWVHZKZwIPWrKuVoVC5qqRxOCvdPtY=",
+      "Microsoft.JSInterop.u4dkki87wb.wasm": "sha256-giS59VaP1TfnN2ctcFayaJ0/LSS18D0AF8xmOsRc6no=",
+      "Microsoft.JSInterop.WebAssembly.dnug9e66zg.wasm": "sha256-1391UuW9RnaY9v+RXWFFkaN+3zIkFWK6F/i2rkesTxo=",
+      "Microsoft.Maui.Controls.3cwdv2w38v.wasm": "sha256-DZSlrW6rO8HHl9FAhVWYE9Hn+0TnXgLub61sR83hWVs=",
+      "Microsoft.Maui.Controls.Xaml.e5d3jhwxwr.wasm": "sha256-UnwSsGfPQ851vzAtrOO0lGqJRlusQVmJEfE8innprtw=",
+      "Microsoft.Maui.u6l0fo4pb7.wasm": "sha256-ukU46nJgCOCvUIg30+NZn0Iy/ABp+Rt03kI7d/wW07Y=",
+      "Microsoft.Maui.Essentials.bkv9p8d1mv.wasm": "sha256-C/Ggk+ZokKpqQx4KwueWNlZXGsjKyKGCYE9kpbsTtSU=",
+      "Microsoft.Maui.Graphics.ot3scd3dp6.wasm": "sha256-XFIZddLprxBqybhIBpWPMHmTOgegiz1yLFd70zFUUvs=",
+      "MimeMapping.gmxjevqz69.wasm": "sha256-CMXcRIg84k7AstbhcD8rbnPKy2wa/gmsBD8gBgZP1c8=",
+      "Newtonsoft.Json.qkbufwhni2.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
+      "Supabase.qyt6qogdl5.wasm": "sha256-zig+I7dVOmC5X90UX+XkfblaDBDqC28AFjl2khOCN/s=",
+      "Supabase.Core.zcuz262cdn.wasm": "sha256-jUEh1mM6mkGdyQrEwowAbpQ8R148PZIAUIOXn0mrgIA=",
+      "Supabase.Functions.das9utiwul.wasm": "sha256-i3baKTpUA4voBHgpG1KCEXhOQom7BsRz3N4FCywsZ6k=",
+      "Supabase.Gotrue.kcc8v0x814.wasm": "sha256-fIDLwe2YAl/vphQoUtljCM5aRD5nbL3EXYlszJRLyfw=",
+      "Supabase.Postgrest.srqgtlz67a.wasm": "sha256-iEw2t5Y/9JgCi1jKfTi45WZVEtsxO0QUCTs/nwNz5aE=",
+      "Supabase.Realtime.r7rezo8ln8.wasm": "sha256-uVv6E6kYwaHrayuVaV9LCt6rkkyLzb8yruwLcdoZP3o=",
+      "Supabase.Storage.rox9ole9mr.wasm": "sha256-y76yu8B80Dx0eKBpLW7a6YC2em2J/O6ww8+m80LzhXE=",
+      "System.IdentityModel.Tokens.Jwt.8p36zpd3sm.wasm": "sha256-PO+x96C/PkZ0SBbU+a9mIaUKvAK79n200oqZ/t+TxrE=",
+      "System.Reactive.8ohwbquoo2.wasm": "sha256-iGvQ5oG946iQ1mM4lE4xCsazH1JSk1YIsBnh62uRDSw=",
+      "Websocket.Client.sntjl98ana.wasm": "sha256-6BUeDh+wN+tE97n/xZ5FpCYyaVYitXH44JLzRcssrz8=",
+      "Microsoft.CSharp.eqffwtcewj.wasm": "sha256-mg70eP+qkGbpeDrXxYEl9Y1edBaHEHxjgff58xis9/A=",
+      "System.Collections.Concurrent.qmp00er2xi.wasm": "sha256-Plb+vVd5sejqqiyDX38V6egt5VJXMnqvNH906GwdBIQ=",
+      "System.Collections.Immutable.8zj8oamidu.wasm": "sha256-JHfo2UNF2D408a8t/5C7amovzkKvEVzS1e2HzFT8Gfg=",
+      "System.Collections.NonGeneric.kadx0gzqeo.wasm": "sha256-dE7eoEPcTaao/RR+NXDAPKMmFZuPhjRCyw9PFKbXV8k=",
+      "System.Collections.Specialized.wytw0r3c9w.wasm": "sha256-uNvH+ifeOSpZftQwVZfGw7JrqQxunhCGHCIxqQZO9BE=",
+      "System.Collections.19mbkdlsf9.wasm": "sha256-m4L+5oVHWkLXpZfLnr10uhongfmDndnJJrPpJTmIwzg=",
+      "System.ComponentModel.Primitives.z5i0jf0hiu.wasm": "sha256-CdUc3nx4tbSb+xfZIkkiOiReYWWoBjnw6+EYXeQ24Fs=",
+      "System.ComponentModel.TypeConverter.zrzaokncch.wasm": "sha256-nyuZjhyKj2tMjx1ZevmEn/gOVoNmJu6vcr6CZF0lk5c=",
+      "System.ComponentModel.9jbfhdd9o4.wasm": "sha256-2wJbBJ+uQvKsQbS5UUAvAtDtJr8SqMmWDAw+CsAPw98=",
+      "System.Console.v00mzs6lqv.wasm": "sha256-nzw2vSQmmOoqJ9STLB70aOQ5/Z/1gdSSARM1VVO3vMU=",
+      "System.Data.Common.mn6scv76ms.wasm": "sha256-smj2zn8+B3oUbi56fQRHt6MhsUogf06WSUYn6EEhHxQ=",
+      "System.Diagnostics.DiagnosticSource.p9xljpzvxh.wasm": "sha256-rYLeq5mRwGIQWJXArORCNoFainIbw5/LONMj8+lk5TM=",
+      "System.Diagnostics.TraceSource.kjo1z9jpg3.wasm": "sha256-gJbPUfWmDdHwCUvgqsX4zWm2dkoAIyyRhxI/L9Na2jk=",
+      "System.Diagnostics.Tracing.8c7oh1osuc.wasm": "sha256-KBA2DfOPQyhzDoYlEAHY3WShxhPP4qfevjNrtrQBeOA=",
+      "System.Drawing.Primitives.um68xmouvq.wasm": "sha256-lqyZ72qhFrUryPd96z26GGtM3p3uH89cwmGxHKrPKbE=",
+      "System.Drawing.5ziebqy3j0.wasm": "sha256-bzXJoRVcRnyoxOCSMreix72mWvcA5CAA0Cl7Rd89ruM=",
+      "System.Formats.Asn1.xf49xcc77t.wasm": "sha256-Q5CYslH8tTLeiFqMoUNx2VwL3gFRNXlwEiUGzx3PnlU=",
+      "System.IO.Compression.muypmfus97.wasm": "sha256-rs5dsiA5wSNoYitXUB/oENlcT9sev47s2dA7iRgBW6A=",
+      "System.IO.Pipelines.hqvxmp1tnr.wasm": "sha256-F7eq3vfkNdyf7BI0RJMCuDGtdhNgu4qn1GGWK5FvVz0=",
+      "System.Linq.Expressions.mrunfj7bg5.wasm": "sha256-fjlaKb24C8XdZzs+i4CLiMqmCvX2PIF6BglEH47/K70=",
+      "System.Linq.646gf9qpcb.wasm": "sha256-CmrAwxXfxxTNEutPYWyVWr9Ft9UDFJu3L5BvRHvDMEg=",
+      "System.Memory.pf5a3apgyk.wasm": "sha256-BRU9hQ5yn+8XalZEseaFmTagJDNGMApQfGhCYlcdyLU=",
+      "System.Net.Http.mx9p43vs6b.wasm": "sha256-il7s5kNvJ1QrvjkP6VY3sXV2+1qwSILEN0bW4JappAw=",
+      "System.Net.NetworkInformation.gqkc298rf3.wasm": "sha256-CMbvM2xT/Jeq64rsCRcV1vQEhK6xRC+1672W0+UcPFs=",
+      "System.Net.Ping.oewtlayn5l.wasm": "sha256-UMba4K8/+i9fCA3mdrwXx7KrTCSZcTnolMOhtV6pumQ=",
+      "System.Net.Primitives.yo1gwezwab.wasm": "sha256-krRRXjf8VZFS3+ZnHFb6UwyKbDpH5A/syT/naX2txOU=",
+      "System.Net.WebSockets.Client.cyi3anclp0.wasm": "sha256-THdPZnbKuXH/PRMLbpjq2xh5hsGNINBFoeuSgpetCvc=",
+      "System.Net.WebSockets.tcteq9tbw7.wasm": "sha256-HToC1YgoatBH4LeWmSRVboXXgGGSxhxtGae1hYdVAb8=",
+      "System.Numerics.Vectors.pzhfuox7pp.wasm": "sha256-K+ly4r0xl2v9qN7IPV8vzAuiGJZIH8LEPF8vm6aAMZQ=",
+      "System.ObjectModel.1ruot79jq7.wasm": "sha256-rbrPGWGmfugfRO64B/s3yWgR2z1UpWK2yshtM+pUHTE=",
+      "System.Private.Uri.3vruoixnd4.wasm": "sha256-caeNFvWaM36JYvlK9YaOyr8xaYemNEH415WFc0xhtMs=",
+      "System.Private.Xml.Linq.m59yedm2n0.wasm": "sha256-2mQ4EjbQclkIgoELGjePtzOqXN1zPJQO6aSX95bt+gc=",
+      "System.Private.Xml.q795easah6.wasm": "sha256-GsytnJa6tTbJf3q1oCqSalygnDYFtHgV9DG7EgdFF6M=",
+      "System.Reflection.Emit.ILGeneration.7u6bfk7h55.wasm": "sha256-X+bxsI5Y61pv3d/kxPfm7VSTlVFYeprafaMqZylXxBM=",
+      "System.Reflection.Emit.Lightweight.3tsgrw7c4g.wasm": "sha256-1+CsVf/BsARNP6Om55z6e9V3cOkOSi6bZ6m/aRxoAEQ=",
+      "System.Reflection.Primitives.mqh5dcggcu.wasm": "sha256-DsbZXTIkkpkVbx9luOz3EgU80fgg7jpxlhMIMr4HFAE=",
+      "System.Runtime.InteropServices.x4oidzv9xc.wasm": "sha256-sRODQSZ2c3RGYhteRF414ie5pG7yQXNL5Tkar8/F6V4=",
+      "System.Runtime.Loader.sox3tj0vj5.wasm": "sha256-tAkLBIqLjmrwP0JPI1oLTBSGH/yIGWUGWNruIiVkRWI=",
+      "System.Runtime.Numerics.gf6whhbvw0.wasm": "sha256-jO0+gCsv/PZqq6l9GO4M3LvcUgDT4AJBivW+SV2yM0s=",
+      "System.Runtime.Serialization.Formatters.xom0qwumxc.wasm": "sha256-4aydm09WaY1TnJLjwJW2n6T8qDvP+6AHXsP9p/2uRRE=",
+      "System.Runtime.Serialization.Primitives.lqowotcine.wasm": "sha256-w87o1KEfEVCglV6QY4dYOmQr8pzuyE7rnXBJAjNU0Ak=",
+      "System.Runtime.eqwjlwr4b8.wasm": "sha256-dpE32Ow9Mx98sObyPq5grPZUm2IHTtc2zDmeVB3GS2c=",
+      "System.Security.Claims.wlbfry6grz.wasm": "sha256-hAueTImo6zEa1FyfzJ0D8P45QoZPxze/9uxbYdw/BLk=",
+      "System.Security.Cryptography.3bujsaestr.wasm": "sha256-LwRhHyNmWWwqMY6aarwA+RdK1FuC5O86n+EUsHPP80A=",
+      "System.Text.Encoding.Extensions.r3tvss3oy9.wasm": "sha256-F2EnIoFynO9FTiVa0TLwVvbJ9bn+a4MGhRQpzzxOOSs=",
+      "System.Text.Encodings.Web.o9icumg7r0.wasm": "sha256-hGKsNQkCi7LxmMFZBlVS3nUyrIrNkgfuIKnbYv0UDp0=",
+      "System.Text.Json.uy013q7f7v.wasm": "sha256-2onLYDuraP2eOQZ097srboCcMs1WCRuIi1onjQGtFU4=",
+      "System.Text.RegularExpressions.diiobv0bpe.wasm": "sha256-SwVdWGBTabGFI1gyvuITz4uiZeW3uCKXbePCm45TuVo=",
+      "System.Threading.Channels.3l57jczmpr.wasm": "sha256-B2vJHSyMft9f8awWSU4C2G7rIUb5zM2Zjpa1VJRbTJE=",
+      "System.Threading.Thread.u13k1px4e9.wasm": "sha256-cgG+SxCaOelUBvYBj/JRMtTfrFyGlV87/hw1V/LtuEg=",
+      "System.Threading.g1x3wsghd7.wasm": "sha256-/OWiXLth3cm5AWSegG/QYViGTLVo7NxynVq/M/uUTgY=",
+      "System.Web.HttpUtility.rcooxpkhlz.wasm": "sha256-S9ZJlWBBt25AEKtXvn7DE4zdvjU/rSl94NNuHijMAmc=",
+      "System.Xml.Linq.62mgoxb9g2.wasm": "sha256-UgDQgumqZj6p9gp1AxxwuF7FY0ittV25c4qrMW9q7XY=",
+      "System.Xml.ReaderWriter.gz32ys99sf.wasm": "sha256-VF3d0ICpPxqIYaRUDbNSc1e2+RovhjN2NODmCBOH8es=",
+      "System.Xml.XDocument.rq3uoqeade.wasm": "sha256-jXHocYVCS/ThppEaX8pR/Ky4h/AvzicYqHMda1gq83I=",
+      "System.t4d4s3f398.wasm": "sha256-fVP2BxRRKpBA0PmBbKxmO45bXDrAXVn1GthlDclLbeU=",
+      "netstandard.r4qhdad01r.wasm": "sha256-dfw6cIQG8iC4qSw+q6GqxbHQrxDrfnjbvdUifS0ErAg=",
+      "PersonalGTD.Shared.50lh5xnp55.wasm": "sha256-a4K8Yytbhon8LtlovPcEJW4FdJAfguRskKKxe7+k644=",
+      "PersonalGTD.Web.jiow7u5f0a.wasm": "sha256-G/NSEhgXhphvUp2/sWpobqZ1LLnNUQls+kxFNHDz6zU="
+    },
+    "satelliteResources": {
+      "ar": {
+        "Microsoft.Maui.Controls.resources.ogkysbqmfv.wasm": "sha256-GGQHn1owHWQ9iQtPpybrqDVeXNAwCH42ORNwSRi6Vss="
+      },
+      "ca": {
+        "Microsoft.Maui.Controls.resources.o8ibky10uq.wasm": "sha256-6GKIswM47iSLaeHMbZ60QT1PTYuG0wCA3J/BYD7cSDI="
+      },
+      "cs": {
+        "Microsoft.Maui.Controls.resources.8csa4z76uu.wasm": "sha256-CHJ4iso6Xoa4nwjr101DCS+170UEkp/CV0T7zz9lH3U="
+      },
+      "da": {
+        "Microsoft.Maui.Controls.resources.e2pgybmybw.wasm": "sha256-5jCD3rH4UYJtLbneucEe6oVYoYWOcdJBY/dRdUH5atA="
+      },
+      "de": {
+        "Microsoft.Maui.Controls.resources.c0heg8h9m9.wasm": "sha256-ZDI82IStpAT+igtokeYmjaMEhMGu+FUrLmpmD1rw5Vc="
+      },
+      "el": {
+        "Microsoft.Maui.Controls.resources.pu8rw7vkzy.wasm": "sha256-kfEsOVPYyuF7b8fKzdhHRe9MDm9QqTPJ6t/m2lYVBl8="
+      },
+      "es": {
+        "Microsoft.Maui.Controls.resources.44zn54mn2h.wasm": "sha256-fBmbnrq2i+bZd9ZQXzu9Bfbmv2GMWeLv6DtMvtep4tA="
+      },
+      "fi": {
+        "Microsoft.Maui.Controls.resources.dti0l2aq98.wasm": "sha256-vwPuYUO6mkHZTmqzb0J9I1nWVAi61NvJYbtq0bjEnUw="
+      },
+      "fr": {
+        "Microsoft.Maui.Controls.resources.9weoin3r7c.wasm": "sha256-l6C3K19t7frVurp+/CFL8VRVcMRGEZ1Ktpt3WsfKwrM="
+      },
+      "he": {
+        "Microsoft.Maui.Controls.resources.w2mymtoasw.wasm": "sha256-uPHKYwfAbGr/lFikpw3C/fl/OTG/NKuNb8UoDy2Kgwg="
+      },
+      "hi": {
+        "Microsoft.Maui.Controls.resources.7rx31jl6bd.wasm": "sha256-o2pHB1nlonxkTm4YNsDz7AoL2Cdj5+dshv9EOyC0L00="
+      },
+      "hr": {
+        "Microsoft.Maui.Controls.resources.mbp5hqfmkw.wasm": "sha256-jid0Ha2KKuivMSjBkjQRjh1pGNg6L/WALUhrV0c+EpE="
+      },
+      "hu": {
+        "Microsoft.Maui.Controls.resources.d6oclhznfk.wasm": "sha256-m/Fxcc05hr/wgEhLwP1zytuk2G416NXkXEjk5RLVwuo="
+      },
+      "id": {
+        "Microsoft.Maui.Controls.resources.zzu2x14m5h.wasm": "sha256-by6ZZ2EK4csv+otI5MRrF01v/8ZPvrNZR9+9vlBMbS0="
+      },
+      "it": {
+        "Microsoft.Maui.Controls.resources.dnfmvbm20t.wasm": "sha256-uWM7tont2hVaEVxqMy7e6ltv2t7bSblrlRpIl/j9lOo="
+      },
+      "ja": {
+        "Microsoft.Maui.Controls.resources.jy9bunt70m.wasm": "sha256-1c5xp8XqIcKnQCP0A/lmZhis8PS9IHUE59wayl1zzic="
+      },
+      "ko": {
+        "Microsoft.Maui.Controls.resources.2tdjzmd7jh.wasm": "sha256-pne3vXxkI1hgYwtk+D4vf0DHNU4UNQ9GjpNATPg9wdg="
+      },
+      "ms": {
+        "Microsoft.Maui.Controls.resources.heu91kgn3i.wasm": "sha256-18wGaT0bvXK2qkyFQHnxKfIxeB7MI31KtBwfLuYwmWM="
+      },
+      "nb": {
+        "Microsoft.Maui.Controls.resources.ldfxfquj65.wasm": "sha256-53x2DndSiADdXCNi99QbyebAPE/h0AJsP3wzEmL8c7U="
+      },
+      "nl": {
+        "Microsoft.Maui.Controls.resources.7z7l0t47io.wasm": "sha256-XVBqQ6lnK6LaOtcBceoRJmFdgdx0eK3SYI9mH98r6Xo="
+      },
+      "pl": {
+        "Microsoft.Maui.Controls.resources.33yimvhg41.wasm": "sha256-Dz9X/BEIRuU8suFappbaQs219OCy15kMHtrdf8TjK+w="
+      },
+      "pt-BR": {
+        "Microsoft.Maui.Controls.resources.39yamyzkz3.wasm": "sha256-55mQso/ZG/dS8FUiOHKDspYC04HyOdJxMBtMYJV3tzQ="
+      },
+      "pt": {
+        "Microsoft.Maui.Controls.resources.7zdsvqydw3.wasm": "sha256-w7zoKipDygxx9Qu3NBdA4Y8lpF92IrFgPRFEmiJK45o="
+      },
+      "ro": {
+        "Microsoft.Maui.Controls.resources.wdkbvegejk.wasm": "sha256-DM2s1Hks/2X+LRNVQYdIUdJk70TJkj11hGniXccwzWg="
+      },
+      "ru": {
+        "Microsoft.Maui.Controls.resources.45ivlfm8md.wasm": "sha256-aGEoksf4RGzHBxarspDhgrE1egP6FEGTuh82Pu13174="
+      },
+      "sk": {
+        "Microsoft.Maui.Controls.resources.kdzhplsoz1.wasm": "sha256-WLrvJ0n1NyY41BdYopaNOKrotflZL3a7HCD37989kjY="
+      },
+      "sv": {
+        "Microsoft.Maui.Controls.resources.0erlpldn95.wasm": "sha256-6DpoB3aW2/0pLoJLa+ezpiQey/GvIKVsUS7WU3ABKto="
+      },
+      "th": {
+        "Microsoft.Maui.Controls.resources.o0po8gt2bx.wasm": "sha256-qCw5bi1zbX9WNoQ/TplxyW2sf3ZeaLsoefctzELRvMk="
+      },
+      "tr": {
+        "Microsoft.Maui.Controls.resources.cj61iknpeq.wasm": "sha256-WKknZ2FuPZwgl0LvoDCBMEbm2Zg77AZScEAiPcpwA3I="
+      },
+      "uk": {
+        "Microsoft.Maui.Controls.resources.1ilhwdkavc.wasm": "sha256-GbslTeH6DKVJ8jPB7o2AxyrJnXoZcbOmJ6tqHQA5TnU="
+      },
+      "vi": {
+        "Microsoft.Maui.Controls.resources.7x41d3hx6n.wasm": "sha256-1cdppupH7lT3AUsc/HqIwVAvmuFGvRRjPF6K6ou7Oyo="
+      },
+      "zh-HK": {
+        "Microsoft.Maui.Controls.resources.w7xj2384zd.wasm": "sha256-7Nwp1A0FJjEZVh999hqfP14Jja9ehJWvehRrklJoxK8="
+      },
+      "zh-Hans": {
+        "Microsoft.Maui.Controls.resources.x0zuq6kyb2.wasm": "sha256-LwGLSImaNg/2X7pvKWvip7EQllzGBhh8ltJZ1URgerw="
+      },
+      "zh-Hant": {
+        "Microsoft.Maui.Controls.resources.0jmjmegi8w.wasm": "sha256-zEbgwrE6e8NdLVEwnXBk+5MhWN/T7uGphfpeIWwkrh8="
+      }
+    }
+  },
+  "cacheBootResources": true,
+  "debugLevel": 0,
+  "linkerEnabled": true,
+  "appsettings": [
+    "../appsettings.json"
+  ],
+  "globalizationMode": "sharded",
+  "extensions": {
+    "blazor": {}
+  }
+}

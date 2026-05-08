@@ -28,6 +28,8 @@ jobs:
         run: |
           sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" PersonalGTD.Web/wwwroot/appsettings.json
           sed -i "s|SUPABASE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_KEY }}|g" PersonalGTD.Web/wwwroot/appsettings.json
+          sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" PersonalGTD.Web/Program.cs
+          sed -i "s|SUPABASE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_KEY }}|g" PersonalGTD.Web/Program.cs
         working-directory: ${{ github.workspace }}
 
       - name: 🏗️ Publish Blazor WebAssembly
