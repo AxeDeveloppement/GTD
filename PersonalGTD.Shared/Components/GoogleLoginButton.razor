@@ -16,7 +16,8 @@
 @code {
     private async Task SignInWithGoogle()
     {
-        var callbackUrl = NavigationManager.ToAbsoluteUri("auth/callback").ToString();
+        // Sur GitHub Pages, il est préférable de rediriger vers la racine pour éviter les 404 sur les routes virtuelles
+        var callbackUrl = NavigationManager.BaseUri;
         var url = await AuthService.GetGoogleSignInUrl(callbackUrl);
         if (!string.IsNullOrEmpty(url))
         {

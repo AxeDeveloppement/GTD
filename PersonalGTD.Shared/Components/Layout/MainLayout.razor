@@ -111,12 +111,27 @@ else
 
     protected override void OnInitialized()
     {
-        AuthService.OnAuthStateChanged += StateHasChanged;
+        AuthService.OnAuthStateChanged += HandleAuthStateChanged;
+    }
+
+    private void HandleAuthStateChanged()
+    {
+        CheckAuthRedirect();
+        StateHasChanged();
+    }
+
+    private void CheckAuthRedirect()
+    {
+        var uri = NavigationManager.Uri;
+        if (AuthService.CurrentUser != null && (uri.Contains("#access_token") || uri.Contains("access_token=")))
+        {
+            NavigationManager.NavigateTo(NavigationManager.BaseUri, forceLoad: true);
+        }
     }
 
     public void Dispose()
     {
-        AuthService.OnAuthStateChanged -= StateHasChanged;
+        AuthService.OnAuthStateChanged -= HandleAuthStateChanged;
     }
 
     private async Task LoginAsync()

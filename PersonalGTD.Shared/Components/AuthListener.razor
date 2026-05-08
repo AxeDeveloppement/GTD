@@ -17,16 +17,16 @@
 
     private void CheckCurrentSession()
     {
-        // If we are on the login page (or any page where CurrentUser is handled by MainLayout)
-        // and we have a user, ensure we are not stuck on a white page or callback.
         var uri = NavigationManager.Uri;
-        if (AuthService.CurrentUser != null && (uri.Contains("auth/callback") || uri.EndsWith("/")))
+        
+        // Si l'utilisateur est connecté et qu'on est sur une URL de callback ou avec un fragment de token
+        if (AuthService.CurrentUser != null)
         {
-            // If we are already on home but the UI hasn't refreshed or we are on callback,
-            // force a navigation to home to "clean up" the URL.
-            if (uri.Contains("auth/callback") || uri.Contains("#access_token"))
+            if (uri.Contains("auth/callback") || uri.Contains("#access_token") || uri.Contains("access_token="))
             {
-                NavigationManager.NavigateTo("", forceLoad: true);
+                // Rediriger vers la racine pour nettoyer l'URL et éviter les boucles
+                // On utilise forceLoad: true pour être sûr que le client Supabase et Blazor repartent sur une base propre
+                NavigationManager.NavigateTo(NavigationManager.BaseUri, forceLoad: true);
             }
         }
     }
