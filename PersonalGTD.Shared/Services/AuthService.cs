@@ -1,7 +1,6 @@
 using Microsoft.JSInterop;
 using Supabase;
 using Supabase.Gotrue;
-using Supabase.Gotrue.Constants;
 using System.Text.Json;
 using System;
 using System.Threading.Tasks;
@@ -53,7 +52,7 @@ public class AuthService
             }
             OnAuthStateChanged?.Invoke();
         }
-        else if (state == AuthState.SignedOut)
+        else if (state == Supabase.Gotrue.Constants.AuthState.SignedOut)
         {
             CurrentUser = null;
             try 
