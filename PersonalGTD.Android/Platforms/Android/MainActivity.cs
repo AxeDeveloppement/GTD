@@ -33,11 +33,18 @@ public class MainActivity : MauiAppCompatActivity
     {
         try
         {
-            var workRequest = PeriodicWorkRequest.Builder.From<NotificationWorker>(TimeSpan.FromHours(1)).Build();
+            var constraints = new Constraints.Builder()
+                .SetRequiredNetworkType(NetworkType.Connected)
+                .Build();
+
+            var workRequest = PeriodicWorkRequest.Builder.From<NotificationWorker>(TimeSpan.FromHours(1))
+                .SetConstraints(constraints)
+                .Build();
             WorkManager.GetInstance(this).EnqueueUniquePeriodicWork(
                 "GTDNotificationWork", 
-                ExistingPeriodicWorkPolicy.Keep, 
+                ExistingPeriodicWorkPolicy.Update, 
                 workRequest);
+            global::Android.Util.Log.Info("MainActivity", "Notification worker scheduled/updated successfully (1h period).");
         }
         catch (Exception ex)
         {

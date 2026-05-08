@@ -40,9 +40,10 @@ public class AuthService
                 var session = _supabase.Auth.CurrentSession;
                 if (session != null)
                 {
-                    // Persister la session Supabase via localStorage
+                    // Persister la session Supabase via localStorage et Preferences (pour le worker Android)
                     var sessionJson = JsonSerializer.Serialize(session);
                     try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson); } catch { }
+                    try { Microsoft.Maui.Storage.Preferences.Default.Set("supabase_session", sessionJson); } catch { }
                     
                     var user = session.User;
                     if (user != null)
@@ -52,6 +53,7 @@ public class AuthService
                         {
                             CurrentUser = username;
                             try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch { }
+                            try { Microsoft.Maui.Storage.Preferences.Default.Set("gtd_user", username); } catch { }
                         }
                     }
                 }
@@ -65,6 +67,8 @@ public class AuthService
                     CurrentUser = null;
                     try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session"); } catch { }
                     try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user"); } catch { }
+                    try { Microsoft.Maui.Storage.Preferences.Default.Remove("supabase_session"); } catch { }
+                    try { Microsoft.Maui.Storage.Preferences.Default.Remove("gtd_user"); } catch { }
                     NotifyAuthenticationStateChanged();
                 }
             }
@@ -101,6 +105,12 @@ public class AuthService
             }
 
             var savedSessionJson = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_session");
+            if (string.IsNullOrEmpty(savedSessionJson))
+            {
+                // Fallback sur Preferences (utile sur Android si localStorage est vide au premier boot)
+                savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
+            }
+
             if (!string.IsNullOrEmpty(savedSessionJson))
             {
                 try 
