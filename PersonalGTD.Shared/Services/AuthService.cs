@@ -80,10 +80,18 @@ public class AuthService
         
         try
         {
-            // 1. Initialiser le client Supabase (déclenche le parsing automatique de l'URL hash)
+            // 1. Initialiser le client Supabase
             await _supabase.InitializeAsync();
 
-            // 2. Tenter de charger une session existante du localStorage IMMÉDIATEMENT
+            // 2. Tenter de récupérer un token capturé par l'index.html (Cas GitHub Pages / Redirect)
+            var capturedHash = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_auth_token");
+            if (!string.IsNullOrEmpty(capturedHash))
+            {
+                await ProcessHashFragment(capturedHash);
+                await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_auth_token");
+            }
+
+            // 3. Charger la session persistée classique
             var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
             if (!string.IsNullOrEmpty(savedUser))
             {
@@ -105,25 +113,10 @@ public class AuthService
                 } catch { }
             }
 
-            // 3. Laisser un peu de temps pour que le client traite les jetons de l'URL
-            await Task.Delay(500); 
-
-            // 4. Vérifier la session actuelle
+            // 4. Vérification finale
+            await Task.Delay(300); 
             var currentSession = _supabase.Auth.CurrentSession;
             var user = currentSession?.User ?? _supabase.Auth.CurrentUser;
-
-            // Tentative désespérée : Parser manuellement l'URL si rien n'est trouvé
-            if (user == null)
-            {
-                var currentUrl = await _jsRuntime.InvokeAsync<string>("eval", "window.location.href");
-                if (currentUrl.Contains("access_token="))
-                {
-                    // Supabase devrait l'avoir vu, mais si ce n'est pas le cas, on attend encore un peu
-                    await Task.Delay(500);
-                    currentSession = _supabase.Auth.CurrentSession;
-                    user = currentSession?.User ?? _supabase.Auth.CurrentUser;
-                }
-            }
 
             if (user != null)
             {
@@ -150,6 +143,33 @@ public class AuthService
             IsInitialized = true;
             NotifyAuthenticationStateChanged();
         }
+    }
+
+    private async Task ProcessHashFragment(string hash)
+    {
+        try
+        {
+            // Nettoyer le #
+            var cleanHash = hash.TrimStart('#');
+            var parts = cleanHash.Split('&');
+            string? accessToken = null;
+            string? refreshToken = null;
+
+            foreach (var part in parts)
+            {
+                var kvp = part.Split('=');
+                if (kvp.Length != 2) continue;
+                
+                if (kvp[0] == "access_token") accessToken = kvp[1];
+                if (kvp[0] == "refresh_token") refreshToken = kvp[1];
+            }
+
+            if (!string.IsNullOrEmpty(accessToken))
+            {
+                await _supabase.Auth.SetSession(accessToken, refreshToken ?? "");
+            }
+        }
+        catch { }
     }
 
     public async Task<string?> GetGoogleSignInUrl(string callbackUrl)
