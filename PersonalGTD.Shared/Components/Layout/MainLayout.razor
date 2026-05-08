@@ -116,16 +116,18 @@ else
 
     private void HandleAuthStateChanged()
     {
-        CheckAuthRedirect();
+        _ = CheckAuthRedirect();
         StateHasChanged();
     }
 
-    private void CheckAuthRedirect()
+    private async Task CheckAuthRedirect()
     {
         var uri = NavigationManager.Uri;
         if (AuthService.CurrentUser != null && (uri.Contains("#access_token") || uri.Contains("access_token=")))
         {
-            NavigationManager.NavigateTo(NavigationManager.BaseUri, forceLoad: true);
+            // Nettoyer l'URL via JS sans recharger la page pour ne pas perdre l'état
+            await JS.InvokeVoidAsync("window.history.replaceState", null, "", NavigationManager.BaseUri);
+            StateHasChanged();
         }
     }
 
@@ -199,6 +201,13 @@ else
                 await AuthService.InitializeAsync();
                 
                 await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+                
+                var uri = NavigationManager.Uri;
+                if (uri.Contains("auth/callback") || uri.Contains("#access_token") || uri.Contains("access_token="))
+                {
+                    // Nettoyer l'URL
+                    await JS.InvokeVoidAsync("window.history.replaceState", null, "", NavigationManager.BaseUri);
+                }
                 
                 if (AuthService.CurrentUser != null)
                 {

@@ -17,18 +17,9 @@
 
     private void CheckCurrentSession()
     {
-        var uri = NavigationManager.Uri;
-        
-        // Si l'utilisateur est connecté et qu'on est sur une URL de callback ou avec un fragment de token
-        if (AuthService.CurrentUser != null)
-        {
-            if (uri.Contains("auth/callback") || uri.Contains("#access_token") || uri.Contains("access_token="))
-            {
-                // Rediriger vers la racine pour nettoyer l'URL et éviter les boucles
-                // On utilise forceLoad: true pour être sûr que le client Supabase et Blazor repartent sur une base propre
-                NavigationManager.NavigateTo(NavigationManager.BaseUri, forceLoad: true);
-            }
-        }
+        // La redirection vers la Inbox est gérée naturellement par le rendu conditionnel dans MainLayout.
+        // Si AuthService.CurrentUser != null, MainLayout affiche le corps de l'application (Inbox par défaut).
+        // Le nettoyage de l'URL est également géré dans MainLayout pour éviter les rechargements.
     }
 
     public void Dispose()
