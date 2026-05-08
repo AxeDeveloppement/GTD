@@ -22,6 +22,14 @@ public class NotificationWorker : Worker
         {
             global::Android.Util.Log.Info("NotificationWorker", "Worker started checking for tasks...");
 
+            // Check if user stopped reminding for today
+            var stopDate = Preferences.Default.Get<string>("stop_reminding_date", "");
+            if (stopDate == DateTime.Now.ToString("yyyy-MM-dd"))
+            {
+                global::Android.Util.Log.Info("NotificationWorker", "User requested to stop reminding for today. Skipping notification.");
+                return Result.InvokeSuccess();
+            }
+
             // Récupérer la session persistée via Preferences (partagée entre UI et Service)
             var sessionJson = Preferences.Default.Get<string?>("supabase_session", null);
             if (string.IsNullOrEmpty(sessionJson)) 
@@ -92,13 +100,23 @@ public class NotificationWorker : Worker
             notificationManager.CreateNotificationChannel(channel);
         }
 
+        var remindLaterIntent = new Intent(context, typeof(NotificationActionReceiver));
+        remindLaterIntent.SetAction(NotificationActionReceiver.ActionRemindLater);
+        var remindLaterPending = PendingIntent.GetBroadcast(context, 0, remindLaterIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
+
+        var stopRemindingIntent = new Intent(context, typeof(NotificationActionReceiver));
+        stopRemindingIntent.SetAction(NotificationActionReceiver.ActionStopReminding);
+        var stopRemindingPending = PendingIntent.GetBroadcast(context, 1, stopRemindingIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
+
         var builder = new global::Android.App.Notification.Builder(context, channelId)
             .SetContentTitle("Mon GTD")
             .SetSmallIcon(global::Android.Resource.Mipmap.SymDefAppIcon)
             .SetAutoCancel(true)
             .SetContentIntent(pendingIntent)
             .SetVisibility(NotificationVisibility.Public)
-            .SetPriority((int)NotificationPriority.High);
+            .SetPriority((int)NotificationPriority.High)
+            .AddAction(0, "Rappeler dans 1h", remindLaterPending)
+            .AddAction(0, "Ne plus rappeler", stopRemindingPending);
 
         if (overdueCount > 0 && todayCount > 0)
             builder.SetContentText($"{overdueCount} tâches en retard et {todayCount} aujourd'hui.");
