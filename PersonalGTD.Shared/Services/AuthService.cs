@@ -1,3 +1,4 @@
+using Microsoft.JSInterop;
 using Supabase;
 using Supabase.Gotrue;
 using System.Text.Json;
