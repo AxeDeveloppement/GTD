@@ -25,15 +25,18 @@
 }
 
 .login-card {
-    background: rgba(255, 255, 255, 0.97);
-    border-radius: 24px;
-    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 2rem;
     position: relative;
     z-index: 1;
 }
@@ -61,13 +64,13 @@
 
 .login-title {
     margin: 0;
-    font-size: 2rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
     position: relative;
     display: inline-block;
 }
@@ -80,8 +83,9 @@
 
 .login-subtitle {
     margin: 0;
-    font-size: 0.9rem;
-    color: #64748b;
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
 }
 
 /* Formulaire */
@@ -98,29 +102,30 @@
 }
 
 .login-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #374151;
-    letter-spacing: 0.01em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .login-input {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    color: #0f172a;
-    background: #f8fafc;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.03);
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
 }
 
 .login-input:focus {
-    border-color: #6366f1;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 
 .login-error {
@@ -180,7 +185,24 @@
     content: "";
     flex: 1;
     height: 1px;
-    background: #e2e8f0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.google-oauth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.google-oauth-text {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 /* ── Encart démo ─────────────────────────────────── */
@@ -188,10 +210,10 @@
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
-    border: 1.5px solid #c7d2fe;
-    border-radius: 14px;
-    padding: 0.9rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: left;
@@ -200,10 +222,10 @@
 }
 
 .demo-card:hover {
-    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
-    border-color: #a5b4fc;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 }
 
 .demo-card:active {
@@ -232,20 +254,20 @@
 
 .demo-label {
     font-size: 0.85rem;
-    font-weight: 700;
-    color: #3730a3;
+    font-weight: 600;
+    color: #e2e8f0;
     line-height: 1.2;
 }
 
 .demo-creds {
-    font-size: 0.78rem;
-    color: #6366f1;
+    font-size: 0.8rem;
+    color: #94a3b8;
     line-height: 1.2;
 }
 
 .demo-creds strong {
-    font-weight: 700;
-    color: #4338ca;
+    font-weight: 600;
+    color: #cbd5e1;
 }
 
 .demo-arrow {
