@@ -1,6 +1,7 @@
 using Microsoft.JSInterop;
 using Supabase;
 using Supabase.Gotrue;
+using Supabase.Gotrue.Constants;
 using System.Text.Json;
 using System;
 using System.Threading.Tasks;
@@ -25,9 +26,9 @@ public class AuthService
         _supabase.Auth.AddStateChangedListener(OnSupabaseAuthStateChanged);
     }
 
-    private async void OnSupabaseAuthStateChanged(object sender, AuthState state)
+    private async void OnSupabaseAuthStateChanged(object sender, Supabase.Gotrue.Constants.AuthState state)
     {
-        if (state == AuthState.SignedIn || state == AuthState.TokenRefreshed)
+        if (state == Supabase.Gotrue.Constants.AuthState.SignedIn || state == Supabase.Gotrue.Constants.AuthState.TokenRefreshed)
         {
             var session = _supabase.Auth.CurrentSession;
             if (session != null)
