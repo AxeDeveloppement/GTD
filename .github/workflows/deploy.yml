@@ -44,44 +44,42 @@ jobs:
           name: blazor-pages
           path: release/wwwroot
 
-      - name: 🛠️ Fix base href for GitHub Pages
+      - name: 🛠️ Configure Base Path and 404.html
         run: |
+          # Extraire le nom du dépôt
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          
+          # S'assurer que le base href est correct dans l'index.html publié
           sed -i "s|<base href=\"/\" />|<base href=\"/${REPO_NAME}/\" />|g" release/wwwroot/index.html
-          echo "Base href updated to /${REPO_NAME}/ in release/wwwroot/index.html"
-        working-directory: ${{ github.workspace }}
-
-      - name: 📄 Générer 404.html pour le routage Blazor SPA
-        run: |
-          cat > release/wwwroot/404.html << 'EOF'
+          
+          # Générer le 404.html dynamique pour le routage SPA
+          cat > release/wwwroot/404.html << EOF
           <!DOCTYPE html>
           <html>
           <head>
-            <meta charset="utf-8">
-            <title>Mon organiseur</title>
-            <script>
-              var pathSegmentsToKeep = 1;
-              var l = window.location;
-              l.replace(
-                l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-                l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-                l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-                (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-                l.hash
-              );
-            <\/script>
+              <meta charset="utf-8">
+              <title>Mon organiseur - Redirection...</title>
+              <script type="text/javascript">
+                  var pathSegmentsToKeep = 1;
+                  var l = window.location;
+                  l.replace(
+                      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+                      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+                      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+                      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+                      l.hash
+                  );
+              </script>
           </head>
-          <body></body>
+          <body>Redirection en cours...</body>
           </html>
           EOF
+          
+          echo "Base path set to /${REPO_NAME}/ and 404.html generated."
         working-directory: ${{ github.workspace }}
 
       - name: 🔇 Disable Jekyll processing
         run: touch release/wwwroot/.nojekyll
-        working-directory: ${{ github.workspace }}
-
-      - name: 🔍 Check build output
-        run: ls -R release/wwwroot
         working-directory: ${{ github.workspace }}
 
       - name: 🚀 Deploy to GitHub Pages
