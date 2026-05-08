@@ -16,6 +16,11 @@ public class AuthService
 
     public event Action? OnAuthStateChanged;
 
+    public void NotifyAuthenticationStateChanged()
+    {
+        OnAuthStateChanged?.Invoke();
+    }
+
     public AuthService(IJSRuntime jsRuntime, Supabase.Client supabase)
     {
         _jsRuntime = jsRuntime;
@@ -49,7 +54,7 @@ public class AuthService
                         }
                     }
                 }
-                OnAuthStateChanged?.Invoke();
+                NotifyAuthenticationStateChanged();
             }
             else if (state == Supabase.Gotrue.Constants.AuthState.SignedOut)
             {
@@ -59,7 +64,7 @@ public class AuthService
                     CurrentUser = null;
                     await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session");
                     await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
-                    OnAuthStateChanged?.Invoke();
+                    NotifyAuthenticationStateChanged();
                 }
             }
         }
@@ -75,7 +80,14 @@ public class AuthService
         
         try
         {
-            // 1. Tenter de charger une session existante du localStorage
+            // 1. Tenter de charger une session existante du localStorage IMMÉDIATEMENT
+            var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
+            if (!string.IsNullOrEmpty(savedUser))
+            {
+                CurrentUser = savedUser;
+                NotifyAuthenticationStateChanged();
+            }
+
             var savedSessionJson = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_session");
             if (!string.IsNullOrEmpty(savedSessionJson))
             {
@@ -91,12 +103,10 @@ public class AuthService
             }
 
             // 2. Laisser le temps au client de parser le fragment d'URL (OAuth redirect)
-            await Task.Delay(800); 
+            await Task.Delay(500); 
 
-            // 3. Vérifier la session actuelle (soit restaurée, soit parsée depuis l'URL)
+            // 3. Vérifier la session actuelle
             var currentSession = _supabase.Auth.CurrentSession;
-            
-            // Si toujours nul, on tente de récupérer le user directement
             var user = currentSession?.User ?? _supabase.Auth.CurrentUser;
 
             if (user != null)
@@ -107,21 +117,11 @@ public class AuthService
                     CurrentUser = username;
                     await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
                     
-                    // Si on a un user mais pas de session persistée, on la persiste maintenant
-                    if (currentSession != null && string.IsNullOrEmpty(savedSessionJson))
+                    if (currentSession != null)
                     {
                         var sessionJson = JsonSerializer.Serialize(currentSession);
                         await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson);
                     }
-                }
-            }
-            else 
-            {
-                // Fallback username-only persistence
-                var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
-                if (!string.IsNullOrEmpty(savedUser))
-                {
-                    CurrentUser = savedUser;
                 }
             }
         }
@@ -132,7 +132,7 @@ public class AuthService
         finally
         {
             IsInitialized = true;
-            OnAuthStateChanged?.Invoke();
+            NotifyAuthenticationStateChanged();
         }
     }
 
@@ -171,7 +171,7 @@ public class AuthService
                 {
                     CurrentUser = username;
                     await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
-                    OnAuthStateChanged?.Invoke();
+                    NotifyAuthenticationStateChanged();
                     return true;
                 }
             }
@@ -208,7 +208,7 @@ public class AuthService
                 await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
             }
             catch { }
-            OnAuthStateChanged?.Invoke();
+            NotifyAuthenticationStateChanged();
             return true;
         }
         return false;
@@ -223,6 +223,6 @@ public class AuthService
             await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
         }
         catch { }
-        OnAuthStateChanged?.Invoke();
+        NotifyAuthenticationStateChanged();
     }
 }

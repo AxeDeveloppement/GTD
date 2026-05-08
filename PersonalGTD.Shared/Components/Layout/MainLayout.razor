@@ -109,9 +109,21 @@ else
     private string loginPassword = "";
     private bool loginError = false;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         AuthService.OnAuthStateChanged += HandleAuthStateChanged;
+        
+        try
+        {
+            // Initialisation immédiate dès que possible
+            await AuthService.InitializeAsync();
+            
+            if (AuthService.CurrentUser != null)
+            {
+                await LoadReviewStateAsync();
+            }
+        }
+        catch { }
     }
 
     private void HandleAuthStateChanged()
@@ -197,9 +209,6 @@ else
         {
             try 
             {
-                // Guarantee AuthService initialization first
-                await AuthService.InitializeAsync();
-                
                 await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
                 
                 var uri = NavigationManager.Uri;
@@ -211,7 +220,6 @@ else
                 
                 if (AuthService.CurrentUser != null)
                 {
-                    await LoadReviewStateAsync();
                     await NotificationService.RequestPermissionAsync();
                     await NotificationService.CheckAndNotifyAsync();
                 }
