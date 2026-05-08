@@ -72,7 +72,7 @@
         var success = await AuthService.HandleCallbackAsync();
         if (success)
         {
-            NavigationManager.NavigateTo("/", forceLoad: true);
+            NavigationManager.NavigateTo("", forceLoad: true);
         }
         else
         {
@@ -83,11 +83,11 @@
             
             if (success)
             {
-                NavigationManager.NavigateTo("/", forceLoad: true);
+                NavigationManager.NavigateTo("", forceLoad: true);
             }
             else
             {
-                NavigationManager.NavigateTo("/?error=auth_failed");
+                NavigationManager.NavigateTo("?error=auth_failed");
             }
         }
     }
