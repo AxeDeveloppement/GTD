@@ -2,7 +2,8 @@ using Microsoft.JSInterop;
 using Supabase;
 using Supabase.Gotrue;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using System;
+using System.Threading.Tasks;
 
 namespace PersonalGTD.Shared.Services;
 
