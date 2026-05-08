@@ -12,6 +12,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
       - name: 📥 Checkout
@@ -35,6 +37,12 @@ jobs:
             -o release \
             --nologo
         working-directory: ${{ github.workspace }}
+
+      - name: 📦 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: blazor-pages
+          path: release/wwwroot
 
       - name: 🛠️ Fix base href for GitHub Pages
         run: |
