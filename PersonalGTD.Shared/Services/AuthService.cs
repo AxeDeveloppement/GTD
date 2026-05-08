@@ -27,12 +27,12 @@ public class AuthService
 
     private async void OnSupabaseAuthStateChanged(object sender, Supabase.Gotrue.Constants.AuthState state)
     {
-        if (state == Supabase.Gotrue.Constants.AuthState.SignedIn || state == Supabase.Gotrue.Constants.AuthState.TokenRefreshed)
+        try
         {
-            var session = _supabase.Auth.CurrentSession;
-            if (session != null)
+            if (state == Supabase.Gotrue.Constants.AuthState.SignedIn || state == Supabase.Gotrue.Constants.AuthState.TokenRefreshed)
             {
-                try 
+                var session = _supabase.Auth.CurrentSession;
+                if (session != null)
                 {
                     // Persister la session Supabase
                     var sessionJson = JsonSerializer.Serialize(session);
@@ -42,25 +42,30 @@ public class AuthService
                     if (user != null)
                     {
                         var username = MapEmailToUsername(user.Email);
-                        if (username != null && CurrentUser != username)
+                        if (username != null)
                         {
                             CurrentUser = username;
                             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
                         }
                     }
-                } catch { }
+                }
+                OnAuthStateChanged?.Invoke();
             }
-            OnAuthStateChanged?.Invoke();
-        }
-        else if (state == Supabase.Gotrue.Constants.AuthState.SignedOut)
-        {
-            CurrentUser = null;
-            try 
+            else if (state == Supabase.Gotrue.Constants.AuthState.SignedOut)
             {
-                await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session");
-                await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
-            } catch { }
-            OnAuthStateChanged?.Invoke();
+                // Uniquement si on est vraiment déconnecté (pas lors d'un rafraîchissement raté temporaire)
+                if (_supabase.Auth.CurrentSession == null)
+                {
+                    CurrentUser = null;
+                    await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session");
+                    await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
+                    OnAuthStateChanged?.Invoke();
+                }
+            }
+        }
+        catch (Exception)
+        {
+            // Ignorer les erreurs de JS interop lors de la fermeture ou transition
         }
     }
 
@@ -76,36 +81,47 @@ public class AuthService
             {
                 try 
                 {
-                    var session = JsonSerializer.Deserialize<Session>(savedSessionJson);
+                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                    var session = JsonSerializer.Deserialize<Session>(savedSessionJson, options);
                     if (session != null && !string.IsNullOrEmpty(session.AccessToken))
                     {
-                        // Charger la session dans le client Supabase
                         await _supabase.Auth.SetSession(session.AccessToken, session.RefreshToken ?? "");
                     }
                 } catch { }
             }
 
             // 2. Laisser le temps au client de parser le fragment d'URL (OAuth redirect)
-            // Augmenté à 500ms pour plus de fiabilité sur GitHub Pages
-            await Task.Delay(500); 
+            await Task.Delay(800); 
 
+            // 3. Vérifier la session actuelle (soit restaurée, soit parsée depuis l'URL)
             var currentSession = _supabase.Auth.CurrentSession;
-            if (currentSession?.User != null)
+            
+            // Si toujours nul, on tente de récupérer le user directement
+            var user = currentSession?.User ?? _supabase.Auth.CurrentUser;
+
+            if (user != null)
             {
-                var username = MapEmailToUsername(currentSession.User.Email);
+                var username = MapEmailToUsername(user.Email);
                 if (username != null)
                 {
                     CurrentUser = username;
                     await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                    
+                    // Si on a un user mais pas de session persistée, on la persiste maintenant
+                    if (currentSession != null && string.IsNullOrEmpty(savedSessionJson))
+                    {
+                        var sessionJson = JsonSerializer.Serialize(currentSession);
+                        await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson);
+                    }
                 }
             }
             else 
             {
                 // Fallback username-only persistence
-                var user = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
-                if (!string.IsNullOrEmpty(user))
+                var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
+                if (!string.IsNullOrEmpty(savedUser))
                 {
-                    CurrentUser = user;
+                    CurrentUser = savedUser;
                 }
             }
         }
