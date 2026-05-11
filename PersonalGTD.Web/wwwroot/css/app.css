@@ -1376,10 +1376,19 @@ code {
 
 .card-title-icon {
     flex-shrink: 0;
-    padding: 8px;
-    background: rgba(79, 70, 229, 0.05); /* Default tint */
-    border-radius: 10px;
-    background: color-mix(in srgb, var(--accent-color, #4f46e5), transparent 92%);
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color, #4f46e5) 15%, transparent), color-mix(in srgb, var(--accent-color, #4f46e5) 5%, transparent));
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--accent-color, #4f46e5) 15%, transparent),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-title-icon {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--accent-color, #4f46e5) 25%, transparent),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 
