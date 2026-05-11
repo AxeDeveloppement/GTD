@@ -64,9 +64,20 @@
                 {
                     <div class="card" style="--accent-color: @c.Color; border-left: 4px solid var(--accent-color);">
                         <div class="card-top">
-                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--accent-color);">
-                                <path opacity="0.25" d="M3 4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V6.58579C21 6.851 20.8946 7.10536 20.7071 7.29289L14 14V22L10 18V14L3.29289 7.29289C3.10536 7.10536 3 6.851 3 6.58579V4Z" fill="currentColor"/>
-                                <path d="M3 4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V6.58579C21 6.851 20.8946 7.10536 20.7071 7.29289L14 14V22L10 18V14L3.29289 7.29289C3.10536 7.10536 3 6.851 3 6.58579V4Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="color: var(--accent-color);">
+                                <defs>
+                                    <linearGradient id="filtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
+                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.3" />
+                                    </linearGradient>
+                                    <linearGradient id="filtGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="currentColor" stop-opacity="0.8" />
+                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.2" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M4 6h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="url(#filtGrad)" />
+                                <path d="M7 13h10a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2z" fill="url(#filtGrad2)" />
+                                <path d="M10 19h4a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8.5 20.5v0A1.5 1.5 0 0 1 10 19z" fill="url(#filtGrad)" />
                             </svg>
                             <h4 class="project-title">@c.Name</h4>
                         </div>

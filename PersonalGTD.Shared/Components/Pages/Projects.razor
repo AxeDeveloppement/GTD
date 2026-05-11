@@ -58,11 +58,20 @@
                 {
                     <div class="card" style="--accent-color: @p.Color; border-left: 4px solid var(--accent-color);">
                         <div class="card-top">
-                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--accent-color);">
-                                <path opacity="0.25" d="M12 3L2 8L12 13L22 8L12 3Z" fill="currentColor" />
-                                <path d="M12 3L2 8L12 13L22 8L12 3Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M2 13L12 18L22 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M2 18L12 23L22 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="color: var(--accent-color);">
+                                <defs>
+                                    <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
+                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.4" />
+                                    </linearGradient>
+                                    <linearGradient id="pg2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="currentColor" stop-opacity="0.7" />
+                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="3" y="3" width="7" height="7" rx="2" fill="url(#pg1)" />
+                                <rect x="14" y="3" width="7" height="18" rx="2" fill="url(#pg2)" />
+                                <rect x="3" y="14" width="7" height="7" rx="2" fill="url(#pg2)" />
                             </svg>
                             <h4 class="project-title">@p.Name</h4>
                         </div>
