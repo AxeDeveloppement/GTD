@@ -5,9 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon organiseur</title>
-    <base href="/" />
-    <link rel="stylesheet" href="css/app.css?v=2.4" />
-    <link href="PersonalGTD.Web.styles.css" rel="stylesheet" />
+    <script>
+        var path = window.location.pathname;
+        var base = path.indexOf('/GTD/') !== -1 ? '/GTD/' : '/';
+        document.write('<base href="' + base + '" />');
+    </script>
+    <link rel="stylesheet" href="css/app.css?v=2.5" />
+    <link rel="stylesheet" href="css/bundle-scoped.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <script type="text/javascript">
         // Capture immédiate du token Supabase avant toute redirection ou chargement Blazor
