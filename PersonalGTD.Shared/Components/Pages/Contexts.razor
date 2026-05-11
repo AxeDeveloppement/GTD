@@ -64,20 +64,16 @@
                 {
                     <div class="card" style="--accent-color: @c.Color; border-left: 4px solid var(--accent-color);">
                         <div class="card-top">
-                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="color: var(--accent-color);">
+                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="color: var(--accent-color);">
                                 <defs>
-                                    <linearGradient id="filtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <linearGradient id="cg-@c.Id" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
                                         <stop offset="100%" stop-color="currentColor" stop-opacity="0.3" />
                                     </linearGradient>
-                                    <linearGradient id="filtGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="currentColor" stop-opacity="0.8" />
-                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.2" />
-                                    </linearGradient>
                                 </defs>
-                                <path d="M4 6h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="url(#filtGrad)" />
-                                <path d="M7 13h10a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2z" fill="url(#filtGrad2)" />
-                                <path d="M10 19h4a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8.5 20.5v0A1.5 1.5 0 0 1 10 19z" fill="url(#filtGrad)" />
+                                <path d="M21 4H3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Z" fill="url(#cg-@c.Id)" stroke="currentColor" stroke-width="1.5" />
+                                <path d="M18 11H6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" />
+                                <path d="M15 17H9a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1Z" fill="url(#cg-@c.Id)" stroke="currentColor" stroke-width="1.5" />
                             </svg>
                             <h4 class="project-title">@c.Name</h4>
                         </div>

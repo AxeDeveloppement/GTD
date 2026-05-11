@@ -58,20 +58,17 @@
                 {
                     <div class="card" style="--accent-color: @p.Color; border-left: 4px solid var(--accent-color);">
                         <div class="card-top">
-                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="color: var(--accent-color);">
+                            <svg class="card-title-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="color: var(--accent-color);">
                                 <defs>
-                                    <linearGradient id="pg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <linearGradient id="pg-@p.Id" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
-                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.4" />
-                                    </linearGradient>
-                                    <linearGradient id="pg2" x1="100%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="currentColor" stop-opacity="0.7" />
-                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.1" />
+                                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.3" />
                                     </linearGradient>
                                 </defs>
-                                <rect x="3" y="3" width="7" height="7" rx="2" fill="url(#pg1)" />
-                                <rect x="14" y="3" width="7" height="18" rx="2" fill="url(#pg2)" />
-                                <rect x="3" y="14" width="7" height="7" rx="2" fill="url(#pg2)" />
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#pg-@p.Id)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 22V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
                             </svg>
                             <h4 class="project-title">@p.Name</h4>
                         </div>
