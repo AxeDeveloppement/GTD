@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
 html, body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -17,8 +19,8 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6, .app-title {
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: -0.025em;
+    font-family: 'Manrope', sans-serif !important;
+    letter-spacing: -0.03em;
     line-height: 1.2;
     margin: 0;
 }
@@ -35,29 +37,37 @@ h1, h2, h3, h4, h5, h6, .app-title {
     position: relative;
 }
 
-.page-header::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-    border-radius: 99px;
-    opacity: 0.6;
+.btn-primary {
+    color: #fff;
+    background-color: #4f46e5;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 .page-title {
     margin: 0;
     font-size: 2.75rem;
     font-weight: 800;
+    font-family: 'Manrope', sans-serif !important;
     background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
     animation: titleFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -113,22 +123,15 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background-color: #4f46e5;
-    border: none;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: #4338ca;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -219,6 +222,15 @@ code {
     color: #c02d76;
 }
 
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
 .task-list {
     display: flex;
     flex-direction: column;
@@ -246,24 +258,17 @@ code {
     100% { background-position: -200% 0; }
 }
 
-.status-bar-safe-area {
-    display: none;
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(79, 70, 229, 0.2);
+    border-radius: 50%;
+    border-top-color: #4f46e5;
+    animation: spin 1s ease-in-out infinite;
 }
 
-@supports (-webkit-touch-callout: none) {
-    .status-bar-safe-area {
-        display: flex;
-        position: sticky;
-        top: 0;
-        height: env(safe-area-inset-top);
-        background-color: #f7f7f7;
-        width: 100%;
-        z-index: 1;
-    }
-
-    .flex-column, .navbar-brand {
-        padding-left: env(safe-area-inset-left);
-    }
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Global Layout Fixes for Mobile - FORCED */
@@ -292,6 +297,7 @@ code {
     .logout-text {
         display: none !important;
     }
+    
 }
 
 /* Project Grid Fixes */
@@ -313,3 +319,1194 @@ code {
         flex: 1 1 100% !important;
     }
 }
+
+/* --- SHARED STYLES --- */
+* {
+    box-sizing: border-box;
+}
+
+/* ====================================================
+   PAGE DE CONNEXION
+   ==================================================== */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    padding: 1.5rem;
+}
+
+/* Grain décoratif en fond */
+.login-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(79,70,229,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(124,58,237,0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.login-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Marque / Logo */
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.login-logo {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.login-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.04em;
+    position: relative;
+    display: inline-block;
+}
+
+.login-title::after {
+    content: '.';
+    color: #7c3aed;
+    -webkit-text-fill-color: #7c3aed; /* Re-override for gradient text */
+}
+
+.login-subtitle {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* Formulaire */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.login-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.03);
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.login-input:focus {
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.login-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    color: #be123c;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    font-family: inherit;
+    margin-top: 0.25rem;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.google-oauth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.google-oauth-text {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* ── Encart démo ─────────────────────────────────── */
+.demo-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+}
+
+.demo-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.demo-card:active {
+    transform: scale(0.99);
+}
+
+.demo-icon {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+.demo-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.demo-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.2;
+}
+
+.demo-creds {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.2;
+}
+
+.demo-creds strong {
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.demo-arrow {
+    color: #6366f1;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.demo-card:hover .demo-arrow {
+    transform: translateX(3px);
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: #0f172a; /* Base Ardoise Slate-900 */
+    color: #f8fafc;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0; /* Default to mobile-first */
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .main-wrapper {
+        margin-left: 260px;
+    }
+}
+
+.app-header {
+    background-color: #0f172a;
+    height: 60px;
+    padding: 0 0.75rem;
+    border-bottom: 1px solid #1e293b;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #f8fafc;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+    .app-header {
+        height: 64px;
+        padding: 0 1.5rem;
+        gap: 1rem;
+    }
+}
+
+.app-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ffffff 20%, #a5b4fc 40%, #a5b4fc 60%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 60%;
+    text-align: center;
+    z-index: 1;
+    animation: titleShimmer 4s linear infinite;
+}
+
+.app-title::after {
+    content: '.';
+    color: #6366f1;
+    -webkit-text-fill-color: #6366f1;
+}
+
+@media (min-width: 768px) {
+    .app-title {
+        font-size: 1.5rem;
+        position: static;
+        transform: none;
+        max-width: none;
+        flex: 1;
+        text-align: left;
+    }
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.05) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+    height: 36px;
+    min-width: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.logout-btn svg {
+    color: #f87171;
+    width: 18px;
+    height: 18px;
+}
+
+.logout-text {
+    display: none;
+    font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+    .logout-btn {
+        padding: 0 1.1rem;
+        height: 42px;
+    }
+    .logout-text {
+        display: inline;
+    }
+}
+
+.d-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .d-desktop {
+        display: inline;
+    }
+}
+
+.app-main {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .app-main {
+        padding: 1.5rem;
+    }
+}
+
+
+/* ====================================================
+   TABS — segment control moderne
+   ==================================================== */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    background: rgba(241, 245, 249, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.25rem;
+    border-radius: 14px;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    max-width: 100%;
+    gap: 0.15rem;
+    flex-wrap: wrap;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.tab-button svg {
+    opacity: 0.7;
+    width: 18px;
+    height: 18px;
+}
+
+.tab-button:hover {
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.tab-button.active {
+    color: #4f46e5;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.tab-button span {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .tabs-container {
+        padding: 0.35rem;
+        border-radius: 14px;
+        margin-bottom: 2.5rem;
+        gap: 0.25rem;
+        flex-wrap: nowrap;
+    }
+    .tab-button {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+        gap: 0.6rem;
+    }
+    .tab-button span {
+        display: inline;
+    }
+}
+
+@media (max-width: 640px) {
+    .tab-button.active span {
+        display: inline;
+    }
+    .count-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .tab-button.active span {
+        display: none;
+    }
+}
+
+/* ====================================================
+   BADGES
+   ==================================================== */
+.count-badge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    color: white;
+    font-weight: 700;
+}
+
+.count-badge.red    { background: #ef4444; }
+.count-badge.orange { background: #f97316; }
+
+/* ====================================================
+   CALENDAR — CONTRÔLES (navigation mois)
+   ==================================================== */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+}
+
+.cal-month {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cal-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cal-btn:hover {
+    background: #f8fafc;
+    border-color: #c7d2fe;
+    color: #4f46e5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+/* ====================================================
+   CALENDAR WRAPPER — suppression de la grille rigide
+   ==================================================== */
+.calendar-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e8ecf2;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ====================================================
+   DESKTOP — design moderne sans quadrillage
+   ==================================================== */
+@media (min-width: 1024px) {
+    .calendar-wrapper {
+        overflow: visible;
+        background: #f4f6fb; /* fond unifié léger = plus de damier flottant */
+        border-radius: 20px;
+        padding: 1.25rem;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .calendar-grid {
+        gap: 5px;
+        background: transparent;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    /* En-tête des jours */
+    .day-header {
+        background: transparent;
+        text-align: center;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #475569; /* plus contrasté qu'avant */
+        padding: 0 0 0.85rem 0;
+        border-bottom: none;
+    }
+
+    /* Cellule jour */
+    .calendar-day {
+        background: #ffffff;
+        min-height: 110px;
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        border: 1px solid rgba(226, 232, 240, 0.5); /* bordure très subtile pour délimiter sans damier dur */
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .calendar-day::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(79,70,229,0.03) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+
+    .calendar-day:hover {
+        border-color: #e0e7ff;
+        box-shadow: 0 4px 16px rgba(79, 70, 229, 0.1);
+        transform: translateY(-1px);
+    }
+
+    .calendar-day:hover::before {
+        opacity: 1;
+    }
+
+    /* Jour courant */
+    .calendar-day.today {
+        background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+        border-color: #c7d2fe;
+        box-shadow: 0 2px 12px rgba(79, 70, 229, 0.12);
+    }
+
+    .calendar-day.today::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+        border-radius: 14px 14px 0 0;
+    }
+
+    /* Jours d'un autre mois — même fond mais vraiment effacé */
+    .calendar-day.other-month {
+        background: rgba(255,255,255,0.45);
+        border-color: transparent;
+    }
+
+    .calendar-day.other-month:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    /* Numéro du jour — desktop */
+    .day-number {
+        font-size: 0.88rem;
+        font-weight: 700;          /* gras pour bien ressortir */
+        color: #1e293b;            /* quasi-noir, très lisible sur blanc */
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        transition: background 0.15s ease, color 0.15s ease;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #b0bec9;  /* toujours clair mais plus foncé que transparent */
+        font-weight: 400;
+    }
+
+    /* Tâches dans le calendrier — desktop */
+    .day-tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        flex: 1;
+    }
+
+    .cal-task {
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 0.22rem 0.5rem;
+        border-radius: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .cal-task:hover {
+        filter: none;
+        transform: translateX(2px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .cal-red {
+        background: linear-gradient(90deg, #fff1f2, #ffe4e6);
+        border-left-color: #ef4444;
+        color: #be123c;
+    }
+    .cal-orange {
+        background: linear-gradient(90deg, #fff7ed, #ffedd5);
+        border-left-color: #f97316;
+        color: #c2410c;
+    }
+    .cal-green {
+        background: linear-gradient(90deg, #f0fdf4, #dcfce7);
+        border-left-color: #22c55e;
+        color: #15803d;
+    }
+
+    /* Indicateur débordement desktop */
+    .cal-task-more {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #94a3b8;
+        padding: 0.15rem 0.35rem;
+        background: #f1f5f9;
+        border-radius: 4px;
+        text-align: center;
+        cursor: default;
+    }
+
+    /* Petit point d'accent sur le numéro pour les jours avec tâches */
+    .calendar-day.has-tasks:not(.today) .day-number::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #4f46e5;
+    }
+}
+
+/* ====================================================
+   MOBILE — vue compacte avec dots
+   ==================================================== */
+@media (max-width: 1023px) {
+    .calendar-wrapper {
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .calendar-grid {
+        gap: 1px;
+        background: #e2e8f0;
+    }
+
+    .day-header {
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        padding: 0.5rem 0.25rem;
+        background: #f8fafc;
+        letter-spacing: 0.04em;
+    }
+
+    .calendar-day {
+        background: white;
+        min-height: 52px;
+        padding: 0.3rem 0.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+    
+    .calendar-day:active {
+        background-color: #f1f5f9;
+    }
+
+    .calendar-day.today {
+        background: #eef2ff;
+    }
+
+    .calendar-day.other-month {
+        background: #f8fafc;
+        opacity: 0.6;
+    }
+
+    .day-number {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #475569;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
+    }
+
+    .calendar-day.today .day-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 700;
+    }
+
+    .calendar-day.other-month .day-number {
+        color: #cbd5e1;
+    }
+
+    .day-tasks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .cal-task {
+        font-size: 0;
+        width: 6px;
+        height: 6px;
+        min-height: 6px;
+        padding: 0;
+        border-radius: 50%;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .cal-red    { background: #ef4444; }
+    .cal-orange { background: #f97316; }
+    .cal-green  { background: #22c55e; }
+}
+
+@media (max-width: 480px) {
+    .cal-month  { font-size: 1.1rem; }
+    .cal-btn    { width: 32px; height: 32px; }
+    .calendar-controls { margin-bottom: 0.75rem; }
+}
+
+/* ====================================================
+   LISTE DE TÂCHES (onglets En retard / Aujourd'hui / À venir)
+   ==================================================== */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skeleton-item {
+    height: 72px;
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 12px;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+
+
+/* --- GOOGLE BUTTON --- */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.98);
+    color: #0f172a;
+    border: none;
+    border-radius: 14px;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Outfit', sans-serif;
+}
+
+.google-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.google-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.google-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* =============================================
+   PREMIUM PROJECT & CONTEXT GRID (SAAS REFINED)
+   ============================================= */
+.grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+}
+
+.card {
+    background: #ffffff !important;
+    border: 1px solid #f1f5f9 !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    color: #1e293b !important;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+    border-color: #e2e8f0 !important;
+}
+
+.card-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+}
+
+.card-title-icon {
+    flex-shrink: 0;
+    padding: 8px;
+    background: rgba(79, 70, 229, 0.05); /* Default tint */
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--accent-color, #4f46e5), transparent 92%);
+}
+
+
+.project-title {
+    margin: 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #4f46e5 !important; /* Premium Indigo */
+    font-family: 'Manrope', sans-serif !important;
+    letter-spacing: -0.01em !important;
+    cursor: default !important; /* No more strange cursors */
+}
+
+.description {
+    color: #64748b !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+}
+
+.card-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid rgba(79, 70, 229, 0.12) !important; /* Tinted HR matching title */
+    margin-top: auto !important;
+    flex-wrap: nowrap !important;
+}
+
+.card-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.btn-view-tasks {
+    width: 38px !important;
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    border: 1px solid transparent !important;
+    background: #f8fafc !important;
+    color: var(--accent-color, #4f46e5) !important; /* Uses the project color! */
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+}
+
+.icon-btn {
+    width: 34px !important;
+    height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #94a3b8 !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+}
+
+.btn-view-tasks:hover {
+    background: var(--accent-color, #4f46e5) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+.icon-btn:hover {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+/* SUB-PAGE SAAS STYLE */
+.project-detail-view { padding: 0 !important; animation: fadeIn 0.4s ease !important; }
+.detail-header { border-radius: 0 0 24px 24px !important; padding: 3rem 2rem !important; margin-bottom: 2.5rem !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; color: white !important; }
+.btn-back { 
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.1) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+    color: white !important; 
+    padding: 0.5rem 1rem !important; 
+    border-radius: 8px !important; 
+    font-size: 0.85rem !important; 
+    font-weight: 600 !important; 
+    margin-bottom: 1.5rem !important; 
+    cursor: pointer !important;
+}
+.detail-project-name { font-size: 2.5rem !important; font-weight: 800 !important; letter-spacing: -0.04em !important; font-family: 'Manrope', sans-serif !important; }
+
+/* TASKS LIST TITLE & ALIGNMENT */
+.detail-tasks-title {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    font-family: 'Manrope', sans-serif !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important; 
+    margin-bottom: 2.25rem !important;
+    margin-top: 2.5rem !important;
+    letter-spacing: -0.01em !important;
+}
+
+.detail-tasks-title span:first-of-type {
+    background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-fill-color: transparent !important;
+}
+
+.detail-tasks-title svg {
+    flex-shrink: 0;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    color: #4f46e5 !important;
+}
+
+
+
+
+
+

@@ -108,7 +108,9 @@ public class AuthService
             if (string.IsNullOrEmpty(savedSessionJson))
             {
                 // Fallback sur Preferences (utile sur Android si localStorage est vide au premier boot)
-                savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
+                try {
+                    savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
+                } catch { }
             }
 
             if (!string.IsNullOrEmpty(savedSessionJson))
