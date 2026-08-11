@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
@@ -31,6 +32,7 @@ public class GtdItem : BaseModel
     public int EnergyLevel { get; set; } = 3; // 1 to 5
 
     [Column("estimated_time")]
+    [JsonConverter(typeof(IntervalToMinutesConverter))]
     public int EstimatedTimeMinutes { get; set; } = 0;
 
     [Column("due_date")]
