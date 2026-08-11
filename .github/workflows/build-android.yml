@@ -34,7 +34,7 @@ jobs:
         run: |
           keytool -genkeypair `
             -dname "cn=PersonalGTD, ou=Dev, o=PersonalGTD, L=Paris, S=IDF, C=FR" `
-            -keystore $env:KEYSTORE_PATH `
+            -keystore PersonalGTD.Android/$env:KEYSTORE_PATH `
             -storepass android `
             -keypass android `
             -alias personalgtd `
