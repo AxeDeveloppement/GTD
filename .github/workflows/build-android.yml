@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET 9
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0.x'
 
@@ -27,7 +27,20 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore PersonalGTD.Android/PersonalGTD.Android.csproj
 
-      - name: Publish APK
+      - name: Generate signing key
+        shell: bash
+        run: |
+          keytool -genkeypair \
+            -dname "cn=PersonalGTD, ou=Dev, o=PersonalGTD, L=Paris, S=IDF, C=FR" \
+            -keystore release-key.jks \
+            -storepass android \
+            -keypass android \
+            -alias personalgtd \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000
+
+      - name: Publish APK (signed)
         shell: bash
         run: |
           dotnet publish PersonalGTD.Android/PersonalGTD.Android.csproj \
@@ -35,14 +48,30 @@ jobs:
             -f net9.0-android \
             -o ./publish \
             -p:AndroidPackageFormat=apk \
-            -p:EmbedAssembliesIntoApk=true
+            -p:EmbedAssembliesIntoApk=true \
+            -p:AndroidKeyStore=true \
+            -p:AndroidSigningKeyStore=release-key.jks \
+            -p:AndroidSigningKeyAlias=personalgtd \
+            -p:AndroidSigningKeyPass=android \
+            -p:AndroidSigningStorePass=android
+
+      - name: List published files
+        shell: bash
+        run: ls -la ./publish/
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: build-logs
+          path: ./publish/
 
       - name: Upload APK to Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: apk-${{ github.run_number }}
           name: "APK Build #${{ github.run_number }}"
-          files: ./publish/com.axeldeveloppement.gtd.apk
+          files: ./publish/**/*.apk
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
