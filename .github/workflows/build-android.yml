@@ -34,8 +34,8 @@ jobs:
             -c Release \
             -f net9.0-android \
             -o ./publish \
-            /p:AndroidPackageFormat=apk \
-            /p:EmbedAssembliesIntoApk=true
+            -p:AndroidPackageFormat=apk \
+            -p:EmbedAssembliesIntoApk=true
 
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v1
