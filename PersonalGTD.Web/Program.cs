@@ -22,13 +22,19 @@ try
     builder.Services.AddScoped<IContextService, ContextService>();
     builder.Services.AddScoped<ReviewStateService>();
     builder.Services.AddScoped<AuthService>();
+    builder.Services.AddScoped<ISessionStorage, WebSessionStorage>();
     builder.Services.AddScoped<NotificationService>();
 
     Console.WriteLine("🔗 Configuration de Supabase...");
-    var supabaseUrl = builder.Configuration["Supabase:Url"] 
-        ?? "SUPABASE_URL_PLACEHOLDER";
-    var supabaseKey = builder.Configuration["Supabase:Key"]
-        ?? "SUPABASE_KEY_PLACEHOLDER";
+    // MAJ-02: Valider la présence des clés de configuration au démarrage
+    var supabaseUrl = builder.Configuration["Supabase:Url"];
+    var supabaseKey = builder.Configuration["Supabase:Key"];
+    
+    if (string.IsNullOrEmpty(supabaseUrl) || string.IsNullOrEmpty(supabaseKey))
+    {
+        throw new InvalidOperationException(
+            "Configuration Supabase manquante : 'Supabase:Url' et 'Supabase:Key' doivent être définis dans appsettings.json.");
+    }
     
     var supabaseOptions = new Supabase.SupabaseOptions 
     { 

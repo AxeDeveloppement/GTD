@@ -39,8 +39,11 @@
         <WindowsPackageType>None</WindowsPackageType>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
-        <AndroidTargetSdkVersion>34</AndroidTargetSdkVersion>
+        <AndroidTargetSdkVersion>35</AndroidTargetSdkVersion>
         <AndroidPackageFormat>apk</AndroidPackageFormat>
+
+        <!-- Suppress harmless transitive dependency version warnings from Xamarin.AndroidX packages -->
+        <NoWarn>$(NoWarn);NU1608</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>

@@ -73,9 +73,9 @@ public class AuthService
                 }
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            // Ignorer les erreurs de JS interop lors de la fermeture ou transition
+            Console.WriteLine($"[AuthService] Auth state change handler error (ignored): {ex.Message}");
         }
     }
 
@@ -182,7 +182,10 @@ public class AuthService
                 await _supabase.Auth.SetSession(accessToken, refreshToken ?? "");
             }
         }
-        catch { }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[AuthService] ProcessHashFragment error: {ex.Message}");
+        }
     }
 
     public async Task<string?> GetGoogleSignInUrl(string callbackUrl)
@@ -287,11 +290,20 @@ public class AuthService
         return email; // Default to email if no mapping
     }
 
+#if DEMO_MODE
+    // CRIT-03: Demo credentials conditionnés — actif uniquement en build DEMO_MODE
+    private static readonly Dictionary<string, string> DemoCredentials = new()
+    {
+        { "Dounette", "Axel" },
+        { "Axel", "Dounette" },
+        { "demo", "demo" },
+    };
+#endif
+
+#if DEMO_MODE
     public async Task<bool> LoginAsync(string username, string password)
     {
-        if ((username == "Dounette" && password == "Axel") ||
-            (username == "Axel" && password == "Dounette") ||
-            (username == "demo" && password == "demo"))
+        if (DemoCredentials.TryGetValue(username, out var expectedPassword) && expectedPassword == password)
         {
             CurrentUser = username;
             try
@@ -304,6 +316,12 @@ public class AuthService
         }
         return false;
     }
+#else
+    public Task<bool> LoginAsync(string username, string password)
+    {
+        return Task.FromResult(false);
+    }
+#endif
 
     public async Task LogoutAsync()
     {

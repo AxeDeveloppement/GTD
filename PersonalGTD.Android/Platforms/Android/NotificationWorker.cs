@@ -31,8 +31,8 @@ public class NotificationWorker : Worker
             }
 
             // Récupérer la session persistée via Preferences (partagée entre UI et Service)
-            var sessionJson = Preferences.Default.Get<string?>("supabase_session", null);
-            if (string.IsNullOrEmpty(sessionJson)) 
+            var sessionJson = Preferences.Default.Get<string?>("supabase_session", null) ?? string.Empty;
+            if (string.IsNullOrEmpty(sessionJson))
             {
                 global::Android.Util.Log.Warn("NotificationWorker", "No session found in Preferences. User might not be logged in.");
                 return Result.InvokeSuccess();
@@ -40,21 +40,35 @@ public class NotificationWorker : Worker
 
             var options = new SupabaseOptions { AutoConnectRealtime = false };
             var client = new Client(SupabaseConfig.Url, SupabaseConfig.Key, options);
-            
-            // Initialisation synchrone pour le worker
-            client.InitializeAsync().Wait();
+
+            // MAJ-01: ConfigureAwait(false) pour éviter les risques de deadlock dans le contexte Worker synchrone
+            client.InitializeAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
             var session = JsonSerializer.Deserialize<Supabase.Gotrue.Session>(sessionJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            if (session == null || string.IsNullOrEmpty(session.AccessToken)) 
+            if (session == null || string.IsNullOrEmpty(session.AccessToken))
             {
                 global::Android.Util.Log.Warn("NotificationWorker", "Session is invalid or empty.");
                 return Result.InvokeSuccess();
             }
 
-            client.Auth.SetSession(session.AccessToken, session.RefreshToken ?? "").Wait();
+            client.Auth.SetSession(session.AccessToken, session.RefreshToken ?? "").ConfigureAwait(false).GetAwaiter().GetResult();
 
-            // Récupérer les tâches
-            var response = client.From<GtdItem>().Get().Result;
+            // CRIT-02: Filtrer par owner_username pour ne récupérer que les tâches de l'utilisateur connecté
+            var ownerUsername = Preferences.Default.Get<string>("gtd_user", "");
+            if (string.IsNullOrEmpty(ownerUsername))
+            {
+                global::Android.Util.Log.Warn("NotificationWorker", "No owner_username found in Preferences. Skipping notification.");
+                return Result.InvokeSuccess();
+            }
+
+            // Récupérer uniquement les tâches de l'utilisateur authentifié
+            var response = client
+                .From<GtdItem>()
+                .Filter("owner_username", Supabase.Postgrest.Constants.Operator.Equals, ownerUsername)
+                .Get()
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
             var tasks = response.Models;
 
             var today = DateTime.Now.Date;
@@ -65,28 +79,29 @@ public class NotificationWorker : Worker
 
             if (overdue.Any() || todayTasks.Any())
             {
-                ShowNotification(overdue.Count, todayTasks.Count);
+                ShowNotification(overdue.Count, todayCount: todayTasks.Count);
             }
 
             return Result.InvokeSuccess();
         }
         catch (Exception ex)
         {
-            global::Android.Util.Log.Error("NotificationWorker", $"Error in Worker: {ex.Message}");
-            global::Android.Util.Log.Error("NotificationWorker", ex.StackTrace);
+            global::Android.Util.Log.Error("NotificationWorker", $"Error in Worker: {ex.Message ?? "Unknown error"}");
+            if (!string.IsNullOrEmpty(ex.StackTrace))
+                global::Android.Util.Log.Error("NotificationWorker", ex.StackTrace);
             return Result.InvokeRetry();
         }
     }
 
     private void ShowNotification(int overdueCount, int todayCount)
     {
-        var context = ApplicationContext;
+        var context = ApplicationContext ?? throw new InvalidOperationException("Application context is null");
         var intent = new Intent(context, typeof(MainActivity));
         intent.AddFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
         
         var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
 
-        string channelId = "gtd_notifications_v2"; // Nouvelle version du channel pour forcer la prise en compte des paramètres
+        string channelId = "gtd_notifications_v2";
         var notificationManager = (global::Android.App.NotificationManager)context.GetSystemService(Context.NotificationService)!;
 
         if (global::Android.OS.Build.VERSION.SdkInt >= global::Android.OS.BuildVersionCodes.O)

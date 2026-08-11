@@ -22,8 +22,9 @@ public class NotificationActionReceiver : BroadcastReceiver
 
         if (intent.Action == ActionRemindLater)
         {
+            NetworkType networkType = NetworkType.Connected;
             var constraints = new Constraints.Builder()
-                .SetRequiredNetworkType(NetworkType.Connected)
+                .SetRequiredNetworkType(networkType)
                 .Build();
 
             var workRequest = OneTimeWorkRequest.Builder.From<NotificationWorker>()
@@ -31,9 +32,10 @@ public class NotificationActionReceiver : BroadcastReceiver
                 .SetInitialDelay(TimeSpan.FromHours(1))
                 .Build();
 
+            ExistingWorkPolicy policy = ExistingWorkPolicy.Replace;
             WorkManager.GetInstance(context).EnqueueUniqueWork(
-                "GTDNotificationWork_Delayed", 
-                ExistingWorkPolicy.Replace, 
+                "GTDNotificationWork_Delayed",
+                policy,
                 workRequest);
 
             global::Android.Util.Log.Info("NotificationActionReceiver", "Scheduled reminder for 1 hour later.");

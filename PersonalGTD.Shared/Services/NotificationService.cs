@@ -1,21 +1,22 @@
 using Microsoft.JSInterop;
 using PersonalGTD.Shared.Models;
-using System.Text.Json;
 
 namespace PersonalGTD.Shared.Services;
 
 public class NotificationService
 {
     private readonly IJSRuntime _js;
+    private readonly ISessionStorage _sessionStorage;
     private readonly ITaskService _taskService;
     private readonly AuthService _authService;
 
     public bool HasAgendaNotifications { get; private set; }
     public event Action? OnStateChanged;
 
-    public NotificationService(IJSRuntime js, ITaskService taskService, AuthService authService)
+    public NotificationService(IJSRuntime js, ISessionStorage sessionStorage, ITaskService taskService, AuthService authService)
     {
         _js = js;
+        _sessionStorage = sessionStorage;
         _taskService = taskService;
         _authService = authService;
     }
@@ -31,7 +32,7 @@ public class NotificationService
 
         var tasks = await _taskService.GetItemsAsync();
         var today = DateTime.Now.Date;
-        
+
         var overdueTasks = tasks.Where(t => t.DueDate.HasValue && t.DueDate.Value.Date < today && t.Status != GtdStatus.Done).ToList();
         var todayTasks = tasks.Where(t => t.DueDate.HasValue && t.DueDate.Value.Date == today && t.Status != GtdStatus.Done).ToList();
 
@@ -70,16 +71,19 @@ public class NotificationService
     {
         var user = _authService.CurrentUser;
         var storageKey = $"gtd-notified-{user}-{key}-{DateTime.Now:yyyy-MM-dd}";
-        
-        try 
+
+        try
         {
-            var alreadyNotified = await _js.InvokeAsync<string>("localStorage.getItem", storageKey);
+            var alreadyNotified = await _sessionStorage.GetItemAsync(storageKey);
             if (string.IsNullOrEmpty(alreadyNotified))
             {
                 await _js.InvokeVoidAsync("notificationHelper.showNotification", title, body, key);
-                await _js.InvokeVoidAsync("localStorage.setItem", storageKey, "true");
+                await _sessionStorage.SetItemAsync(storageKey, "true");
             }
         }
-        catch { /* JS not ready or not supported */ }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[NotificationService] NotifyOnceAsync error: {ex.Message}");
+        }
     }
 }

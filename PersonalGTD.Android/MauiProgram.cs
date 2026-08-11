@@ -32,6 +32,7 @@ public static class MauiProgram
 		builder.Services.AddScoped<IContextService, ContextService>();
 		builder.Services.AddScoped<ReviewStateService>();
 		builder.Services.AddScoped<AuthService>();
+		builder.Services.AddScoped<ISessionStorage, MobileSessionStorage>();
 		builder.Services.AddScoped<NotificationService>();
 
 		// Configuration Supabase
@@ -41,5 +42,3 @@ public static class MauiProgram
 		return builder.Build();
 	}
 }
-
-

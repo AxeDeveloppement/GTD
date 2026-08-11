@@ -31,7 +31,7 @@ public class GtdItem : BaseModel
     public int EnergyLevel { get; set; } = 3; // 1 to 5
 
     [Column("estimated_time")]
-    public TimeSpan EstimatedTime { get; set; } = TimeSpan.Zero;
+    public int EstimatedTimeMinutes { get; set; } = 0;
 
     [Column("due_date")]
     public DateTime? DueDate { get; set; }

@@ -2,11 +2,9 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Views;
 using Microsoft.Maui;
 using Microsoft.Extensions.DependencyInjection;
 using AndroidX.Work;
-
 
 namespace PersonalGTD.Android;
 
@@ -33,22 +31,24 @@ public class MainActivity : MauiAppCompatActivity
     {
         try
         {
+            NetworkType networkType = NetworkType.Connected;
             var constraints = new Constraints.Builder()
-                .SetRequiredNetworkType(NetworkType.Connected)
+                .SetRequiredNetworkType(networkType)
                 .Build();
 
             var workRequest = PeriodicWorkRequest.Builder.From<NotificationWorker>(TimeSpan.FromHours(1))
                 .SetConstraints(constraints)
                 .Build();
+            ExistingPeriodicWorkPolicy policy = ExistingPeriodicWorkPolicy.Update;
             WorkManager.GetInstance(this).EnqueueUniquePeriodicWork(
-                "GTDNotificationWork", 
-                ExistingPeriodicWorkPolicy.Update, 
+                "GTDNotificationWork",
+                policy,
                 workRequest);
             global::Android.Util.Log.Info("MainActivity", "Notification worker scheduled/updated successfully (1h period).");
         }
         catch (Exception ex)
         {
-            global::Android.Util.Log.Error("MainActivity", $"Failed to schedule worker: {ex.Message}");
+            global::Android.Util.Log.Error("MainActivity", $"Failed to schedule worker: {ex.Message ?? "Unknown error"}");
         }
     }
 
@@ -70,6 +70,3 @@ public class MainActivity : MauiAppCompatActivity
         }
     }
 }
-
-
-
