@@ -1,0 +1,6 @@
+MSBUILD : error MSB1001: Commutateur inconnu.
+ ligne de commande complète : «C:\Program Files\dotnet\sdk\10.0.400\MSBuild.exe -maxcpucount --verbosity:m -tlp:default=auto --nologo -preprocess PersonalGTD.Android/PersonalGTD.Android.csproj -f net10.0-android -distributedlogger:Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildLogger,C:\Program Files\dotnet\sdk\10.0.400\dotnet.dll*Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildForwardingLogger,C:\Program Files\dotnet\sdk\10.0.400\dotnet.dll»
+ Commutateurs ajoutés par les fichiers réponse :
+Commutateur : -f
+
+Pour la syntaxe du commutateur, tapez "MSBuild -help"
