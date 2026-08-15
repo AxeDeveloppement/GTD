@@ -12,6 +12,7 @@ public class AuthService
 {
     private readonly IJSRuntime _jsRuntime;
     private readonly Supabase.Client _supabase;
+    private readonly ISessionStorage _sessionStorage;
     public string? CurrentUser { get; private set; }
     public bool IsInitialized { get; private set; }
 
@@ -22,10 +23,11 @@ public class AuthService
         OnAuthStateChanged?.Invoke();
     }
 
-    public AuthService(IJSRuntime jsRuntime, Supabase.Client supabase)
+    public AuthService(IJSRuntime jsRuntime, Supabase.Client supabase, ISessionStorage sessionStorage)
     {
         _jsRuntime = jsRuntime;
         _supabase = supabase;
+        _sessionStorage = sessionStorage;
         
         // Listen to auth state changes (OAuth, session recovery, etc.)
         _supabase.Auth.AddStateChangedListener(OnSupabaseAuthStateChanged);
@@ -40,9 +42,9 @@ public class AuthService
                 var session = _supabase.Auth.CurrentSession;
                 if (session != null)
                 {
-                    // Persister la session Supabase via localStorage et Preferences (pour le worker Android)
+                    // Persister la session Supabase via ISessionStorage et Preferences (pour le worker Android)
                     var sessionJson = JsonSerializer.Serialize(session);
-                    try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson); } catch { }
+                    try { await _sessionStorage.SetItemAsync("supabase_session", sessionJson); } catch { }
                     try { Microsoft.Maui.Storage.Preferences.Default.Set("supabase_session", sessionJson); } catch { }
                     
                     var user = session.User;
@@ -52,7 +54,7 @@ public class AuthService
                         if (username != null)
                         {
                             CurrentUser = username;
-                            try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch { }
+                            try { await _sessionStorage.SetItemAsync("gtd_user", username); } catch { }
                             try { Microsoft.Maui.Storage.Preferences.Default.Set("gtd_user", username); } catch { }
                         }
                     }
@@ -65,8 +67,8 @@ public class AuthService
                 if (_supabase.Auth.CurrentSession == null)
                 {
                     CurrentUser = null;
-                    try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_session"); } catch { }
-                    try { await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user"); } catch { }
+                    try { await _sessionStorage.RemoveItemAsync("supabase_session"); } catch { }
+                    try { await _sessionStorage.RemoveItemAsync("gtd_user"); } catch { }
                     try { Microsoft.Maui.Storage.Preferences.Default.Remove("supabase_session"); } catch { }
                     try { Microsoft.Maui.Storage.Preferences.Default.Remove("gtd_user"); } catch { }
                     NotifyAuthenticationStateChanged();
@@ -85,30 +87,43 @@ public class AuthService
         
         try
         {
-            // 1. Initialiser le client Supabase
-            await _supabase.InitializeAsync();
+            // 1. Initialiser le client Supabase avec un timeout de 10 secondes
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+            var initTask = _supabase.InitializeAsync();
+            var delayTask = Task.Delay(TimeSpan.FromSeconds(15), cts.Token);
+            
+            var completedTask = await Task.WhenAny(initTask, delayTask);
+            if (completedTask == delayTask)
+            {
+                Console.WriteLine("[AuthService] Supabase initialization timed out, continuing anyway");
+            }
+            else
+            {
+                await initTask; // Ensure any exception is propagated if it completed first
+            }
 
-            // 2. Tenter de récupérer un token capturé par l'index.html (Cas GitHub Pages / Redirect)
-            var capturedHash = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_auth_token");
+            // 2. Tenter de récupérer un token capturé (Cas Redirect)
+            var capturedHash = await _sessionStorage.GetItemAsync("supabase_auth_token");
             if (!string.IsNullOrEmpty(capturedHash))
             {
                 await ProcessHashFragment(capturedHash);
-                await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "supabase_auth_token");
+                await _sessionStorage.RemoveItemAsync("supabase_auth_token");
             }
 
-            // 3. Charger la session persistée classique via localStorage
-            var savedUser = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "gtd_user");
+            // 3. Charger la session persistée classique via ISessionStorage
+            var savedUser = await _sessionStorage.GetItemAsync("gtd_user");
             if (!string.IsNullOrEmpty(savedUser))
             {
                 CurrentUser = savedUser;
                 NotifyAuthenticationStateChanged();
             }
 
-            var savedSessionJson = await _jsRuntime.InvokeAsync<string?>("localStorage.getItem", "supabase_session");
+            var savedSessionJson = await _sessionStorage.GetItemAsync("supabase_session");
             if (string.IsNullOrEmpty(savedSessionJson))
             {
-                // Fallback sur Preferences (utile sur Android si localStorage est vide au premier boot)
-                try {
+                // Fallback sur Preferences (utile sur Android si ISessionStorage est vide au premier boot)
+                try 
+                {
                     savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
                 } catch { }
             }
@@ -137,12 +152,12 @@ public class AuthService
                 if (!string.IsNullOrEmpty(username))
                 {
                     CurrentUser = username;
-                    try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username); } catch { }
+                    try { await _sessionStorage.SetItemAsync("gtd_user", username); } catch { }
                     
                     if (currentSession != null)
                     {
                         var sessionJson = JsonSerializer.Serialize(currentSession);
-                        try { await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "supabase_session", sessionJson); } catch { }
+                        try { await _sessionStorage.SetItemAsync("supabase_session", sessionJson); } catch { }
                     }
                 }
             }
@@ -251,10 +266,6 @@ public class AuthService
     {
         try
         {
-            // The Supabase client automatically picks up the session from the URL fragment in WASM
-            // but we might need to wait for it or trigger it.
-            // Actually, with the C# client in WASM, it usually handles the session from the URL.
-            
             var session = _supabase.Auth.CurrentSession;
             if (session?.User != null)
             {
@@ -264,7 +275,7 @@ public class AuthService
                 if (username != null)
                 {
                     CurrentUser = username;
-                    await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                    await _sessionStorage.SetItemAsync("gtd_user", username);
                     NotifyAuthenticationStateChanged();
                     return true;
                 }
@@ -308,7 +319,7 @@ public class AuthService
             CurrentUser = username;
             try
             {
-                await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "gtd_user", username);
+                await _sessionStorage.SetItemAsync("gtd_user", username);
             }
             catch { }
             NotifyAuthenticationStateChanged();
@@ -329,7 +340,7 @@ public class AuthService
         try
         {
             await _supabase.Auth.SignOut();
-            await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "gtd_user");
+            await _sessionStorage.RemoveItemAsync("gtd_user");
         }
         catch { }
         NotifyAuthenticationStateChanged();

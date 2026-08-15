@@ -5,6 +5,7 @@
 @inject IJSRuntime JS
 @inject PersonalGTD.Shared.Services.NotificationService NotificationService
 @inject NavigationManager NavigationManager
+@inject PersonalGTD.Shared.Services.ISessionStorage SessionStorage
 
 <AuthListener />
 
@@ -192,7 +193,7 @@ else
     private async Task LoadReviewStateAsync()
     {
         var user = AuthService.CurrentUser ?? "unknown";
-        var doneAt = await JS.InvokeAsync<string?>("localStorage.getItem", $"gtd-review-done-at-{user}");
+        var doneAt = await SessionStorage.GetItemAsync($"gtd-review-done-at-{user}");
         if (!string.IsNullOrEmpty(doneAt) && DateTime.TryParse(doneAt, out var dt))
         {
             if (dt >= ReviewStateService.GetLastReviewTrigger())
@@ -208,9 +209,14 @@ else
     {
         if (firstRender)
         {
-            try 
+            try
             {
-                await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+                // Vérifier si notificationHelper existe avant d'appeler (correction Android)
+                var hasNotificationHelper = await JS.InvokeAsync<bool>("typeof window.notificationHelper !== 'undefined'");
+                if (hasNotificationHelper)
+                {
+                    await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
+                }
                 
                 var uri = NavigationManager.Uri;
                 if (uri.Contains("#access_token") || uri.Contains("access_token=") || uri.Contains("auth/callback"))
@@ -232,6 +238,7 @@ else
                     await NotificationService.CheckAndNotifyAsync();
                 }
             }
+            catch (Microsoft.JSInterop.JSException) { /* WebView JS not available on mobile */ }
             catch { /* WebView not ready or not supported */ }
             finally
             {
