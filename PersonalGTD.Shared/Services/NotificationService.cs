@@ -23,7 +23,19 @@ public class NotificationService
 
     public async Task RequestPermissionAsync()
     {
-        await _js.InvokeAsync<string>("notificationHelper.requestPermission");
+        try
+        {
+            // Android WebView n'a pas l'API Notification du navigateur
+            var hasNotification = await _js.InvokeAsync<bool>("typeof Notification !== 'undefined'");
+            if (hasNotification)
+            {
+                await _js.InvokeAsync<string>("notificationHelper.requestPermission");
+            }
+        }
+        catch
+        {
+            // JSInterop non disponible sur Android Hybrid — ignorer silencieusement
+        }
     }
 
     public async Task CheckAndNotifyAsync()

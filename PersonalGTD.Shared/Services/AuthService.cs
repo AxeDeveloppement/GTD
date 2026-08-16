@@ -87,19 +87,21 @@ public class AuthService
         
         try
         {
-            // 1. Initialiser le client Supabase avec un timeout de 10 secondes
-            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+            // 1. Initialiser le client Supabase avec un timeout strict de 8 secondes
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(8));
             var initTask = _supabase.InitializeAsync();
-            var delayTask = Task.Delay(TimeSpan.FromSeconds(15), cts.Token);
+            var timeoutTask = Task.Delay(TimeSpan.FromSeconds(8), cts.Token);
             
-            var completedTask = await Task.WhenAny(initTask, delayTask);
-            if (completedTask == delayTask)
+            var completedTask = await Task.WhenAny(initTask, timeoutTask);
+            if (completedTask == initTask)
             {
-                Console.WriteLine("[AuthService] Supabase initialization timed out, continuing anyway");
+                try { await initTask; } catch { /* Ignore init errors */ }
             }
             else
             {
-                await initTask; // Ensure any exception is propagated if it completed first
+                Console.WriteLine("[AuthService] Supabase initialization timed out, continuing with cached session");
+                // Abort the hanging task to prevent memory leaks
+                cts.Cancel();
             }
 
             // 2. Tenter de récupérer un token capturé (Cas Redirect)
@@ -122,7 +124,7 @@ public class AuthService
             if (string.IsNullOrEmpty(savedSessionJson))
             {
                 // Fallback sur Preferences (utile sur Android si ISessionStorage est vide au premier boot)
-                try 
+                try
                 {
                     savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
                 } catch { }
@@ -130,7 +132,7 @@ public class AuthService
 
             if (!string.IsNullOrEmpty(savedSessionJson))
             {
-                try 
+                try
                 {
                     var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                     var session = JsonSerializer.Deserialize<Session>(savedSessionJson, options);
@@ -141,8 +143,7 @@ public class AuthService
                 } catch { }
             }
 
-            // 4. Vérification finale
-            await Task.Delay(300); 
+            // 4. Vérification finale — supprimé le Task.Delay(300) qui ralentissait le démarrage Android
             var currentSession = _supabase.Auth.CurrentSession;
             var user = currentSession?.User ?? _supabase.Auth.CurrentUser;
 

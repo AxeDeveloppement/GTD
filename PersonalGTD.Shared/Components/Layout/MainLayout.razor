@@ -122,8 +122,19 @@ else
         // Détecter la session dès le chargement, particulièrement utile pour le retour d'OAuth
         if (AuthService.CurrentUser == null)
         {
-            await AuthService.InitializeAsync();
+            try
+            {
+                await AuthService.InitializeAsync();
+            }
+            catch
+            {
+                // Auth init failed — force ready state to prevent infinite loading spinner
+                Console.WriteLine("[MainLayout] Auth initialization failed, marking as ready anyway");
+            }
         }
+        // Garantir que l'UI passe au-delà de l'écran "Initialisation..."
+        // même si OnAfterRenderAsync n'est pas encore appelé
+        isReady = true;
     }
 
     private void HandleAuthStateChanged()
