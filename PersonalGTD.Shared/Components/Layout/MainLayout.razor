@@ -210,19 +210,8 @@ else
     {
         if (firstRender)
         {
-            // Initialiser l'authentification en arrière-plan APRÈS le premier rendu.
-            _ = Task.Run(async () =>
-            {
-                try
-                {
-                    await AuthService.InitializeAsync();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[MainLayout] Auth init error (non-fatal): {ex.Message}");
-                }
-            });
-
+            // L'initialisation Auth est gérée par Routes.razor pour éviter les appels doublons.
+            // Ici on ne gère que les tâches post-rendu spécifiques à l'UI principale.
             try
             {
                 // Vérifier si notificationHelper existe avant d'appeler (correction Android)
@@ -231,20 +220,19 @@ else
                 {
                     await JS.InvokeVoidAsync("window.notificationHelper.registerNavigationHandler", DotNetObjectReference.Create(this));
                 }
-                
+            }
+            catch (Microsoft.JSInterop.JSException) { /* WebView JS not available on mobile */ }
+            catch { /* WebView not ready or not supported */ }
+
+            try
+            {
                 var uri = NavigationManager.Uri;
                 if (uri.Contains("#access_token") || uri.Contains("access_token=") || uri.Contains("auth/callback"))
                 {
                     // Nettoyer l'URL sans recharger pour une expérience fluide
                     await JS.InvokeVoidAsync("window.history.replaceState", null, "", NavigationManager.BaseUri);
-                    
-                    // Si on vient de se connecter mais que l'UI n'a pas suivi, forcer un rafraîchissement
-                    if (AuthService.CurrentUser == null)
-                    {
-                        await AuthService.InitializeAsync();
-                    }
                 }
-                
+
                 if (AuthService.CurrentUser != null)
                 {
                     await LoadReviewStateAsync();
@@ -254,11 +242,9 @@ else
             }
             catch (Microsoft.JSInterop.JSException) { /* WebView JS not available on mobile */ }
             catch { /* WebView not ready or not supported */ }
-            finally
-            {
-                isReady = true;
-                StateHasChanged();
-            }
+
+            isReady = true;
+            StateHasChanged();
         }
     }
 

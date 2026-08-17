@@ -1,4 +1,5 @@
 @inject PersonalGTD.Shared.Services.AuthService AuthService
+@inject NavigationManager NavigationManager
 
 <Router AppAssembly="@typeof(Routes).Assembly" AdditionalAssemblies="new[] { typeof(PersonalGTD.Shared.Components.Layout.MainLayout).Assembly }">
     <Found Context="routeData">
@@ -16,20 +17,26 @@
 </Router>
 
 @code {
+    private int _authInitStarted = 0;
+
     protected override void OnInitialized()
     {
-        // Ne JAMAIS bloquer OnInitializedAsync avec l'initialisation Supabase.
-        // Sur Android, _supabase.InitializeAsync() peut se bloquer indéfiniment
-        // (timeout réseau, DNS, etc.) et empêcher le premier rendu Blazor,
-        // laissant l'app figée sur "Chargement en cours..." de index.html.
-        // L'initialisation est déportée dans OnAfterRenderAsync en fire-and-forget.
+        // Navigation explicite vers la page d'accueil pour garantir que le Router
+        // trouve une route même si l'URL initiale est vide ou invalide sur Android.
+        var currentUri = NavigationManager.Uri;
+        var baseUri = NavigationManager.BaseUri.TrimEnd('/');
+        if (currentUri == baseUri || currentUri == baseUri + "/" || currentUri.Contains("auth/callback"))
+        {
+            NavigationManager.NavigateTo("/", forceLoad: false);
+        }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (firstRender && Interlocked.Exchange(ref _authInitStarted, 1) == 0)
         {
             // Initialiser l'authentification en arrière-plan APRÈS le premier rendu.
+            // Utilise Interlocked pour garantir qu'une seule instance lance InitializeAsync.
             // Cela garantit que l'UI est affichée immédiatement, même si Supabase
             // met du temps à répondre ou échoue complètement.
             _ = Task.Run(async () =>
