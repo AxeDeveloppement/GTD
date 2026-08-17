@@ -115,25 +115,15 @@ else
     private string loginPassword = "";
     private bool loginError = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         AuthService.OnAuthStateChanged += HandleAuthStateChanged;
         
-        // Détecter la session dès le chargement, particulièrement utile pour le retour d'OAuth
-        if (AuthService.CurrentUser == null)
-        {
-            try
-            {
-                await AuthService.InitializeAsync();
-            }
-            catch
-            {
-                // Auth init failed — force ready state to prevent infinite loading spinner
-                Console.WriteLine("[MainLayout] Auth initialization failed, marking as ready anyway");
-            }
-        }
-        // Garantir que l'UI passe au-delà de l'écran "Initialisation..."
-        // même si OnAfterRenderAsync n'est pas encore appelé
+        // Ne JAMAIS bloquer le rendu avec l'initialisation Supabase.
+        // Sur Android, _supabase.InitializeAsync() peut se bloquer indéfiniment
+        // et empêcher le premier rendu Blazor, laissant l'app figée sur
+        // "Chargement en cours..." de index.html (ou "Initialisation..." ici).
+        // L'initialisation est déportée dans OnAfterRenderAsync en arrière-plan.
         isReady = true;
     }
 
@@ -220,6 +210,19 @@ else
     {
         if (firstRender)
         {
+            // Initialiser l'authentification en arrière-plan APRÈS le premier rendu.
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await AuthService.InitializeAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[MainLayout] Auth init error (non-fatal): {ex.Message}");
+                }
+            });
+
             try
             {
                 // Vérifier si notificationHelper existe avant d'appeler (correction Android)

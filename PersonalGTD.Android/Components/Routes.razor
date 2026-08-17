@@ -16,22 +16,33 @@
 </Router>
 
 @code {
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        // Initialiser l'authentification avant le premier rendu pour éviter
-        // que le timeout Supabase bloque le thread UI et empêche le rendu Blazor.
-        // Sur Android, sans cette initialisation précoce, l'app reste bloquée
-        // sur le message "Chargement en cours..." de index.html.
-        try
+        // Ne JAMAIS bloquer OnInitializedAsync avec l'initialisation Supabase.
+        // Sur Android, _supabase.InitializeAsync() peut se bloquer indéfiniment
+        // (timeout réseau, DNS, etc.) et empêcher le premier rendu Blazor,
+        // laissant l'app figée sur "Chargement en cours..." de index.html.
+        // L'initialisation est déportée dans OnAfterRenderAsync en fire-and-forget.
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
         {
-            await AuthService.InitializeAsync();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"[Routes] Auth init error (non-fatal): {ex.Message}");
+            // Initialiser l'authentification en arrière-plan APRÈS le premier rendu.
+            // Cela garantit que l'UI est affichée immédiatement, même si Supabase
+            // met du temps à répondre ou échoue complètement.
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await AuthService.InitializeAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[Routes] Auth init error (non-fatal): {ex.Message}");
+                }
+            });
         }
     }
 }
-
-
-
