@@ -11,21 +11,55 @@ namespace PersonalGTD.Android;
 [Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
 public class MainActivity : MauiAppCompatActivity
 {
+    private const int NotificationPermissionRequestId = 0;
+    private static readonly string[] NotificationPermission = { global::Android.Manifest.Permission.PostNotifications };
+
 	protected override void OnCreate(Bundle? savedInstanceState)
 	{
 		base.OnCreate(savedInstanceState);
 
+        RequestNotificationPermissionIfNeeded();
+        HandleIntent(Intent);
+        ScheduleNotificationWorker();
+	}
+
+    /// <summary>
+    /// Demande la permission POST_NOTIFICATIONS sur Android 13+ si non accordée.
+    /// </summary>
+    private void RequestNotificationPermissionIfNeeded()
+    {
         if (global::Android.OS.Build.VERSION.SdkInt >= global::Android.OS.BuildVersionCodes.Tiramisu)
         {
             if (CheckSelfPermission(global::Android.Manifest.Permission.PostNotifications) != global::Android.Content.PM.Permission.Granted)
             {
-                RequestPermissions(new string[] { global::Android.Manifest.Permission.PostNotifications }, 0);
+                RequestPermissions(NotificationPermission, NotificationPermissionRequestId);
             }
         }
+    }
 
-        HandleIntent(Intent);
-        ScheduleNotificationWorker();
-	}
+    /// <summary>
+    /// Callback pour gérer le résultat de la demande de permission notifications.
+    /// </summary>
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+    {
+        base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == NotificationPermissionRequestId && permissions.Length > 0)
+        {
+            if (permissions[0] == global::Android.Manifest.Permission.PostNotifications)
+            {
+                if (grantResults.Length > 0 && grantResults[0] != Permission.Granted)
+                {
+                    global::Android.Util.Log.Warn("MainActivity", "Permission notifications refusée par l'utilisateur.");
+                    global::Android.Widget.Toast.MakeText(this, "Les notifications sont nécessaires pour recevoir des rappels de tâches.", global::Android.Widget.ToastLength.Long).Show();
+                }
+                else
+                {
+                    global::Android.Util.Log.Info("MainActivity", "Permission notifications accordée.");
+                }
+            }
+        }
+    }
 
     private void ScheduleNotificationWorker()
     {
@@ -39,7 +73,8 @@ public class MainActivity : MauiAppCompatActivity
             var workRequest = PeriodicWorkRequest.Builder.From<NotificationWorker>(TimeSpan.FromHours(1))
                 .SetConstraints(constraints)
                 .Build();
-            ExistingPeriodicWorkPolicy policy = ExistingPeriodicWorkPolicy.Update;
+            // Replace annule le travail existant et le remplace, garantissant une mise à jour propre
+            ExistingPeriodicWorkPolicy policy = ExistingPeriodicWorkPolicy.Replace;
             WorkManager.GetInstance(this).EnqueueUniquePeriodicWork(
                 "GTDNotificationWork",
                 policy,
@@ -62,10 +97,18 @@ public class MainActivity : MauiAppCompatActivity
     {
         if (intent?.DataString != null && intent.DataString.StartsWith("gtdapp://auth"))
         {
-            var authService = IPlatformApplication.Current?.Services.GetService<PersonalGTD.Shared.Services.AuthService>();
-            if (authService != null)
+            // Vérification de sécurité : s'assurer que l'intent provient bien de notre application
+            if (intent.Package == PackageName)
             {
-                _ = authService.ProcessDeepLink(intent.DataString);
+                var authService = IPlatformApplication.Current?.Services.GetService<PersonalGTD.Shared.Services.AuthService>();
+                if (authService != null)
+                {
+                    _ = authService.ProcessDeepLink(intent.DataString);
+                }
+            }
+            else
+            {
+                global::Android.Util.Log.Warn("MainActivity", $"Intent deep link ignoré : source non fiable (package={intent.Package ?? "null"}).");
             }
         }
     }
