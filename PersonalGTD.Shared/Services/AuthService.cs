@@ -87,10 +87,11 @@ public class AuthService
         
         try
         {
-            // 1. Initialiser le client Supabase avec un timeout strict de 4 secondes (optimisé mobile)
-            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(4));
+            // 1. Initialiser le client Supabase avec un timeout strict de 2 secondes (optimisé mobile)
+            // Un timeout plus court évite que l'app reste bloquée sur "Chargement en cours..."
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
             var initTask = _supabase.InitializeAsync();
-            var timeoutTask = Task.Delay(TimeSpan.FromSeconds(4), cts.Token);
+            var timeoutTask = Task.Delay(TimeSpan.FromSeconds(2), cts.Token);
             
             var completedTask = await Task.WhenAny(initTask, timeoutTask);
             if (completedTask == initTask)
@@ -99,9 +100,10 @@ public class AuthService
             }
             else
             {
-                Console.WriteLine("[AuthService] Supabase initialization timed out (4s), continuing with cached session");
+                Console.WriteLine("[AuthService] Supabase initialization timed out (2s), continuing with cached session");
                 // Abort the hanging task to prevent memory leaks
                 cts.Cancel();
+                try { initTask.Dispose(); } catch { }
             }
 
             // 2. Tenter de récupérer un token capturé (Cas Redirect)
