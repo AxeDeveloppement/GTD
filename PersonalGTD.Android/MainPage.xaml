@@ -6,7 +6,13 @@
              x:Class="PersonalGTD.Android.MainPage">
 
     <Grid>
-        <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <!--
+            Le composant racine Blazor est configuré de manière programmatique dans MainPage.xaml.cs
+            via blazorWebView.RootComponents.Add(), car l'attribut XAML RootComponent n'existe pas
+            sur BlazorWebView dans MAUI 10.
+        -->
+        <BlazorWebView x:Name="blazorWebView"
+                       HostPage="wwwroot/index.html">
         </BlazorWebView>
     </Grid>
 
