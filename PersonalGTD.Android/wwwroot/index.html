@@ -12,19 +12,28 @@
     <!-- <link href="PersonalGTD.Web.styles.css" rel="stylesheet" /> -->
     <script type="text/javascript">
         // Capture immédiate du token Supabase avant toute redirection ou chargement Blazor
-        if (window.location.hash && window.location.hash.indexOf('access_token=') !== -1) {
-            localStorage.setItem('supabase_auth_token', window.location.hash);
+        try {
+            if (window.location.hash && window.location.hash.indexOf('access_token=') !== -1) {
+                localStorage.setItem('supabase_auth_token', window.location.hash);
+            }
+        } catch (e) {
+            console.error('[index.html] Failed to capture auth token:', e);
         }
 
-        // SPA Redirect Handler for GitHub Pages
+        // SPA Redirect Handler for GitHub Pages — désactivé sur mobile (Blazor Hybrid)
+        // pour éviter les plantages dus à l.search étant vide au démarrage natif
         (function(l) {
-            if (l.search[1] === '/' ) {
-                var decoded = l.search.slice(1).split('&').map(function(s) { 
-                    return s.replace(/~and~/g, '&') 
-                }).join('?');
-                window.history.replaceState(null, null,
-                    l.pathname.slice(0, -1) + decoded + l.hash
-                );
+            try {
+                if (l.search && l.search.length > 1 && l.search[1] === '/' ) {
+                    var decoded = l.search.slice(1).split('&').map(function(s) {
+                        return s.replace(/~and~/g, '&')
+                    }).join('?');
+                    window.history.replaceState(null, null,
+                        l.pathname.slice(0, -1) + decoded + l.hash
+                    );
+                }
+            } catch(e) {
+                console.error('[index.html] SPA redirect handler failed:', e);
             }
         }(window.location))
     </script>

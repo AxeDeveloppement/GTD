@@ -11,10 +11,6 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-            .ConfigureMauiHandlers(handlers =>
-            {
-                handlers.AddHandler<Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler>();
-            })
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -36,7 +32,8 @@ public static class MauiProgram
 		builder.Services.AddScoped<NotificationService>();
 
 		// Configuration Supabase
-		var supabaseOptions = new Supabase.SupabaseOptions { AutoConnectRealtime = true };
+		// AutoConnectRealtime désactivé sur mobile pour éviter le blocage au démarrage si le WebSocket échoue
+		var supabaseOptions = new Supabase.SupabaseOptions { AutoConnectRealtime = false };
 		builder.Services.AddSingleton(provider => new Supabase.Client(SupabaseConfig.Url, SupabaseConfig.Key, supabaseOptions));
 
 		return builder.Build();
