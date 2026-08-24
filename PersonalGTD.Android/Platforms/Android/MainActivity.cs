@@ -4,6 +4,8 @@ using Android.Content.PM;
 using Android.OS;
 using AndroidX.Work;
 namespace PersonalGTD.Android;
+using AndroidX.Core.View;
+using global::Android.Views;
 
 [Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
 public class MainActivity : MauiAppCompatActivity
@@ -14,10 +16,19 @@ public class MainActivity : MauiAppCompatActivity
 	{
 		base.OnCreate(savedInstanceState);
         
-        // Barres système : configuration adaptée à la version d'Android pour que
-        // l'application s'insère dans le bon espace (edge-to-edge sur Android 10+,
-        // contenu sous les barres sur Android 9 et antérieurs).
-        ConfigureSystemBars();
+        if (Window == null) return;
+
+    // 1. Force l'OS à réserver l'espace pour les barres système (désactive l'Edge-to-Edge)
+    WindowCompat.SetDecorFitsSystemWindows(Window, true);
+
+    // 2. Interdit expressément à l'application de monter dans la zone du poinçon caméra
+    if (Build.VERSION.SdkInt >= BuildVersionCodes.P) // Android 9+
+    {
+        Window.Attributes.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.Never;
+    }
+
+    // 3. (Optionnel) Définit la couleur de fond de la barre d'état si nécessaire
+    // Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#0f172a"));
         
 #if DEBUG
         global::Android.Webkit.WebView.SetWebContentsDebuggingEnabled(true);
