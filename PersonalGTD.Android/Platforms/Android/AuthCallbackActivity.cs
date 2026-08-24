@@ -13,17 +13,26 @@ public class AuthCallbackActivity : global::Android.App.Activity
 {
     protected override void OnCreate(global::Android.OS.Bundle? savedInstanceState)
     {
-        base.OnCreate(savedInstanceState);
-
-        if (Intent?.DataString != null)
+        try
         {
-            // Rediriger vers MainActivity avec les données du lien
-            var intent = new global::Android.Content.Intent(this, typeof(MainActivity));
-            intent.SetData(Intent.Data);
-            intent.AddFlags(global::Android.Content.ActivityFlags.ClearTop | global::Android.Content.ActivityFlags.SingleTop);
-            StartActivity(intent);
-        }
+            base.OnCreate(savedInstanceState);
 
-        Finish();
+            if (Intent?.DataString != null)
+            {
+                // Rediriger vers MainActivity avec les données du lien
+                var intent = new global::Android.Content.Intent(this, typeof(MainActivity));
+                intent.SetData(Intent.Data);
+                intent.AddFlags(global::Android.Content.ActivityFlags.ClearTop | global::Android.Content.ActivityFlags.SingleTop);
+                StartActivity(intent);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            try { global::Android.Util.Log.Error("AuthCallbackActivity", ex.ToString()); } catch { }
+        }
+        finally
+        {
+            Finish();
+        }
     }
 }

@@ -62,6 +62,13 @@
 
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+
+        <!-- Blazor wwwroot assets (locaux : index.html, favicon...) -->
+        <MauiAsset Include="wwwroot\**" LogicalName="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" />
+
+        <!-- Assets CSS partagés : source unique dans PersonalGTD.Shared/wwwroot/css
+             (plus de copie manuelle entre Web et Android) -->
+        <MauiAsset Include="..\PersonalGTD.Shared\wwwroot\**" LogicalName="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
     <ItemGroup>
@@ -70,6 +77,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="10.0.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
         <PackageReference Include="Xamarin.AndroidX.Work.Runtime" Version="2.11.2" />
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime" Version="2.10.0.2" />
     </ItemGroup>
 
     <ItemGroup>

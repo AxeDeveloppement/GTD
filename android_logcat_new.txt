@@ -1,0 +1,114 @@
+--------- beginning of kernel
+08-21 18:56:50.473     0     0 I logd    : logdr: UID=2000 GID=2000 PID=15630 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+--------- beginning of system
+08-21 18:56:51.335   592   743 D ActivityManager: freezing 1079 com.android.settings
+08-21 18:56:51.336   592   743 D ActivityManager: freezing 14314 com.google.android.apps.wellbeing
+08-21 18:56:51.336   592   743 D ActivityManager: freezing 27975 com.android.keychain
+08-21 18:56:51.337   592   743 D ActivityManager: freezing 3954 com.google.android.settings.intelligence
+--------- beginning of main
+08-21 18:56:51.450   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:56:55.068   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:56:59.641   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:00.046  1619  1935 I AiAiEcho: Predicting[0]: 
+08-21 18:57:00.049  1619  1935 I AiAiEcho: EchoTargets: 
+08-21 18:57:00.049  1619  1935 I AiAiEcho: Filtered by AiAi flag check: 
+08-21 18:57:00.049  1619  1935 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-21 18:57:00.050  1619  1935 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-21 18:57:00.053   888   888 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-21 18:57:00.069   888   966 D EGL_emulation: app_time_stats: avg=60022.88ms min=60022.88ms max=60022.88ms count=1
+08-21 18:57:05.069   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:05.071   888   966 D EGL_emulation: app_time_stats: avg=5001.83ms min=5001.83ms max=5001.83ms count=1
+08-21 18:57:07.576   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:08.100   592   694 W ProcessStats: Tracking association SourceState{30da7e7 com.google.android.googlequicksearchbox:search/10132 BTop #9909} whose proc state 2 is better than process ProcessState{2679983 com.google.android.gms.persistent/10128 pkg=com.google.android.gms} proc state 4 (5 skipped)
+08-21 18:57:08.163 15446 15446 D WM-DelayedWorkTracker: Scheduling work b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff
+08-21 18:57:08.167   592   735 D ActivityManager: sync unfroze 15446 com.axeldeveloppement.gtd for 6
+08-21 18:57:08.173 15446 15446 D WM-GreedyScheduler: Starting tracking for b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff
+08-21 18:57:08.205 15446 15446 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0)
+08-21 18:57:08.228 15446 15492 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0)
+08-21 18:57:08.234 15446 15492 D CompatibilityChangeReporter: Compat change id reported: 263076149; UID 10194; state: ENABLED
+08-21 18:57:08.245   592  2382 D ActivityManager: sync unfroze 3358 com.google.android.gms for 6
+08-21 18:57:08.272  1434 15326 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.chimera.container.ConfigService started execution. cause:4 exec_start_elapsed_seconds: 29974 [CONTEXT service_id=218 ]
+08-21 18:57:08.273  1434 15326 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.chimera.container.ConfigService started execution. cause:4 exec_start_elapsed_seconds: 29974 [CONTEXT service_id=218 ]
+08-21 18:57:08.320  3358  3428 I ChimeraConfigurator: Starting update, reason: 2 urgentFeatures: 
+08-21 18:57:08.381 15446 15446 D WM-WorkerWrapper: Starting work for crc64f0e0a2508dd343ab.NotificationWorker
+08-21 18:57:08.381 15446 15492 D WM-WorkConstraintsTrack: NetworkRequestConstraintController register shared callback
+08-21 18:57:08.400   592  1069 D ConnectivityService: requestNetwork for uid/pid:10194/15446 activeRequest: null callbackRequest: 294 [NetworkRequest [ REQUEST id=295, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+08-21 18:57:08.401   592   797 D ConnectivityService: NetReassign [295 : null → 106] [c 0] [a 0] [i 1]
+08-21 18:57:08.401   592   788 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=295, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 18:57:08.401   592   788 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=295, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 18:57:08.401   592   788 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=295, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 18:57:08.402   592   788 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=295, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 18:57:08.415 15446 15701 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onCapabilitiesChanged callback
+08-21 18:57:08.415 15446 15701 D WM-WorkConstraintsTrack: Not dispatching constraint state yet: isBlocked=null, capabilitiesInitialized=true
+08-21 18:57:08.415 15446 15701 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onBlockedStatusChanged callback false
+08-21 18:57:08.418 15446 15491 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0)
+08-21 18:57:08.426 15446 15491 D WM-Processor: Work WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0) is already enqueued for processing
+08-21 18:57:08.472 15446 15700 I NotificationWorker: Worker started checking for tasks...
+08-21 18:57:08.598  3358  3428 I GmsDebugLogger: [50] container:2318189190800+maps_core+mlkit.barcode.ui+mlkit.ocr.common+vision.barcode,tflite_dynamite:2627305025100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr|6
+08-21 18:57:08.626  3358  3428 I GmsModuleFndr: Beginning GMS chimera module scan
+08-21 18:57:08.648  3358  3428 I ModuleSetMgr: Computing pending module set with APKs: [[AdsFdrDynamite.integ:231004600100000], [Cronetdynamite:231818190800], [Dynamiteloader:231818190000], [Dynamitemodulesa:231818190000], [Dynamitemodulesc:231818190000], [Googlecertificates:231818190000], [Mapsdynamite:231818190000], [Measurementdynamite:231818190000]]
+08-21 18:57:08.660 15446 15700 W NotificationWorker: No session found in Preferences. User might not be logged in.
+08-21 18:57:08.677 15446 15492 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, tags={ crc64f0e0a2508dd343ab.NotificationWorker } ]
+08-21 18:57:08.686 15446 15446 D WM-Processor: Processor b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff executed; reschedule = false
+08-21 18:57:08.689 15446 15446 D WM-GreedyScheduler: Stopping tracking for WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0)
+08-21 18:57:08.693 15446 15446 D WM-SystemJobService: b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff executed on JobScheduler
+08-21 18:57:08.696   592  2382 W JobScheduler: Job didn't exist in JobStore: f6e4e4d {androidx.work.systemjobscheduler} #u0a194/1 @androidx.work.systemjobscheduler@com.axeldeveloppement.gtd/androidx.work.impl.background.systemjob.SystemJobService
+08-21 18:57:08.696 15446 15493 D WM-GreedyScheduler: Cancelling work ID b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff
+08-21 18:57:08.697 15446 15446 D WM-SystemJobService: onStopJob for WorkGenerationalId(workSpecId=b0b4848f-7e9c-41d2-8ed6-2d8b86be19ff, generation=0)
+08-21 18:57:08.720 15446 15493 D WM-SystemJobScheduler: Scheduling work ID b0b4848f-7e9c-41d2-8ed6-2d8b86be19ffJob ID 2
+08-21 18:57:08.722 15446 15491 D WM-WorkConstraintsTrack: NetworkRequestConstraintController unregister shared callback
+08-21 18:57:08.735  3358  3428 I ModuleSetMgr: Pending container module APKs: []
+08-21 18:57:08.735  3358  3428 I ModuleSetMgr: Pending non-container module APKs: []
+08-21 18:57:08.772  3358  3428 W PackageParser: Unknown element under <manifest>: queries at /data/user_de/0/com.google.android.gms/app_chimera/m/00000000/AdsDynamite.apk Binary XML file line #15
+08-21 18:57:08.820  3358  3428 W PackageParser: Unknown element under <manifest>: queries at /data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk Binary XML file line #15
+08-21 18:57:08.904  3358  3428 I GmsDebugLogger: [73] 1801
+08-21 18:57:08.909  3358  3428 W ZappDownloader: No successful module downloads for requested features [].
+08-21 18:57:08.910  3358  3428 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[VisionBarcode.optional:231818100800],[TfliteDynamiteDynamite.integ:262730502100800],[MlkitOcrCommon.optional:231818100800],[MapsCoreDynamite.integ:231112103100800],[MlkitBarcodeUi.optional:231818100000]
+08-21 18:57:08.928  3358  3428 I ChimeraConfigService: Scheduling checkin for one-off execution between [3300,43201] seconds from now (1787338628927) [CONTEXT service_id=264 ]
+08-21 18:57:08.930  3358 15324 W gle.android.gms: Long monitor contention with owner lowpool[1] (3428) at int com.google.android.gms.chimera.container.ConfigChimeraService.a(awbb)(:com.google.android.gms@231818047@23.18.18 (190800-535401451):13) waiters=0 in int com.google.android.gms.chimera.container.ConfigChimeraService.a(awbb) for 646ms
+08-21 18:57:08.930  3358 15324 I ChimeraConfigurator: Starting update, reason: 3 urgentFeatures: 
+08-21 18:57:08.933  1434 11893 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.chimera.container.ConfigService finished executing. cause:4 result: 2 elapsed_millis: 716 uptime_millis: 716 exec_start_elapsed_seconds: 29974 [CONTEXT service_id=218 ]
+08-21 18:57:09.010  3358 15324 I GmsDebugLogger: [73] 1801
+08-21 18:57:09.022  1434 15326 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gcm.HeartbeatAlarm$ConnectionInfoPersistService started execution. cause:5 exec_start_elapsed_seconds: 29975 [CONTEXT service_id=218 ]
+08-21 18:57:09.023  3358 15324 W ZappDownloader: No successful module downloads for requested features [].
+08-21 18:57:09.023  3358 15324 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[VisionBarcode.optional:231818100800],[TfliteDynamiteDynamite.integ:262730502100800],[MlkitOcrCommon.optional:231818100800],[MapsCoreDynamite.integ:231112103100800],[MlkitBarcodeUi.optional:231818100000]
+08-21 18:57:09.038  1434 15327 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gcm.HeartbeatAlarm$ConnectionInfoPersistService finished executing. cause:5 result: 1 elapsed_millis: 36 uptime_millis: 36 exec_start_elapsed_seconds: 29975 [CONTEXT service_id=218 ]
+08-21 18:57:09.039  3358 15324 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+08-21 18:57:15.084   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:15.235   592   788 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 18:57:15.531   592  2384 D WifiNl80211Manager: Scan result ready event
+08-21 18:57:15.531   592  2384 D WifiNative: Scan result ready event
+08-21 18:57:18.051   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:18.750   592   743 D ActivityManager: freezing 15446 com.axeldeveloppement.gtd
+08-21 18:57:21.051   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:23.446   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:23.990   592  2384 W ProcessStats: Tracking association SourceState{30da7e7 com.google.android.googlequicksearchbox:search/10132 BTop #9973} whose proc state 2 is better than process ProcessState{2679983 com.google.android.gms.persistent/10128 pkg=com.google.android.gms} proc state 4 (167 skipped)
+08-21 18:57:25.069   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:26.098   592   743 D ActivityManager: freezing 3358 com.google.android.gms
+08-21 18:57:26.445  1434 15326 I AlarmManager: setExactAndAllowWhileIdle [name: GCM_HB_ALARM type: 2 triggerAtMillis: 30852855]
+08-21 18:57:26.447  1434 15326 I AlarmManager: setExactAndAllowWhileIdle [name: GCM_HB_ALARM type: 2 triggerAtMillis: 30852857]
+08-21 18:57:27.069   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:30.069   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:31.385   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:33.068   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:35.069   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:35.087   888   966 D EGL_emulation: app_time_stats: avg=30015.98ms min=30015.98ms max=30015.98ms count=1
+08-21 18:57:36.085   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 18:57:39.576   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:41.508   592  2384 W ProcessStats: Tracking association SourceState{30da7e7 com.google.android.googlequicksearchbox:search/10132 BTop #9976} whose proc state 2 is better than process ProcessState{2679983 com.google.android.gms.persistent/10128 pkg=com.google.android.gms} proc state 4 (8 skipped)
+08-21 18:57:45.069   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:45.819     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=4 c=900000 fc=3000000 cc=10 chg=
+08-21 18:57:47.511   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:57:55.073   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:57:55.447   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:58:00.040  1619  1935 I AiAiEcho: Predicting[0]: 
+08-21 18:58:00.040  1619  1935 I AiAiEcho: EchoTargets: 
+08-21 18:58:00.040  1619  1935 I AiAiEcho: Filtered by AiAi flag check: 
+08-21 18:58:00.040  1619  1935 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-21 18:58:00.041   888   966 D EGL_emulation: app_time_stats: avg=24953.57ms min=24953.57ms max=24953.57ms count=1
+08-21 18:58:00.041  1619  1935 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-21 18:58:00.050   888   888 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-21 18:58:01.178   592   693 I UsageStatsService: User[0] Flushing usage stats to disk
+08-21 18:58:03.383   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 18:58:05.069   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 18:58:05.111     0     0 I logd    : logdr: UID=2000 GID=2000 PID=15929 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns

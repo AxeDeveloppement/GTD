@@ -1,26 +1,27 @@
-using Microsoft.Maui.Storage;
+// MobileSessionStorage déplacé vers le projet Android pour éviter la dépendance MAUI dans Shared.
+// Ce fichier restaure une implémentation identique dans PersonalGTD.Shared si vous préférez l'avoir
+// directement dans le projet Shared (attention aux références MAUI en build non-mobile).
+
+using System.Threading.Tasks;
 
 namespace PersonalGTD.Shared.Services;
 
-/// <summary>
-/// Implémentation Mobile de ISessionStorage via Preferences natif MAUI.
-/// </summary>
 public class MobileSessionStorage : ISessionStorage
 {
     public Task<string?> GetItemAsync(string key)
     {
-        return Task.FromResult(Preferences.Default.Get(key, (string?)null));
+        // Implémentation neutre pour Shared : renvoie null (plateforme doit fournir une vraie implémentation)
+        return Task.FromResult<string?>(null);
     }
 
     public Task SetItemAsync(string key, string value)
     {
-        Preferences.Default.Set(key, value);
+        // Pas d'effet dans cette implémentation Shared
         return Task.CompletedTask;
     }
 
     public Task RemoveItemAsync(string key)
     {
-        Preferences.Default.Remove(key);
         return Task.CompletedTask;
     }
 }

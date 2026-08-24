@@ -129,8 +129,25 @@ else
 
     private void HandleAuthStateChanged()
     {
-        _ = CheckAuthRedirect();
-        StateHasChanged();
+        // IMPORTANT : Dispatcher sur le thread principal pour éviter les exceptions silencieuses
+        // et les deadlocks sur Blazor Hybrid Android.
+        // Utilise SynchronizationContext pour contourner le conflit de résolution InvokeAsync avec IJSRuntime
+        var syncCtx = System.Threading.SynchronizationContext.Current;
+        if (syncCtx != null)
+        {
+            syncCtx.Send(static state =>
+            {
+                var self = (PersonalGTD.Shared.Components.Layout.MainLayout)state!;
+                _ = self.CheckAuthRedirect();
+                self.StateHasChanged();
+            }, this);
+        }
+        else
+        {
+            // Fallback si pas de SynchronizationContext (ne devrait pas arriver)
+            _ = CheckAuthRedirect();
+            StateHasChanged();
+        }
     }
 
     private async Task CheckAuthRedirect()

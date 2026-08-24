@@ -33,7 +33,21 @@ public class AuthService
         _supabase.Auth.AddStateChangedListener(OnSupabaseAuthStateChanged);
     }
 
-    private async void OnSupabaseAuthStateChanged(object sender, Supabase.Gotrue.Constants.AuthState state)
+    private void OnSupabaseAuthStateChanged(object sender, Supabase.Gotrue.Constants.AuthState state)
+    {
+        // Fire-and-forget sécurisé pour éviter de bloquer le thread UI
+        // (async void sur un event handler peut causer des blocages sur BlazorWebView Android)
+        try
+        {
+            _ = HandleAuthStateChangedAsync(state);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[AuthService] Auth state change handler error (ignored): {ex.Message}");
+        }
+    }
+
+    private async Task HandleAuthStateChangedAsync(Supabase.Gotrue.Constants.AuthState state)
     {
         try
         {
@@ -42,11 +56,10 @@ public class AuthService
                 var session = _supabase.Auth.CurrentSession;
                 if (session != null)
                 {
-                    // Persister la session Supabase via ISessionStorage et Preferences (pour le worker Android)
+                    // Persister la session Supabase via ISessionStorage
                     var sessionJson = JsonSerializer.Serialize(session);
-                    try { await _sessionStorage.SetItemAsync("supabase_session", sessionJson); } catch { }
-                    try { Microsoft.Maui.Storage.Preferences.Default.Set("supabase_session", sessionJson); } catch { }
-                    
+                    try { await _sessionStorage.SetItemAsync("supabase_session", sessionJson).ConfigureAwait(false); } catch { }
+
                     var user = session.User;
                     if (user != null)
                     {
@@ -54,8 +67,7 @@ public class AuthService
                         if (username != null)
                         {
                             CurrentUser = username;
-                            try { await _sessionStorage.SetItemAsync("gtd_user", username); } catch { }
-                            try { Microsoft.Maui.Storage.Preferences.Default.Set("gtd_user", username); } catch { }
+                            try { await _sessionStorage.SetItemAsync("gtd_user", username).ConfigureAwait(false); } catch { }
                         }
                     }
                 }
@@ -67,17 +79,15 @@ public class AuthService
                 if (_supabase.Auth.CurrentSession == null)
                 {
                     CurrentUser = null;
-                    try { await _sessionStorage.RemoveItemAsync("supabase_session"); } catch { }
-                    try { await _sessionStorage.RemoveItemAsync("gtd_user"); } catch { }
-                    try { Microsoft.Maui.Storage.Preferences.Default.Remove("supabase_session"); } catch { }
-                    try { Microsoft.Maui.Storage.Preferences.Default.Remove("gtd_user"); } catch { }
+                    try { await _sessionStorage.RemoveItemAsync("supabase_session").ConfigureAwait(false); } catch { }
+                    try { await _sessionStorage.RemoveItemAsync("gtd_user").ConfigureAwait(false); } catch { }
                     NotifyAuthenticationStateChanged();
                 }
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AuthService] Auth state change handler error (ignored): {ex.Message}");
+            Console.WriteLine($"[AuthService] Auth state change handler error: {ex.Message}");
         }
     }
 
@@ -125,11 +135,7 @@ public class AuthService
             var savedSessionJson = await _sessionStorage.GetItemAsync("supabase_session");
             if (string.IsNullOrEmpty(savedSessionJson))
             {
-                // Fallback sur Preferences (utile sur Android si ISessionStorage est vide au premier boot)
-                try
-                {
-                    savedSessionJson = Microsoft.Maui.Storage.Preferences.Default.Get<string?>("supabase_session", null);
-                } catch { }
+                // Fallback : aucun fallback natif ici, rely on platform-specific ISessionStorage implementation
             }
 
             if (!string.IsNullOrEmpty(savedSessionJson))

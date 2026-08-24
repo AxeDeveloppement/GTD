@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using PersonalGTD.Shared.Services;
 using PersonalGTD.Shared;
+using PersonalGTD.Android.Services;
 
 namespace PersonalGTD.Android;
 
@@ -28,11 +29,10 @@ public static class MauiProgram
 		builder.Services.AddScoped<IContextService, ContextService>();
 		builder.Services.AddScoped<ReviewStateService>();
 		builder.Services.AddScoped<AuthService>();
-		builder.Services.AddScoped<ISessionStorage, MobileSessionStorage>();
+		builder.Services.AddScoped<ISessionStorage, Services.MobileSessionStorage>();
 		builder.Services.AddScoped<NotificationService>();
 
 		// Configuration Supabase
-		// AutoConnectRealtime désactivé sur mobile pour éviter le blocage au démarrage si le WebSocket échoue
 		var supabaseOptions = new Supabase.SupabaseOptions { AutoConnectRealtime = false };
 		builder.Services.AddSingleton(provider => new Supabase.Client(SupabaseConfig.Url, SupabaseConfig.Key, supabaseOptions));
 

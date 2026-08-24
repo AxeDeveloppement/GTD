@@ -1,0 +1,115 @@
+08-21 01:01:11.751   356   356 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+08-21 01:01:14.069   356   356 D nativeloader: InitDefaultPublicLibraries for_preload=0: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+08-21 01:01:16.618   576   673 I SystemConfig: Reading permissions from /system/etc/permissions/android.software.webview.xml
+08-21 01:01:17.522   576   576 W PackageSettings: Missing permission state for package com.google.android.overlay.googlewebview on user 0
+08-21 01:01:18.541   576   576 I PackageManager: getCompressedFiles[/product/app/WebViewGoogle-Stub]: [/product/app/WebViewGoogle/WebViewGoogle.apk.gz]
+08-21 01:01:18.542   576   576 W PackageManager: Failed to scan /product/app/WebViewGoogle-Stub: Package com.google.android.webview at /product/app/WebViewGoogle-Stub ignored: updated version 567263637 better than this 567263637
+08-21 01:01:18.579   576   576 W PackageManager: Failed to parse /product/app/WebViewGoogle: Missing base APK in /product/app/WebViewGoogle
+08-21 01:01:18.806   576   576 W PackageManager: Relax SCAN_REQUIRE_KNOWN requirement for package com.google.android.webview
+08-21 01:01:19.966   576   576 D SystemServerTiming: StartWebViewUpdateService
+08-21 01:01:19.966   576   576 I SystemServiceManager: Starting com.android.server.webkit.WebViewUpdateService
+08-21 01:01:19.969   576   576 V SystemServerTiming: StartWebViewUpdateService took to complete: 3ms
+08-21 01:01:20.270   576   576 D SystemServerTiming: OnBootPhase_200_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:20.271   576   576 V SystemServerTiming: OnBootPhase_200_com.android.server.webkit.WebViewUpdateService took to complete: 1ms
+08-21 01:01:22.527   576   576 D SystemServerTiming: OnBootPhase_480_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:22.528   576   576 V SystemServerTiming: OnBootPhase_480_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:22.693   576   576 D SystemServerTiming: OnBootPhase_500_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:22.693   576   576 V SystemServerTiming: OnBootPhase_500_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:23.151   576   576 D SystemServerTiming: OnBootPhase_520_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:23.151   576   576 V SystemServerTiming: OnBootPhase_520_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:23.407   576   714 D SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.google.android.webview changed
+08-21 01:01:23.407   576   714 D SystemServerInitThreadPool: Started executing Update app-ops uidState in case package com.google.android.webview changed
+08-21 01:01:23.408   576   714 D SystemServerInitThreadPool: Finished executing Update app-ops uidState in case package com.google.android.webview changed
+08-21 01:01:23.408   576   714 V SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.google.android.webview changed took to complete: 1ms
+08-21 01:01:23.518   576   714 D SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.google.android.overlay.googlewebview changed
+08-21 01:01:23.518   576   714 D SystemServerInitThreadPool: Started executing Update app-ops uidState in case package com.google.android.overlay.googlewebview changed
+08-21 01:01:23.524   576   714 D SystemServerInitThreadPool: Finished executing Update app-ops uidState in case package com.google.android.overlay.googlewebview changed
+08-21 01:01:23.530   576   714 V SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.google.android.overlay.googlewebview changed took to complete: 7ms
+08-21 01:01:23.628   576   576 D SystemServerTiming: OnBootPhase_550_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:23.628   576   576 V SystemServerTiming: OnBootPhase_550_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:24.312   576   714 D SystemServerTimingAsync: InitThreadPoolExec:WebViewFactoryPreparation
+08-21 01:01:24.313   576   714 D SystemServerInitThreadPool: Started executing WebViewFactoryPreparation
+08-21 01:01:24.313   576   714 I SystemServer: WebViewFactoryPreparation
+08-21 01:01:24.313   576   714 D SystemServerTimingAsync: WebViewFactoryPreparation
+08-21 01:01:24.320   576   714 E AppOps  : 	at android.webkit.WebViewLibraryLoader.createRelroFile(WebViewLibraryLoader.java:126)
+08-21 01:01:24.320   576   714 E AppOps  : 	at android.webkit.WebViewLibraryLoader.createRelros(WebViewLibraryLoader.java:170)
+08-21 01:01:24.320   576   714 E AppOps  : 	at android.webkit.WebViewLibraryLoader.prepareNativeLibraries(WebViewLibraryLoader.java:152)
+08-21 01:01:24.320   576   714 E AppOps  : 	at android.webkit.WebViewFactory.onWebViewProviderChanged(WebViewFactory.java:555)
+08-21 01:01:24.320   576   714 E AppOps  : 	at com.android.server.webkit.SystemImpl.onWebViewProviderChanged(SystemImpl.java:174)
+08-21 01:01:24.320   576   714 E AppOps  : 	at com.android.server.webkit.WebViewUpdateServiceImpl.onWebViewProviderChanged(WebViewUpdateServiceImpl.java:351)
+08-21 01:01:24.320   576   714 E AppOps  : 	at com.android.server.webkit.WebViewUpdateServiceImpl.prepareWebViewInSystemServer(WebViewUpdateServiceImpl.java:182)
+08-21 01:01:24.320   576   714 E AppOps  : 	at com.android.server.webkit.WebViewUpdateService.prepareWebViewInSystemServer(WebViewUpdateService.java:129)
+08-21 01:01:24.326   576   714 V SystemServerTimingAsync: WebViewFactoryPreparation took to complete: 13ms
+08-21 01:01:24.327   576   714 D SystemServerInitThreadPool: Finished executing WebViewFactoryPreparation
+08-21 01:01:24.328   576   714 V SystemServerTimingAsync: InitThreadPoolExec:WebViewFactoryPreparation took to complete: 15ms
+08-21 01:01:24.341   576   679 I ActivityManager: Start proc 905:WebViewLoader-x86_64/1037 [android.webkit.WebViewLibraryLoader$RelroFileCreator] for 
+08-21 01:01:24.375   905   905 I WebViewLoader-x: Using CollectorTypeCC GC.
+08-21 01:01:24.378   905   905 W WebViewLoader-x: Unexpected CPU variant for x86: x86_64.
+08-21 01:01:24.378   905   905 W WebViewLoader-x: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 01:01:24.399   905   905 E WebViewLoader-x: Not starting debugger since process cannot load the jdwp agent.
+08-21 01:01:24.430   905   905 V WebViewLibraryLoader: RelroFileCreator (64bit = true), package: com.google.android.webview library: libmonochrome_64.so
+08-21 01:01:24.447   905   905 W WebViewLoader-x: Entry not found
+08-21 01:01:24.450   905   905 D nativeloader: Configuring clns-6 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:01:24.600   576   576 D SystemServerTiming: OnBootPhase_600_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:24.601   576   576 V SystemServerTiming: OnBootPhase_600_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:24.606   905   905 D nativeloader: Configuring clns-7 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:01:24.943   905   905 I WebViewLoader-x: System.exit called, status: 0
+08-21 01:01:24.948   356   356 D Zygote  : mbuffer starts with 14, nice name is webview_zygote, mEnd = 404, mNext = 165, mLinesLeft = 6, mFd = 6
+08-21 01:01:24.958   576   591 I ActivityManager: Process WebViewLoader-x86_64 (pid 905) has died: psvc PER 
+08-21 01:01:25.045   987   987 I webview_zygote: Using CollectorTypeCC GC.
+08-21 01:01:25.067   987   987 I WebViewZygoteInit: Starting WebViewZygoteInit
+08-21 01:01:25.121   987   987 I WebViewZygoteInit: Beginning application preload for com.google.android.webview
+08-21 01:01:25.123   987   987 W webview_zygote: Entry not found
+08-21 01:01:25.127   987   987 D nativeloader: Configuring clns-6 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:01:25.134   871   871 D NavigationModeController:     /product/overlay/GoogleWebViewOverlay.apk
+08-21 01:01:25.145   987   987 D nativeloader: Configuring clns-7 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:01:25.213   987   987 I WebViewZygoteInit: Application preload done
+08-21 01:01:25.597   576   576 D SystemServerTimingAsync: ssm.onStartUser-0_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:25.597   576   576 V SystemServerTimingAsync: ssm.onStartUser-0_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:25.750   576   576 V StorageManagerService: Package com.google.android.overlay.googlewebview does not have legacy storage
+08-21 01:01:25.810   576   576 V StorageManagerService: Package com.google.android.webview does not have legacy storage
+08-21 01:01:32.061   576   666 D ActivityManagerTiming: OnBootPhase_1000_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:32.062   576   666 V ActivityManagerTiming: OnBootPhase_1000_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:33.105   576   678 D SystemServerTimingAsync: ssm.onUnlockingUser-0_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:33.106   576   678 V SystemServerTimingAsync: ssm.onUnlockingUser-0_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:35.011   576   678 D SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:35.014   576   678 V SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:39.767   871   871 D NavigationModeController:     /product/overlay/GoogleWebViewOverlay.apk
+08-21 01:01:40.886   576  2366 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.webkit.WebViewUpdateService
+08-21 01:01:40.886   576  2366 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+08-21 01:01:44.286   871   871 D NavigationModeController:     /product/overlay/GoogleWebViewOverlay.apk
+08-21 01:01:49.416   987   999 I webview_zygote: Background concurrent copying GC freed 2382(162KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 1933KB/3866KB, paused 582us,71us total 163.898ms
+08-21 01:02:02.865  3914  3914 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:02:02.865  3914  3914 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:02:02.871  3914  3914 W monodroid: runtime args empty
+08-21 01:02:02.965  3914  3914 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:02:03.058  3914  3914 D DOTNET  : AndroidCryptoNative_InitLibraryOnLoad: jint AndroidCryptoNative_InitLibraryOnLoad(JavaVM *, void *) in /__w/1/s/src/runtime/src/native/libs/System.Security.Cryptography.Native.Android/pal_jni.c
+08-21 01:02:03.060  3914  3914 D DOTNET  : GetOptionalClassGRef: optional class com/android/org/conscrypt/OpenSSLEngineImpl was not found
+08-21 01:02:03.321  1101  1446 D PrefCtrlListHelper: Could not find Context-only controller for pref: com.android.settings.deviceinfo.legal.WebViewLicensePreferenceController
+08-21 01:02:04.722  1101  1129 D PrefCtrlListHelper: Could not find Context-only controller for pref: com.android.settings.deviceinfo.legal.WebViewLicensePreferenceController
+08-21 01:03:18.325  4999  4999 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+08-21 01:03:19.987  3914  3914 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:03:19.989  3914  3914 I DOTNET  : [MainPage] OnAppearing called
+08-21 01:03:20.646  3914  3914 I WebViewFactory: Loading com.google.android.webview version 113.0.5672.136 (code 567263637)
+08-21 01:03:20.658  3914  3914 D nativeloader: Configuring clns-7 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:03:20.670  3914  3914 D nativeloader: Configuring clns-8 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c652bb1 com.google.android.overlay.googlewebview/10049} BLOCKED
+08-21 01:03:20.842  3914  5069 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.axeldeveloppement.gtd/app_webview/variations_seed_new"
+08-21 01:03:20.842  3914  5069 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.axeldeveloppement.gtd/app_webview/variations_seed"
+08-21 01:03:20.958   576   679 I ActivityManager: Start proc 5073:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {com.axeldeveloppement.gtd/org.chromium.content.app.SandboxedProcessService0:0}
+08-21 01:03:20.999  5073  5073 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+08-21 01:03:21.300   576   679 I ActivityManager: Start proc 5106:com.google.android.webview:webview_service/u0a134 for service {com.google.android.webview/org.chromium.android_webview.services.ComponentsProviderService}
+08-21 01:03:21.352  5106  5106 I webview_service: Using CollectorTypeCC GC.
+08-21 01:03:21.353  5106  5106 W webview_service: Unexpected CPU variant for x86: x86_64.
+08-21 01:03:21.353  5106  5106 W webview_service: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 01:03:21.359  5106  5106 E webview_service: Not starting debugger since process cannot load the jdwp agent.
+08-21 01:03:21.401  5106  5106 W webview_service: Entry not found
+08-21 01:03:21.402  5106  5106 D nativeloader: Configuring clns-6 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+08-21 01:03:21.421  5106  5106 D nativeloader: Configuring clns-7 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+08-21 01:03:21.430  5106  5106 V GraphicsEnvironment: ANGLE GameManagerService for com.google.android.webview: false
+08-21 01:03:21.430  5106  5106 V GraphicsEnvironment: com.google.android.webview is not listed in per-application setting
+08-21 01:03:21.433  5106  5106 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_service
+08-21 01:03:21.702  3914  3914 I DOTNET  : [MainPage] Handler changed, platform handler: True
+08-21 01:03:21.702  3914  3914 I DOTNET  : [MainPage] BlazorWebView handler initialized
+08-21 01:03:23.039  3914  3914 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 01:03:32.488   576   728 D ActivityManager: freezing 5106 com.google.android.webview:webview_service

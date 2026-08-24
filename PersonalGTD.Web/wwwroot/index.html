@@ -10,8 +10,10 @@
         var base = path.indexOf('/GTD/') !== -1 ? '/GTD/' : '/';
         document.write('<base href="' + base + '" />');
     </script>
-    <link rel="stylesheet" href="css/app.css?v=2.5" />
-    <link rel="stylesheet" href="css/bundle-scoped.css" />
+    <!-- CSS partagé : source unique dans PersonalGTD.Shared/wwwroot/css,
+         servi par Blazor sous _content/PersonalGTD.Shared/ -->
+    <link rel="stylesheet" href="_content/PersonalGTD.Shared/css/app.css" />
+    <link rel="stylesheet" href="_content/PersonalGTD.Shared/css/bundle-scoped.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <script type="text/javascript">
         // Capture immédiate du token Supabase avant toute redirection ou chargement Blazor

@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:PersonalGTD.Android"
-             xmlns:components="clr-namespace:PersonalGTD.Android.Components"
+             xmlns:shared="clr-namespace:PersonalGTD.Shared.Components;assembly=PersonalGTD.Shared"
              x:Class="PersonalGTD.Android.MainPage">
 
-    <Grid>
-        <!--
-            Le composant racine Blazor est configuré de manière programmatique dans MainPage.xaml.cs
-            via blazorWebView.RootComponents.Add(), car l'attribut XAML RootComponent n'existe pas
-            sur BlazorWebView dans MAUI 10.
-        -->
-        <BlazorWebView x:Name="blazorWebView"
-                       HostPage="wwwroot/index.html">
-        </BlazorWebView>
-    </Grid>
+    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type shared:Routes}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
 
 </ContentPage>

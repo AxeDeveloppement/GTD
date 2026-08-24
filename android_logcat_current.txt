@@ -1,0 +1,619 @@
+--------- beginning of main
+08-21 22:09:11.416   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:15.502   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 22:09:19.607   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:25.503   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+--------- beginning of system
+08-21 22:09:25.633   592  2254 I ActivityManager: Force stopping com.axeldeveloppement.gtd appid=10194 user=0: from pid 31925
+08-21 22:09:25.634   592  2254 I ActivityManager: Killing 17029:com.axeldeveloppement.gtd/u0a194 (adj 945): stop com.axeldeveloppement.gtd due to from pid 31925
+08-21 22:09:25.636   592   684 D DisplayManagerService: Drop pending events for gone uid 10194
+08-21 22:09:25.638   592  2254 W ProcessStats: Tracking association SourceState{4687e2c com.google.android.apps.nexuslauncher/10169 BTop #11188} whose proc state 2 is better than process ProcessState{17be69d com.google.android.googlequicksearchbox:search/10132 pkg=com.google.android.googlequicksearchbox} proc state 14 (24 skipped)
+08-21 22:09:25.645  1075  1075 D CarrierSvcBindHelper: onHandleForceStop: [com.axeldeveloppement.gtd]
+08-21 22:09:25.646  1075  1075 D CarrierSvcBindHelper: No carrier app for: 0
+08-21 22:09:25.660   592  2255 V ActivityManager: Got obituary of 17029:com.axeldeveloppement.gtd
+08-21 22:09:25.661   368   368 I Zygote  : Process 17029 exited due to signal 9 (Killed)
+08-21 22:09:25.894   592  2254 W ActivityTaskManager: callingPackage for (uid=2000, pid=31925) has no WPC
+08-21 22:09:25.897   592  2254 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10194; state: DISABLED
+08-21 22:09:25.900   592  2254 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10194; state: DISABLED
+08-21 22:09:25.901   592  2254 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10194; state: ENABLED
+08-21 22:09:25.906   592  2254 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10194; state: DISABLED
+08-21 22:09:25.906   592  2254 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10194; state: DISABLED
+08-21 22:09:25.908   592  2254 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10194; state: ENABLED
+08-21 22:09:25.909   592  2254 D CompatibilityChangeReporter: Compat change id reported: 205907456; UID 10194; state: ENABLED
+08-21 22:09:25.921   888   945 D SplashScreenView: Build android.window.SplashScreenView{ce1dc1d V.E...... ......ID 0,0-0,0}
+08-21 22:09:25.921   888   945 D SplashScreenView: Icon: view: android.widget.ImageView{8a9be92 V.ED..... ......I. 0,0-0,0 #10204f0 android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@f42d063 size: 504
+08-21 22:09:25.921   888   945 D SplashScreenView: Branding: view: android.view.View{a831460 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+08-21 22:09:25.924   592  2254 D CompatibilityChangeReporter: Compat change id reported: 194833441; UID 10194; state: ENABLED
+08-21 22:09:25.924   592  2254 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+08-21 22:09:25.927   592   941 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10194; state: DISABLED
+08-21 22:09:25.927   592   686 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10194; state: DISABLED
+08-21 22:09:25.929   592   941 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10194; state: DISABLED
+08-21 22:09:25.937   592   695 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10194; state: ENABLED
+08-21 22:09:25.939   888   932 V WindowManagerShell: Transition requested: android.os.BinderProxy@4decf6d TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=68 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity } baseActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} topActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} origActivity=null realActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} numActivities=1 lastActiveTime=41512330 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@15fb7a2} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{900bc33 crc64f0e0a2508dd343ab.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+08-21 22:09:25.947   368   368 D Zygote  : Forked child process 31928
+08-21 22:09:25.949   592   695 I ActivityManager: Start proc 31928:com.axeldeveloppement.gtd/u0a194 for next-top-activity {com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity}
+08-21 22:09:25.980   592   735 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10194; state: ENABLED
+08-21 22:09:25.981   433   433 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+08-21 22:09:25.990 31928 31928 I veloppement.gtd: Late-enabling -Xcheck:jni
+08-21 22:09:26.016 31928 31928 I veloppement.gtd: Using CollectorTypeCC GC.
+08-21 22:09:26.017 31928 31928 W veloppement.gtd: Unexpected CPU variant for x86: x86_64.
+08-21 22:09:26.017 31928 31928 W veloppement.gtd: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 22:09:26.036   450   462 I adbd    : jdwp connection from 31928
+08-21 22:09:26.054   888   966 E OpenGLRenderer: Unable to match the desired swap behavior.
+08-21 22:09:26.066 31928 31928 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10194; state: ENABLED
+08-21 22:09:26.069 31928 31928 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10194; state: ENABLED
+08-21 22:09:26.075   592  2249 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10194; state: ENABLED
+08-21 22:09:26.081 31928 31928 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+08-21 22:09:26.085 31928 31928 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+08-21 22:09:26.085 31928 31928 W ziparchive: Unable to open '/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.dm': No such file or directory
+08-21 22:09:26.086 31928 31928 W ziparchive: Unable to open '/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.dm': No such file or directory
+08-21 22:09:26.159  1202  1780 D EGL_emulation: app_time_stats: avg=294516.22ms min=2.37ms max=6478659.50ms count=22
+08-21 22:09:26.172   888   932 V WindowManagerShell: onTransitionReady android.os.BinderProxy@4decf6d: {id=95 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@740a7e9} m=OPEN f=NONE leash=Surface(name=Task=68)/@0x3b9b022 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@e6ac6e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6068ab3 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:26.172   592   683 V WindowManager: Sent Transition #95 createdAt=08-21 22:09:25.902 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=68 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity } baseActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} topActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} origActivity=null realActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} numActivities=1 lastActiveTime=41512330 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{58da72c Task{769a101 #68 type=standard A=10194:com.axeldeveloppement.gtd}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{e47c5f5 crc64f0e0a2508dd343ab.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+08-21 22:09:26.172   888   932 V WindowManagerShell: Playing animation for (#95)android.os.BinderProxy@4decf6d@0
+08-21 22:09:26.172   592   683 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 22:09:26.172   888   932 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@a0545a1
+08-21 22:09:26.172   888   932 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@afbe3c6
+08-21 22:09:26.172   888   932 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@dca7f87
+08-21 22:09:26.172   592   683 V WindowManager:     info={id=95 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{58da72c Task{769a101 #68 type=standard A=10194:com.axeldeveloppement.gtd}}} m=OPEN f=NONE leash=Surface(name=Task=68)/@0xa20e97e sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{e7e9042 Task{33ab908 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x88d8ea sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:26.172   888   932 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@b7d9eb4
+08-21 22:09:26.173   888   932 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+08-21 22:09:26.173   888   932 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@e0f9add
+08-21 22:09:26.173   888   932 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@1c27652
+08-21 22:09:26.173   888   932 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@5458d23
+08-21 22:09:26.173   888   932 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=95 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@740a7e9} m=OPEN f=NONE leash=Surface(name=Task=68)/@0x3b9b022 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@e6ac6e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6068ab3 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:26.173   888   932 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@3074d95, appThread = android.app.IApplicationThread$Stub$Proxy@9fd9eaa, debugName = LauncherToDream }}
+08-21 22:09:26.173   888   932 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@8d08a9b, appThread = android.app.IApplicationThread$Stub$Proxy@9e86e38, debugName = QuickstepLaunchHome }}
+08-21 22:09:26.173   888   932 V WindowManagerShell:  Delegate animation for #95 to null
+08-21 22:09:26.173   888   932 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@baff220
+08-21 22:09:26.173   888   932 V WindowManagerShell: start default transition animation, info = {id=95 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@740a7e9} m=OPEN f=NONE leash=Surface(name=Task=68)/@0x3b9b022 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@e6ac6e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x6068ab3 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:26.173   888   932 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@fcefb9c animAttr=0x13 type=OPEN isEntrance=false
+08-21 22:09:26.174   888   932 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@f9e3588 animAttr=0x12 type=OPEN isEntrance=true
+08-21 22:09:26.175   888   932 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@baff220
+08-21 22:09:26.373   888   900 I ndroid.systemui: Background young concurrent copying GC freed 379571(17MB) AllocSpace objects, 2(40KB) LOS objects, 47% free, 18MB/35MB, paused 17.765ms,31us total 57.308ms
+08-21 22:09:26.467   888   932 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#95)android.os.BinderProxy@4decf6d@0
+08-21 22:09:26.472   592   683 V WindowManager: Finish Transition #95: created at 08-21 22:09:25.902 collect-started=0.023ms request-sent=19.038ms started=47.944ms ready=155.73ms sent=267.684ms finished=569.512ms
+08-21 22:09:26.479   888   932 V WindowManagerShell: Track 0 became idle
+08-21 22:09:26.480   888   932 V WindowManagerShell: All active transition animations finished
+08-21 22:09:26.492 31928 31928 D nativeloader: Configuring clns-6 for other apk /data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/lib/x86_64:/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.axeldeveloppement.gtd
+08-21 22:09:26.509 31928 31928 V GraphicsEnvironment: Currently set values for:
+08-21 22:09:26.509 31928 31928 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+08-21 22:09:26.509 31928 31928 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+08-21 22:09:26.510 31928 31928 V GraphicsEnvironment: ANGLE GameManagerService for com.axeldeveloppement.gtd: false
+08-21 22:09:26.511 31928 31928 V GraphicsEnvironment: com.axeldeveloppement.gtd is not listed in per-application setting
+08-21 22:09:26.511 31928 31928 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+08-21 22:09:26.530   592   941 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10194; state: ENABLED
+08-21 22:09:26.547 31928 31928 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 22:09:26.549 31928 31928 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 22:09:26.550 31928 31928 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 22:09:26.550 31928 31928 W monodroid: runtime args empty
+08-21 22:09:26.645 31928 31928 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 22:09:26.671 31928 31928 D DOTNET  : AndroidCryptoNative_InitLibraryOnLoad: jint AndroidCryptoNative_InitLibraryOnLoad(JavaVM *, void *) in /__w/1/s/src/runtime/src/native/libs/System.Security.Cryptography.Native.Android/pal_jni.c
+08-21 22:09:26.673 31928 31928 D DOTNET  : GetOptionalClassGRef: optional class com/android/org/conscrypt/OpenSSLEngineImpl was not found
+08-21 22:09:26.753 31928 31928 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 22:09:26.812 31928 31928 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+08-21 22:09:26.875 31928 31928 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
+08-21 22:09:26.875 31928 31928 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+08-21 22:09:26.880 31928 31949 D WM-ForceStopRunnable: The default process name was not specified.
+08-21 22:09:26.881 31928 31949 D WM-ForceStopRunnable: Performing cleanup operations.
+08-21 22:09:26.932 31928 31949 D WM-SystemJobScheduler: Reconciling jobs
+08-21 22:09:26.945 31928 31949 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10194; state: ENABLED
+08-21 22:09:26.953 31928 31949 D WM-ForceStopRunnable: Application was force-stopped, rescheduling.
+08-21 22:09:27.009 31928 31949 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10194; state: ENABLED
+08-21 22:09:27.009 31928 31949 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10194; state: ENABLED
+08-21 22:09:27.010 31928 31949 D WM-SystemJobScheduler: Scheduling work ID 74e345a8-20d1-4f2b-afad-5919154fff4bJob ID 12
+08-21 22:09:27.012   592   941 D CompatibilityChangeReporter: Compat change id reported: 271850009; UID 10194; state: ENABLED
+08-21 22:09:27.013   592   941 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10194; state: ENABLED
+08-21 22:09:27.013   592   941 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10194; state: ENABLED
+08-21 22:09:27.021 31928 31949 D WM-GreedyScheduler: Starting tracking for 74e345a8-20d1-4f2b-afad-5919154fff4b
+08-21 22:09:27.109 31928 31953 D WM-WorkConstraintsTrack: NetworkRequestConstraintController register shared callback
+08-21 22:09:27.112   592   941 D ConnectivityService: requestNetwork for uid/pid:10194/31928 activeRequest: null callbackRequest: 345 [NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+08-21 22:09:27.115   592   788 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:27.115   592   797 D ConnectivityService: NetReassign [346 : null → 107] [c 0] [a 1] [i 1]
+08-21 22:09:27.115   592   788 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:27.115   592   788 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:27.115   592   788 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:27.130 31928 31949 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemalarm.RescheduleReceiver
+08-21 22:09:27.133 31928 31954 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onCapabilitiesChanged callback
+08-21 22:09:27.133 31928 31954 D WM-WorkConstraintsTrack: Not dispatching constraint state yet: isBlocked=null, capabilitiesInitialized=true
+08-21 22:09:27.133 31928 31954 D WM-WorkConstraintsTrack: NetworkRequestConstraintController onBlockedStatusChanged callback false
+08-21 22:09:27.136 31928 31952 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=74e345a8-20d1-4f2b-afad-5919154fff4b, generation=0)
+08-21 22:09:27.151 31928 31953 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=74e345a8-20d1-4f2b-afad-5919154fff4b, generation=0)
+08-21 22:09:27.157 31928 31953 D CompatibilityChangeReporter: Compat change id reported: 263076149; UID 10194; state: ENABLED
+08-21 22:09:27.543   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:27.588   592   941 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10194. pid: 31928
+08-21 22:09:27.606 31928 31978 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+08-21 22:09:27.610 31928 31978 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+08-21 22:09:27.617 31928 31978 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+08-21 22:09:27.657 31928 31928 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+08-21 22:09:27.764 31928 31928 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 22:09:27.765 31928 31928 I DOTNET  : [DEBUG MainPage] Constructeur appelé
+08-21 22:09:27.853 31928 31928 I DOTNET  : [DEBUG MainPage] OnAppearing appelé (fois: 1)
+08-21 22:09:27.853 31928 31928 I DOTNET  : [DEBUG MainPage] BlazorWebView existe, HostPage=index.html
+08-21 22:09:27.931 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+08-21 22:09:27.969 31928 31953 D WM-Processor: Processor cancelling 74e345a8-20d1-4f2b-afad-5919154fff4b
+08-21 22:09:27.970 31928 31928 I MainActivity: Notification worker scheduled/updated successfully (1h period).
+08-21 22:09:27.970 31928 31953 D WM-Processor: WorkerWrapper interrupted for 74e345a8-20d1-4f2b-afad-5919154fff4b
+08-21 22:09:27.974 31928 31953 D WM-GreedyScheduler: Cancelling work ID 74e345a8-20d1-4f2b-afad-5919154fff4b
+08-21 22:09:28.005 31928 31953 D WM-SystemJobScheduler: Scheduling work ID 7a1c6e01-1b36-427f-a8d8-a2f35b760438Job ID 13
+08-21 22:09:28.011 31928 31953 D WM-GreedyScheduler: Starting tracking for 7a1c6e01-1b36-427f-a8d8-a2f35b760438
+08-21 22:09:28.012 31928 31953 D WM-StopWorkRunnable: StopWorkRunnable for 74e345a8-20d1-4f2b-afad-5919154fff4b; Processor.stopWork = false
+08-21 22:09:28.020 31928 31949 D WM-WorkConstraintsTrack: NetworkRequestConstraintController send initial capabilities
+08-21 22:09:28.023 31928 31949 D WM-GreedyScheduler: Constraints met: Scheduling work ID WorkGenerationalId(workSpecId=7a1c6e01-1b36-427f-a8d8-a2f35b760438, generation=0)
+08-21 22:09:28.032 31928 31949 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=7a1c6e01-1b36-427f-a8d8-a2f35b760438, generation=0)
+08-21 22:09:28.069 31928 31928 I WebViewFactory: Loading com.google.android.webview version 113.0.5672.136 (code 567263637)
+08-21 22:09:28.077 31928 31928 W ziparchive: Unable to open '/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.dm': No such file or directory
+08-21 22:09:28.078 31928 31928 W ziparchive: Unable to open '/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.dm': No such file or directory
+08-21 22:09:28.079 31928 31928 W veloppement.gtd: Entry not found
+08-21 22:09:28.080 31928 31928 D nativeloader: Configuring clns-7 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 22:09:28.086 31928 31928 D nativeloader: Configuring clns-8 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+08-21 22:09:28.086   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e8efd97 com.android.cts.priv.ctsshim/10174} BLOCKED
+08-21 22:09:28.088   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{df02b84 com.google.android.youtube/10138} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{89cef6d com.android.internal.display.cutout.emulation.corner/10023} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{71357a2 com.android.internal.display.cutout.emulation.double/10048} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{13bdc33 com.google.android.googlequicksearchbox/10132} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6067bf0 com.google.android.onetimeinitializer/10125} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6261569 com.google.android.ext.shared/10100} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f34bee com.android.internal.systemui.navbar.gestural_wide_back/10004} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{ce088f com.android.virtualmachine.res/10180} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{bef671c com.google.android.federatedcompute/10187} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2019f25 com.android.managedprovisioning.auto_generated_rro_product__/10022} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4cc38fa com.android.carrierconfig.auto_generated_rro_vendor__/10076} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{fac9eab com.android.systemui.emulation.pixel_3_xl/10036} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{819d908 com.android.systemui.emulation.pixel_4_xl/10059} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{75208a1 com.android.systemui.emulation.pixel_fold/10009} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{a14eac6 com.android.simappdialog.auto_generated_rro_product__/10028} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{5947a87 com.android.htmlviewer/10115} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8f77db4 com.google.android.health.connect.backuprestore/10186} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6e58ddd com.android.systemui.auto_generated_rro_product__/10033} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6e4ed52 com.google.android.apps.messaging/10131} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f343823 com.google.android.soundpicker/10137} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{68c120 com.google.android.marvin.talkbackoverlay/10078} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6322ad9 com.google.android.configupdater/10129} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9408c9e com.android.internal.emulation.pixel_3a_xl/10044} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b88337f com.android.internal.emulation.pixel_6_pro/10018} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{be8cf4c com.android.internal.emulation.pixel_7_pro/10008} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2119b95 com.android.internal.emulation.pixel_8_pro/10057} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{924d4aa com.android.internal.emulation.pixel_3a/10052} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2f6889b com.android.internal.emulation.pixel_4a/10013} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{3799438 com.android.internal.emulation.pixel_6a/10025} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{13d5c11 com.android.internal.emulation.pixel_7a/10031} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f539176 com.google.android.overlay.googlewebview/10049} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{42b1377 com.google.android.hotspot2.osulogin/10191} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b4fbbe4 com.android.simappdialog/10112} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{28aa84d com.android.internal.display.cutout.emulation.hole/10073} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{cdf4f02 com.android.internal.display.cutout.emulation.tall/10065} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2b37013 com.android.internal.systemui.navbar.threebutton/10068} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{43eb250 com.android.camera2/10142} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2e67c49 com.android.systemui.auto_generated_rro_vendor__/10077} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f77594e com.google.android.deskclock/10153} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{35afa6f com.android.internal.systemui.navbar.twobutton/10021} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6e4a37c com.google.android.as/10127} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{7119405 com.google.android.gm/10144} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e73bc5a com.android.internal.systemui.navbar.gestural_extra_wide_back/10045} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{246ce8b com.android.systemui.emulation.pixel_3/10015} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{5967b68 com.android.systemui.emulation.pixel_4/10038} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{51c6b81 com.android.systemui.emulation.pixel_5/10071} BLOCKED
+08-21 22:09:28.089   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{ca14426 com.android.systemui.emulation.pixel_6/10074} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{ed1c867 com.android.systemui.emulation.pixel_7/10072} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{10be614 com.android.systemui.emulation.pixel_8/10070} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9a33ebd com.android.nfc.auto_generated_rro_product__/10027} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{acd7cb2 com.android.printspooler/10102} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9288403 com.android.emergency.auto_generated_rro_product__/10041} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{bcb4f80 com.google.android.connectivity.resources.goldfish.overlay/10079} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4ca09b9 com.android.dreams.basic/10103} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{712b1fe com.google.android.networkstack.tethering.emulator/10026} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{da55d5f com.android.providers.settings.auto_generated_rro_product__/10006} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{855e3ac com.google.android.as.oss/10121} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{af88875 com.android.traceur.auto_generated_rro_product__/10003} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4e3f00a com.google.android.devicelockcontroller/10181} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9ec707b com.google.android.dialer/10130} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e138e98 com.android.internal.emulation.pixel_3/10046} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{55636f1 com.android.internal.emulation.pixel_4/10060} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9d902d6 com.android.internal.emulation.pixel_5/10010} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{7c79957 com.android.internal.emulation.pixel_6/10037} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{fefc44 com.android.internal.emulation.pixel_7/10067} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e06512d com.android.internal.emulation.pixel_8/10042} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b3a7662 com.google.android.captiveportallogin/10114} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9c273f3 com.android.musicfx/10088} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{81198b0 com.google.android.apps.docs/10155} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{253000c com.google.android.apps.maps/10152} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{423d329 com.google.android.modulemetadata/10146} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{84d96ae com.google.android.markup/10135} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{5865c4f com.android.providers.settings.auto_generated_rro_vendor__/10081} BLOCKED
+08-21 22:09:28.090   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e6f8fdc com.google.android.rkpdapp/10178} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{37d78e5 com.google.android.contacts/10154} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{d606fba com.android.server.telecom.auto_generated_rro_product__/10035} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{7f66e6b com.google.android.overlay.googleconfig/10055} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b53cdc8 com.android.chrome/10150} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{c11be61 com.android.bips.auto_generated_rro_product__/10032} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b95cd86 com.google.android.apps.customization.pixel/10143} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f0b8647 com.google.android.tag/10085} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{cbbfe74 com.google.android.overlay.permissioncontroller/10002} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{54adf9d com.google.android.partnersetup/10124} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{1713c12 com.google.android.apps.wallpaper.nexus/10141} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{5703fe3 com.google.android.apps.nexuslauncher/10169} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{d48de0 com.google.android.nearby.halfsheet/10171} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8fad899 com.android.theme.font.notoserifsource/10066} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{23075e com.google.android.safetycenter.resources/10172} BLOCKED
+08-21 22:09:28.091   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{bdcf73f com.android.internal.display.cutout.emulation.waterfall/10040} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{a24a80c com.android.internal.systemui.navbar.transparent/10029} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2176555 com.google.android.connectivity.resources/10170} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9943b6a com.android.providers.contacts.auto_generated_rro_product__/10016} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{c33c85b com.google.android.feedback/10162} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{a7a38f8 com.google.android.printservice.recommendation/10110} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b3601d1 com.google.android.apps.photos/10140} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{e4d65e0 com.google.android.calendar/10145} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{332a436 com.google.android.documentsui/10098} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{25c8f37 com.android.systemui.emulation.pixel_3a_xl/10020} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{95eca4 com.android.systemui.emulation.pixel_6_pro/10063} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8c7ea0d com.android.systemui.emulation.pixel_7_pro/10054} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{97ccdc2 com.android.systemui.emulation.pixel_8_pro/10001} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{6e0e7d3 com.google.mainline.telemetry/10151} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4972f10 com.android.carrierconfig.auto_generated_rro_product__/10064} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{b161a09 com.android.providers.partnerbookmarks/10101} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4e040e com.android.wallpaper.livepicker/10089} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{7482e2f com.android.providers.telephony.auto_generated_rro_product__/10062} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f282c3c com.android.phone.auto_generated_rro_vendor__/10080} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{3fd4dc5 com.google.mainline.adservices/10136} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{bea531a com.android.imsserviceentitlement/10117} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8337e4b com.google.android.healthconnect.controller/10185} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{769d028 com.android.internal.emulation.pixel_2_xl/10017} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{c6a0141 com.android.internal.emulation.pixel_3_xl/10056} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{eca86e6 com.android.internal.emulation.pixel_4_xl/10047} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{d39b427 com.android.internal.emulation.pixel_fold/10005} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{39fc6d4 com.android.bookmarkprovider/10113} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{594707d com.google.android.overlay.pixelconfigcommon/10012} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8282b72 com.android.systemui.accessibility.accessibilitymenu.auto_generated_rro_product__/10050} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2836bc3 com.android.systemui.emulation.pixel_3a/10011} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{89c7c40 com.android.systemui.emulation.pixel_4a/10000} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{1fc9779 com.android.systemui.emulation.pixel_6a/10039} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f498cbe com.android.systemui.emulation.pixel_7a/10019} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{427011f com.google.android.settings.intelligence/10118} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{c74a3c3 com.google.android.projection.gearhead/10123} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{3ed1c6c com.google.android.uwb.resources/10182} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{3615440 com.android.cts.ctsshim/10175} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{2263235 com.google.android.wifi.resources/10189} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{78db6ca com.google.android.wifi.dialog/10190} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{f44903b com.google.android.apps.wallpaper/10161} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{cc59358 com.google.android.odad/10122} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{114bcb1 com.android.settings.auto_generated_rro_product__/10030} BLOCKED
+08-21 22:09:28.092   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{9387596 com.android.internal.systemui.navbar.gestural/10051} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8e1f517 com.google.android.apps.youtube.music/10156} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{7ac8d04 com.android.bluetoothmidiservice/10108} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{c8772ed com.android.storagemanager.auto_generated_rro_product__/10024} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{afe5522 com.google.android.cellbroadcastreceiver/10176} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{686cbb3 com.android.phone.auto_generated_rro_product__/10058} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{8e77570 android.auto_generated_rro_product__/10069} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{4f550e9 com.android.internal.systemui.navbar.gestural_narrow_back/10053} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{850a16e com.google.android.inputmethod.latin/10147} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{498700f android.auto_generated_rro_vendor__/10075} BLOCKED
+08-21 22:09:28.093   592  2254 I AppsFilter: interaction: PackageSetting{a8aad1d com.axeldeveloppement.gtd/10194} -> PackageSetting{1a6789c com.google.android.apps.restore/10119} BLOCKED
+08-21 22:09:28.118 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (unsupported, reflection, allowed)
+08-21 22:09:28.118 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (unsupported, reflection, allowed)
+08-21 22:09:28.118 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (unsupported, reflection, allowed)
+08-21 22:09:28.118 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+08-21 22:09:28.118 31928 31928 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+08-21 22:09:28.124 31928 31928 I cr_WVCFactoryProvider: Loaded version=113.0.5672.136 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+08-21 22:09:28.141 31928 31983 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.axeldeveloppement.gtd/app_webview/variations_seed_new"
+08-21 22:09:28.154 31928 31928 I cr_LibraryLoader: Successfully loaded native library
+08-21 22:09:28.156 31928 31928 I cr_CachingUmaRecorder: Flushed 8 samples from 8 histograms.
+08-21 22:09:28.173 31928 31928 I cr_VariationsUtils: Loaded seed with age 76594s
+08-21 22:09:28.189   592  2254 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 99028; state: DISABLED
+08-21 22:09:28.189   592   695 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10194; state: ENABLED
+08-21 22:09:28.196  1006  1006 D Zygote  : Forked child process 31987
+08-21 22:09:28.204   592  2254 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10194; state: ENABLED
+08-21 22:09:28.206 31987 31987 I ocessService0:0: Using CollectorTypeCC GC.
+08-21 22:09:28.207 31928 31928 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10194; state: ENABLED
+08-21 22:09:28.210 31987 31987 W ocessService0:0: Unexpected CPU variant for x86: x86_64.
+08-21 22:09:28.210 31987 31987 W ocessService0:0: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 22:09:28.218 31987 31987 E ocessService0:0: Not starting debugger since process cannot load the jdwp agent.
+08-21 22:09:28.221   592  2254 D ActivityManager: sync unfroze 3358 com.google.android.gms for 4
+08-21 22:09:28.225   978  1238 D BtGatt.ScanManager: uid 10128 isForeground true scanMode -1
+08-21 22:09:28.236   592   695 I ActivityManager: Start proc 31987:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0i28 for  {com.axeldeveloppement.gtd/org.chromium.content.app.SandboxedProcessService0:0}
+08-21 22:09:28.270 31987 31987 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 99028; state: ENABLED
+08-21 22:09:28.273 31987 31987 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 99028; state: ENABLED
+08-21 22:09:28.287 31987 31987 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+08-21 22:09:28.289 31987 31987 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+08-21 22:09:28.290   592  2254 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 99028. pid: 31987
+08-21 22:09:28.293 31987 31987 W SystemServiceRegistry: No service published for: virtualdevice
+08-21 22:09:28.293 31987 31987 I cr_ChildProcessService: Creating new ChildProcessService pid=31987
+08-21 22:09:28.400   592  2254 D ActivityManager: sync unfroze 28428 com.google.android.webview:webview_service for 6
+08-21 22:09:28.408 31928 31928 D CompatibilityChangeReporter: Compat change id reported: 214741472; UID 10194; state: ENABLED
+08-21 22:09:28.413 31928 31928 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10194; state: ENABLED
+08-21 22:09:28.424   592  2254 D ConnectivityService: requestNetwork for uid/pid:10194/31928 activeRequest: null callbackRequest: 347 [NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+08-21 22:09:28.425   592   788 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:28.425   592   941 D CompatibilityChangeReporter: Compat change id reported: 271850009; UID 10134; state: ENABLED
+08-21 22:09:28.426   592   788 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:28.426   592   788 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:28.426   592   788 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 22:09:28.427   592   941 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10134; state: ENABLED
+08-21 22:09:28.427   592   797 D ConnectivityService: NetReassign [348 : null → 107] [c 0] [a 0] [i 1]
+08-21 22:09:28.429   592   941 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10134; state: ENABLED
+08-21 22:09:28.432   592   941 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10134; state: DISABLED
+08-21 22:09:28.434   592   695 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10134; state: ENABLED
+08-21 22:09:28.436   592   797 D ConnectivityService: NetReassign [no changes] [c 0] [a 1] [i 3]
+08-21 22:09:28.444   368   368 D Zygote  : Forked child process 32026
+08-21 22:09:28.447   592   695 I ActivityManager: Start proc 32026:com.google.android.webview:webview_apk/u0a134 for service {com.google.android.webview/org.chromium.android_webview.nonembedded.AwComponentUpdateService}
+08-21 22:09:28.464 31928 31928 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+08-21 22:09:28.476 32026 32026 I iew:webview_apk: Using CollectorTypeCC GC.
+08-21 22:09:28.480 32026 32026 W iew:webview_apk: Unexpected CPU variant for x86: x86_64.
+08-21 22:09:28.480 32026 32026 W iew:webview_apk: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 22:09:28.490 32026 32026 E iew:webview_apk: Not starting debugger since process cannot load the jdwp agent.
+08-21 22:09:28.507   592  2254 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10134; state: DISABLED
+08-21 22:09:28.507   592  2254 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10134; state: DISABLED
+08-21 22:09:28.547 32026 32026 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10134; state: ENABLED
+08-21 22:09:28.552 31928 31928 D AndroidRuntime: Shutting down VM
+08-21 22:09:28.553 32026 32026 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10134; state: ENABLED
+--------- beginning of crash
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 31928
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 22:09:28.557 31928 31928 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 22:09:28.557   592  2254 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10134; state: ENABLED
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 22:09:28.559 31928 31928 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 22:09:28.561 32026 32026 W ziparchive: Unable to open '/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.dm': No such file or directory
+08-21 22:09:28.561 32026 32026 W ziparchive: Unable to open '/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.dm': No such file or directory
+08-21 22:09:28.565 32026 32026 W iew:webview_apk: Entry not found
+08-21 22:09:28.566 32026 32026 D nativeloader: Configuring clns-6 for other apk /data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+08-21 22:09:28.568 31928 31928 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 22:09:28.569 31928 31928 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 22:09:28.572 31928 31928 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 22:09:28.573 31928 31928 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 22:09:28.573 31928 31928 I MonoDroid: 
+08-21 22:09:28.573 31928 31928 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 22:09:28.573 31928 31928 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 22:09:28.573 31928 31928 I MonoDroid: 
+08-21 22:09:28.592 32026 32026 D nativeloader: Configuring clns-7 for other apk /data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/lib/x86_64:/data/app/~~M7-Lfrn1FotEJI4ZdDjBqw==/com.google.android.webview-QudxpYCMGqzGumh1ejA-Eg==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~Lpd3RFOBs0R-cMxK_x8-hg==/com.google.android.trichromelibrary_567263637-zJL96UIRYrYUi7VXGQo1Mw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+08-21 22:09:28.599   592   941 W ActivityTaskManager:   Force finishing activity com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity
+08-21 22:09:28.599   592 32043 I DropBoxManagerService: add tag=data_app_crash isTagEnabled=true flags=0x2
+08-21 22:09:28.604   888   932 V WindowManagerShell: Transition requested: android.os.BinderProxy@5c0da5e TransitionRequestInfo { type = CLOSE, triggerTask = null, remoteTransition = null, displayChange = null }
+08-21 22:09:28.613 32026 32026 V GraphicsEnvironment: Currently set values for:
+08-21 22:09:28.613 32026 32026 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+08-21 22:09:28.613 32026 32026 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+08-21 22:09:28.613 31928 31928 I Process : Sending signal. PID: 31928 SIG: 9
+08-21 22:09:28.616 32026 32026 V GraphicsEnvironment: ANGLE GameManagerService for com.google.android.webview: false
+08-21 22:09:28.616 32026 32026 V GraphicsEnvironment: com.google.android.webview is not listed in per-application setting
+08-21 22:09:28.616 32026 32026 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+08-21 22:09:28.623 32026 32026 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+08-21 22:09:28.624 32026 32026 I cr_WebViewApkApp: Launched version=113.0.5672.136 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_apk
+08-21 22:09:28.630   592   941 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10134. pid: 32026
+08-21 22:09:28.632   433   433 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+08-21 22:09:28.652   368   368 I Zygote  : Process 31928 exited due to signal 9 (Killed)
+08-21 22:09:28.653   592   797 D ConnectivityService: releasing NetworkRequest [ REQUEST id=346, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ] (release request)
+08-21 22:09:28.653   592   797 D ConnectivityService: releasing NetworkRequest [ REQUEST id=348, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10194 RequestorUid: 10194 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ] (release request)
+08-21 22:09:28.654   592   941 I ActivityManager: Process com.axeldeveloppement.gtd (pid 31928) has died: fg  TOP 
+08-21 22:09:28.657 31987 31987 I cr_ChildProcessService: Destroying ChildProcessService pid=31987
+08-21 22:09:28.661   592   696 I libprocessgroup: Successfully killed process cgroup uid 10194 pid 31928 in 3ms
+08-21 22:09:28.664   592   941 W ActivityManager: Scheduling restart of crashed service com.axeldeveloppement.gtd/androidx.work.impl.background.systemjob.SystemJobService in 1000ms for connection
+08-21 22:09:28.664   592   941 I ActivityManager: Killing 31987:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a194i28 (adj 0): isolated not needed
+08-21 22:09:28.670   592   684 D DisplayManagerService: Drop pending events for gone uid 10194
+08-21 22:09:28.687   978  1238 D BtGatt.ScanManager: uid 10128 isForeground true scanMode -1
+08-21 22:09:28.702   592   696 I libprocessgroup: Successfully killed process cgroup uid 99028 pid 31987 in 20ms
+08-21 22:09:28.716  1006  1006 I Zygote  : Process 31987 exited due to signal 9 (Killed)
+08-21 22:09:28.718   592   684 D DisplayManagerService: Drop pending events for gone uid 99028
+08-21 22:09:28.720   592   701 E system_server: Cannot read thread CPU times for PID 592
+08-21 22:09:28.750 32026 32026 I cr_LibraryLoader: Successfully loaded native library
+08-21 22:09:28.869  1752  2637 E OpenGLRenderer: Unable to match the desired swap behavior.
+08-21 22:09:28.870  1202  1780 E OpenGLRenderer: Unable to match the desired swap behavior.
+08-21 22:09:28.895   367 32056 I resolv  : GetAddrInfoHandler::run: {107 107 107 983147 10134 0}
+08-21 22:09:28.896   367 32058 I resolv  : res_nmkquery: (QUERY, IN, A)
+08-21 22:09:28.903   367 32057 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+08-21 22:09:29.113   367 32058 I resolv  : res_nsend: used send_dg 55 terrno: 0
+08-21 22:09:29.114   367 32058 I resolv  : doQuery: rcode=0, ancount=1, return value=55
+08-21 22:09:29.117   367 32057 I resolv  : res_nsend: used send_dg 67 terrno: 0
+08-21 22:09:29.117   367 32057 I resolv  : doQuery: rcode=0, ancount=1, return value=67
+08-21 22:09:29.130 32026 32049 D TrafficStats: tagSocket(84) with statsTag=0xffffffff, statsUid=-1
+08-21 22:09:29.165  1752  1752 W A       : Can't get WAA status for Mavatar!
+08-21 22:09:29.165  1752  1752 W A       : java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.apps.tiktok.dataservice.z.b(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.apps.tiktok.dataservice.at.a(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.apps.tiktok.tracing.ec.a(PG:2)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.aj.a(PG:2)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.ac.apply(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.h.e(PG:2)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.j.run(PG:9)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.d.i(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.d.l(PG:12)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.d.n(PG:2)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.i.f(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.common.util.concurrent.j.run(PG:12)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.android.libraries.i.ae.run(PG:1)
+08-21 22:09:29.165  1752  1752 W A       : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+08-21 22:09:29.165  1752  1752 W A       : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.android.libraries.i.k.run(PG:2)
+08-21 22:09:29.165  1752  1752 W A       : 	at com.google.android.libraries.i.p.run(PG:4)
+08-21 22:09:29.165  1752  1752 W A       : 	at java.lang.Thread.run(Thread.java:1012)
+08-21 22:09:29.168   592  1625 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 22:09:29.169  1202  1904 D OneSearchSuggestProvider: Established or reuse existing binder channel authority=com.google.android.googlequicksearchbox
+08-21 22:09:29.210  1752  1752 I A       : Created gRPC endpoint to "search" for service class com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService
+08-21 22:09:29.221  1619  1935 I AiAiEcho: Predicting[0]: 
+08-21 22:09:29.221  1619  1935 I AiAiEcho: EchoTargets: 
+08-21 22:09:29.221  1619  1935 I AiAiEcho: Filtered by AiAi flag check: 
+08-21 22:09:29.221  1619  1935 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-21 22:09:29.225  1619  1935 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+08-21 22:09:29.242   592   683 V WindowManager: Sent Transition #96 createdAt=08-21 22:09:28.599 via request=TransitionRequestInfo { type = CLOSE, triggerTask = null, remoteTransition = null, displayChange = null }
+08-21 22:09:29.243   592   683 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 22:09:29.243   592   683 V WindowManager:     info={id=96 t=CLOSE f=0x10 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{e7e9042 Task{33ab908 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x88d8ea sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{58da72c Task{769a101 #68 type=standard A=10194:com.axeldeveloppement.gtd}}} m=CLOSE f=NONE leash=Surface(name=Task=68)/@0xa20e97e sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{a12f914 token=android.os.Binder@80d4767})/@0x3c8cbb7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:29.243   888   932 V WindowManagerShell: onTransitionReady android.os.BinderProxy@5c0da5e: {id=96 t=CLOSE f=0x10 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@191de43} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf0dfea7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7a63cc0} m=CLOSE f=NONE leash=Surface(name=Task=68)/@0x8b67f54 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{a12f914 token=android.os.Binder@80d4767})/@0xf77fefd sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:29.243   888   932 V WindowManagerShell: Playing animation for (#96)android.os.BinderProxy@5c0da5e@0
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@a0545a1
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@afbe3c6
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@dca7f87
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@b7d9eb4
+08-21 22:09:29.243   888   932 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@e0f9add
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@1c27652
+08-21 22:09:29.243   888   932 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@5458d23
+08-21 22:09:29.243   888   932 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=96 t=CLOSE f=0x10 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@191de43} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf0dfea7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7a63cc0} m=CLOSE f=NONE leash=Surface(name=Task=68)/@0x8b67f54 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{a12f914 token=android.os.Binder@80d4767})/@0xf77fefd sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 22:09:29.243   888   932 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@3074d95, appThread = android.app.IApplicationThread$Stub$Proxy@9fd9eaa, debugName = LauncherToDream }}
+08-21 22:09:29.243   888   932 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@8d08a9b, appThread = android.app.IApplicationThread$Stub$Proxy@9e86e38, debugName = QuickstepLaunchHome }}
+08-21 22:09:29.243   888   932 D RemoteTransitionHandler: Found filterPair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@8d08a9b, appThread = android.app.IApplicationThread$Stub$Proxy@9e86e38, debugName = QuickstepLaunchHome }}
+08-21 22:09:29.244   888   932 V WindowManagerShell:  Delegate animation for #96 to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@8d08a9b, appThread = android.app.IApplicationThread$Stub$Proxy@9e86e38, debugName = QuickstepLaunchHome }
+08-21 22:09:29.250   592  1060 W system_server: Long monitor contention with owner android.anim (687) at void com.android.server.wm.WindowSurfacePlacer$Traverser.run()(WindowSurfacePlacer.java:58) waiters=0 in void com.android.server.wm.ActivityClientController.activityResumed(android.os.IBinder, boolean) for 169ms
+08-21 22:09:29.252   592   686 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{7a916e8 u0 com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity t68 f} isExiting}
+08-21 22:09:29.269   888   932 V WindowManagerShell:  animated by com.android.wm.shell.transition.RemoteTransitionHandler@5458d23
+08-21 22:09:29.342   592  1548 W InputManager-JNI: Input channel object 'f4e4c3d Splash Screen com.axeldeveloppement.gtd (client)' was disposed without first being removed with the input manager!
+08-21 22:09:29.350   592  2254 I ImeTracker: com.google.android.apps.nexuslauncher:2857f1bd: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR
+08-21 22:09:29.350   592  2254 I ImeTracker: com.google.android.apps.nexuslauncher:2857f1bd: onCancelled at PHASE_SERVER_SHOULD_HIDE
+08-21 22:09:29.365  2304  2304 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227 
+08-21 22:09:29.370  2304  2304 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+08-21 22:09:29.370  2304  2304 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.google.android.apps.nexuslauncher fieldId=0 fieldName=null extras=null}, false)
+08-21 22:09:29.370  2304  2304 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+08-21 22:09:29.371  2304  2304 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+08-21 22:09:29.458   592  1678 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 22:09:29.468  1202  1202 D SearchTargetUtil:  query= size=0
+08-21 22:09:29.626   433   447 W VsyncModulator: setTransactionSchedule: Unexpected EarlyEnd
+08-21 22:09:29.668   592   694 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10194; state: DISABLED
+08-21 22:09:29.668   592   695 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10194; state: ENABLED
+08-21 22:09:29.674   368   368 D Zygote  : Forked child process 32068
+08-21 22:09:29.676   592   695 I ActivityManager: Start proc 32068:com.axeldeveloppement.gtd/u0a194 for service {com.axeldeveloppement.gtd/androidx.work.impl.background.systemjob.SystemJobService}
+08-21 22:09:29.697 32068 32068 I veloppement.gtd: Late-enabling -Xcheck:jni
+08-21 22:09:29.721 32068 32068 I veloppement.gtd: Using CollectorTypeCC GC.
+08-21 22:09:29.723 32068 32068 W veloppement.gtd: Unexpected CPU variant for x86: x86_64.
+08-21 22:09:29.723 32068 32068 W veloppement.gtd: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 22:09:29.757   450   462 I adbd    : jdwp connection from 32068
+08-21 22:09:29.786 32068 32068 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10194; state: ENABLED
+08-21 22:09:29.788 32068 32068 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10194; state: ENABLED
+08-21 22:09:29.794 32068 32068 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+08-21 22:09:29.795 32068 32068 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+08-21 22:09:29.797 32068 32068 W ziparchive: Unable to open '/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.dm': No such file or directory
+08-21 22:09:29.797 32068 32068 W ziparchive: Unable to open '/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.dm': No such file or directory
+08-21 22:09:29.890   888   932 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#96)android.os.BinderProxy@5c0da5e@0
+08-21 22:09:29.894   592   683 V WindowManager: Finish Transition #96: created at 08-21 22:09:28.599 collect-started=0.023ms request-sent=0.274ms started=13.118ms ready=81.55ms sent=641.403ms finished=1294.213ms
+08-21 22:09:29.901   888   932 V WindowManagerShell: Track 0 became idle
+08-21 22:09:29.901   888   932 V WindowManagerShell: All active transition animations finished
+08-21 22:09:30.082 32068 32068 D nativeloader: Configuring clns-6 for other apk /data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/lib/x86_64:/data/app/~~Z00LOlt8FrAWmXnjzxxpOw==/com.axeldeveloppement.gtd-KJUU0OBAPZPFYQCvswCgcA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.axeldeveloppement.gtd
+08-21 22:09:30.098 32068 32068 V GraphicsEnvironment: Currently set values for:
+08-21 22:09:30.098 32068 32068 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+08-21 22:09:30.098 32068 32068 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+08-21 22:09:30.098 32068 32068 V GraphicsEnvironment: ANGLE GameManagerService for com.axeldeveloppement.gtd: false
+08-21 22:09:30.098 32068 32068 V GraphicsEnvironment: com.axeldeveloppement.gtd is not listed in per-application setting
+08-21 22:09:30.099 32068 32068 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+08-21 22:09:30.114 32068 32068 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 22:09:30.114 32068 32068 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 22:09:30.114 32068 32068 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 22:09:30.114 32068 32068 W monodroid: runtime args empty
+08-21 22:09:30.122 32068 32068 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 22:09:30.163 32068 32068 D DOTNET  : AndroidCryptoNative_InitLibraryOnLoad: jint AndroidCryptoNative_InitLibraryOnLoad(JavaVM *, void *) in /__w/1/s/src/runtime/src/native/libs/System.Security.Cryptography.Native.Android/pal_jni.c
+08-21 22:09:30.164 32068 32068 D DOTNET  : GetOptionalClassGRef: optional class com/android/org/conscrypt/OpenSSLEngineImpl was not found
+08-21 22:09:30.216   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 22:09:30.244 32068 32068 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 22:09:30.311 32068 32068 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+08-21 22:09:30.344 28428 28438 W webview_service: Reducing the number of considered missed Gc histogram windows from 1540 to 100
+08-21 22:09:30.372 32068 32068 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
+08-21 22:09:30.372 32068 32068 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+08-21 22:09:30.376 32068 32089 D WM-ForceStopRunnable: The default process name was not specified.
+08-21 22:09:30.377 32068 32089 D WM-ForceStopRunnable: Performing cleanup operations.
+08-21 22:09:30.446 32068 32089 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10194; state: ENABLED
+08-21 22:09:30.454 32068 32089 D WM-ForceStopRunnable: Found unfinished work, scheduling it.
+08-21 22:09:30.484 32068 32089 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10194; state: ENABLED
+08-21 22:09:30.484 32068 32089 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10194; state: ENABLED
+08-21 22:09:30.484 32068 32089 D WM-SystemJobScheduler: Scheduling work ID 7a1c6e01-1b36-427f-a8d8-a2f35b760438Job ID 13
+08-21 22:09:30.558 32068 32091 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemalarm.RescheduleReceiver
+08-21 22:09:30.861   592  1548 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10194. pid: 32068
+08-21 22:09:30.867   592   592 W JobScheduler: Job didn't exist in JobStore: bda2948 {androidx.work.systemjobscheduler} #u0a194/13 @androidx.work.systemjobscheduler@com.axeldeveloppement.gtd/androidx.work.impl.background.systemjob.SystemJobService
+08-21 22:09:30.869   592   592 W JobScheduler: Job didn't exist in JobStore: 6e60430 {androidx.work.systemjobscheduler} #u0a194/12 @androidx.work.systemjobscheduler@com.axeldeveloppement.gtd/androidx.work.impl.background.systemjob.SystemJobService
+08-21 22:09:30.869 32068 32068 I Choreographer: Skipped 33 frames!  The application may be doing too much work on its main thread.
+08-21 22:09:32.909   592  1678 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 22:09:35.479   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:35.489   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 22:09:35.675   592   743 D ActivityManager: freezing 11198 com.google.process.gservices
+08-21 22:09:36.268   592  2253 I ActivityManager: Killing 29293:android.process.media/u0a87 (adj 965): empty #17
+08-21 22:09:36.285   592   696 I libprocessgroup: Successfully killed process cgroup uid 10087 pid 29293 in 14ms
+08-21 22:09:36.407 32068 32137 D ProfileInstaller: Installing profile for com.axeldeveloppement.gtd
+--------- beginning of kernel
+08-21 22:09:36.393     0     0 W binder_debug: 11 callbacks suppressed
+08-21 22:09:36.411   368   368 I Zygote  : Process 29293 exited due to signal 9 (Killed)
+08-21 22:09:36.393     0     0 I binder  : undelivered transaction 2241936, process died.
+08-21 22:09:36.395     0     0 I binder  : undelivered transaction 2293584, process died.
+08-21 22:09:36.398     0     0 I binder  : undelivered transaction 2293621, process died.
+08-21 22:09:36.399     0     0 I binder  : undelivered transaction 2458817, process died.
+08-21 22:09:36.401     0     0 I binder  : undelivered transaction 2458864, process died.
+08-21 22:09:36.403     0     0 I binder  : undelivered transaction 2587789, process died.
+08-21 22:09:36.404     0     0 I binder  : undelivered transaction 2587839, process died.
+08-21 22:09:36.407     0     0 I binder  : undelivered transaction 2714470, process died.
+08-21 22:09:36.409     0     0 I binder  : undelivered transaction 2714520, process died.
+08-21 22:09:36.410     0     0 I binder  : undelivered transaction 2714577, process died.
+08-21 22:09:36.428   592   684 D DisplayManagerService: Drop pending events for gone uid 10087
+08-21 22:09:36.429   592  2253 W ProcessStats: Tracking association SourceState{4687e2c com.google.android.apps.nexuslauncher/10169 BTop #11250} whose proc state 2 is better than process ProcessState{17be69d com.google.android.googlequicksearchbox:search/10132 pkg=com.google.android.googlequicksearchbox} proc state 14 (13 skipped)
+08-21 22:09:39.234   888   888 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-21 22:09:40.297   592   743 D ActivityManager: freezing 32026 com.google.android.webview:webview_apk
+08-21 22:09:40.300   592   743 D ActivityManager: freezing 28428 com.google.android.webview:webview_service
+08-21 22:09:40.557   592   739 W CpuMonitorService: Current CPU frequency (2117736) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-21 22:09:40.876   592   743 D ActivityManager: freezing 32068 com.axeldeveloppement.gtd
+08-21 22:09:43.415   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:45.500   888   888 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-21 22:09:46.283   592   743 D ActivityManager: freezing 3358 com.google.android.gms
+08-21 22:09:51.607   875   875 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-21 22:09:54.602     0     0 I logd    : logdr: UID=2000 GID=2000 PID=32226 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns

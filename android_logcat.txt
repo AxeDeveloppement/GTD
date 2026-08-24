@@ -1,0 +1,689 @@
+08-21 01:01:02.436     0     0 I init    : Error: Apex SEPolicy failed signature check
+08-21 01:01:03.139     0     0 E cutils-trace: Error opening trace file: No such file or directory (2)
+08-21 01:01:03.983     0     0 W platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+08-21 01:01:04.367     0     0 E cutils-trace: Error opening trace file: Permission denied (13)
+08-21 01:01:05.125   171   171 E vold    : Error getting bootctrl v1.0 module.
+08-21 01:01:05.104     0     0 E vold    : Error getting bootctrl v1.0 module.
+08-21 01:01:06.627   180   194 E keystore2: system/security/keystore2/src/error.rs:180 - system/security/keystore2/src/maintenance.rs:167: getting keymint device
+08-21 01:01:06.627   180   194 E keystore2:     2: Error::Km(r#HARDWARE_TYPE_UNAVAILABLE)
+08-21 01:01:06.627   171   171 E vold    : keystore2 Keystore earlyBootEnded returned service specific error: -68
+08-21 01:01:06.606     0     0 E vold    : keystore2 Keystore earlyBootEnded returned service specific error: -68
+08-21 01:01:08.849     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/test@btf.o (xdp_drop_ipv4_udp_ether) returned fd: 7 (no error)
+08-21 01:01:08.885     0     0 D LibBpfLoader: bpf_create_map name tether_error_map, ret: 6
+08-21 01:01:08.885     0     0 I LibBpfLoader: map /sys/fs/bpf/tethering/map_offload_tether_error_map id 3
+08-21 01:01:08.938     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_downstream6_ether) returned fd: 7 (no error)
+08-21 01:01:08.941     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_upstream6_ether) returned fd: 16 (no error)
+08-21 01:01:08.943     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_downstream6_rawip$4_14) returned fd: 17 (no error)
+08-21 01:01:08.946     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_upstream6_rawip$4_14) returned fd: 18 (no error)
+08-21 01:01:08.949     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_downstream4_rawip$5_8) returned fd: 19 (no error)
+08-21 01:01:08.952     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_upstream4_rawip$5_8) returned fd: 20 (no error)
+08-21 01:01:08.955     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_downstream4_ether$5_8) returned fd: 21 (no error)
+08-21 01:01:08.958     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (schedcls_tether_upstream4_ether$5_8) returned fd: 22 (no error)
+08-21 01:01:08.960     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (xdp_tether_downstream_ether) returned fd: 23 (no error)
+08-21 01:01:08.962     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (xdp_tether_downstream_rawip) returned fd: 24 (no error)
+08-21 01:01:08.965     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (xdp_tether_upstream_ether) returned fd: 25 (no error)
+08-21 01:01:08.967     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/offload@btf.o (xdp_tether_upstream_rawip) returned fd: 26 (no error)
+08-21 01:01:09.041     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (cgroupskb_ingress_stats$trace) returned fd: 7 (no error)
+08-21 01:01:09.045     0     0 D LibBpfLoader: New bpf prog load reusing prog /sys/fs/bpf/netd_shared/prog_netd_cgroupskb_ingress_stats, ret: 19 (no error)
+08-21 01:01:09.050     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (cgroupskb_egress_stats$trace) returned fd: 20 (no error)
+08-21 01:01:09.054     0     0 D LibBpfLoader: New bpf prog load reusing prog /sys/fs/bpf/netd_shared/prog_netd_cgroupskb_egress_stats, ret: 21 (no error)
+08-21 01:01:09.056     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (skfilter_egress_xtbpf) returned fd: 22 (no error)
+08-21 01:01:09.058     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (skfilter_ingress_xtbpf) returned fd: 23 (no error)
+08-21 01:01:09.064     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (schedact_ingress_account) returned fd: 24 (no error)
+08-21 01:01:09.066     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (skfilter_allowlist_xtbpf) returned fd: 25 (no error)
+08-21 01:01:09.067     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (skfilter_denylist_xtbpf) returned fd: 26 (no error)
+08-21 01:01:09.072     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/netd_shared/netd.o (cgroupsock_inet_create) returned fd: 27 (no error)
+08-21 01:01:09.141     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/dscpPolicy.o (schedcls_set_dscp_ether) returned fd: 7 (no error)
+08-21 01:01:09.165     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/block.o (bind4_block_port) returned fd: 7 (no error)
+08-21 01:01:09.167     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/block.o (bind6_block_port) returned fd: 8 (no error)
+08-21 01:01:09.194     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/clatd.o (schedcls_ingress6_clat_ether$4_14) returned fd: 7 (no error)
+08-21 01:01:09.197     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/clatd.o (schedcls_ingress6_clat_rawip$4_14) returned fd: 9 (no error)
+08-21 01:01:09.200     0     0 D LibBpfLoader: bpf_prog_load lib call for /apex/com.android.tethering/etc/bpf/net_shared/clatd.o (schedcls_egress4_clat_rawip) returned fd: 10 (no error)
+08-21 01:01:09.222     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/gpuMem.o (tracepoint_gpu_mem_gpu_mem_total) returned fd: 7 (no error)
+08-21 01:01:09.291     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/timeInState.o (tracepoint_sched_sched_switch) returned fd: 7 (no error)
+08-21 01:01:09.294     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/timeInState.o (tracepoint_power_cpu_frequency) returned fd: 22 (no error)
+08-21 01:01:09.297     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/timeInState.o (tracepoint_sched_sched_process_free) returned fd: 23 (no error)
+08-21 01:01:09.310     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/bpfRingbufProg.o (skfilter_ringbuf_test) returned fd: 7 (no error)
+08-21 01:01:09.324     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/gpuWork.o (tracepoint_power_gpu_work_period) returned fd: 8 (no error)
+08-21 01:01:09.343     0     0 D LibBpfLoader: bpf_prog_load lib call for /system/etc/bpf/fuseMedia.o (fuse_media) returned fd: 6 (no error)
+08-21 01:01:09.704   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.705   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.706   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.706   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.706   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.709   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.710   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.712   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.713   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.713   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.713   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.714   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.715   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.715   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.716   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:09.716   355   355 E TcUtils : NLMSG_ERROR message return error: -2
+08-21 01:01:11.161   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:11.209   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:11.209   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:11.246   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:11.247   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:11.247   406   415 E android.hardware.graphics.composer3-service.ranchu: freeBuffer:127 failed with 'Error3::BAD_BUFFER'
+08-21 01:01:12.423   508   543 W emuglGLESv2_enc: error cap: 0xde1 is invalid
+08-21 01:01:12.423   508   543 E emuglGLESv2_enc: device/generic/goldfish-opengl/system/GLESv2_enc/GL2Encoder.cpp:s_glEnable:5076 GL error 0x500 condition [!GLESv2Validation::allowedEnable(ctx->majorVersion(), ctx->minorVersion(), what)]
+08-21 01:01:15.197   576   576 W system_server: Failed to upload odrefresh metrics: Unable to open or parse metrics file /data/misc/odrefresh/odrefresh-metrics.xml (error: Error=XML_ERROR_FILE_NOT_FOUND ErrorID=3 (0x3) Line number=0: filename=/data/misc/odrefresh/odrefresh-metrics.xml)
+08-21 01:01:16.853   576   673 W SystemConfig: java.io.FileNotFoundException: /vendor/etc/public.libraries.txt: open failed: ENOENT (No such file or directory)
+08-21 01:01:16.853   576   673 W SystemConfig: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:01:18.347   576   576 W PackageManager: System overlay com.google.android.marvin.talkbackoverlay targets an SDK below the required SDK level of vendor overlays (34). This will become an install error in a future release
+08-21 01:01:20.738   576   576 E IntegrityFileManager: Error creating staging and rules directory
+08-21 01:01:21.624   576   576 E SoundTriggerMiddlewareImpl: java.util.NoSuchElementException
+08-21 01:01:21.663   576   673 E UsbDeviceManager: java.util.NoSuchElementException
+08-21 01:01:21.792   576   790 E AS.AudioService: error reading spatial audio device settings
+08-21 01:01:22.638   576   576 E DisplayPowerController2[0]: failed to set up display white-balance: java.lang.IllegalStateException: cannot find sensor com.google.sensor.color
+08-21 01:01:22.683   576   677 E AppWidgetManager: java.lang.IllegalStateException: User 0 must be unlocked for widgets to be available
+08-21 01:01:22.830   576   772 E WifiChipAidlImpl: getMode failed with service-specific exception: android.os.ServiceSpecificException:  (code 5)
+08-21 01:01:22.853   576   772 E WifiChipAidlImpl: getMode failed with service-specific exception: android.os.ServiceSpecificException:  (code 5)
+08-21 01:01:22.894   576   772 E WifiChipAidlImpl: getWifiChipCapabilities failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:22.933   576   772 E WifiChipAidlImpl: getSupportedRadioCombinations failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:22.935   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:22.941   576   772 E WifiChipAidlImpl: enableStaChannelForPeerNetwork failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:23.132   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:23.161   576   772 E WifiChipAidlImpl: setMultiStaUseCase failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:23.164   576   772 E WifiChipAidlImpl: setMultiStaPrimaryConnection failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:23.166   576   776 E WifiStaIfaceAidlImpl: getBackgroundScanCapabilities failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:23.313   576   576 E HealthConnectResContext: java.lang.IllegalStateException
+08-21 01:01:23.327   576   707 D SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.axeldeveloppement.gtd changed
+08-21 01:01:23.327   576   707 D SystemServerInitThreadPool: Started executing Update app-ops uidState in case package com.axeldeveloppement.gtd changed
+08-21 01:01:23.333   576   707 D SystemServerInitThreadPool: Finished executing Update app-ops uidState in case package com.axeldeveloppement.gtd changed
+08-21 01:01:23.341   576   707 V SystemServerTimingAsync: InitThreadPoolExec:Update app-ops uidState in case package com.axeldeveloppement.gtd changed took to complete: 6ms
+08-21 01:01:23.859   576   576 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:23.945   576   576 E BitmapFactory: Unable to decode stream: java.io.FileNotFoundException: /data/system/users/0/wallpaper_orig: open failed: ENOENT (No such file or directory)
+08-21 01:01:24.315   576   685 W BatteryExternalStatsWorker: error reading modem stats:ERROR_PHONE_NOT_AVAILABLE
+08-21 01:01:24.320   576   714 E AppOps  : java.lang.SecurityException: Specified package "android" under uid 1037 but it is not
+08-21 01:01:24.479   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:24.497   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:24.528   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:24.540   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:24.565   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:24.704   871   871 W BatteryControllerGoogle: java.lang.SecurityException: Failed to find provider com.google.android.flipendo.api for user 0; expected to find a valid ContentProvider for this authority
+08-21 01:01:24.704   871   871 W BatteryControllerGoogle: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3057)
+08-21 01:01:24.704   871   871 W BatteryControllerGoogle: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:24.704   871   871 W BatteryControllerGoogle: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:24.704   871   871 W BatteryControllerGoogle: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:24.707   871   871 W BatteryControllerGoogle: Caused by: android.os.RemoteException: Remote stack trace:
+08-21 01:01:25.026   576   903 W ZygoteProcess: Got error connecting to zygote, retrying. msg= Connection refused
+08-21 01:01:25.307   871   938 E AppWidgetManager: java.lang.IllegalStateException: User 0 must be unlocked for widgets to be available
+08-21 01:01:25.307   871   938 E AppWidgetManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3065)
+08-21 01:01:25.307   871   938 E AppWidgetManager: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:25.307   871   938 E AppWidgetManager: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:25.307   871   938 E AppWidgetManager: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:25.312   422   442 E EGL_emulation: tid 442: eglQueryContext(2146): error 0x3004 (EGL_BAD_ATTRIBUTE)
+08-21 01:01:25.359   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.429   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.454   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.479   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.494   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.535   576  1037 E StatsCompanionService: android.content.pm.PackageManager$NameNotFoundException: com.google.android.trichromelibrary
+08-21 01:01:25.552   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.626   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.644   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.647   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.688   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.692   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.723   576   677 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:25.777   576   576 V StorageManagerService: Package com.axeldeveloppement.gtd does not have legacy storage
+08-21 01:01:25.868  1039  1039 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:26.372   576   576 D SystemServerTiming: showSystemReadyErrorDialogs
+08-21 01:01:26.427   576   576 V SystemServerTiming: showSystemReadyErrorDialogs took to complete: 55ms
+08-21 01:01:26.732  1057  1148 E droid.bluetooth: [0821/010126.731950:ERROR:config.cc(106)] config_new: unable to open file '/data/misc/bluedroid/bt_remote_dev_info.conf': No such file or directory
+08-21 01:01:26.732  1057  1148 E droid.bluetooth: [0821/010126.732368:ERROR:config.cc(106)] config_new: unable to open file '/data/misc/bluedroid/bt_remote_dev_info.bak': No such file or directory
+08-21 01:01:27.096   871   933 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:27.294  1101  1201 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:27.302  1093  1093 E CarrierIdProvider: read carrier list from ota pb failure: java.io.FileNotFoundException: /data/misc/carrierid/carrier_list.pb: open failed: ENOENT (No such file or directory)
+08-21 01:01:27.376   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:27.409   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:27.604   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:01:28.949   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:28.949   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:29.408   493   493 E RIL     : Error 0 opening logical channel: 0
+08-21 01:01:29.511   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:29.511   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:29.517   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:29.529   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:29.565  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:29.653  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:29.677   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:01:30.131   493   493 E RIL     : Error 0 opening logical channel: 0
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: java.lang.SecurityException: Failed to find provider com.google.android.apps.turbo.estimated_time_remaining for user 0; expected to find a valid ContentProvider for this authority
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3057)
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:30.151   871   871 E BatteryInfoBroadcast: Caused by: android.os.RemoteException: Remote stack trace:
+08-21 01:01:31.277   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:31.285   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:31.302   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:31.321   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:31.434  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:31.556  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:31.557  1093  1093 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:31.685  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:31.685  1093  1093 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:31.873  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:31.874  1093  1093 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:32.049  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:32.136   493   493 E RIL     : Error 0 transmitting APDU: 0
+08-21 01:01:32.160  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:32.163  1450  1450 E SafebootUtils: java.io.IOException: Failed to create directory
+08-21 01:01:32.193   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.206   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.218   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.226   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.233   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.240   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.244   576   772 E ApConfigUtil: Malformed channel value detected: java.lang.NumberFormatException: For input string: ""
+08-21 01:01:32.248   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.248   576   772 E ApConfigUtil: Malformed channel value detected: java.lang.NumberFormatException: For input string: ""
+08-21 01:01:32.253   576   772 E WifiChipAidlImpl: getUsableChannels failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:32.254   576   772 E ApConfigUtil: Malformed channel value detected: java.lang.NumberFormatException: For input string: ""
+08-21 01:01:32.325   493   493 E RIL     : Error 0 transmitting APDU: 0
+08-21 01:01:32.384  1513  1513 E SplitCompat: Error installing additional splits
+08-21 01:01:32.384  1513  1513 E SplitCompat: java.io.IOException: Unable to create directory: /data/user/0/com.google.android.inputmethod.latin/files/splitcompat
+08-21 01:01:32.397  1513  1538 E SplitCompat: java.io.IOException: Unable to create directory: /data/user/0/com.google.android.inputmethod.latin/files/splitcompat
+08-21 01:01:33.052   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:01:33.513   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:33.601   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:33.790  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:33.790  1093  1093 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:34.121  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:35.054   871  1781 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:35.117   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:01:35.577   576   859 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 01:01:35.584  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:35.613  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:35.647   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:35.655   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:35.810  1159  1813 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:37.831  1661  1661 E AiAiWallpaperEffectsGen: java.io.FileNotFoundException: midasnet_mobilenetv2_dptmqn_dec128_full_082421_384_384_fp16_opt.tflite
+08-21 01:01:38.184  1607  2068 W ModernMediaScanner: Failed to visit /system/media: java.nio.file.NoSuchFileException: /system/media
+08-21 01:01:38.299  1607  2068 W ModernMediaScanner: Failed to visit /oem/media: java.nio.file.NoSuchFileException: /oem/media
+08-21 01:01:38.544  1159  2183 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:38.894   355   396 I netd    : networkAddInterface(100, eth0) -> ServiceSpecificException(64, "Machine is not on the network") <0.16ms>
+08-21 01:01:38.895   576   779 W ConnectivityService: Exception adding interface: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:38.901   355   396 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: 10.0.2.0/24, ifName: eth0, nextHop: , mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.87ms>
+08-21 01:01:38.907   576   779 E ConnectivityService: Exception in networkAddRouteParcel for non-gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:38.909   355   396 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: 0.0.0.0/0, ifName: eth0, nextHop: 10.0.2.2, mtu: 1500}) -> ServiceSpecificException(64, "Machine is not on the network") <0.22ms>
+08-21 01:01:38.911   576   779 E ConnectivityService: Exception in networkAddRouteParcel for gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:38.925   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:38.979   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:39.691   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:39.815   576   772 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:39.816   576   772 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:39.831   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:39.876   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:01:39.924   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.098   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.144   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.149   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.159   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.167   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.178   576   802 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.181   576   802 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.309   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.310   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.310   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.317   576   772 E WifiStaIfaceAidlImpl: setDtimMultiplier failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:40.327   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.449   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.459   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:01:40.477   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.533   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.550  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:40.557   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.561   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.562   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.614   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.615   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.628   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.630   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.695  1622  2287 W ConfigFileUtils: Failed to read asset ChimeraModuleSetList.pb: java.io.FileNotFoundException: ChimeraModuleSetList.pb
+08-21 01:01:40.875   355   393 I netd    : networkAddInterface(101, wlan0) -> ServiceSpecificException(64, "Machine is not on the network") <0.24ms>
+08-21 01:01:40.875   576   779 W ConnectivityService: Exception adding interface: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:40.876   355   393 I netd    : networkAddRouteParcel(101, RouteInfoParcel{destination: fe80::/64, ifName: wlan0, nextHop: , mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.15ms>
+08-21 01:01:40.989   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:40.991   576   772 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:41.100   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.206   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.209   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.266   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.280   355   393 I netd    : networkAddRouteParcel(101, RouteInfoParcel{destination: 10.0.2.0/24, ifName: wlan0, nextHop: , mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.16ms>
+08-21 01:01:41.282   576   779 E ConnectivityService: Exception in networkAddRouteParcel for non-gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:41.283   355   393 I netd    : networkAddRouteParcel(101, RouteInfoParcel{destination: 0.0.0.0/0, ifName: wlan0, nextHop: 10.0.2.2, mtu: 0}) -> ServiceSpecificException(64, "Machine is not on the network") <0.24ms>
+08-21 01:01:41.283   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.297   576   779 E ConnectivityService: Exception in networkAddRouteParcel for gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
+08-21 01:01:41.312   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.337  1661  2355 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.338  1661  2353 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.342  1661  2356 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.474   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:01:41.479   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:41.485   576   772 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:41.547   576   772 E WifiStaIfaceAidlImpl: setDtimMultiplier failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-21 01:01:41.585  1661  2429 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.588  1661  2428 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.599  1661  2427 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.719  1661  2460 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.727  1661  2454 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:41.983   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.015   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.046   576   772 E WifiStaIfaceAidlImpl: stopRssiMonitoring failed with service-specific exception: android.os.ServiceSpecificException:  (code 5)
+08-21 01:01:42.074   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.099   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.172   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.173   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.286  1661  1793 I AiAiAdaptiveAudio: AdaptiveAudio config updated, new config=AdaptiveAudioConfig{shouldEnableAdaptiveAudio=false, shouldBypassQprCheck=false, shouldLimitCalibration=true, shouldShowDebugNotification=false, userSettingDefaultValue=false, crashOnError=true, shouldShowPromoNotification=false, useSilenceDetectorStateBugFix=false}
+08-21 01:01:42.327   576   802 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.342   576   802 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.400   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.431   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.432   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.746  1829  2409 D StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:3002)
+08-21 01:01:42.746  1829  2409 D StrictMode: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:139)
+08-21 01:01:42.826   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.835   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.836   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.847   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.860   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.870   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.879   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:42.937   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.027   576   768 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.162   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.164   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.212   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.275   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.284   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.326   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.554  1622  2287 W ConfigFileUtils: Failed to read asset ChimeraModuleSetList.pb: java.io.FileNotFoundException: ChimeraModuleSetList.pb
+08-21 01:01:43.734   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.736   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.740   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.747   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.748   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.750   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.754   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.755   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.773   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.789   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.792   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.793   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.807   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.822   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.830   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.832   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.842   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:43.991  1829  1829 I PodcastAudioPlayer: onPlaybackStateChanged: PlaybackState {state=0, position=0, buffered position=0, speed=0.0, updated=45496, actions=2359815, error code=0, error message=null, custom actions=[], active item id=-1}
+08-21 01:01:43.996  1829  1829 I PodcastAudioPlayer: onPlaybackStateChanged: PlaybackState {state=0, position=0, buffered position=0, speed=0.0, updated=45498, actions=2409991, error code=0, error message=null, custom actions=[], active item id=-1}
+08-21 01:01:43.998  1829  1829 I PodcastAudioPlayer: onPlaybackStateChanged: PlaybackState {state=0, position=0, buffered position=0, speed=0.0, updated=45508, actions=2409991, error code=0, error message=null, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null], active item id=-1}
+08-21 01:01:44.034  1959  2387 W BugleRcs: android.content.pm.PackageManager$NameNotFoundException: com.google.android.ims
+08-21 01:01:44.037  1661  2459 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:44.053   355   393 E netd    : Error adding route ::/0 -> fe80::2 wlan0 to table 1016: File exists
+08-21 01:01:44.054   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.166   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.241   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.246  1661  2459 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:44.277  1829  2658 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:01:44.433   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.453   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.514  2644  2644 E AggregateFuture: java.lang.IllegalStateException: Setup parameters does not exist!
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: [55] aabf.j: [SR]: cksf was raised while waiting to connect to SingleRegistrationVendorImsService.: cksf: Error while notifying location: JibeService Not Initialized
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: Caused by: java.lang.IllegalStateException: JibeService Not Initialized
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3065)
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:44.573  1959  2446 E BugleRcsEngine: 	at com.google.android.aidl.BaseProxy.transactAndReadException(PG:3)
+08-21 01:01:44.606  1661  2458 W AiAiFed : java.lang.IllegalArgumentException: Unsupported response code3
+08-21 01:01:44.776   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.820   576   779 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.888   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.899   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.919   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.925   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:44.933   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:45.054   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:45.087   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:45.170   576   770 W BestClock: java.time.DateTimeException: Missing network time fix
+08-21 01:01:45.289   576   828 D SntpClient: request time failed: java.net.SocketTimeoutException: Poll timed out
+08-21 01:01:45.599  1815  2435 E AwarenessRouterSyncMgr: Exception while syncing fences
+08-21 01:01:45.599  1815  2435 E AwarenessRouterSyncMgr: java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Account associated with identity was null
+08-21 01:01:45.599  1815  2435 E AwarenessRouterSyncMgr: Caused by: java.lang.IllegalStateException: Account associated with identity was null
+08-21 01:01:45.930  1829  1829 W A       : java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+08-21 01:01:45.935  1450  2316 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+08-21 01:01:45.985  1959  2700 W RcsClientLib: Error while stopping RCS engine.
+08-21 01:01:45.989  1959  2700 W RcsClientLib: java.lang.IllegalStateException: JibeService Not Initialized
+08-21 01:01:45.989  1959  2700 W RcsClientLib: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3065)
+08-21 01:01:45.989  1959  2700 W RcsClientLib: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:45.989  1959  2700 W RcsClientLib: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:45.989  1959  2700 W RcsClientLib: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:45.989  1959  2700 W RcsClientLib: 	at com.google.android.aidl.BaseProxy.transactAndReadExceptionReturnVoid(PG:3)
+08-21 01:01:46.190  1057  1057 D MediaPlayerList: sendMediaUpdate state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=45508, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null], active item id=-1, error=null}
+08-21 01:01:46.231  1829  1829 W A       : java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+08-21 01:01:46.515  1057  1057 D MediaPlayerList: sendMediaUpdate state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=45508, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null], active item id=-1, error=null}
+08-21 01:01:46.542  1959  2629 W RcsClientLib: Error while stopping RCS engine.
+08-21 01:01:46.543  1959  2629 W RcsClientLib: java.lang.IllegalStateException: JibeService Not Initialized
+08-21 01:01:46.543  1959  2629 W RcsClientLib: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3065)
+08-21 01:01:46.543  1959  2629 W RcsClientLib: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:01:46.543  1959  2629 W RcsClientLib: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:01:46.543  1959  2629 W RcsClientLib: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:01:46.543  1959  2629 W RcsClientLib: 	at com.google.android.aidl.BaseProxy.transactAndReadExceptionReturnVoid(PG:3)
+08-21 01:01:46.580  1057  1057 D MediaPlayerList: sendMediaUpdate state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=45508, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null], active item id=-1, error=null}
+08-21 01:01:47.003  2709  2896 I VoiceDataManager: Caused by: java.util.concurrent.CancellationException: Task was cancelled.
+08-21 01:01:47.218  1622  2521 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+08-21 01:01:47.350  1450  1750 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+08-21 01:01:47.452  2709  2896 I VoiceDataManager: Caused by: java.util.concurrent.CancellationException: Task was cancelled.
+08-21 01:01:47.678   576  3023 I BootReceiver: Checking for fsck errors
+08-21 01:01:47.685  1450  2316 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+08-21 01:01:47.925   871   953 E KeyguardUpdateMonitorLog: java.lang.Exception: Called by
+08-21 01:01:48.039   871   953 E KeyguardUpdateMonitorLog: java.lang.Exception: Called by
+08-21 01:01:49.638  1691  1691 E VS.BluetoothShim: Error locating SCO method
+08-21 01:01:49.638  1691  1691 E VS.BluetoothShim: java.lang.NoSuchMethodException: android.bluetooth.BluetoothHeadset.startScoUsingVirtualVoiceCall [class android.bluetooth.BluetoothDevice]
+08-21 01:01:49.652  1861  2769 D StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:3002)
+08-21 01:01:49.652  1861  2769 D StrictMode: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:139)
+08-21 01:01:49.653  1861  2769 D StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:3002)
+08-21 01:01:49.653  1861  2769 D StrictMode: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:139)
+08-21 01:01:49.653  1861  2769 D StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:3002)
+08-21 01:01:49.653  1861  2769 D StrictMode: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:139)
+08-21 01:01:50.825  3132  3218 E DialerDialerBaseApplication: Caused by: java.lang.IllegalStateException: Resources are not initialized yet. Do not call getResource() in constructors of injected classes
+08-21 01:01:50.833  1450  1576 E CCTFlatFileLogStore: java.util.concurrent.TimeoutException: Timed out waiting for Task
+08-21 01:01:50.941  1450  1450 E GmsCoreLogger: java.util.concurrent.ExecutionException: java.util.concurrent.TimeoutException
+08-21 01:01:50.941  1450  1450 E GmsCoreLogger: Caused by: java.util.concurrent.TimeoutException
+08-21 01:01:51.232  1829  2409 W CorpusConfigHelper: android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+08-21 01:01:51.232  1829  2409 W CorpusConfigHelper: 	at android.util.JsonReader.syntaxError(JsonReader.java:1162)
+08-21 01:01:52.877   576   677 E PackageManager: java.util.concurrent.TimeoutException: [Optimistic Bind] Didn't bind to resolver in time!
+08-21 01:01:53.018  3132  3229 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+08-21 01:01:53.251  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:53.253  1093  1093 W Telephony: registerImsRegistrationCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:53.333  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:53.355  1039  1075 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:01:53.400  1093  1093 W Telephony: registerMmTelCapabilityCallback: registration failed, no ImsService available. Exception: code: 1
+08-21 01:01:54.528  1450  2635 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+08-21 01:01:54.528  1450  2635 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:01:55.687  1450  2635 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+08-21 01:01:55.687  1450  2635 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:01:55.723  3132  3231 W DialerVvmExecutorImpl: java.lang.IllegalStateException: existing sms listener: 10757179
+08-21 01:01:55.731  3132  3231 W DialerVvmExecutorImpl: com.android.dialer.voicemail.service.impl.scheduler.VvmExecutorImpl.lambda$executeWorkOnCarrierService$15:326 Could not complete vvm work with action: ACTIVATE. Error: [GeneralFailureReason: FAILED_FUTURE, RestFailureReason: REST_UNSPECIFIED, OmtpFailureReason: OMTP_UNSPECIFIED] [CONTEXT enable_persistent_logger=true ]
+08-21 01:01:56.042  1450  2635 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:01:56.477  1450  2635 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:01:58.894  2644  3724 E TaskWorkerFactory: java.lang.NoSuchMethodException: com.android.devicelockcontroller.provision.worker.DeviceCheckInWorker.<init> [class android.content.Context, class androidx.work.WorkerParameters, interface com.google.common.util.concurrent.ListeningExecutorService]
+08-21 01:02:01.315  1829  1829 E A       : onError
+08-21 01:02:01.315  1829  1829 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+08-21 01:02:01.315  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 01:02:01.315  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 01:02:01.449  3646  3768 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+08-21 01:02:01.898   576   679 I ActivityManager: Start proc 3914:com.axeldeveloppement.gtd/u0a192 for broadcast {com.axeldeveloppement.gtd/androidx.work.impl.background.systemalarm.RescheduleReceiver}
+08-21 01:02:01.946  3914  3914 I veloppement.gtd: Late-enabling -Xcheck:jni
+08-21 01:02:01.974  3914  3914 I veloppement.gtd: Using CollectorTypeCC GC.
+08-21 01:02:01.978  3914  3914 W veloppement.gtd: Unexpected CPU variant for x86: x86_64.
+08-21 01:02:01.978  3914  3914 W veloppement.gtd: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+08-21 01:02:02.131  3914  3914 W ziparchive: Unable to open '/data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/base.dm': No such file or directory
+08-21 01:02:02.131  3914  3914 W ziparchive: Unable to open '/data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/base.dm': No such file or directory
+08-21 01:02:02.216   418   418 W WVCdm   : [oemcrypto_adapter_dynamic.cpp(1549):OEMCrypto_InitializeAndCheckKeybox] Keybox error: 25. Falling back to L3.
+08-21 01:02:02.311  3132  3231 E DialerTikTokListenableWorker: com.google.apps.tiktok.contrib.work.TikTokListenableWorker.lambda$logOnCancellationOrFailure$0:165 TikTokListenableWorker encountered an exception while running client worker: com.android.dialer.voicemail.service.impl.VvmTaskWorker
+08-21 01:02:02.312  3132  3219 E WM-WorkerWrapper: Work [ id=5460e895-f3ea-42b7-939e-ab35adddc07e, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker, 1, UPDATE_STATUS, TikTokWorker#com.android.dialer.voicemail.service.impl.VvmTaskWorker } ] failed because it threw an exception/error
+08-21 01:02:02.312  3132  3219 E WM-WorkerWrapper: java.util.concurrent.ExecutionException: qy: The completer object was garbage collected - this future would otherwise never complete. The tag was: class cdp
+08-21 01:02:02.651   355  2450 W resolv  : SSL_connect ssl error =5, mark 0xf0065: Connection refused
+08-21 01:02:02.710  3914  3914 D nativeloader: Configuring clns-6 for other apk /data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/lib/x86_64:/data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.axeldeveloppement.gtd
+08-21 01:02:02.772  3914  3914 V GraphicsEnvironment: ANGLE GameManagerService for com.axeldeveloppement.gtd: false
+08-21 01:02:02.772  3914  3914 V GraphicsEnvironment: com.axeldeveloppement.gtd is not listed in per-application setting
+08-21 01:02:02.865  3914  3914 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:02:02.865  3914  3914 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:02:02.870  3914  3914 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 01:02:03.362  1101  1446 W BaseSearchIndex: Error initial controller
+08-21 01:02:03.649  3914  3914 W veloppement.gtd: Attempt to remove non-JNI local reference
+08-21 01:02:03.763  1101  1446 E HardwareInfoFeatureProviderImpl: java.lang.NumberFormatException: For input string: "E"
+08-21 01:02:03.987  1101  1446 W BaseSearchIndex: Error initial controller
+08-21 01:02:04.225  1093  1093 E PhoneInterfaceManager: isVoNrEnabled: CommandException: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED
+08-21 01:02:04.227  1093  1093 E PhoneInterfaceManager: isVoNrEnabled: CommandException: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED
+08-21 01:02:04.305  1101  1129 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+08-21 01:02:04.876  1101  1129 E HardwareInfoFeatureProviderImpl: java.lang.NumberFormatException: For input string: "E"
+08-21 01:02:04.926  1101  1129 W BaseSearchIndex: Error initial controller
+08-21 01:02:04.991  1101  1129 W BaseSearchIndex: Error initial controller
+08-21 01:02:06.708  1450  3171 W TapAndPay: java.lang.NullPointerException: NfcAdapter is null
+08-21 01:02:06.913  3914  3914 D WM-RescheduleReceiver: Received intent Intent { act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.axeldeveloppement.gtd/androidx.work.impl.background.systemalarm.RescheduleReceiver (has extras) }
+08-21 01:02:10.871   576   710 E RecoverySnapshotStorage: Error reading snapshot for 10128 from disk
+08-21 01:02:10.871   576   710 E RecoverySnapshotStorage: java.io.FileNotFoundException: /data/system/recoverablekeystore/snapshots/10128.xml: open failed: ENOENT (No such file or directory)
+08-21 01:02:10.871   576   710 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:02:10.905   180  3239 E keystore2: system/security/keystore2/src/error.rs:180 - system/security/keystore2/src/security_level.rs:684
+08-21 01:02:10.905   180  3239 E keystore2:     3: Error::Rc(r#SYSTEM_ERROR)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: [WrappingKeyManager] InternalRecoveryServiceException during wrapping key generation [CONTEXT service_id=172 ]
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: android.security.keystore.recovery.InternalRecoveryServiceException: Failed to import secret key.
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.wrapUnexpectedServiceSpecificException(RecoveryController.java:783)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: Caused by: android.os.ServiceSpecificException: Failed to import secret key. (code 22)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3071)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:02:10.924  1622  4269 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:02:11.002  1450  1576 E dlpn    : RuntimeException while executing runnable dlqc{qze@f346b2f} with executor MoreExecutors.directExecutor()
+08-21 01:02:11.002  1450  1576 E dlpn    : java.lang.NullPointerException: Attempt to get length of null array
+08-21 01:02:11.999  3914  4316 D ProfileInstaller: Installing profile for com.axeldeveloppement.gtd
+08-21 01:02:13.221  1622  4275 W PeoplePU: java.lang.IllegalArgumentException: Unknown component: ComponentInfo{com.google.android.syncadapters.contacts/com.google.android.syncadapters.contacts.ProxyGalProvider}
+08-21 01:02:13.221  1622  4275 W PeoplePU: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3061)
+08-21 01:02:13.221  1622  4275 W PeoplePU: 	at android.os.Parcel.createException(Parcel.java:3041)
+08-21 01:02:13.221  1622  4275 W PeoplePU: 	at android.os.Parcel.readException(Parcel.java:3024)
+08-21 01:02:13.221  1622  4275 W PeoplePU: 	at android.os.Parcel.readException(Parcel.java:2966)
+08-21 01:02:13.221  1622  4275 W PeoplePU: Caused by: android.os.RemoteException: Remote stack trace:
+08-21 01:02:14.127  1622  4275 I ActiveUnlock: Setting system trigger values from: active_unlock_on_face_errors=[-1] [CONTEXT service_id=327 ]
+08-21 01:02:14.168  1661  1681 I AiAiEcho: Settings changed for uri: content://settings/secure/active_unlock_on_face_errors
+08-21 01:02:14.178  1661  1683 I AiAiEcho: Settings changed for uri: content://settings/secure/active_unlock_on_face_errors
+08-21 01:02:14.669  1450  1769 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+08-21 01:02:14.669  1450  1769 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:02:14.800  1622  2286 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:02:14.919  1622  2286 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:02:15.193  1450  2635 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+08-21 01:02:15.193  1450  2635 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+08-21 01:02:16.587  1829  1829 E A       : onError
+08-21 01:02:16.587  1829  1829 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+08-21 01:02:16.587  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 01:02:16.587  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 01:02:17.133  1622  3009 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:02:17.378  1622  3009 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+08-21 01:02:32.108   576   728 D ActivityManager: freezing 3914 com.axeldeveloppement.gtd
+08-21 01:02:35.578   576   710 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 01:02:47.641  1450  3171 W TapAndPay: java.lang.NullPointerException: NfcAdapter is null
+08-21 01:02:47.682  1829  1829 E A       : onError
+08-21 01:02:47.682  1829  1829 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+08-21 01:02:47.682  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 01:02:47.682  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 01:02:47.723  1829  2447 E cr_CronetUrlRequestContext: Exception in upload method
+08-21 01:02:47.723  1829  2447 E cr_CronetUrlRequestContext: com.google.android.apps.gsa.shared.r.d: Error code: 262182
+08-21 01:03:18.482  4999  4999 W Monkey  : args: [-p, com.axeldeveloppement.gtd, -c, android.intent.category.LAUNCHER, 1]
+08-21 01:03:18.484  4999  4999 W Monkey  :  arg: "com.axeldeveloppement.gtd"
+08-21 01:03:18.491  4999  4999 W Monkey  : data="com.axeldeveloppement.gtd"
+08-21 01:03:18.607   871   895 V WindowManagerShell: Transition requested: android.os.BinderProxy@cb75488 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=16 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity } baseActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} topActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} origActivity=null realActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} numActivities=1 lastActiveTime=140602 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@f009e21} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{1f79246 crc64f0e0a2508dd343ab.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+08-21 01:03:18.608   576  2152 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+08-21 01:03:18.701  3914  3914 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package com.axeldeveloppement.gtd
+08-21 01:03:18.707   576   666 D ActivityManager: sync unfroze 3914 com.axeldeveloppement.gtd for 1
+08-21 01:03:18.874   576   663 V WindowManager: Sent Transition #5 createdAt=08-21 01:03:18.553 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=16 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity } baseActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} topActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} origActivity=null realActivity=ComponentInfo{com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity} numActivities=1 lastActiveTime=140602 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{a10f5a Task{80767aa #16 type=standard A=10192:com.axeldeveloppement.gtd}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{dd258b crc64f0e0a2508dd343ab.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+08-21 01:03:18.874   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:03:18.875   576   663 V WindowManager:     info={id=5 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a10f5a Task{80767aa #16 type=standard A=10192:com.axeldeveloppement.gtd}}} m=OPEN f=NONE leash=Surface(name=Task=16)/@0x49efe7c sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{41b8668 Task{aa838c3 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x5ab0b0b sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+08-21 01:03:19.435  3892  3957 E SliceManager: android.os.DeadObjectException: Transaction failed on small parcel; remote process probably died, but this could also be caused by running out of binder buffer space
+08-21 01:03:19.767  3892  3957 E SliceIndexUpdateTask: Error during slice index.
+08-21 01:03:19.767  3892  3957 E SliceIndexUpdateTask: java.lang.UnsupportedOperationException
+08-21 01:03:20.255  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+08-21 01:03:20.538   576  1240 D ConnectivityService: requestNetwork for uid/pid:10192/3914 activeRequest: null callbackRequest: 131 [NetworkRequest [ REQUEST id=132, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+08-21 01:03:20.541   576   772 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=132, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:20.541   576   772 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=132, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:20.541   576   772 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=132, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:20.542   576   772 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=132, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:20.653  3914  3914 W veloppement.gtd: Entry not found
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{1266736 com.android.cts.priv.ctsshim/10174} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a909637 com.google.android.youtube/10138} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2dee7a4 com.android.internal.display.cutout.emulation.corner/10023} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{54c90d com.android.internal.display.cutout.emulation.double/10048} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{669c0c2 com.google.android.googlequicksearchbox/10132} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{bce5ed3 com.google.android.onetimeinitializer/10125} BLOCKED
+08-21 01:03:20.670   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{1f4da10 com.google.android.ext.shared/10100} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{811e909 com.android.internal.systemui.navbar.gestural_wide_back/10004} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a97270e com.android.virtualmachine.res/10180} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{316152f com.google.android.federatedcompute/10187} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c35873c com.android.managedprovisioning.auto_generated_rro_product__/10022} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{6670cc5 com.android.carrierconfig.auto_generated_rro_vendor__/10076} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{522a61a com.android.systemui.emulation.pixel_3_xl/10036} BLOCKED
+08-21 01:03:20.671   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{78d54b com.android.systemui.emulation.pixel_4_xl/10059} BLOCKED
+08-21 01:03:20.673   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{771db28 com.android.systemui.emulation.pixel_fold/10009} BLOCKED
+08-21 01:03:20.673   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{530b041 com.android.simappdialog.auto_generated_rro_product__/10028} BLOCKED
+08-21 01:03:20.674   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{eb509e6 com.android.htmlviewer/10115} BLOCKED
+08-21 01:03:20.674   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{9fd7b27 com.google.android.health.connect.backuprestore/10186} BLOCKED
+08-21 01:03:20.674   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{39d81d4 com.android.systemui.auto_generated_rro_product__/10033} BLOCKED
+08-21 01:03:20.674   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{5970f7d com.google.android.apps.messaging/10131} BLOCKED
+08-21 01:03:20.674   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{fb7de72 com.google.android.soundpicker/10137} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{53ca2c3 com.google.android.marvin.talkbackoverlay/10078} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a3ae740 com.google.android.configupdater/10129} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{90a2679 com.android.internal.emulation.pixel_3a_xl/10044} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{ba16fbe com.android.internal.emulation.pixel_6_pro/10018} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{ebca81f com.android.internal.emulation.pixel_7_pro/10008} BLOCKED
+08-21 01:03:20.675   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{887376c com.android.internal.emulation.pixel_8_pro/10057} BLOCKED
+08-21 01:03:20.676   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{dfdb135 com.android.internal.emulation.pixel_3a/10052} BLOCKED
+08-21 01:03:20.676   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{500c9ca com.android.internal.emulation.pixel_4a/10013} BLOCKED
+08-21 01:03:20.676   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b0da73b com.android.internal.emulation.pixel_6a/10025} BLOCKED
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{665e58 com.android.internal.emulation.pixel_7a/10031} BLOCKED
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c652bb1 com.google.android.overlay.googlewebview/10049} BLOCKED
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{649b896 com.google.android.hotspot2.osulogin/10191} BLOCKED
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{da57c17 com.android.simappdialog/10112} BLOCKED
+08-21 01:03:20.677   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c0f0804 com.android.internal.display.cutout.emulation.hole/10073} BLOCKED
+08-21 01:03:20.678   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{defd1ed com.android.internal.display.cutout.emulation.tall/10065} BLOCKED
+08-21 01:03:20.678   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b60c822 com.android.internal.systemui.navbar.threebutton/10068} BLOCKED
+08-21 01:03:20.678   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{17bc2b3 com.android.camera2/10142} BLOCKED
+08-21 01:03:20.678   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{76a070 com.android.systemui.auto_generated_rro_vendor__/10077} BLOCKED
+08-21 01:03:20.678   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e049fe9 com.google.android.deskclock/10153} BLOCKED
+08-21 01:03:20.679   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7e7446e com.android.internal.systemui.navbar.twobutton/10021} BLOCKED
+08-21 01:03:20.680   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f65d70f com.google.android.as/10127} BLOCKED
+08-21 01:03:20.680   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a7d539c com.google.android.gm/10144} BLOCKED
+08-21 01:03:20.680   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{d7e51a5 com.android.internal.systemui.navbar.gestural_extra_wide_back/10045} BLOCKED
+08-21 01:03:20.681   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{647397a com.android.systemui.emulation.pixel_3/10015} BLOCKED
+08-21 01:03:20.681   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e32d52b com.android.systemui.emulation.pixel_4/10038} BLOCKED
+08-21 01:03:20.681   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2da0d88 com.android.systemui.emulation.pixel_5/10071} BLOCKED
+08-21 01:03:20.682   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{6276321 com.android.systemui.emulation.pixel_6/10074} BLOCKED
+08-21 01:03:20.682   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b7f7346 com.android.systemui.emulation.pixel_7/10072} BLOCKED
+08-21 01:03:20.682   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{8879907 com.android.systemui.emulation.pixel_8/10070} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{4c67a34 com.android.nfc.auto_generated_rro_product__/10027} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{9f6105d com.android.printspooler/10102} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{baf7dd2 com.android.emergency.auto_generated_rro_product__/10041} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{47abea3 com.google.android.connectivity.resources.goldfish.overlay/10079} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{36b05a0 com.android.dreams.basic/10103} BLOCKED
+08-21 01:03:20.683   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a085559 com.google.android.networkstack.tethering.emulator/10026} BLOCKED
+08-21 01:03:20.684   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b63a51e com.android.providers.settings.auto_generated_rro_product__/10006} BLOCKED
+08-21 01:03:20.684   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{8f0a1ff com.google.android.as.oss/10121} BLOCKED
+08-21 01:03:20.685   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a0adbcc com.android.traceur.auto_generated_rro_product__/10003} BLOCKED
+08-21 01:03:20.685   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{15fee15 com.google.android.devicelockcontroller/10181} BLOCKED
+08-21 01:03:20.686   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{9a0f52a com.google.android.dialer/10130} BLOCKED
+08-21 01:03:20.686   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{cb75f1b com.android.internal.emulation.pixel_3/10046} BLOCKED
+08-21 01:03:20.687   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2efe8b8 com.android.internal.emulation.pixel_4/10060} BLOCKED
+08-21 01:03:20.687   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f5e5691 com.android.internal.emulation.pixel_5/10010} BLOCKED
+08-21 01:03:20.687   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{eb139f6 com.android.internal.emulation.pixel_6/10037} BLOCKED
+08-21 01:03:20.688   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b62d1f7 com.android.internal.emulation.pixel_7/10067} BLOCKED
+08-21 01:03:20.688   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{116d864 com.android.internal.emulation.pixel_8/10042} BLOCKED
+08-21 01:03:20.688   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e00cacd com.google.android.captiveportallogin/10114} BLOCKED
+08-21 01:03:20.689   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{baeff82 com.android.musicfx/10088} BLOCKED
+08-21 01:03:20.689   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{be89693 com.google.android.apps.docs/10155} BLOCKED
+08-21 01:03:20.689   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2cc8c36 com.google.android.apps.maps/10152} BLOCKED
+08-21 01:03:20.689   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{89b16d0 com.google.android.modulemetadata/10146} BLOCKED
+08-21 01:03:20.690   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{fdc46c9 com.google.android.markup/10135} BLOCKED
+08-21 01:03:20.690   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{6d191ce com.android.providers.settings.auto_generated_rro_vendor__/10081} BLOCKED
+08-21 01:03:20.690   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{4fc08ef com.google.android.rkpdapp/10178} BLOCKED
+08-21 01:03:20.690   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{1e2cffc com.google.android.contacts/10154} BLOCKED
+08-21 01:03:20.691   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{1d98685 com.android.server.telecom.auto_generated_rro_product__/10035} BLOCKED
+08-21 01:03:20.691   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{78fcda com.google.android.overlay.googleconfig/10055} BLOCKED
+08-21 01:03:20.691   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b2a450b com.android.chrome/10150} BLOCKED
+08-21 01:03:20.692   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{38aefe8 com.android.bips.auto_generated_rro_product__/10032} BLOCKED
+08-21 01:03:20.692   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{cb10601 com.google.android.apps.customization.pixel/10143} BLOCKED
+08-21 01:03:20.692   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{cfa0ca6 com.google.android.tag/10085} BLOCKED
+08-21 01:03:20.692   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{4b626e7 com.google.android.overlay.permissioncontroller/10002} BLOCKED
+08-21 01:03:20.692   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f132294 com.google.android.partnersetup/10124} BLOCKED
+08-21 01:03:20.693   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{227013d com.google.android.apps.wallpaper.nexus/10141} BLOCKED
+08-21 01:03:20.693   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f2a4d32 com.google.android.apps.nexuslauncher/10169} BLOCKED
+08-21 01:03:20.693   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f344a83 com.google.android.nearby.halfsheet/10171} BLOCKED
+08-21 01:03:20.693   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c49d400 com.android.theme.font.notoserifsource/10066} BLOCKED
+08-21 01:03:20.693   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2077439 com.google.android.safetycenter.resources/10172} BLOCKED
+08-21 01:03:20.694   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{fac0a7e com.android.internal.display.cutout.emulation.waterfall/10040} BLOCKED
+08-21 01:03:20.694   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2e70bdf com.android.internal.systemui.navbar.transparent/10029} BLOCKED
+08-21 01:03:20.694   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f78302c com.google.android.connectivity.resources/10170} BLOCKED
+08-21 01:03:20.694   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2e21af5 com.android.providers.contacts.auto_generated_rro_product__/10016} BLOCKED
+08-21 01:03:20.695   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{cfa508a com.google.android.feedback/10162} BLOCKED
+08-21 01:03:20.695   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{fda86fb com.google.android.printservice.recommendation/10110} BLOCKED
+08-21 01:03:20.695   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{64e2318 com.google.android.apps.photos/10140} BLOCKED
+08-21 01:03:20.696   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{bdfa36a com.google.android.calendar/10145} BLOCKED
+08-21 01:03:20.696   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{a867171 com.google.android.documentsui/10098} BLOCKED
+08-21 01:03:20.696   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{34eb56 com.android.systemui.emulation.pixel_3a_xl/10020} BLOCKED
+08-21 01:03:20.696   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{c097d7 com.android.systemui.emulation.pixel_6_pro/10063} BLOCKED
+08-21 01:03:20.697   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{78e58c4 com.android.systemui.emulation.pixel_7_pro/10054} BLOCKED
+08-21 01:03:20.697   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{23fb3ad com.android.systemui.emulation.pixel_8_pro/10001} BLOCKED
+08-21 01:03:20.697   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2ac66e2 com.google.mainline.telemetry/10151} BLOCKED
+08-21 01:03:20.697   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f8cda73 com.android.carrierconfig.auto_generated_rro_product__/10064} BLOCKED
+08-21 01:03:20.697   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{17a3d30 com.android.providers.partnerbookmarks/10101} BLOCKED
+08-21 01:03:20.698   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2d0dda9 com.android.wallpaper.livepicker/10089} BLOCKED
+08-21 01:03:20.698   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2e0f2e com.android.providers.telephony.auto_generated_rro_product__/10062} BLOCKED
+08-21 01:03:20.698   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7d0aacf com.android.phone.auto_generated_rro_vendor__/10080} BLOCKED
+08-21 01:03:20.698   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2fdfc5c com.google.mainline.adservices/10136} BLOCKED
+08-21 01:03:20.699   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{430ab65 com.android.imsserviceentitlement/10117} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{20ff03a com.google.android.healthconnect.controller/10185} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2d724eb com.android.internal.emulation.pixel_2_xl/10017} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b9c8248 com.android.internal.emulation.pixel_3_xl/10056} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{d0598e1 com.android.internal.emulation.pixel_4_xl/10047} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{efcd606 com.android.internal.emulation.pixel_fold/10005} BLOCKED
+08-21 01:03:20.700   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{98124c7 com.android.bookmarkprovider/10113} BLOCKED
+08-21 01:03:20.701   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e1b7af4 com.google.android.overlay.pixelconfigcommon/10012} BLOCKED
+08-21 01:03:20.701   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{de1e21d com.android.systemui.accessibility.accessibilitymenu.auto_generated_rro_product__/10050} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{b804c92 com.android.systemui.emulation.pixel_3a/10011} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7e14663 com.android.systemui.emulation.pixel_4a/10000} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{1ef5260 com.android.systemui.emulation.pixel_6a/10039} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{43f8319 com.android.systemui.emulation.pixel_7a/10019} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7529fde com.google.android.settings.intelligence/10118} BLOCKED
+08-21 01:03:20.702   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7023a35 com.google.android.projection.gearhead/10123} BLOCKED
+08-21 01:03:20.703   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e97e5bf com.google.android.uwb.resources/10182} BLOCKED
+08-21 01:03:20.703   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{3ad1eca com.android.cts.ctsshim/10175} BLOCKED
+08-21 01:03:20.703   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{f67348c com.google.android.wifi.resources/10189} BLOCKED
+08-21 01:03:20.703   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{13c37d5 com.google.android.wifi.dialog/10190} BLOCKED
+08-21 01:03:20.703   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{364dbea com.google.android.apps.wallpaper/10161} BLOCKED
+08-21 01:03:20.704   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{def1edb com.google.android.odad/10122} BLOCKED
+08-21 01:03:20.704   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{2990d78 com.android.settings.auto_generated_rro_product__/10030} BLOCKED
+08-21 01:03:20.704   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{157c51 com.android.internal.systemui.navbar.gestural/10051} BLOCKED
+08-21 01:03:20.705   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{cacccb6 com.google.android.apps.youtube.music/10156} BLOCKED
+08-21 01:03:20.705   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{6b6cdb7 com.android.bluetoothmidiservice/10108} BLOCKED
+08-21 01:03:20.705   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{10d8924 com.android.storagemanager.auto_generated_rro_product__/10024} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{8648c8d com.google.android.cellbroadcastreceiver/10176} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7b0fe42 com.android.phone.auto_generated_rro_product__/10058} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{ce08e53 android.auto_generated_rro_product__/10069} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{e2c1390 com.android.internal.systemui.navbar.gestural_narrow_back/10053} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{81a6489 com.google.android.inputmethod.latin/10147} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{8d4bc8e android.auto_generated_rro_vendor__/10075} BLOCKED
+08-21 01:03:20.706   576  2203 I AppsFilter: interaction: PackageSetting{b62f0d1 com.axeldeveloppement.gtd/10192} -> PackageSetting{7dbbcaf com.google.android.apps.restore/10119} BLOCKED
+08-21 01:03:20.791  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (unsupported, reflection, allowed)
+08-21 01:03:20.791  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (unsupported, reflection, allowed)
+08-21 01:03:20.791  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (unsupported, reflection, allowed)
+08-21 01:03:20.792  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+08-21 01:03:20.792  3914  3914 W veloppement.gtd: Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+08-21 01:03:20.842  3914  5069 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.axeldeveloppement.gtd/app_webview/variations_seed_new"
+08-21 01:03:20.842  3914  5069 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.axeldeveloppement.gtd/app_webview/variations_seed"
+08-21 01:03:20.958   576   679 I ActivityManager: Start proc 5073:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {com.axeldeveloppement.gtd/org.chromium.content.app.SandboxedProcessService0:0}
+08-21 01:03:21.347   576  1240 D ConnectivityService: requestNetwork for uid/pid:10192/3914 activeRequest: null callbackRequest: 133 [NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+08-21 01:03:21.348   576   772 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:21.349   576   772 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:21.349   576   772 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:21.349   576   772 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.axeldeveloppement.gtd UnderlyingNetworks: Null] ]
+08-21 01:03:21.652  3914  3929 I veloppement.gtd: Background young concurrent copying GC freed 13740(1403KB) AllocSpace objects, 3(60KB) LOS objects, 28% free, 3858KB/5376KB, paused 1.685ms,76us total 103.478ms
+08-21 01:03:22.048   576  2203 D CoreBackPreview: Window{2f5e4ae u0 com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2282be0, mPriority=-1, mIsAnimationCallback=false}
+08-21 01:03:22.244  3914  5015 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:03:22.451   576   663 W ziparchive: Unable to open '/data/app/~~VbEwwXc52CEc0Nn76gQgZQ==/com.axeldeveloppement.gtd-OaTocLH2jf2eUnfL57EmpQ==/base.dm': No such file or directory
+08-21 01:03:22.458   576   663 I ActivityTaskManager: Displayed com.axeldeveloppement.gtd/crc64f0e0a2508dd343ab.MainActivity for user 0: +3s920ms
+08-21 01:03:22.569   576  2203 I ImeTracker: com.axeldeveloppement.gtd:2384d758: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+08-21 01:03:22.569   576  2203 I ImeTracker: com.axeldeveloppement.gtd:2384d758: onCancelled at PHASE_SERVER_SHOULD_HIDE
+08-21 01:03:22.594  1513  1513 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.axeldeveloppement.gtd fieldId=0 fieldName=null extras=null}, false)
+08-21 01:03:22.666   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:03:22.835   576  2203 W InputManager-JNI: Input channel object '9a5b6e4 Splash Screen com.axeldeveloppement.gtd (client)' was disposed without first being removed with the input manager!
+08-21 01:03:23.039  3914  3914 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 01:03:50.610  1829  1829 E A       : onError
+08-21 01:03:50.610  1829  1829 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+08-21 01:03:50.610  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 01:03:50.610  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 01:03:50.620  1450  5139 W TapAndPay: java.lang.NullPointerException: NfcAdapter is null

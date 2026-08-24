@@ -1,96 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon organiseur</title>
-    <base href="/" />
-    <link rel="stylesheet" href="css/app.css?v=2.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <!-- Utiliser base href relatif pour que les ressources embarquées soient résolues correctement dans WebView -->
+    <base href="./" />
+    <!-- Feuille de styles principale (layout, login, app shell) -->
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- Bundle CSS des composants (formulaires .form-card, .form-group, FAB, modales...) -->
     <link rel="stylesheet" href="css/bundle-scoped.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <!-- <link href="PersonalGTD.Web.styles.css" rel="stylesheet" /> -->
-    <script type="text/javascript">
-        // Capture immédiate du token Supabase avant toute redirection ou chargement Blazor
-        try {
-            if (window.location.hash && window.location.hash.indexOf('access_token=') !== -1) {
-                localStorage.setItem('supabase_auth_token', window.location.hash);
-            }
-        } catch (e) {
-            console.error('[index.html] Failed to capture auth token:', e);
-        }
-
-        // SPA Redirect Handler for GitHub Pages — désactivé sur mobile (Blazor Hybrid)
-        // pour éviter les plantages dus à l.search étant vide au démarrage natif
-        (function(l) {
-            try {
-                if (l.search && l.search.length > 1 && l.search[1] === '/' ) {
-                    var decoded = l.search.slice(1).split('&').map(function(s) {
-                        return s.replace(/~and~/g, '&')
-                    }).join('?');
-                    window.history.replaceState(null, null,
-                        l.pathname.slice(0, -1) + decoded + l.hash
-                    );
-                }
-            } catch(e) {
-                console.error('[index.html] SPA redirect handler failed:', e);
-            }
-        }(window.location))
-    </script>
 </head>
-
-<body>
+  <body>
     <div id="app">Chargement en cours...</div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
+    <div id="blazor-error-ui" style="display:none">
+      An unhandled error has occurred.
+      <a href="." class="reload">Reload</a>
+      <span class="dismiss">🗙</span>
     </div>
-    <!-- NOTE: Blazor Hybrid injects the framework natively via BlazorWebViewHandler - DO NOT add blazor.webassembly.js here -->
-    <script>
-        window.notificationHelper = {
-            navHandler: null,
-            registerNavigationHandler: function(dotNetObj) {
-                this.navHandler = dotNetObj;
-            },
-            requestPermission: async function() {
-                if (!("Notification" in window)) return "not_supported";
-                try {
-                    const permission = await Notification.requestPermission();
-                    return permission;
-                } catch (e) {
-                    return "error";
-                }
-            },
-            showNotification: function(title, body, tag) {
-                if (!("Notification" in window) || Notification.permission !== "granted") return;
-                
-                const options = {
-                    body: body,
-                    icon: 'icon-192.png',
-                    tag: tag,
-                    renotify: true,
-                    requireInteraction: true
-                };
-                const n = new Notification(title, options);
-                const self = this;
-                n.onclick = function(event) {
-                    event.preventDefault();
-                    window.focus();
-                    
-                    if (tag && tag.startsWith('agenda-')) {
-                        if (self.navHandler) {
-                            self.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
-                        } else {
-                            window.location.href = "?/agenda";
-                        }
-                    }
-                    n.close();
-                };
-            }
-        };
-    </script>
-</body>
 
+    <!-- blazor.webview.js : laissé au handler MAUI (ne pas l'inclure manuellement pour éviter doublons) -->
+
+    <!-- Blazor WebView bootstrap script (injecté manuellement) -->
+    <!-- Charger blazor.webview.js avec autostart=false pour empêcher un démarrage automatique
+         du runtime si le handler MAUI l'initialise séparément. Le handler pourra appeler
+         ensuite Blazor.start() lorsque le bridge natif est prêt. -->
+    <script src="_framework/blazor.webview.js" autostart="false"></script>
+
+    <!-- Script métier (après le script blazor.webview) -->
+    <script>
+      // API helper pour les notifications (attendre que la plateforme expose window.external)
+      (function () {
+        function ensureExternalReady(maxAttempts = 50, delay = 50) {
+          return new Promise((resolve) => {
+            let attempts = 0;
+            const iv = setInterval(() => {
+              attempts++;
+              if (window.external && typeof window.external.receiveMessage === 'function') {
+                clearInterval(iv);
+                resolve(true);
+              } else if (attempts >= maxAttempts) {
+                clearInterval(iv);
+                resolve(false);
+              }
+            }, delay);
+          });
+        }
+
+        window.notificationHelper = {
+          navHandler: null,
+          registerNavigationHandler: function (dotNetObj) {
+            this.navHandler = dotNetObj;
+          },
+          requestPermission: async function () {
+            if (!('Notification' in window)) return 'not_supported';
+            try {
+              const permission = await Notification.requestPermission();
+              return permission;
+            } catch (e) {
+              return 'error';
+            }
+          },
+          showNotification: async function (title, body, tag) {
+            if (!('Notification' in window) || Notification.permission !== 'granted') return;
+
+            const options = {
+              body: body,
+              icon: 'icon-192.png',
+              tag: tag,
+              renotify: true,
+              requireInteraction: true
+            };
+
+            const n = new Notification(title, options);
+            const self = this;
+            n.onclick = function (event) {
+              event.preventDefault();
+              window.focus();
+
+              if (tag && tag.startsWith('agenda-')) {
+                if (self.navHandler) {
+                  self.navHandler.invokeMethodAsync('NavigateTo', 'agenda');
+                } else {
+                  window.location.href = '?/agenda';
+                }
+              }
+              n.close();
+            };
+          }
+        };
+
+        // Optionnel: attendre l'API native exposée par BlazorWebView
+        ensureExternalReady().then((ready) => {
+          if (!ready) {
+            console.warn('window.external.receiveMessage non disponible après attente');
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>

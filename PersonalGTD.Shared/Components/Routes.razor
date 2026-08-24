@@ -1,0 +1,83 @@
+@using System.Reflection
+@inject PersonalGTD.Shared.Services.AuthService AuthService
+@inject NavigationManager NavigationManager
+
+<!-- Composant de routage partagé entre Web (WASM) et Mobile (Blazor Hybrid).
+     Le Router est rendu directement pour éviter le freeze "Chargement..." sur Android Hybrid.
+     La navigation vers "/" est gérée par la route par défaut du Router. -->
+<Router AppAssembly="@AppAssembly" AdditionalAssemblies="@AdditionalAssemblies">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(PersonalGTD.Shared.Components.Layout.MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <div style="padding:2rem; text-align:center; color:white; background-color:#0f172a; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+            <h2 style="font-family:'Outfit', sans-serif;">Page non trouvée</h2>
+            <p style="opacity:0.8;">Désolé, il n'y a rien à cette adresse.</p>
+            <button @onclick="NavigateHome" style="margin-top:1rem; padding:0.5rem 1rem; background:#4f46e5; color:white; border:none; border-radius:8px; cursor:pointer;">
+                Retour à l'accueil
+            </button>
+        </div>
+    </NotFound>
+</Router>
+
+@code {
+    // Assemblée principale contenant les pages (toujours PersonalGTD.Shared)
+    private Assembly AppAssembly => typeof(PersonalGTD.Shared.Components.Pages.Home).Assembly;
+
+    // Assemblèmes supplémentaires à rechercher pour les pages
+    private IEnumerable<Assembly> AdditionalAssemblies => new[]
+    {
+        typeof(PersonalGTD.Shared.Components.Layout.MainLayout).Assembly,
+        typeof(PersonalGTD.Shared.Components.Pages.Home).Assembly
+    };
+
+    private int _authInitStarted = 0;
+
+    protected override void OnInitialized()
+    {
+        var uri = NavigationManager.Uri;
+        Console.WriteLine($"[Routes] Initial URI: {uri}");
+        Console.WriteLine($"[Routes] Base URI: {NavigationManager.BaseUri}");
+
+        // Sur Android Hybrid, l'URI initiale est "blazor:///" ou similaire.
+        // Rediriger proprement vers "/" sans bloquer le rendu du Router.
+        if (string.IsNullOrEmpty(uri) || uri == NavigationManager.BaseUri ||
+            uri.TrimEnd('/') == NavigationManager.BaseUri.TrimEnd('/') ||
+            uri.StartsWith("blazor://"))
+        {
+            Console.WriteLine("[Routes] Redirecting to /");
+            NavigationManager.NavigateTo("/", forceLoad: false);
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Initialiser l'authentification en arrière-plan APRÈS le premier rendu.
+            if (Interlocked.Exchange(ref _authInitStarted, 1) == 0)
+            {
+                _ = InitializeAuthInBackground();
+            }
+        }
+    }
+
+    private async Task InitializeAuthInBackground()
+    {
+        try
+        {
+            await AuthService.InitializeAsync();
+            Console.WriteLine("[Routes] Auth initialized successfully");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Routes] Auth init error (non-fatal): {ex.Message}");
+        }
+    }
+
+    private void NavigateHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

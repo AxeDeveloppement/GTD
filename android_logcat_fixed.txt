@@ -1,0 +1,917 @@
+08-21 01:47:51.815   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:47:52.203 24954 24954 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:47:52.204 24954 24954 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:47:52.206 24954 24954 W monodroid: runtime args empty
+08-21 01:47:52.217 24954 24954 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:47:54.723 24954 24954 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:47:55.120   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:47:55.734 24954 24954 D AndroidRuntime: Shutting down VM
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 24954
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.737 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 01:47:55.743 24954 24954 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 01:47:55.753 24954 24954 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:47:55.754 24954 24954 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 01:47:55.755 24954 24954 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 01:47:55.756 24954 24954 I MonoDroid: 
+08-21 01:47:55.756 24954 24954 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 01:47:55.756 24954 24954 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 01:47:55.756 24954 24954 I MonoDroid: 
+08-21 01:47:55.809 25013 25013 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+08-21 01:47:56.185   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:47:57.229 25081 25081 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:47:57.230 25081 25081 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:47:57.230 25081 25081 W monodroid: runtime args empty
+08-21 01:47:57.242 25081 25081 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:47:59.330   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:21.354   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:21.548   576 21197 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:48:21.659   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:21.662   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@24c61fe, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:22.140   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:22.408   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@d3e2e61, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:22.412   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:22.994   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:23.241   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:23.260   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@b527f37, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:25.252   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:30.041   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:30.269   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:30.283   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@fa2f6d4, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:30.451   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:30.704   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:30.728   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@286516e, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:31.036   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:31.279   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@6aa6f34, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:31.960   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:32.187   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:32.203   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@b2e59da, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:32.338   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:32.545   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:32.572   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@240ed8a, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:33.329   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:33.536   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@7221c2e, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:33.860   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:36.590   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:36.802   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@93677db, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:36.883   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:37.722   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 01:48:37.895   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@73278f2, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:38.875   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:39.704 25081 25081 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:48:40.783 25081 25081 D AndroidRuntime: Shutting down VM
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25081
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.790 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 01:48:40.797 25081 25081 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 01:48:40.810 25081 25081 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:48:40.811 25081 25081 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 01:48:40.813 25081 25081 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 01:48:40.813 25081 25081 I MonoDroid: 
+08-21 01:48:40.813 25081 25081 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 01:48:40.813 25081 25081 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 01:48:40.814 25081 25081 I MonoDroid: 
+08-21 01:48:40.864   576   664 D CoreBackPreview: Window{f8ad417 u0 Application Error: com.axeldeveloppement.gtd}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.WindowOnBackInvokedDispatcher$OnBackInvokedCallbackWrapper@78a69a5, mPriority=0, mIsAnimationCallback=false}
+08-21 01:48:40.881   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:41.366   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:41.652   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:43.994   576  2064 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 01:48:47.518   576   664 D CoreBackPreview: Window{f8ad417 u0 Application Error: com.axeldeveloppement.gtd}: Setting back callback null
+08-21 01:48:47.589   576   664 W InputManager-JNI: Input channel object 'f8ad417 Application Error: com.axeldeveloppement.gtd (client)' was disposed without first being removed with the input manager!
+08-21 01:48:47.645   576   664 W Looper  : Slow dispatch took 126ms android.ui h=com.android.server.am.AppErrorDialog$1 c=null m=1
+08-21 01:48:48.122 25505 25505 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:48:48.122 25505 25505 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:48:48.123 25505 25505 W monodroid: runtime args empty
+08-21 01:48:48.132 25505 25505 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:48:50.585   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:48:52.713   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:53.380 25505 25505 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:48:54.324 25505 25505 D AndroidRuntime: Shutting down VM
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25505
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.327 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 01:48:54.332 25505 25505 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 01:48:54.343 25505 25505 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:48:54.345 25505 25505 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 01:48:54.347 25505 25505 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 01:48:54.347 25505 25505 I MonoDroid: 
+08-21 01:48:54.347 25505 25505 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 01:48:54.348 25505 25505 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 01:48:54.348 25505 25505 I MonoDroid: 
+08-21 01:48:54.594   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:48:54.629   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:48:56.040   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:49:25.401   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:49:25.835 25885 25885 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:49:25.835 25885 25885 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:49:25.835 25885 25885 W monodroid: runtime args empty
+08-21 01:49:25.843 25885 25885 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:49:28.146 25885 25885 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:49:28.714   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:49:28.881 25885 25963 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/com.axeldeveloppement.gtd/cache/WebView/Default/HTTP Cache/Code Cache/wasm: No such file or directory (2)
+08-21 01:49:28.886 25885 25963 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
+08-21 01:49:29.093 25885 25885 D AndroidRuntime: Shutting down VM
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25885
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.095 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 01:49:29.098 25885 25885 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 01:49:29.111 25885 25885 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 01:49:29.113 25885 25885 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 01:49:29.114 25885 25885 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 01:49:29.115 25885 25885 I MonoDroid: 
+08-21 01:49:29.115 25885 25885 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 01:49:29.115 25885 25885 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 01:49:29.115 25885 25885 I MonoDroid: 
+08-21 01:49:29.457   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 01:49:29.511   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 01:49:30.208   576  8672 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 01:49:30.583 25993 25993 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 01:49:30.583 25993 25993 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 01:49:30.584 25993 25993 W monodroid: runtime args empty
+08-21 01:49:30.592 25993 25993 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 01:49:33.171   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 01:49:39.558  1057  1057 D MediaPlayerList: sendMediaUpdate state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=45508, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null], active item id=-1, error=null}
+08-21 01:49:47.596   576  2171 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:00:00.063   576  1920 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:00:58.019   576  2171 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:01:26.786  1057  1157 E bluetooth: packages/modules/Bluetooth/system/gd/os/linux_generic/files.cc:221 FileCreatedTime: unable to read '/data/misc/bluetooth/logs/btsnooz_hci.log' file metadata, error: No such file or directory
+08-21 02:06:10.244   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:06:11.159 25993 25993 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 02:06:12.170 25993 25993 D AndroidRuntime: Shutting down VM
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25993
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.172 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 02:06:12.179 25993 25993 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 02:06:12.190 25993 25993 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 02:06:12.191 25993 25993 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 02:06:12.194 25993 25993 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 02:06:12.194 25993 25993 I MonoDroid: 
+08-21 02:06:12.194 25993 25993 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 02:06:12.195 25993 25993 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 02:06:12.195 25993 25993 I MonoDroid: 
+08-21 02:06:12.289   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:06:12.539   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:06:13.635  1367  1367 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 02:06:13.635  1367  1367 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 02:06:13.635  1367  1367 W monodroid: runtime args empty
+08-21 02:06:13.645  1367  1367 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 02:06:14.115   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:06:45.118   576  2270 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:07:02.100  2055  2055 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 02:07:02.101  2055  2055 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 02:07:02.101  2055  2055 W monodroid: runtime args empty
+08-21 02:07:02.111  2055  2055 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 02:08:24.094   576 21197 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 02:08:26.990   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:27.074  1829  1829 E A       : onError
+08-21 02:08:27.074  1829  1829 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+08-21 02:08:27.074  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 02:08:27.074  1829  1829 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 02:08:27.160  1829  2904 E BgTaskExecutorImpl: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+08-21 02:08:27.160  1829  2904 E BgTaskExecutorImpl: Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+08-21 02:08:27.643  2055  2055 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 02:08:28.742  2055  2055 I DOTNET  : [MainPage] BlazorWebView handler initialized
+08-21 02:08:29.158  2055  2900 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 02:08:29.747  2055  2055 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 02:08:29.784   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:32.861   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:33.139   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@cd0463c, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:34.468   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:34.733   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@33cf717, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:35.604   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:35.800   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@eb924a5, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:36.652   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:36.894   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@dd5bdcd, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:37.696   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:38.554   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:38.807   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@d2926df, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:39.723   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:40.023   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@d59be1, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:40.847   576  2201 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:08:40.885   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:41.097  8983 21198 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 02:08:41.626   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:41.911   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@2bc5ab4, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:42.608   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:43.081   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:43.480   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:44.213   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@9d4517b, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:45.747   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:08:45.753   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:08:47.466   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:47.828   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@f9580e3, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:48.260   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:48.540   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@2ae0037, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:49.234   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:49.518   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:49.816   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@5386b7a, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:50.441   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:50.743   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@efc10e7, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:51.315   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:51.473   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:51.609   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:08:51.618   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@f31f7a9, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:51.789   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:52.124   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@1b1d19, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:52.634   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:52.876   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@2797a45, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:53.616   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:53.850   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@64bdd97, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:54.765   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:55.060   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@a822120, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:55.167   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:55.874   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:57.924   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:58.130   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@f7b507b, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:08:59.285   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:08:59.367   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:08:59.548   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@a731fe3, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:00.476   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:00.779   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@bd14ca4, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:01.608   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:01.846   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@fc73028, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:02.655   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:03.744   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:03.810   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:09:04.070   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@bbd44e8, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:04.992   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:05.291   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@db834ad, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:07.167   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:07.431   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@7fa9cde, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:07.770   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:09:09.751   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:09:10.095   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@7cbac66, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:10.919   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:09:11.642   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:09:41.080   576  2057 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:25:05.467   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:05.774   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@6fda1f6, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:06.586   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:06.897   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@de900c4, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:07.708   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:07.807   576  2270 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:25:08.266  8983 21198 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 02:25:08.391   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:08.560   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@db0317f, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:09.371  1450  1585 E bwfc    : Phenotype API error. Event # edax@77775701, EventCode: 7 [CONTEXT service_id=51 ]
+08-21 02:25:09.766   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:25:09.880  1159  1159 W FrameTracker: Missed SF frame:PREDICTION_ERROR, 2119935, 15308804, CUJ=J<RECENTS_SCROLLING>
+08-21 02:25:09.880  1159  1159 W FrameTracker: Missed SF frame:PREDICTION_ERROR, 2119979, 9785072, CUJ=J<RECENTS_SCROLLING>
+08-21 02:25:10.058   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:11.085  1450  2022 W FontLog : Error updating last accessed time for {Noto COLR Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false}. [CONTEXT service_id=132 ]
+08-21 02:25:13.422   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:25:15.857   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:16.167   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:25:16.180   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@e88de18, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:17.491   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:17.870   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@17bfd48, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:18.817   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:19.128   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@73dbf8c, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:19.758   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:25:20.046   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:22.139   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:22.438   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@187eda1, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:23.439   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:23.537   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:25:23.726   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@d9b6d13, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:24.648   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:24.947   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@47dd75, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:25.656   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:27.599   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 02:25:27.701   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:25:27.891   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@e54e810, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:25:30.951   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:26:08.321   576  2137 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:30:58.020   576  2208 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:36:50.178   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 02:36:50.328   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:36:53.595   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:37:49.498   576  1916 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 02:37:53.295 15393 15393 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+08-21 02:37:53.303 15393 15393 I AndroidRuntime: Using default boot image
+08-21 02:37:53.303 15393 15393 I AndroidRuntime: Leaving lock profiling enabled
+08-21 02:37:53.856 15393 15393 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+08-21 02:37:54.008 15393 15393 I AndroidRuntime: VM exiting with result code 0.
+08-21 02:37:54.246   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 02:37:54.571 15409 15409 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 02:37:54.572 15409 15409 W monodroid: runtime args empty
+08-21 02:37:54.601 15409 15409 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 02:37:57.044 15409 15409 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 02:37:57.460   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 02:37:57.898 15409 15480 E chromium: [ERROR:simple_backend_impl.cc(749)] Simple Cache Backend: cache directory inaccessible right after creation; path: /data/user/0/com.axeldeveloppement.gtd/cache/WebView/Default/HTTP Cache/Code Cache/js
+08-21 02:37:57.913 15409 15500 E chromium: [ERROR:disk_cache.cc(205)] Unable to create cache
+08-21 02:37:58.275 15409 15409 I DOTNET  : [MainPage] BlazorWebView handler initialized
+08-21 02:37:58.682 15409 15457 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 02:37:59.364 15409 15409 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 02:55:08.354   576  2205 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:00:58.027   576  1239 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:01:26.782  1057  1157 E bluetooth: packages/modules/Bluetooth/system/gd/os/linux_generic/files.cc:221 FileCreatedTime: unable to read '/data/misc/bluetooth/logs/btsnooz_hci.log' file metadata, error: No such file or directory
+08-21 03:01:39.000   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:01:39.427   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:01:40.956   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:01:41.706 25631 25631 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:01:41.707 25631 25631 W monodroid: runtime args empty
+08-21 03:01:41.722 25631 25631 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:01:43.768   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:01:44.388 25631 25631 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:01:45.318 25631 25715 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/com.axeldeveloppement.gtd/cache/WebView/Default/HTTP Cache/Code Cache/js: No such file or directory (2)
+08-21 03:01:45.318 25631 25715 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
+08-21 03:01:45.570 25631 25631 D AndroidRuntime: Shutting down VM
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25631
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.573 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 03:01:45.575 25631 25631 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 03:01:45.588 25631 25631 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:01:45.589 25631 25631 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 03:01:45.591 25631 25631 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 03:01:45.591 25631 25631 I MonoDroid: 
+08-21 03:01:45.592 25631 25631 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 03:01:45.592 25631 25631 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 03:01:45.592 25631 25631 I MonoDroid: 
+08-21 03:01:45.935   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:01:45.983   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:01:47.056 25744 25744 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 03:01:47.056 25744 25744 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:01:47.056 25744 25744 W monodroid: runtime args empty
+08-21 03:01:47.066 25744 25744 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:01:49.648   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:02:15.046   576 21197 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:02:17.342   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:02:17.998 25744 25744 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:02:18.990 25744 25744 D AndroidRuntime: Shutting down VM
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: FATAL EXCEPTION: main
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: Process: com.axeldeveloppement.gtd, PID: 25744
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: android.runtime.JavaProxyThrowable: [System.ArgumentException]: The path is empty. (Parameter 'relativeTo')
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x23(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at System.IO.Path.GetRelativePath + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.StartWebViewCoreIfPossible + 0x39(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler.MapHostPage + 0xc(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.AspNetCore.Components.WebView.Maui.BlazorWebViewHandler, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.AspNetCore.Components.WebView.Maui.IBlazorWebView, Microsoft.AspNetCore.Components.WebView.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Android.Webkit.WebView, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.LayoutHandler.SetVirtualView + 0x76(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.ILayout, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.LayoutViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.UpdateContent + 0x53(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.MapContent + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper`2+<>c__DisplayClass5_0[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Handlers.IContentViewHandler, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].<Add>b__0 + 0x19(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.PropertyMapper.UpdateProperties + 0x22(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ElementHandler.SetVirtualView + 0xce(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.992 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ContentViewHandler.SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Handlers.ViewHandler`2[[Microsoft.Maui.IContentView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Maui.Platform.ContentViewGroup, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]].SetVirtualView + 0x0(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.SetHandler + 0x88(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.Element.set_Handler + 0x0(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Controls.VisualElement.Microsoft.Maui.IElement.set_Handler + 0x16(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToHandler + 0xae(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ElementExtensions.ToPlatform + 0x0(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at Microsoft.Maui.Platform.ScopedFragment.OnCreateView + 0x1c(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at AndroidX.Fragment.App.Fragment.n_OnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_ + 0x10(Unknown Source)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.n_onCreateView(Native Method)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at crc6452ffdc5b34af3a0f.ScopedFragment.onCreateView(ScopedFragment.java:45)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.Fragment.performCreateView(Fragment.java:3119)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.createView(FragmentStateManager.java:577)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:286)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.executeOpsTogether(FragmentManager.java:2214)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.removeRedundantOperationsAndExecute(FragmentManager.java:2115)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.execPendingActions(FragmentManager.java:2052)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3327)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.dispatchActivityCreated(FragmentManager.java:3237)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.dispatchActivityCreated(FragmentController.java:263)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onStart(FragmentActivity.java:350)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at androidx.appcompat.app.AppCompatActivity.onStart(AppCompatActivity.java:238)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1582)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:8628)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3807)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:225)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:205)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:177)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:98)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2443)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+08-21 03:02:18.994 25744 25744 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+08-21 03:02:19.004 25744 25744 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:02:19.005 25744 25744 I MonoDroid: UNHANDLED EXCEPTION:
+08-21 03:02:19.008 25744 25744 I MonoDroid: Android.Runtime.JavaProxyThrowable: Exception of type 'Android.Runtime.JavaProxyThrowable' was thrown.
+08-21 03:02:19.008 25744 25744 I MonoDroid: 
+08-21 03:02:19.008 25744 25744 I MonoDroid:   --- End of managed Android.Runtime.JavaProxyThrowable stack trace ---
+08-21 03:02:19.008 25744 25744 I MonoDroid: android.runtime.JavaProxyThrowable
+08-21 03:02:19.008 25744 25744 I MonoDroid: 
+08-21 03:02:19.069   576   664 D CoreBackPreview: Window{66c97ec u0 Application Error: com.axeldeveloppement.gtd}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.WindowOnBackInvokedDispatcher$OnBackInvokedCallbackWrapper@3d386d, mPriority=0, mIsAnimationCallback=false}
+08-21 03:02:19.814   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:02:19.871   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:02:20.565   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:02:33.531   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:02:35.130   576 26109 I ActivityManager: Crashing app skipping ANR: com.android.server.am.ProcessErrorStateRecord@590b761 Timed out while trying to bind
+08-21 03:02:35.934   576   664 D CoreBackPreview: Window{66c97ec u0 Application Error: com.axeldeveloppement.gtd}: Setting back callback null
+08-21 03:02:35.981   576   664 W InputManager-JNI: Input channel object '66c97ec Application Error: com.axeldeveloppement.gtd (client)' was disposed without first being removed with the input manager!
+08-21 03:02:36.428   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:02:38.590  5044 26120 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:02:38.656   576  1239 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:02:38.921   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:02:39.505   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:02:43.738   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:02:52.728   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:02:52.929   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:02:56.288   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:06:14.328   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:14.542   576 21197 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:06:15.867 27732 27757 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:06:17.063   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:06:22.588   871   895 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=332]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@8c59109
+08-21 03:06:22.872   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@844b17d, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:23.847   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:24.178   576  1239 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:06:24.413   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:24.775   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:24.937  5044 26120 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:06:27.126   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:06:28.554   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:06:29.030   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:06:32.437   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:07:24.319   576  2214 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:16:13.687   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:16:13.986   576 21197 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:16:14.491 31787 31787 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:16:14.491 31787 31787 W monodroid: runtime args empty
+08-21 03:16:14.506 31787 31787 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:16:16.966   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:16:17.098 31787 31787 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:16:18.369  1450 31784 W FontLog : Error updating last accessed time for {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false}. [CONTEXT service_id=132 ]
+08-21 03:16:18.741 31787 31840 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:16:19.424 31787 31787 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 03:24:41.306   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:24:41.715   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:24:42.174   576  8672 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:24:43.522   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:24:44.242  4132  4132 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:24:44.242  4132  4132 W monodroid: runtime args empty
+08-21 03:24:44.255  4132  4132 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:24:45.938   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:24:46.763  4132  4132 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:24:48.321  4132  4161 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:24:49.113  4132  4132 I chromium: [INFO:CONSOLE(2)] "Uncaught ReferenceError: Blazor is not defined", source: https://0.0.0.1/ (2)
+08-21 03:25:08.420   576  2174 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:26:22.059   576  2200 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:30:58.027   576  2200 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:32:47.383   576   592 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:41:33.260   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:41:33.759   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:41:37.098   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:41:58.429   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:41:58.568   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:42:23.953   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:42:24.796 11181 11181 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:42:24.798 11181 11181 W monodroid: runtime args empty
+08-21 03:42:24.813 11181 11181 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:42:26.674   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:42:27.282 11181 11181 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:42:28.263   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:42:29.445 11181 11210 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:42:31.803 11181 11181 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: window.external.receiveMessage is not a function", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 03:42:33.394 11181 11181 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) Error: Blazor has already started.", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 03:42:41.860   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:55:08.547   576  2201 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 03:59:03.323   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:59:03.545   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:59:05.385   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:59:06.068 17909 17909 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:59:06.069 17909 17909 W monodroid: runtime args empty
+08-21 03:59:06.082 17909 17909 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:59:07.799   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:59:09.902 17909 17909 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:59:10.821 17909 18031 E chromium: [ERROR:simple_backend_impl.cc(749)] Simple Cache Backend: cache directory inaccessible right after creation; path: /data/user/0/com.axeldeveloppement.gtd/cache/WebView/Default/HTTP Cache/Code Cache/wasm
+08-21 03:59:10.830 17909 18028 E chromium: [ERROR:simple_file_enumerator.cc(21)] opendir /data/user/0/com.axeldeveloppement.gtd/cache/WebView/Default/HTTP Cache/Code Cache/js: No such file or directory (2)
+08-21 03:59:10.830 17909 18028 E chromium: [ERROR:simple_index_file.cc(614)] Could not reconstruct index from disk
+08-21 03:59:10.831 17909 18042 E chromium: [ERROR:disk_cache.cc(205)] Unable to create cache
+08-21 03:59:11.651 17909 18000 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:59:12.698 17909 17909 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: window.external.receiveMessage is not a function", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 03:59:12.765 17909 17909 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) Error: Blazor has already started.", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 03:59:23.260   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 03:59:24.826 18193 18193 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 03:59:24.827 18193 18193 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 03:59:24.827 18193 18193 W monodroid: runtime args empty
+08-21 03:59:24.843 18193 18193 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 03:59:27.917   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 03:59:28.443   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:59:29.089 18193 18193 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 03:59:30.737 18193 18243 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 03:59:31.433 18193 18193 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: window.external.receiveMessage is not a function", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 03:59:31.505   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 03:59:31.783 18193 18193 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) Error: Blazor has already started.", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 04:00:02.689   576  2174 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 04:00:24.746   576  1724 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+08-21 04:00:24.762   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 04:00:27.266   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 04:00:53.479 18877 18877 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+08-21 04:00:53.501 18877 18877 I AndroidRuntime: Using default boot image
+08-21 04:00:53.502 18877 18877 I AndroidRuntime: Leaving lock profiling enabled
+08-21 04:00:54.186 18877 18877 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+08-21 04:00:54.387 18877 18877 I AndroidRuntime: VM exiting with result code 0.
+08-21 04:00:54.563   576   663 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+08-21 04:00:55.279 18915 18915 W monodroid: Failed to create directory '/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64'. File exists
+08-21 04:00:55.280 18915 18915 W monodroid: Creating public update directory: `/data/user/0/com.axeldeveloppement.gtd/files/.__override__/x86_64`
+08-21 04:00:55.282 18915 18915 W monodroid: runtime args empty
+08-21 04:00:55.297 18915 18915 W monodroid-assembly: open_from_update_dir: assembly file DOES NOT EXIST
+08-21 04:00:57.511 18915 18915 W monodroid-assembly: Shared library 'liblog' not loaded, p/invoke '__android_log_print' may fail
+08-21 04:00:57.798   576  1786 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+08-21 04:00:58.027   576  2270 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-21 04:00:59.127 18915 18940 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+08-21 04:00:59.987 18915 18915 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) TypeError: window.external.receiveMessage is not a function", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 04:01:00.222 18915 18915 I chromium: [INFO:CONSOLE(1)] "Uncaught (in promise) Error: Blazor has already started.", source: https://0.0.0.1/_framework/blazor.webview.js (1)
+08-21 04:01:26.781  1057  1157 E bluetooth: packages/modules/Bluetooth/system/gd/os/linux_generic/files.cc:221 FileCreatedTime: unable to read '/data/misc/bluetooth/logs/btsnooz_hci.log' file metadata, error: No such file or directory
+08-21 04:01:58.360   576  2064 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11

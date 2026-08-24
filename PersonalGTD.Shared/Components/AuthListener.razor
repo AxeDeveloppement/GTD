@@ -7,7 +7,11 @@
     protected override void OnInitialized()
     {
         AuthService.OnAuthStateChanged += HandleAuthStateChanged;
+        DeepLinkQueue.LinkEnqueued += HandleDeepLinkEnqueued;
         CheckCurrentSession();
+        // Consommer les deep links OAuth arrivés avant le démarrage du circuit
+        // (ex. : retour depuis le navigateur avant que BlazorWebView ne soit prêt).
+        _ = ProcessPendingDeepLinksAsync();
     }
 
     private void HandleAuthStateChanged()
@@ -22,8 +26,43 @@
         // Le nettoyage de l'URL est également géré dans MainLayout pour éviter les rechargements.
     }
 
+    /// <summary>
+    /// Appelé (depuis le thread UI Android) quand la couche native enfile un deep link OAuth.
+    /// On repasse sur le circuit Blazor pour traiter l'URL avec l'instance AuthService du circuit.
+    /// </summary>
+    private void HandleDeepLinkEnqueued()
+    {
+        var syncContext = SynchronizationContext.Current;
+        if (syncContext != null)
+        {
+            syncContext.Post(_ => _ = ProcessPendingDeepLinksAsync(), null);
+        }
+        else
+        {
+            _ = ProcessPendingDeepLinksAsync();
+        }
+    }
+
+    private async Task ProcessPendingDeepLinksAsync()
+    {
+        var links = DeepLinkQueue.Drain();
+        foreach (var link in links)
+        {
+            try
+            {
+                Console.WriteLine($"[AuthListener] Traitement du deep link OAuth : {link}");
+                await AuthService.ProcessDeepLink(link);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[AuthListener] Erreur lors du traitement du deep link : {ex.Message}");
+            }
+        }
+    }
+
     public void Dispose()
     {
         AuthService.OnAuthStateChanged -= HandleAuthStateChanged;
+        DeepLinkQueue.LinkEnqueued -= HandleDeepLinkEnqueued;
     }
 }

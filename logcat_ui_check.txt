@@ -1,0 +1,508 @@
+--------- beginning of main
+08-22 22:27:08.736 13438 13473 D EGL_emulation: app_time_stats: avg=3.26ms min=1.64ms max=7.12ms count=60
+08-22 22:27:09.736 13438 13473 D EGL_emulation: app_time_stats: avg=2.72ms min=1.67ms max=4.86ms count=60
+08-22 22:27:09.989   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:10.737 13438 13473 D EGL_emulation: app_time_stats: avg=3.41ms min=1.75ms max=19.07ms count=60
+08-22 22:27:11.751 13438 13473 D EGL_emulation: app_time_stats: avg=3.65ms min=1.69ms max=14.16ms count=60
+08-22 22:27:11.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:27:12.752 13438 13473 D EGL_emulation: app_time_stats: avg=2.29ms min=1.54ms max=4.53ms count=60
+08-22 22:27:13.752 13438 13473 D EGL_emulation: app_time_stats: avg=3.11ms min=1.89ms max=16.77ms count=60
+08-22 22:27:14.754 13438 13473 D EGL_emulation: app_time_stats: avg=3.12ms min=1.72ms max=8.98ms count=60
+08-22 22:27:15.770 13438 13473 D EGL_emulation: app_time_stats: avg=2.58ms min=1.58ms max=4.46ms count=61
+--------- beginning of system
+08-22 22:27:16.768   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:27:16.785 13438 13473 D EGL_emulation: app_time_stats: avg=8.26ms min=1.61ms max=28.59ms count=59
+08-22 22:27:17.233   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:27:17.788 13438 13473 D EGL_emulation: app_time_stats: avg=16.68ms min=11.99ms max=20.65ms count=60
+08-22 22:27:17.925   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:18.802 13438 13473 D EGL_emulation: app_time_stats: avg=17.44ms min=11.93ms max=32.95ms count=58
+08-22 22:27:19.802 13438 13473 D EGL_emulation: app_time_stats: avg=17.11ms min=11.69ms max=33.08ms count=58
+08-22 22:27:20.233   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:27:20.803 13438 13473 D EGL_emulation: app_time_stats: avg=16.64ms min=11.99ms max=21.86ms count=60
+08-22 22:27:21.685   577  2077 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:27:21.688  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:27:21.688  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:27:21.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:27:21.805 13438 13473 D EGL_emulation: app_time_stats: avg=17.25ms min=12.09ms max=33.08ms count=58
+08-22 22:27:22.115   577   782 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+08-22 22:27:22.819 13438 13473 D EGL_emulation: app_time_stats: avg=15.34ms min=2.93ms max=23.66ms count=60
+08-22 22:27:23.250   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:27:23.823 13438 13473 D EGL_emulation: app_time_stats: avg=16.66ms min=12.77ms max=20.91ms count=60
+08-22 22:27:24.837 13438 13473 D EGL_emulation: app_time_stats: avg=17.46ms min=11.41ms max=34.69ms count=58
+08-22 22:27:25.853 13438 13473 D EGL_emulation: app_time_stats: avg=11.77ms min=2.04ms max=31.33ms count=60
+08-22 22:27:25.857   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:26.250   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:27:26.709   577   733 W CpuMonitorService: Current CPU frequency (4817895) is greater than maximum CPU frequency (2) for policy ID (0). Skipping CPU frequency policy
+08-22 22:27:26.709   577   733 W CpuMonitorService: Current CPU frequency (4835163) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-22 22:27:26.709   577   733 W CpuMonitorService: Current CPU frequency (4737081) is greater than maximum CPU frequency (2) for policy ID (2). Skipping CPU frequency policy
+08-22 22:27:26.709   577   733 W CpuMonitorService: Current CPU frequency (4833476) is greater than maximum CPU frequency (2) for policy ID (3). Skipping CPU frequency policy
+08-22 22:27:26.853 13438 13473 D EGL_emulation: app_time_stats: avg=3.52ms min=1.78ms max=6.39ms count=60
+08-22 22:27:27.853 13438 13473 D EGL_emulation: app_time_stats: avg=16.05ms min=2.31ms max=32.01ms count=58
+08-22 22:27:28.869 13438 13473 D EGL_emulation: app_time_stats: avg=12.08ms min=2.10ms max=33.81ms count=58
+08-22 22:27:29.886 13438 13473 D EGL_emulation: app_time_stats: avg=3.27ms min=1.58ms max=7.43ms count=61
+08-22 22:27:30.902 13438 13473 D EGL_emulation: app_time_stats: avg=2.61ms min=1.61ms max=4.34ms count=61
+08-22 22:27:31.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:27:31.920 13438 13473 D EGL_emulation: app_time_stats: avg=10.45ms min=1.88ms max=29.07ms count=59
+08-22 22:27:32.936 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=9.44ms max=24.30ms count=61
+08-22 22:27:33.939 13438 13473 D EGL_emulation: app_time_stats: avg=16.97ms min=11.39ms max=31.83ms count=59
+08-22 22:27:34.053   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:34.952 13438 13473 D EGL_emulation: app_time_stats: avg=10.28ms min=1.98ms max=29.83ms count=61
+08-22 22:27:35.954 13438 13473 D EGL_emulation: app_time_stats: avg=3.20ms min=1.86ms max=6.78ms count=60
+08-22 22:27:36.746  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:27:36.969 13438 13473 D EGL_emulation: app_time_stats: avg=2.56ms min=1.63ms max=7.04ms count=61
+08-22 22:27:37.974 13438 13473 D EGL_emulation: app_time_stats: avg=3.41ms min=1.40ms max=20.88ms count=60
+08-22 22:27:38.986 13438 13473 D EGL_emulation: app_time_stats: avg=3.27ms min=1.62ms max=6.70ms count=61
+08-22 22:27:39.987 13438 13473 D EGL_emulation: app_time_stats: avg=2.83ms min=1.62ms max=5.15ms count=60
+08-22 22:27:41.003 13438 13473 D EGL_emulation: app_time_stats: avg=12.68ms min=1.72ms max=33.14ms count=58
+08-22 22:27:41.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:27:41.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:42.005 13438 13473 D EGL_emulation: app_time_stats: avg=16.66ms min=12.80ms max=20.57ms count=60
+08-22 22:27:42.989  1719  2479 W TimedProcessReaper: Memory state is: 125
+08-22 22:27:43.020 13438 13473 D EGL_emulation: app_time_stats: avg=16.88ms min=12.72ms max=34.71ms count=60
+08-22 22:27:44.022 13438 13473 D EGL_emulation: app_time_stats: avg=9.54ms min=1.46ms max=29.79ms count=60
+08-22 22:27:45.037 13438 13473 D EGL_emulation: app_time_stats: avg=3.26ms min=1.59ms max=5.98ms count=61
+08-22 22:27:46.037 13438 13473 D EGL_emulation: app_time_stats: avg=2.85ms min=1.54ms max=6.10ms count=60
+08-22 22:27:46.763   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:27:47.041 13438 13473 D EGL_emulation: app_time_stats: avg=3.28ms min=1.78ms max=10.74ms count=60
+08-22 22:27:48.055 13438 13473 D EGL_emulation: app_time_stats: avg=3.00ms min=1.54ms max=5.30ms count=61
+08-22 22:27:49.071 13438 13473 D EGL_emulation: app_time_stats: avg=15.50ms min=2.17ms max=23.35ms count=60
+08-22 22:27:49.921   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:50.090 13438 13473 D EGL_emulation: app_time_stats: avg=9.31ms min=1.74ms max=31.15ms count=60
+08-22 22:27:50.464   577  2092 D WifiNl80211Manager: Scan result ready event
+08-22 22:27:50.465   577  2092 D WifiNative: Scan result ready event
+08-22 22:27:51.102 13438 13473 D EGL_emulation: app_time_stats: avg=6.67ms min=2.04ms max=31.12ms count=59
+08-22 22:27:51.714   577  2092 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:27:51.718  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:27:51.718  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:27:51.768   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:27:51.769   862   935 D EGL_emulation: app_time_stats: avg=51734.46ms min=51734.46ms max=51734.46ms count=1
+08-22 22:27:52.102 13438 13473 D EGL_emulation: app_time_stats: avg=16.64ms min=12.13ms max=21.49ms count=60
+08-22 22:27:53.105 13438 13473 D EGL_emulation: app_time_stats: avg=9.09ms min=1.90ms max=27.26ms count=60
+08-22 22:27:54.119 13438 13473 D EGL_emulation: app_time_stats: avg=3.20ms min=1.75ms max=6.31ms count=61
+08-22 22:27:55.119 13438 13473 D EGL_emulation: app_time_stats: avg=2.52ms min=1.45ms max=6.82ms count=60
+08-22 22:27:56.124 13438 13473 D EGL_emulation: app_time_stats: avg=3.89ms min=1.73ms max=23.06ms count=60
+08-22 22:27:57.136 13438 13473 D EGL_emulation: app_time_stats: avg=3.05ms min=1.71ms max=8.54ms count=61
+08-22 22:27:57.862   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:27:58.154 13438 13473 D EGL_emulation: app_time_stats: avg=2.57ms min=1.63ms max=5.28ms count=61
+08-22 22:27:59.156 13438 13473 D EGL_emulation: app_time_stats: avg=3.61ms min=1.80ms max=13.83ms count=60
+08-22 22:28:00.034   862   935 D EGL_emulation: app_time_stats: avg=8264.72ms min=8264.72ms max=8264.72ms count=1
+08-22 22:28:00.035  1530  1832 I AiAiEcho: Predicting[0]: 
+08-22 22:28:00.035  1530  1832 I AiAiEcho: EchoTargets: 
+08-22 22:28:00.035  1530  1832 I AiAiEcho: Filtered by AiAi flag check: 
+08-22 22:28:00.035  1530  1832 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-22 22:28:00.036  1530  1832 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-22 22:28:00.050   862   862 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-22 22:28:00.170 13438 13473 D EGL_emulation: app_time_stats: avg=4.46ms min=1.88ms max=18.92ms count=60
+08-22 22:28:01.189 13438 13473 D EGL_emulation: app_time_stats: avg=16.66ms min=14.15ms max=20.40ms count=61
+08-22 22:28:01.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:02.190 13438 13473 D EGL_emulation: app_time_stats: avg=8.12ms min=1.54ms max=26.69ms count=60
+08-22 22:28:03.205 13438 13473 D EGL_emulation: app_time_stats: avg=3.11ms min=1.69ms max=5.68ms count=61
+08-22 22:28:04.221 13438 13473 D EGL_emulation: app_time_stats: avg=2.74ms min=1.52ms max=6.04ms count=61
+08-22 22:28:05.237 13438 13473 D EGL_emulation: app_time_stats: avg=3.45ms min=1.46ms max=22.06ms count=61
+08-22 22:28:05.794   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:06.255 13438 13473 D EGL_emulation: app_time_stats: avg=3.07ms min=1.72ms max=7.81ms count=61
+08-22 22:28:06.772  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:07.270 13438 13473 D EGL_emulation: app_time_stats: avg=14.37ms min=2.09ms max=34.44ms count=58
+08-22 22:28:08.287 13438 13473 D EGL_emulation: app_time_stats: avg=7.83ms min=1.53ms max=31.99ms count=60
+08-22 22:28:09.287 13438 13473 D EGL_emulation: app_time_stats: avg=2.96ms min=1.52ms max=6.88ms count=60
+08-22 22:28:10.304 13438 13473 D EGL_emulation: app_time_stats: avg=13.20ms min=1.67ms max=20.23ms count=60
+08-22 22:28:11.321 13438 13473 D EGL_emulation: app_time_stats: avg=6.86ms min=1.73ms max=32.16ms count=61
+08-22 22:28:11.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:12.337 13438 13473 D EGL_emulation: app_time_stats: avg=16.59ms min=3.43ms max=33.51ms count=58
+08-22 22:28:13.337 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=12.11ms max=21.37ms count=60
+08-22 22:28:13.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:14.338 13438 13473 D EGL_emulation: app_time_stats: avg=7.03ms min=1.92ms max=31.10ms count=60
+08-22 22:28:15.354 13438 13473 D EGL_emulation: app_time_stats: avg=3.30ms min=1.75ms max=8.86ms count=61
+08-22 22:28:16.355 13438 13473 D EGL_emulation: app_time_stats: avg=4.89ms min=1.69ms max=31.92ms count=58
+08-22 22:28:16.821   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:28:17.371 13438 13473 D EGL_emulation: app_time_stats: avg=9.59ms min=1.77ms max=35.11ms count=59
+08-22 22:28:18.371 13438 13473 D EGL_emulation: app_time_stats: avg=16.91ms min=11.67ms max=33.29ms count=59
+08-22 22:28:19.386 13438 13473 D EGL_emulation: app_time_stats: avg=17.16ms min=10.97ms max=34.63ms count=59
+08-22 22:28:20.388 13438 13473 D EGL_emulation: app_time_stats: avg=17.18ms min=10.94ms max=31.62ms count=58
+08-22 22:28:21.402 13438 13473 D EGL_emulation: app_time_stats: avg=16.58ms min=10.64ms max=22.26ms count=61
+08-22 22:28:21.731   577  2092 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:28:21.735  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:21.735  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:21.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:21.769   862   935 D EGL_emulation: app_time_stats: avg=21734.81ms min=21734.81ms max=21734.81ms count=1
+08-22 22:28:21.922   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:22.418 13438 13473 D EGL_emulation: app_time_stats: avg=16.90ms min=11.28ms max=36.73ms count=60
+08-22 22:28:23.421 13438 13473 D EGL_emulation: app_time_stats: avg=10.91ms min=1.62ms max=25.73ms count=59
+08-22 22:28:24.421 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=12.49ms max=20.03ms count=60
+08-22 22:28:25.436 13438 13473 D EGL_emulation: app_time_stats: avg=16.60ms min=12.73ms max=19.61ms count=61
+08-22 22:28:26.438 13438 13473 D EGL_emulation: app_time_stats: avg=17.24ms min=10.95ms max=31.17ms count=58
+08-22 22:28:26.747   577   733 W CpuMonitorService: Current CPU frequency (3732654) is greater than maximum CPU frequency (2) for policy ID (0). Skipping CPU frequency policy
+08-22 22:28:26.747   577   733 W CpuMonitorService: Current CPU frequency (3725912) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-22 22:28:26.748   577   733 W CpuMonitorService: Current CPU frequency (3721690) is greater than maximum CPU frequency (2) for policy ID (2). Skipping CPU frequency policy
+08-22 22:28:26.748   577   733 W CpuMonitorService: Current CPU frequency (3646909) is greater than maximum CPU frequency (2) for policy ID (3). Skipping CPU frequency policy
+08-22 22:28:27.454 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=10.94ms max=22.75ms count=61
+08-22 22:28:28.454 13438 13473 D EGL_emulation: app_time_stats: avg=17.53ms min=12.30ms max=34.66ms count=57
+08-22 22:28:29.470 13438 13473 D EGL_emulation: app_time_stats: avg=5.93ms min=2.08ms max=23.96ms count=61
+08-22 22:28:29.860   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:30.485 13438 13473 D EGL_emulation: app_time_stats: avg=2.56ms min=1.39ms max=4.64ms count=61
+08-22 22:28:31.488 13438 13473 D EGL_emulation: app_time_stats: avg=2.76ms min=1.73ms max=7.57ms count=60
+08-22 22:28:31.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:32.488 13438 13473 D EGL_emulation: app_time_stats: avg=3.63ms min=1.78ms max=20.26ms count=60
+08-22 22:28:33.503 13438 13473 D EGL_emulation: app_time_stats: avg=2.88ms min=1.53ms max=5.49ms count=61
+08-22 22:28:34.504 13438 13473 D EGL_emulation: app_time_stats: avg=9.34ms min=1.80ms max=20.28ms count=59
+08-22 22:28:35.520 13438 13473 D EGL_emulation: app_time_stats: avg=5.57ms min=1.85ms max=27.27ms count=61
+08-22 22:28:36.521 13438 13473 D EGL_emulation: app_time_stats: avg=2.63ms min=1.29ms max=5.45ms count=60
+08-22 22:28:36.794  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:37.539 13438 13473 D EGL_emulation: app_time_stats: avg=2.84ms min=1.41ms max=7.49ms count=61
+08-22 22:28:37.794   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:38.554 13438 13473 D EGL_emulation: app_time_stats: avg=15.83ms min=2.24ms max=24.32ms count=60
+08-22 22:28:39.572 13438 13473 D EGL_emulation: app_time_stats: avg=16.91ms min=12.58ms max=32.30ms count=60
+08-22 22:28:40.587 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=13.01ms max=20.61ms count=61
+08-22 22:28:41.590 13438 13473 D EGL_emulation: app_time_stats: avg=4.79ms min=1.85ms max=32.46ms count=59
+08-22 22:28:41.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:42.602 13438 13473 D EGL_emulation: app_time_stats: avg=2.71ms min=1.77ms max=4.73ms count=61
+08-22 22:28:43.625 13438 13473 D EGL_emulation: app_time_stats: avg=2.66ms min=1.82ms max=5.55ms count=61
+08-22 22:28:44.637 13438 13473 D EGL_emulation: app_time_stats: avg=3.94ms min=1.62ms max=26.03ms count=59
+08-22 22:28:45.652 13438 13473 D EGL_emulation: app_time_stats: avg=2.40ms min=1.57ms max=6.46ms count=61
+08-22 22:28:45.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:46.663 13438 13473 D EGL_emulation: app_time_stats: avg=2.50ms min=1.63ms max=11.01ms count=60
+08-22 22:28:46.845   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:28:47.671 13438 13473 D EGL_emulation: app_time_stats: avg=2.90ms min=1.61ms max=10.88ms count=61
+08-22 22:28:48.685 13438 13473 D EGL_emulation: app_time_stats: avg=13.79ms min=2.14ms max=20.38ms count=60
+08-22 22:28:49.687 13438 13473 D EGL_emulation: app_time_stats: avg=16.94ms min=13.18ms max=26.82ms count=59
+08-22 22:28:50.704 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=10.16ms max=22.25ms count=61
+08-22 22:28:51.704 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=13.81ms max=19.56ms count=60
+08-22 22:28:51.734   577  2092 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:28:51.736  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:51.736  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:28:51.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:28:52.710 13438 13473 D EGL_emulation: app_time_stats: avg=17.31ms min=9.82ms max=31.55ms count=58
+08-22 22:28:53.720 13438 13473 D EGL_emulation: app_time_stats: avg=3.67ms min=1.88ms max=26.85ms count=61
+08-22 22:28:53.920   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:28:54.737 13438 13473 D EGL_emulation: app_time_stats: avg=9.36ms min=1.72ms max=20.46ms count=60
+08-22 22:28:55.742 13438 13473 D EGL_emulation: app_time_stats: avg=16.86ms min=6.54ms max=32.69ms count=59
+08-22 22:28:56.754 13438 13473 D EGL_emulation: app_time_stats: avg=16.84ms min=10.40ms max=30.82ms count=60
+08-22 22:28:57.771 13438 13473 D EGL_emulation: app_time_stats: avg=16.91ms min=12.79ms max=33.73ms count=60
+08-22 22:28:58.772 13438 13473 D EGL_emulation: app_time_stats: avg=16.16ms min=2.60ms max=30.09ms count=60
+08-22 22:28:59.773 13438 13473 D EGL_emulation: app_time_stats: avg=4.46ms min=1.59ms max=18.73ms count=59
+08-22 22:29:00.035  1530  1832 I AiAiEcho: Predicting[0]: 
+08-22 22:29:00.035  1530  1832 I AiAiEcho: EchoTargets: 
+08-22 22:29:00.035  1530  1832 I AiAiEcho: Filtered by AiAi flag check: 
+08-22 22:29:00.035   862   935 D EGL_emulation: app_time_stats: avg=38266.12ms min=38266.12ms max=38266.12ms count=1
+08-22 22:29:00.035  1530  1832 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-22 22:29:00.035  1530  1832 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-22 22:29:00.051   862   862 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-22 22:29:00.787 13438 13473 D EGL_emulation: app_time_stats: avg=16.59ms min=11.31ms max=23.37ms count=61
+08-22 22:29:01.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:01.789 13438 13473 D EGL_emulation: app_time_stats: avg=15.96ms min=2.43ms max=32.61ms count=59
+08-22 22:29:01.857   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:02.790 13438 13473 D EGL_emulation: app_time_stats: avg=12.77ms min=2.14ms max=33.98ms count=58
+08-22 22:29:03.802 13438 13473 D EGL_emulation: app_time_stats: avg=17.11ms min=12.49ms max=32.56ms count=59
+08-22 22:29:04.806 13438 13473 D EGL_emulation: app_time_stats: avg=16.70ms min=2.51ms max=32.06ms count=58
+08-22 22:29:05.822 13438 13473 D EGL_emulation: app_time_stats: avg=3.20ms min=1.95ms max=6.70ms count=61
+08-22 22:29:06.795  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:06.836 13438 13473 D EGL_emulation: app_time_stats: avg=2.57ms min=1.80ms max=5.02ms count=61
+08-22 22:29:07.837 13438 13473 D EGL_emulation: app_time_stats: avg=3.20ms min=1.68ms max=12.46ms count=60
+08-22 22:29:08.839 13438 13473 D EGL_emulation: app_time_stats: avg=3.13ms min=1.70ms max=7.47ms count=60
+08-22 22:29:09.839 13438 13473 D EGL_emulation: app_time_stats: avg=11.32ms min=1.97ms max=19.45ms count=59
+08-22 22:29:10.053   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:10.852 13438 13473 D EGL_emulation: app_time_stats: avg=15.48ms min=2.75ms max=22.60ms count=60
+08-22 22:29:11.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:11.854 13438 13473 D EGL_emulation: app_time_stats: avg=16.93ms min=11.84ms max=31.56ms count=59
+08-22 22:29:12.868 13438 13473 D EGL_emulation: app_time_stats: avg=16.86ms min=11.62ms max=28.43ms count=60
+08-22 22:29:13.869 13438 13473 D EGL_emulation: app_time_stats: avg=15.37ms min=1.94ms max=32.00ms count=58
+08-22 22:29:14.886 13438 13473 D EGL_emulation: app_time_stats: avg=3.20ms min=1.74ms max=8.60ms count=61
+08-22 22:29:15.886 13438 13473 D EGL_emulation: app_time_stats: avg=2.91ms min=1.77ms max=5.51ms count=60
+08-22 22:29:16.845   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:29:16.889 13438 13473 D EGL_emulation: app_time_stats: avg=3.16ms min=1.69ms max=19.89ms count=60
+08-22 22:29:17.901 13438 13473 D EGL_emulation: app_time_stats: avg=15.97ms min=2.71ms max=20.20ms count=60
+08-22 22:29:17.986   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:18.902 13438 13473 D EGL_emulation: app_time_stats: avg=16.65ms min=12.85ms max=20.67ms count=60
+08-22 22:29:19.903 13438 13473 D EGL_emulation: app_time_stats: avg=14.92ms min=2.20ms max=29.90ms count=59
+08-22 22:29:20.903 13438 13473 D EGL_emulation: app_time_stats: avg=3.02ms min=2.05ms max=7.58ms count=60
+08-22 22:29:21.763   577  2092 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:29:21.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:21.768  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:21.768  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:21.920 13438 13473 D EGL_emulation: app_time_stats: avg=2.76ms min=1.44ms max=4.83ms count=61
+08-22 22:29:22.935 13438 13473 D EGL_emulation: app_time_stats: avg=5.69ms min=1.83ms max=25.12ms count=60
+08-22 22:29:23.936 13438 13473 D EGL_emulation: app_time_stats: avg=16.64ms min=13.62ms max=20.29ms count=60
+08-22 22:29:24.952 13438 13473 D EGL_emulation: app_time_stats: avg=16.89ms min=12.78ms max=31.18ms count=60
+08-22 22:29:25.920   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:25.955 13438 13473 D EGL_emulation: app_time_stats: avg=14.44ms min=2.07ms max=23.75ms count=60
+08-22 22:29:26.814   577   733 W CpuMonitorService: Current CPU frequency (3829925) is greater than maximum CPU frequency (2) for policy ID (0). Skipping CPU frequency policy
+08-22 22:29:26.814   577   733 W CpuMonitorService: Current CPU frequency (3826612) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-22 22:29:26.814   577   733 W CpuMonitorService: Current CPU frequency (3902293) is greater than maximum CPU frequency (2) for policy ID (2). Skipping CPU frequency policy
+08-22 22:29:26.814   577   733 W CpuMonitorService: Current CPU frequency (3823993) is greater than maximum CPU frequency (2) for policy ID (3). Skipping CPU frequency policy
+08-22 22:29:26.969 13438 13473 D EGL_emulation: app_time_stats: avg=3.23ms min=2.01ms max=7.21ms count=61
+08-22 22:29:27.970 13438 13473 D EGL_emulation: app_time_stats: avg=9.25ms min=1.61ms max=20.98ms count=59
+08-22 22:29:28.987 13438 13473 D EGL_emulation: app_time_stats: avg=14.67ms min=1.87ms max=34.84ms count=60
+08-22 22:29:30.003 13438 13473 D EGL_emulation: app_time_stats: avg=3.12ms min=1.76ms max=7.60ms count=61
+08-22 22:29:31.020 13438 13473 D EGL_emulation: app_time_stats: avg=2.68ms min=1.65ms max=5.45ms count=61
+08-22 22:29:31.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:32.037 13438 13473 D EGL_emulation: app_time_stats: avg=8.76ms min=1.82ms max=27.74ms count=60
+08-22 22:29:33.052 13438 13473 D EGL_emulation: app_time_stats: avg=3.13ms min=2.08ms max=5.18ms count=61
+08-22 22:29:33.861   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:34.054 13438 13473 D EGL_emulation: app_time_stats: avg=2.76ms min=1.74ms max=5.58ms count=60
+08-22 22:29:35.054 13438 13473 D EGL_emulation: app_time_stats: avg=14.14ms min=1.73ms max=20.14ms count=59
+08-22 22:29:36.070 13438 13473 D EGL_emulation: app_time_stats: avg=16.59ms min=12.73ms max=22.63ms count=61
+08-22 22:29:36.829  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:37.086 13438 13473 D EGL_emulation: app_time_stats: avg=16.62ms min=9.45ms max=21.24ms count=61
+08-22 22:29:38.088 13438 13473 D EGL_emulation: app_time_stats: avg=13.39ms min=1.98ms max=32.49ms count=59
+08-22 22:29:39.104 13438 13473 D EGL_emulation: app_time_stats: avg=3.07ms min=2.04ms max=5.93ms count=61
+08-22 22:29:40.119 13438 13473 D EGL_emulation: app_time_stats: avg=2.68ms min=1.69ms max=4.72ms count=61
+08-22 22:29:40.610  3672  7268 I AlarmManager: setExactAndAllowWhileIdle [name: GCM_HB_ALARM type: 2 triggerAtMillis: 6240610]
+08-22 22:29:40.611  3672  7268 I AlarmManager: setExactAndAllowWhileIdle [name: GCM_HB_ALARM type: 2 triggerAtMillis: 6240611]
+08-22 22:29:41.120 13438 13473 D EGL_emulation: app_time_stats: avg=3.91ms min=1.79ms max=22.28ms count=59
+08-22 22:29:41.450   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:29:41.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:41.793   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:42.124 13438 13473 D EGL_emulation: app_time_stats: avg=3.13ms min=1.64ms max=6.63ms count=60
+08-22 22:29:43.136 13438 13473 D EGL_emulation: app_time_stats: avg=2.67ms min=1.53ms max=5.60ms count=61
+08-22 22:29:44.156 13438 13473 D EGL_emulation: app_time_stats: avg=4.09ms min=1.85ms max=33.02ms count=60
+08-22 22:29:44.468   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:29:45.169 13438 13473 D EGL_emulation: app_time_stats: avg=15.95ms min=2.51ms max=23.59ms count=60
+08-22 22:29:46.170 13438 13473 D EGL_emulation: app_time_stats: avg=16.65ms min=12.33ms max=20.50ms count=60
+08-22 22:29:46.882   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:29:47.187 13438 13473 D EGL_emulation: app_time_stats: avg=16.77ms min=6.56ms max=38.42ms count=60
+08-22 22:29:47.467   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:29:48.202 13438 13473 D EGL_emulation: app_time_stats: avg=16.87ms min=11.55ms max=31.66ms count=60
+08-22 22:29:49.202 13438 13473 D EGL_emulation: app_time_stats: avg=16.92ms min=11.72ms max=32.36ms count=59
+08-22 22:29:49.988   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:50.203 13438 13473 D EGL_emulation: app_time_stats: avg=12.34ms min=1.80ms max=36.40ms count=58
+08-22 22:29:50.467   862   862 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+08-22 22:29:51.204 13438 13473 D EGL_emulation: app_time_stats: avg=5.40ms min=1.92ms max=26.64ms count=59
+08-22 22:29:51.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:29:51.795   577   721 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:29:51.796  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:51.796  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:29:52.219 13438 13473 D EGL_emulation: app_time_stats: avg=2.57ms min=1.52ms max=5.40ms count=61
+08-22 22:29:53.220 13438 13473 D EGL_emulation: app_time_stats: avg=5.15ms min=1.79ms max=26.77ms count=59
+08-22 22:29:54.221 13438 13473 D EGL_emulation: app_time_stats: avg=3.05ms min=1.99ms max=5.50ms count=60
+08-22 22:29:55.239 13438 13473 D EGL_emulation: app_time_stats: avg=10.02ms min=1.68ms max=29.80ms count=59
+08-22 22:29:56.253 13438 13473 D EGL_emulation: app_time_stats: avg=11.47ms min=2.02ms max=33.14ms count=59
+08-22 22:29:57.254 13438 13473 D EGL_emulation: app_time_stats: avg=3.21ms min=2.04ms max=6.59ms count=60
+08-22 22:29:57.921   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:29:58.269 13438 13473 D EGL_emulation: app_time_stats: avg=2.70ms min=1.54ms max=6.20ms count=61
+08-22 22:29:59.271 13438 13473 D EGL_emulation: app_time_stats: avg=3.69ms min=1.83ms max=17.71ms count=60
+08-22 22:30:00.035  1530  1832 I AiAiEcho: Predicting[0]: 
+08-22 22:30:00.035  1530  1832 I AiAiEcho: EchoTargets: 
+08-22 22:30:00.035  1530  1832 I AiAiEcho: Filtered by AiAi flag check: 
+08-22 22:30:00.035   862   935 D EGL_emulation: app_time_stats: avg=59999.73ms min=59999.73ms max=59999.73ms count=1
+08-22 22:30:00.035  1530  1832 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-22 22:30:00.036  1530  1832 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-22 22:30:00.050   862   862 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-22 22:30:00.286 13438 13473 D EGL_emulation: app_time_stats: avg=3.31ms min=2.13ms max=7.10ms count=61
+08-22 22:30:01.289 13438 13473 D EGL_emulation: app_time_stats: avg=2.64ms min=1.57ms max=6.03ms count=60
+08-22 22:30:01.767   862   935 D EGL_emulation: app_time_stats: avg=1732.61ms min=1732.61ms max=1732.61ms count=1
+08-22 22:30:01.768   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:02.304 13438 13473 D EGL_emulation: app_time_stats: avg=3.60ms min=1.62ms max=24.00ms count=61
+08-22 22:30:03.304 13438 13473 D EGL_emulation: app_time_stats: avg=3.42ms min=1.61ms max=6.22ms count=60
+08-22 22:30:04.306 13438 13473 D EGL_emulation: app_time_stats: avg=2.72ms min=1.49ms max=4.39ms count=60
+08-22 22:30:05.306 13438 13473 D EGL_emulation: app_time_stats: avg=9.28ms min=1.99ms max=22.47ms count=59
+08-22 22:30:05.857   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:06.322 13438 13473 D EGL_emulation: app_time_stats: avg=16.60ms min=9.91ms max=22.35ms count=61
+08-22 22:30:06.853  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:07.337 13438 13473 D EGL_emulation: app_time_stats: avg=16.88ms min=11.74ms max=30.70ms count=60
+08-22 22:30:08.352 13438 13473 D EGL_emulation: app_time_stats: avg=10.63ms min=1.86ms max=31.17ms count=60
+08-22 22:30:09.353 13438 13473 D EGL_emulation: app_time_stats: avg=3.23ms min=1.95ms max=6.40ms count=60
+08-22 22:30:10.353 13438 13473 D EGL_emulation: app_time_stats: avg=2.72ms min=1.64ms max=5.43ms count=60
+08-22 22:30:11.354 13438 13473 D EGL_emulation: app_time_stats: avg=3.26ms min=1.62ms max=24.91ms count=59
+08-22 22:30:11.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:12.354 13438 13473 D EGL_emulation: app_time_stats: avg=2.89ms min=1.78ms max=6.30ms count=60
+08-22 22:30:13.370 13438 13473 D EGL_emulation: app_time_stats: avg=2.51ms min=1.84ms max=4.89ms count=61
+08-22 22:30:13.793   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:14.370 13438 13473 D EGL_emulation: app_time_stats: avg=3.15ms min=1.88ms max=10.96ms count=60
+08-22 22:30:15.371 13438 13473 D EGL_emulation: app_time_stats: avg=5.58ms min=1.80ms max=20.18ms count=59
+08-22 22:30:16.386 13438 13473 D EGL_emulation: app_time_stats: avg=16.89ms min=13.74ms max=30.88ms count=60
+08-22 22:30:16.904   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:30:17.388 13438 13473 D EGL_emulation: app_time_stats: avg=10.23ms min=1.83ms max=34.24ms count=59
+08-22 22:30:18.402 13438 13473 D EGL_emulation: app_time_stats: avg=3.06ms min=1.79ms max=5.30ms count=61
+08-22 22:30:19.403 13438 13473 D EGL_emulation: app_time_stats: avg=2.74ms min=1.44ms max=5.54ms count=60
+08-22 22:30:20.404 13438 13473 D EGL_emulation: app_time_stats: avg=9.53ms min=1.79ms max=32.40ms count=59
+08-22 22:30:21.438 13438 13473 D EGL_emulation: app_time_stats: avg=3.53ms min=1.84ms max=20.56ms count=61
+08-22 22:30:21.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:21.801   577  1708 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:30:21.805  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:21.805  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:21.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:22.456 13438 13473 D EGL_emulation: app_time_stats: avg=16.93ms min=9.06ms max=32.60ms count=60
+08-22 22:30:23.472 13438 13473 D EGL_emulation: app_time_stats: avg=9.34ms min=1.88ms max=24.10ms count=61
+08-22 22:30:24.486 13438 13473 D EGL_emulation: app_time_stats: avg=2.81ms min=1.82ms max=5.54ms count=61
+08-22 22:30:25.487 13438 13473 D EGL_emulation: app_time_stats: avg=15.24ms min=1.85ms max=20.10ms count=59
+08-22 22:30:26.488 13438 13473 D EGL_emulation: app_time_stats: avg=9.42ms min=1.60ms max=26.92ms count=60
+08-22 22:30:26.829   577   733 W CpuMonitorService: Current CPU frequency (4031824) is greater than maximum CPU frequency (2) for policy ID (0). Skipping CPU frequency policy
+08-22 22:30:26.829   577   733 W CpuMonitorService: Current CPU frequency (4029965) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-22 22:30:26.829   577   733 W CpuMonitorService: Current CPU frequency (3906652) is greater than maximum CPU frequency (2) for policy ID (2). Skipping CPU frequency policy
+08-22 22:30:27.503 13438 13473 D EGL_emulation: app_time_stats: avg=3.00ms min=1.39ms max=5.20ms count=61
+08-22 22:30:28.521 13438 13473 D EGL_emulation: app_time_stats: avg=2.58ms min=1.72ms max=5.82ms count=61
+08-22 22:30:29.538 13438 13473 D EGL_emulation: app_time_stats: avg=10.10ms min=1.75ms max=56.07ms count=48
+08-22 22:30:29.922   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:30.468   577  1708 D WifiNl80211Manager: Scan result ready event
+08-22 22:30:30.468   577  1708 D WifiNative: Scan result ready event
+08-22 22:30:30.554 13438 13473 D EGL_emulation: app_time_stats: avg=3.48ms min=1.83ms max=16.21ms count=62
+08-22 22:30:31.570 13438 13473 D EGL_emulation: app_time_stats: avg=2.36ms min=1.74ms max=3.77ms count=61
+08-22 22:30:31.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:31.767   862   935 D EGL_emulation: app_time_stats: avg=29999.58ms min=29999.58ms max=29999.58ms count=1
+08-22 22:30:32.570 13438 13473 D EGL_emulation: app_time_stats: avg=11.80ms min=1.98ms max=19.30ms count=59
+08-22 22:30:33.586 13438 13473 D EGL_emulation: app_time_stats: avg=16.86ms min=10.33ms max=30.31ms count=60
+08-22 22:30:34.604 13438 13473 D EGL_emulation: app_time_stats: avg=16.94ms min=13.79ms max=32.37ms count=60
+08-22 22:30:35.605 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=10.80ms max=23.19ms count=60
+08-22 22:30:36.621 13438 13473 D EGL_emulation: app_time_stats: avg=16.62ms min=13.56ms max=19.94ms count=61
+08-22 22:30:36.865  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:37.636 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=14.23ms max=19.44ms count=61
+08-22 22:30:37.862   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:38.638 13438 13473 D EGL_emulation: app_time_stats: avg=16.93ms min=12.70ms max=32.80ms count=59
+08-22 22:30:39.654 13438 13473 D EGL_emulation: app_time_stats: avg=16.62ms min=11.68ms max=21.95ms count=61
+08-22 22:30:40.669 13438 13473 D EGL_emulation: app_time_stats: avg=16.88ms min=12.57ms max=31.50ms count=60
+08-22 22:30:41.670 13438 13473 D EGL_emulation: app_time_stats: avg=7.36ms min=1.92ms max=35.14ms count=59
+08-22 22:30:41.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:42.672 13438 13473 D EGL_emulation: app_time_stats: avg=3.29ms min=1.79ms max=5.74ms count=60
+08-22 22:30:43.686 13438 13473 D EGL_emulation: app_time_stats: avg=8.75ms min=1.45ms max=28.76ms count=59
+08-22 22:30:44.687 13438 13473 D EGL_emulation: app_time_stats: avg=7.16ms min=1.68ms max=31.84ms count=59
+08-22 22:30:45.702 13438 13473 D EGL_emulation: app_time_stats: avg=7.43ms min=1.69ms max=20.33ms count=60
+08-22 22:30:46.048   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:46.703 13438 13473 D EGL_emulation: app_time_stats: avg=17.21ms min=12.48ms max=32.88ms count=58
+08-22 22:30:46.914   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:30:47.705 13438 13473 D EGL_emulation: app_time_stats: avg=16.95ms min=12.25ms max=30.13ms count=59
+08-22 22:30:48.720 13438 13473 D EGL_emulation: app_time_stats: avg=16.60ms min=12.26ms max=19.67ms count=61
+08-22 22:30:49.720 13438 13473 D EGL_emulation: app_time_stats: avg=16.64ms min=11.20ms max=22.05ms count=60
+08-22 22:30:50.722 13438 13473 D EGL_emulation: app_time_stats: avg=6.22ms min=1.87ms max=29.24ms count=60
+08-22 22:30:51.736 13438 13473 D EGL_emulation: app_time_stats: avg=9.50ms min=1.95ms max=32.83ms count=59
+08-22 22:30:51.766   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:30:51.832   577  1708 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:30:51.834  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:51.834  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:30:52.736 13438 13473 D EGL_emulation: app_time_stats: avg=16.64ms min=11.94ms max=20.46ms count=60
+08-22 22:30:53.737 13438 13473 D EGL_emulation: app_time_stats: avg=7.02ms min=1.94ms max=26.50ms count=59
+08-22 22:30:53.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:30:54.737 13438 13473 D EGL_emulation: app_time_stats: avg=3.18ms min=1.70ms max=6.80ms count=60
+08-22 22:30:55.738 13438 13473 D EGL_emulation: app_time_stats: avg=2.77ms min=1.78ms max=6.13ms count=60
+08-22 22:30:56.738 13438 13473 D EGL_emulation: app_time_stats: avg=3.86ms min=1.67ms max=26.03ms count=59
+08-22 22:30:57.739 13438 13473 D EGL_emulation: app_time_stats: avg=3.16ms min=1.74ms max=6.22ms count=60
+08-22 22:30:58.756 13438 13473 D EGL_emulation: app_time_stats: avg=2.79ms min=1.53ms max=5.75ms count=61
+08-22 22:30:59.771 13438 13473 D EGL_emulation: app_time_stats: avg=3.86ms min=1.84ms max=19.47ms count=61
+08-22 22:31:00.035   862   935 D EGL_emulation: app_time_stats: avg=28267.58ms min=28267.58ms max=28267.58ms count=1
+08-22 22:31:00.035  1530  1832 I AiAiEcho: Predicting[0]: 
+08-22 22:31:00.035  1530  1832 I AiAiEcho: EchoTargets: 
+08-22 22:31:00.035  1530  1832 I AiAiEcho: Filtered by AiAi flag check: 
+08-22 22:31:00.037  1530  1832 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-22 22:31:00.037  1530  1832 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-22 22:31:00.051   862   862 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-22 22:31:00.788 13438 13473 D EGL_emulation: app_time_stats: avg=7.95ms min=1.71ms max=21.98ms count=60
+08-22 22:31:01.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:01.802 13438 13473 D EGL_emulation: app_time_stats: avg=17.15ms min=13.59ms max=32.20ms count=59
+08-22 22:31:01.922   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:02.804 13438 13473 D EGL_emulation: app_time_stats: avg=6.09ms min=1.66ms max=24.40ms count=59
+08-22 22:31:03.806 13438 13473 D EGL_emulation: app_time_stats: avg=2.99ms min=1.70ms max=6.86ms count=60
+08-22 22:31:04.820 13438 13473 D EGL_emulation: app_time_stats: avg=2.54ms min=1.58ms max=5.33ms count=61
+08-22 22:31:05.821 13438 13473 D EGL_emulation: app_time_stats: avg=14.43ms min=1.95ms max=23.60ms count=59
+08-22 22:31:06.837 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=12.15ms max=21.63ms count=61
+08-22 22:31:06.893  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:07.852 13438 13473 D EGL_emulation: app_time_stats: avg=16.60ms min=9.43ms max=24.64ms count=61
+08-22 22:31:08.853 13438 13473 D EGL_emulation: app_time_stats: avg=5.40ms min=1.92ms max=29.79ms count=60
+08-22 22:31:09.853 13438 13473 D EGL_emulation: app_time_stats: avg=10.39ms min=1.96ms max=19.54ms count=59
+08-22 22:31:09.856   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:10.869 13438 13473 D EGL_emulation: app_time_stats: avg=16.62ms min=13.27ms max=20.34ms count=61
+08-22 22:31:11.765   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:11.871 13438 13473 D EGL_emulation: app_time_stats: avg=5.88ms min=2.24ms max=46.54ms count=59
+08-22 22:31:13.012 13438 13473 D EGL_emulation: app_time_stats: avg=6.19ms min=1.58ms max=125.03ms count=42
+08-22 22:31:14.021 13438 13473 D EGL_emulation: app_time_stats: avg=16.94ms min=2.78ms max=80.18ms count=27
+08-22 22:31:15.028 13438 13473 D EGL_emulation: app_time_stats: avg=8.90ms min=2.26ms max=35.93ms count=44
+08-22 22:31:16.042 13438 13473 D EGL_emulation: app_time_stats: avg=6.37ms min=2.64ms max=17.41ms count=61
+08-22 22:31:16.941   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:31:17.070 13438 13473 D EGL_emulation: app_time_stats: avg=4.20ms min=1.77ms max=31.88ms count=60
+08-22 22:31:18.049   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:18.071 13438 13473 D EGL_emulation: app_time_stats: avg=16.91ms min=11.11ms max=32.98ms count=59
+08-22 22:31:19.085 13438 13473 D EGL_emulation: app_time_stats: avg=16.87ms min=9.42ms max=31.15ms count=60
+08-22 22:31:20.093 13438 13473 D EGL_emulation: app_time_stats: avg=17.05ms min=12.62ms max=32.46ms count=59
+08-22 22:31:21.106 13438 13473 D EGL_emulation: app_time_stats: avg=16.54ms min=11.54ms max=20.81ms count=61
+08-22 22:31:21.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:21.862   577  2077 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:31:21.864  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:21.864  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:22.121 13438 13473 D EGL_emulation: app_time_stats: avg=16.88ms min=13.76ms max=31.84ms count=60
+08-22 22:31:23.276 13438 13473 D EGL_emulation: app_time_stats: avg=17.14ms min=2.26ms max=111.03ms count=49
+08-22 22:31:24.290 13438 13473 D EGL_emulation: app_time_stats: avg=4.54ms min=2.44ms max=41.67ms count=59
+--------- beginning of kernel
+08-22 22:31:25.098     0     0 I logd    : logdr: UID=2000 GID=2000 PID=14776 n tail=200 logMask=99 pid=0 start=0ns deadline=0ns
+08-22 22:31:25.291 13438 13473 D EGL_emulation: app_time_stats: avg=4.79ms min=2.03ms max=28.60ms count=58
+08-22 22:31:25.986   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:26.310 13438 13473 D EGL_emulation: app_time_stats: avg=3.04ms min=1.95ms max=6.02ms count=61
+08-22 22:31:26.930   577   733 W CpuMonitorService: Current CPU frequency (3331723) is greater than maximum CPU frequency (2) for policy ID (0). Skipping CPU frequency policy
+08-22 22:31:26.930   577   733 W CpuMonitorService: Current CPU frequency (3389308) is greater than maximum CPU frequency (2) for policy ID (1). Skipping CPU frequency policy
+08-22 22:31:26.930   577   733 W CpuMonitorService: Current CPU frequency (3423811) is greater than maximum CPU frequency (2) for policy ID (2). Skipping CPU frequency policy
+08-22 22:31:26.930   577   733 W CpuMonitorService: Current CPU frequency (3395969) is greater than maximum CPU frequency (2) for policy ID (3). Skipping CPU frequency policy
+08-22 22:31:27.312 13438 13473 D EGL_emulation: app_time_stats: avg=11.32ms min=2.37ms max=41.60ms count=56
+08-22 22:31:28.324 13438 13473 D EGL_emulation: app_time_stats: avg=16.52ms min=8.18ms max=23.57ms count=61
+08-22 22:31:29.337 13438 13473 D EGL_emulation: app_time_stats: avg=16.56ms min=6.72ms max=25.11ms count=61
+08-22 22:31:30.340 13438 13473 D EGL_emulation: app_time_stats: avg=17.54ms min=9.69ms max=36.92ms count=57
+08-22 22:31:31.355 13438 13473 D EGL_emulation: app_time_stats: avg=7.24ms min=2.49ms max=43.47ms count=56
+08-22 22:31:31.783   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:32.356 13438 13473 D EGL_emulation: app_time_stats: avg=2.55ms min=1.40ms max=4.46ms count=60
+08-22 22:31:33.372 13438 13473 D EGL_emulation: app_time_stats: avg=3.52ms min=2.13ms max=27.87ms count=60
+08-22 22:31:33.920   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:34.386 13438 13473 D EGL_emulation: app_time_stats: avg=3.33ms min=2.00ms max=5.07ms count=61
+08-22 22:31:35.388 13438 13473 D EGL_emulation: app_time_stats: avg=2.51ms min=1.81ms max=5.18ms count=60
+08-22 22:31:36.389 13438 13473 D EGL_emulation: app_time_stats: avg=12.24ms min=2.09ms max=27.10ms count=57
+08-22 22:31:36.922  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:37.403 13438 13473 D EGL_emulation: app_time_stats: avg=16.79ms min=8.22ms max=29.52ms count=60
+08-22 22:31:38.406 13438 13473 D EGL_emulation: app_time_stats: avg=6.23ms min=1.90ms max=23.25ms count=60
+08-22 22:31:39.421 13438 13473 D EGL_emulation: app_time_stats: avg=12.51ms min=2.02ms max=32.45ms count=58
+08-22 22:31:40.452 13438 13473 D EGL_emulation: app_time_stats: avg=16.82ms min=2.77ms max=83.51ms count=53
+08-22 22:31:41.455 13438 13473 D EGL_emulation: app_time_stats: avg=3.56ms min=2.00ms max=7.02ms count=61
+08-22 22:31:41.768   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:41.858   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:42.456 13438 13473 D EGL_emulation: app_time_stats: avg=5.94ms min=2.12ms max=46.26ms count=56
+08-22 22:31:43.456 13438 13473 D EGL_emulation: app_time_stats: avg=4.03ms min=2.21ms max=10.37ms count=60
+08-22 22:31:44.458 13438 13473 D EGL_emulation: app_time_stats: avg=2.57ms min=1.90ms max=4.01ms count=60
+08-22 22:31:45.458 13438 13473 D EGL_emulation: app_time_stats: avg=11.59ms min=2.14ms max=32.88ms count=57
+08-22 22:31:46.472 13438 13473 D EGL_emulation: app_time_stats: avg=16.58ms min=12.69ms max=21.50ms count=61
+08-22 22:31:46.964   577   737 D ActivityManager: freezing 1769 com.google.android.gms
+08-22 22:31:47.472 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=11.52ms max=20.90ms count=60
+08-22 22:31:48.478 13438 13473 D EGL_emulation: app_time_stats: avg=13.03ms min=2.65ms max=46.53ms count=56
+08-22 22:31:49.487 13438 13473 D EGL_emulation: app_time_stats: avg=4.49ms min=1.91ms max=16.85ms count=60
+08-22 22:31:50.049   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:50.503 13438 13473 D EGL_emulation: app_time_stats: avg=4.17ms min=1.86ms max=46.72ms count=56
+08-22 22:31:51.506 13438 13473 D EGL_emulation: app_time_stats: avg=13.27ms min=2.02ms max=31.23ms count=57
+08-22 22:31:51.767   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:31:51.893   577  1708 D ActivityManager: sync unfroze 1769 com.google.android.gms for 6
+08-22 22:31:51.895  1769  1769 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:51.895  1769  1769 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:31:52.523 13438 13473 D EGL_emulation: app_time_stats: avg=17.18ms min=12.40ms max=34.19ms count=59
+08-22 22:31:53.539 13438 13473 D EGL_emulation: app_time_stats: avg=16.61ms min=10.26ms max=22.09ms count=61
+08-22 22:31:54.545 13438 13473 D EGL_emulation: app_time_stats: avg=15.24ms min=2.18ms max=36.52ms count=56
+08-22 22:31:55.555 13438 13473 D EGL_emulation: app_time_stats: avg=5.78ms min=1.89ms max=71.50ms count=56
+08-22 22:31:56.570 13438 13473 D EGL_emulation: app_time_stats: avg=2.74ms min=1.81ms max=5.26ms count=61
+08-22 22:31:57.575 13438 13473 D EGL_emulation: app_time_stats: avg=4.02ms min=1.96ms max=36.31ms count=59
+08-22 22:31:57.985   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:31:58.590 13438 13473 D EGL_emulation: app_time_stats: avg=2.97ms min=1.71ms max=7.42ms count=61
+08-22 22:31:59.606 13438 13473 D EGL_emulation: app_time_stats: avg=2.52ms min=1.84ms max=4.81ms count=61
+08-22 22:32:00.014   577   721 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+08-22 22:32:00.015   577   721 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=5400015 mSleepTimeMs=0 mIdleTimeMs=5400002 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+08-22 22:32:00.017   577   697 E system_server: Cannot read thread CPU times for PID 577
+08-22 22:32:00.036   356   405 I netd    : tetherGetStats() -> {[]} <0.55ms>
+08-22 22:32:00.037   862   935 D EGL_emulation: app_time_stats: avg=60001.20ms min=60001.20ms max=60001.20ms count=1
+08-22 22:32:00.038  1530  1832 I AiAiEcho: Predicting[0]: 
+08-22 22:32:00.038  1530  1832 I AiAiEcho: EchoTargets: 
+08-22 22:32:00.038  1530  1832 I AiAiEcho: Filtered by AiAi flag check: 
+08-22 22:32:00.038  1530  1832 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+08-22 22:32:00.039  1530  1832 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+08-22 22:32:00.056   862   862 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+08-22 22:32:00.607 13438 13473 D EGL_emulation: app_time_stats: avg=11.49ms min=2.02ms max=30.25ms count=58
+08-22 22:32:01.621 13438 13473 D EGL_emulation: app_time_stats: avg=2.92ms min=1.63ms max=5.81ms count=61
+08-22 22:32:01.783   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:32:02.623 13438 13473 D EGL_emulation: app_time_stats: avg=2.26ms min=1.57ms max=4.23ms count=60
+08-22 22:32:03.625 13438 13473 D EGL_emulation: app_time_stats: avg=3.97ms min=2.06ms max=23.63ms count=59
+08-22 22:32:04.638 13438 13473 D EGL_emulation: app_time_stats: avg=11.45ms min=2.16ms max=19.69ms count=60
+08-22 22:32:05.645 13438 13473 D EGL_emulation: app_time_stats: avg=16.03ms min=2.17ms max=32.33ms count=59
+08-22 22:32:05.921   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:32:06.655 13438 13473 D EGL_emulation: app_time_stats: avg=14.34ms min=2.44ms max=20.46ms count=60
+08-22 22:32:06.955  1769  1769 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+08-22 22:32:07.655 13438 13473 D EGL_emulation: app_time_stats: avg=16.62ms min=10.92ms max=23.36ms count=60
+08-22 22:32:08.656 13438 13473 D EGL_emulation: app_time_stats: avg=16.63ms min=13.16ms max=20.64ms count=60
+08-22 22:32:09.658 13438 13473 D EGL_emulation: app_time_stats: avg=5.73ms min=1.82ms max=32.17ms count=58
+08-22 22:32:09.704     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=4 c=900000 fc=3000000 cc=10 chg=
+08-22 22:32:10.671 13438 13473 D EGL_emulation: app_time_stats: avg=3.04ms min=1.71ms max=6.64ms count=61
+08-22 22:32:11.673 13438 13473 D EGL_emulation: app_time_stats: avg=2.44ms min=1.48ms max=4.68ms count=60
+08-22 22:32:11.789   862   935 D EGL_emulation: app_time_stats: avg=11751.94ms min=11751.94ms max=11751.94ms count=1
+08-22 22:32:11.789   862   862 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+08-22 22:32:12.689 13438 13473 D EGL_emulation: app_time_stats: avg=3.84ms min=1.96ms max=21.13ms count=61
+08-22 22:32:13.703 13438 13473 D EGL_emulation: app_time_stats: avg=2.98ms min=1.78ms max=6.30ms count=61
+08-22 22:32:13.857   849   849 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+08-22 22:32:14.705 13438 13473 D EGL_emulation: app_time_stats: avg=2.38ms min=1.57ms max=5.34ms count=60
