@@ -50,8 +50,8 @@
         <!-- App Icon -->
         <MauiIcon Include="Resources\AppIcon\appicon.png" />
 
-        <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+        <!-- Splash Screen : fond sombre de l'app (#0f172a) pour éviter le flash violet -->
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#0f172a" BaseSize="128,128" />
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
@@ -78,6 +78,7 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
         <PackageReference Include="Xamarin.AndroidX.Work.Runtime" Version="2.11.2" />
         <PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime" Version="2.10.0.2" />
+        <PackageReference Include="Xamarin.AndroidX.Core" Version="1.18.0" />
     </ItemGroup>
 
     <ItemGroup>

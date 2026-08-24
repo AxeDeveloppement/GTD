@@ -4,9 +4,16 @@
     </style>
 
     <style name="Maui.SplashTheme" parent="Maui.MainTheme.NoActionBar">
+        <!-- Fond sombre de l'app (#0f172a) au lieu du violet MAUI par défaut,
+             pour éviter le flash violet visible dans la barre de statut au démarrage. -->
         <item name="android:windowBackground">@drawable/maui_splash</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowActionBar">false</item>
+        <!-- Barres système transparentes dès le splash : le fond sombre de l'app
+             apparaît derrière la barre de statut et la barre de navigation,
+             garantissant une transition sans changement de couleur. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 </resources>

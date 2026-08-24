@@ -14,9 +14,9 @@ public class MainActivity : MauiAppCompatActivity
 	{
 		base.OnCreate(savedInstanceState);
         
-        // Barres système : la barre de statut et de navigation adoptent le fond sombre
-        // de l'app (#0f172a) pour un rendu intégré, quelle que soit la version d'Android.
-        // Les icônes système sont éclaircies (blanches) pour le contraste.
+        // Barres système : configuration adaptée à la version d'Android pour que
+        // l'application s'insère dans le bon espace (edge-to-edge sur Android 10+,
+        // contenu sous les barres sur Android 9 et antérieurs).
         ConfigureSystemBars();
         
 #if DEBUG
@@ -28,11 +28,20 @@ public class MainActivity : MauiAppCompatActivity
 	}
 
     /// <summary>
-    /// Configure les barres système (statut et navigation) pour un rendu intégré,
-    /// quelle que soit la version d'Android.
-    /// - La barre de statut et de navigation adoptent le fond sombre de l'app (#0f172a).
-    /// - Les icônes système sont éclaircies (blanches) pour le contraste.
-    /// - Android 11+ (API 30+) : WindowInsetsController pour les icônes claires.
+    /// Configure les barres système (statut et navigation) de façon adaptée à la
+    /// version d'Android, afin que l'application s'insère dans le bon espace :
+    ///
+    /// - Android 10+ (API 29+) : mode edge-to-edge. Le WebView s'étend sous la barre
+    ///   de statut et la barre de navigation. Les barres passent en transparent pour
+    ///   laisser apparaître le fond sombre de l'app (#0f172a) au lieu du fond violet
+    ///   du splash, et les icônes système sont éclaircies (blanches). Le contenu est
+    ///   ensuite décalé via les insets safe-area côté CSS (env(safe-area-inset-*)).
+    ///
+    /// - Android 9 et antérieurs : le mode edge-to-edge via WindowCompat n'est pas
+    ///   fiable. On garde le contenu sous les barres (fitsSystemWindows par défaut)
+    ///   et on colore la barre de statut avec le fond de l'app pour éviter le flash
+    ///   violet du splash.
+    ///
     /// NB : le préfixe global:: est obligatoire car le namespace PersonalGTD.Android
     /// masque le namespace Android.
     /// </summary>
@@ -40,26 +49,43 @@ public class MainActivity : MauiAppCompatActivity
     {
         try
         {
-            // Couleur de la barre de statut et de navigation : fond sombre de l'app (#0f172a)
-            // pour un rendu intégré, quelle que soit la version d'Android.
             var appBackground = global::Android.Graphics.Color.ParseColor("#0f172a");
-            Window.SetStatusBarColor(appBackground);
-            Window.SetNavigationBarColor(appBackground);
 
-            // Icônes claires (blanches) pour la barre de statut et de navigation,
-            // car le fond de l'app est sombre.
-            // WindowInsetsController et WindowInsetsControllerAppearance
-            // sont disponibles à partir d'Android 11 (API 30).
-            if (OperatingSystem.IsAndroidVersionAtLeast(30))
+            if (OperatingSystem.IsAndroidVersionAtLeast(29))
             {
-                var controller = Window.InsetsController;
-                if (controller != null)
+                // Edge-to-edge : le contenu (WebView) s'étend sous les barres système.
+                // WindowCompat (AndroidX.Core) gère proprement les différences de version.
+                global::AndroidX.Core.View.WindowCompat.SetDecorFitsSystemWindows(Window, false);
+
+                // Barres transparentes : le fond sombre de l'app (#0f172a) apparaît
+                // derrière la barre de statut et la barre de navigation, au lieu du
+                // fond violet du splash (#512BD4).
+                Window.SetStatusBarColor(global::Android.Graphics.Color.Transparent);
+                Window.SetNavigationBarColor(global::Android.Graphics.Color.Transparent);
+
+                // Icônes claires (blanches) pour la barre de statut et de navigation,
+                // car le fond de l'app est sombre.
+                // WindowInsetsController et WindowInsetsControllerAppearance
+                // sont disponibles à partir d'Android 11 (API 30).
+                if (OperatingSystem.IsAndroidVersionAtLeast(30))
                 {
-                    var appearance = global::Android.Views.WindowInsetsControllerAppearance.LightStatusBars
-                                   | global::Android.Views.WindowInsetsControllerAppearance.LightNavigationBars;
-                    var appearanceInt = (int)appearance;
-                    controller.SetSystemBarsAppearance(appearanceInt, appearanceInt);
+                    var controller = Window.InsetsController;
+                    if (controller != null)
+                    {
+                        var appearance = global::Android.Views.WindowInsetsControllerAppearance.LightStatusBars
+                                       | global::Android.Views.WindowInsetsControllerAppearance.LightNavigationBars;
+                        var appearanceInt = (int)appearance;
+                        controller.SetSystemBarsAppearance(appearanceInt, appearanceInt);
+                    }
                 }
+            }
+            else
+            {
+                // Android 9 et antérieurs : on conserve le contenu sous les barres
+                // (fitsSystemWindows par défaut) et on colore la barre de statut avec
+                // le fond de l'app pour éviter le flash violet du splash.
+                Window.SetStatusBarColor(appBackground);
+                Window.SetNavigationBarColor(appBackground);
             }
         }
         catch (Exception ex)

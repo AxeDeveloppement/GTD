@@ -1517,3 +1517,11 @@ code {
 
 
 
+  
+/* Safe-area insets: Android edge-to-edge / iOS notch. */  
+.app-header { padding-top: env(safe-area-inset-top, 0px); }  
+.app-main { padding-bottom: env(safe-area-inset-bottom, 0px); }  
+.login-page { padding-top: calc(1.5rem + env(safe-area-inset-top, 0px)); padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }  
+.fab-container { bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }  
+@media (max-width: 1024px) { .fab-container { bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)); } }  
+@media (max-width: 480px) { .fab-container { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); } } 
